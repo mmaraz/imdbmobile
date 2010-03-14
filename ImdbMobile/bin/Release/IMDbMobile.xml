@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<application>
+  <name>IMDb Mobile</name>
+  <version>0.5</version>
+  <description>Search through IMDb.com for Movies/Stars/TV/Games.</description>
+  <versionurl>http://packardo.co.uk/apptodate/IMDbMobile.xml</versionurl>
+  <caburl>http://packardo.co.uk/apptodate/IMDbMobile.cab</caburl>
+</application>

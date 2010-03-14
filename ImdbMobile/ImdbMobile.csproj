@@ -1,0 +1,377 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{820D2D2C-8CA2-4CE2-A76C-A6CFA50798F0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ImdbMobile</RootNamespace>
+    <AssemblyName>ImdbMobile</AssemblyName>
+    <ProjectTypeGuids>{4D628B5B-2FBC-4AA6-8C16-197242AEB884};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <PlatformFamilyName>PocketPC</PlatformFamilyName>
+    <PlatformID>b2c48bd2-963d-4549-9169-1fa021dce484</PlatformID>
+    <OSVersion>5.02</OSVersion>
+    <DeployDirSuffix>ImdbMobile</DeployDirSuffix>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <NativePlatformName>Windows Mobile 6 Professional SDK</NativePlatformName>
+    <FormFactorID>
+    </FormFactorID>
+    <ApplicationIcon>IMDbMobile.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;$(PlatformFamilyName)</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <FileAlignment>512</FileAlignment>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;$(PlatformFamilyName)</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <FileAlignment>512</FileAlignment>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ManilaDotNetSDK, Version=2.1.3591.34568, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Desktop\ManilaDotNetSDK.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsCE.Forms" />
+    <Reference Include="mscorlib" />
+    <Reference Include="Newtonsoft.Json.Compact, Version=3.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Blade\Desktop\Json.NET\Bin\Compact\Newtonsoft.Json.Compact.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenNETCF, Version=2.3.0.39, Culture=neutral, PublicKeyToken=e60dbea84bb431b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Smart Device Framework\Bin\OpenNETCF.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CFAdditions.cs" />
+    <Compile Include="Controls\AboutControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\AboutControl.Designer.cs">
+      <DependentUpon>AboutControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ActorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ActorControl.Designer.cs">
+      <DependentUpon>ActorControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CastControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\CastControl.Designer.cs">
+      <DependentUpon>CastControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ComingSoonControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ComingSoonControl.Designer.cs">
+      <DependentUpon>ComingSoonControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\EpisodeListControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\EpisodeListControl.Designer.cs">
+      <DependentUpon>EpisodeListControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ExternalReviews.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ExternalReviews.Designer.cs">
+      <DependentUpon>ExternalReviews.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FilmographyControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\FilmographyControl.Designer.cs">
+      <DependentUpon>FilmographyControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\GoofsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\GoofsControl.Designer.cs">
+      <DependentUpon>GoofsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MainControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\MainControl.Designer.cs">
+      <DependentUpon>MainControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MovieControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\MovieControl.Designer.cs">
+      <DependentUpon>MovieControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ParentalGuide.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ParentalGuide.Designer.cs">
+      <DependentUpon>ParentalGuide.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PhotoViewerControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\PhotoViewerControl.Designer.cs">
+      <DependentUpon>PhotoViewerControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\QuotesControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\QuotesControl.Designer.cs">
+      <DependentUpon>QuotesControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SeasonListControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\SeasonListControl.Designer.cs">
+      <DependentUpon>SeasonListControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Top250Control.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Top250Control.Designer.cs">
+      <DependentUpon>Top250Control.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TrailersControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TrailersControl.Designer.cs">
+      <DependentUpon>TrailersControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TriviaControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TriviaControl.Designer.cs">
+      <DependentUpon>TriviaControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UserReviews.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UserReviews.Designer.cs">
+      <DependentUpon>UserReviews.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ViewReview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ViewReview.Designer.cs">
+      <DependentUpon>ViewReview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IMDBData\ShowtimeParser.cs" />
+    <Compile Include="IMDBData\TitleExternalReviewParser.cs" />
+    <Compile Include="IMDBData\TitleParentalGuideParser.cs" />
+    <Compile Include="IMDBData\TitleUserReviewParser.cs" />
+    <Compile Include="UI\ManilaExtensions\ReviewDisplay.cs" />
+    <Compile Include="UI\Translations.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IMDBData\ActorParser.cs" />
+    <Compile Include="IMDBData\API.cs" />
+    <Compile Include="IMDBData\Classes.cs" />
+    <Compile Include="IMDBData\ActorTriviaParser.cs" />
+    <Compile Include="IMDBData\ComingSoonParser.cs" />
+    <Compile Include="IMDBData\TitleSeasonParser.cs" />
+    <Compile Include="IMDBData\FilmographyParser.cs" />
+    <Compile Include="IMDBData\ImageDownloader.cs" />
+    <Compile Include="IMDBData\ParseCast.cs" />
+    <Compile Include="IMDBData\Search.cs" />
+    <Compile Include="IMDBData\Settings.cs" />
+    <Compile Include="IMDBData\TitleGoofParser.cs" />
+    <Compile Include="IMDBData\TitleParser.cs" />
+    <Compile Include="IMDBData\TitlePhotoParser.cs" />
+    <Compile Include="IMDBData\TitleQuoteParser.cs" />
+    <Compile Include="IMDBData\TitleTriviaParser.cs" />
+    <Compile Include="IMDBData\Top250Parser.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Controls\AboutControl.resx">
+      <DependentUpon>AboutControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ActorControl.resx">
+      <DependentUpon>ActorControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\CastControl.resx">
+      <DependentUpon>CastControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ComingSoonControl.resx">
+      <DependentUpon>ComingSoonControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\EpisodeListControl.resx">
+      <DependentUpon>EpisodeListControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ExternalReviews.resx">
+      <DependentUpon>ExternalReviews.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FilmographyControl.resx">
+      <DependentUpon>FilmographyControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\GoofsControl.resx">
+      <DependentUpon>GoofsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\MainControl.resx">
+      <DependentUpon>MainControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\MovieControl.resx">
+      <DependentUpon>MovieControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ParentalGuide.resx">
+      <DependentUpon>ParentalGuide.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\PhotoViewerControl.resx">
+      <DependentUpon>PhotoViewerControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\QuotesControl.resx">
+      <DependentUpon>QuotesControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SeasonListControl.resx">
+      <DependentUpon>SeasonListControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Top250Control.resx">
+      <DependentUpon>Top250Control.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TrailersControl.resx">
+      <DependentUpon>TrailersControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TriviaControl.resx">
+      <DependentUpon>TriviaControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UserReviews.resx">
+      <DependentUpon>UserReviews.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ViewReview.resx">
+      <DependentUpon>ViewReview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings.resx">
+      <DependentUpon>Settings.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings.Designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\KListFunctions.cs" />
+    <Compile Include="UI\ManilaExtensions\ActionButton.cs" />
+    <Compile Include="UI\ManilaExtensions\ActorHeader.cs" />
+    <Compile Include="UI\ManilaExtensions\PhotoDisplay.cs" />
+    <Compile Include="UI\ManilaExtensions\QuoteItem.cs" />
+    <Compile Include="UI\ManilaExtensions\TextDisplay.cs" />
+    <Compile Include="UI\ManilaExtensions\LoadingButton.cs" />
+    <Compile Include="UI\ManilaExtensions\ErrorButton.cs" />
+    <Compile Include="UI\ManilaExtensions\MovieHeader.cs" />
+    <Compile Include="UI\SlidingList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Titlebar.cs" />
+    <Compile Include="UI\WindowHandler.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="IMDbMobile.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="IMDbMobile.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\Cast_Over.png" />
+    <None Include="Resources\Close_Over.png" />
+    <None Include="Resources\ComingSoon_Over.png" />
+    <None Include="Resources\Filmography_Over.png" />
+    <None Include="Resources\MoreInfo_Over.png" />
+    <None Include="Resources\ParentalGuide.png" />
+    <None Include="Resources\ParentalGuide_Over.png" />
+    <None Include="Resources\Photos_Over.png" />
+    <None Include="Resources\Quote_Over.png" />
+    <None Include="Resources\Settings_Over.png" />
+    <None Include="Resources\Trailers_Over.png" />
+    <None Include="Resources\Trivia_Over.png" />
+    <None Include="Resources\about.png" />
+    <None Include="Resources\about_over.png" />
+    <None Include="Resources\ExternalReview.png" />
+    <None Include="Resources\ExternalReview_Over.png" />
+    <None Include="Resources\UserReview.png" />
+    <None Include="Resources\UserReview_Over.png" />
+    <Content Include="Translations\English.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Translations\Swedish.xml" />
+    <None Include="Resources\episodes.png" />
+    <None Include="Resources\Continuity.png" />
+    <None Include="Resources\star_over.png" />
+    <None Include="Resources\star_out.png" />
+    <None Include="Resources\heading.png" />
+    <None Include="Resources\search_btn.png" />
+    <None Include="Resources\Close.png" />
+    <None Include="Resources\Trivia.png" />
+    <None Include="Resources\Trailers.png" />
+    <None Include="Resources\Settings.png" />
+    <None Include="Resources\Quote.png" />
+    <None Include="Resources\Photos.png" />
+    <None Include="Resources\Filmography.png" />
+    <None Include="Resources\ComingSoon.png" />
+    <None Include="Resources\Cast.png" />
+    <None Include="Resources\MoreInfo.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CompactFramework.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}">
+        <HostingProcess disable="1" />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
