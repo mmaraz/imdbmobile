@@ -1,0 +1,179 @@
+C:\Users\Noreen\Documents\Visual Studio 2008\Projects\ImdbMobile\ImdbMobile\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Noreen\Documents\Visual Studio 2008\Projects\ImdbMobile\ImdbMobile\obj\Debug\ImdbMobile.Properties.Resources.resources
+C:\Users\Noreen\Documents\Visual Studio 2008\Projects\ImdbMobile\ImdbMobile\obj\Debug\ImdbMobile.csproj.GenerateResource.Cache
+C:\Users\Noreen\Documents\Visual Studio 2008\Projects\ImdbMobile\ImdbMobile\bin\Debug\ImdbMobile.exe
+C:\Users\Noreen\Documents\Visual Studio 2008\Projects\ImdbMobile\ImdbMobile\bin\Debug\ImdbMobile.pdb
+C:\Users\Noreen\Documents\Visual Studio 2008\Projects\ImdbMobile\ImdbMobile\obj\Debug\ImdbMobile.exe
+C:\Users\Noreen\Documents\Visual Studio 2008\Projects\ImdbMobile\ImdbMobile\obj\Debug\ImdbMobile.pdb
+C:\Users\Noreen\Documents\Visual Studio 2008\Projects\ImdbMobile\ImdbMobile\obj\Debug\ImdbMobile.Form1.resources
+C:\Users\Noreen\Documents\Visual Studio 2008\Projects\ImdbMobile\ImdbMobile\bin\Debug\ManilaDotNetSDK.dll
+C:\Users\Noreen\Documents\Visual Studio 2008\Projects\ImdbMobile\ImdbMobile\bin\Debug\OpenNETCF.Drawing.dll
+C:\Users\Noreen\Documents\Visual Studio 2008\Projects\ImdbMobile\ImdbMobile\obj\Debug\ImdbMobile.Movie.resources
+C:\Users\Noreen\Documents\Visual Studio 2008\Projects\ImdbMobile\ImdbMobile\obj\Debug\ImdbMobile.Actor.resources
+C:\Users\Noreen\Documents\Visual Studio 2008\Projects\ImdbMobile\ImdbMobile\obj\Debug\ImdbMobile.Settings.resources
+C:\Users\DevUser\Downloads\ImdbMobile\ImdbMobile\ImdbMobile\bin\Debug\ImdbMobile.exe
+C:\Users\DevUser\Downloads\ImdbMobile\ImdbMobile\ImdbMobile\bin\Debug\ImdbMobile.pdb
+C:\Users\DevUser\Downloads\ImdbMobile\ImdbMobile\ImdbMobile\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\DevUser\Downloads\ImdbMobile\ImdbMobile\ImdbMobile\obj\Debug\ImdbMobile.Actor.resources
+C:\Users\DevUser\Downloads\ImdbMobile\ImdbMobile\ImdbMobile\obj\Debug\ImdbMobile.Form1.resources
+C:\Users\DevUser\Downloads\ImdbMobile\ImdbMobile\ImdbMobile\obj\Debug\ImdbMobile.Movie.resources
+C:\Users\DevUser\Downloads\ImdbMobile\ImdbMobile\ImdbMobile\obj\Debug\ImdbMobile.Properties.Resources.resources
+C:\Users\DevUser\Downloads\ImdbMobile\ImdbMobile\ImdbMobile\obj\Debug\ImdbMobile.Settings.resources
+C:\Users\DevUser\Downloads\ImdbMobile\ImdbMobile\ImdbMobile\obj\Debug\ImdbMobile.csproj.GenerateResource.Cache
+C:\Users\DevUser\Downloads\ImdbMobile\ImdbMobile\ImdbMobile\obj\Debug\ImdbMobile.exe
+C:\Users\DevUser\Downloads\ImdbMobile\ImdbMobile\ImdbMobile\obj\Debug\ImdbMobile.pdb
+C:\Users\DevUser\Downloads\ImdbMobile\ImdbMobile\ImdbMobile\obj\Debug\ImdbMobile.MoreDetails.resources
+C:\Users\DevUser\Downloads\ImdbMobile\ImdbMobile\ImdbMobile\obj\Debug\ImdbMobile.Filmography.resources
+C:\Users\DevUser\Downloads\ImdbMobile\ImdbMobile\ImdbMobile\obj\Debug\ImdbMobile.Cast.resources
+C:\Users\DevUser\Downloads\ImdbMobile\ImdbMobile\ImdbMobile\bin\Debug\OpenNETCF.dll
+C:\Users\DevUser\Downloads\ImdbMobile\ImdbMobile\ImdbMobile\bin\Debug\OpenNETCF.Configuration.dll
+C:\Users\DevUser\Downloads\ImdbMobile\ImdbMobile\ImdbMobile\bin\Debug\OpenNETCF.xml
+C:\Users\DevUser\Downloads\ImdbMobile\ImdbMobile\ImdbMobile\bin\Debug\OpenNETCF.Configuration.xml
+C:\Users\DevUser\Downloads\ImdbMobile\ImdbMobile\ImdbMobile\obj\Debug\ImdbMobile.Trivia.resources
+C:\Users\DevUser\Downloads\ImdbMobile\ImdbMobile\ImdbMobile\obj\Debug\ImdbMobile.Viewer.resources
+C:\Users\DevUser\Downloads\ImdbMobile\ImdbMobile\ImdbMobile\obj\Debug\ImdbMobile.Quotes.resources
+C:\Users\DevUser\Downloads\ImdbMobile\ImdbMobile\ImdbMobile\bin\Debug\Newtonsoft.Json.Compact.dll
+C:\Users\DevUser\Downloads\ImdbMobile\ImdbMobile\ImdbMobile\obj\Debug\ImdbMobile.PhotoViewer.resources
+C:\Users\DevUser\Downloads\ImdbMobile\ImdbMobile\ImdbMobile\obj\Debug\ImdbMobile.Goofs.resources
+C:\Users\DevUser\Downloads\ImdbMobile\ImdbMobile\ImdbMobile\obj\Debug\ImdbMobile.Top250.resources
+C:\Users\DevUser\Downloads\ImdbMobile\ImdbMobile\ImdbMobile\obj\Debug\ImdbMobile.ComingSoon.resources
+C:\Users\Noreen\Downloads\ImdbMobile\ImdbMobile\ImdbMobile\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Noreen\Downloads\ImdbMobile\ImdbMobile\ImdbMobile\obj\Debug\ImdbMobile.Actor.resources
+C:\Users\Noreen\Downloads\ImdbMobile\ImdbMobile\ImdbMobile\obj\Debug\ImdbMobile.Cast.resources
+C:\Users\Noreen\Downloads\ImdbMobile\ImdbMobile\ImdbMobile\obj\Debug\ImdbMobile.ComingSoon.resources
+C:\Users\Noreen\Downloads\ImdbMobile\ImdbMobile\ImdbMobile\obj\Debug\ImdbMobile.Filmography.resources
+C:\Users\Noreen\Downloads\ImdbMobile\ImdbMobile\ImdbMobile\obj\Debug\ImdbMobile.Form1.resources
+C:\Users\Noreen\Downloads\ImdbMobile\ImdbMobile\ImdbMobile\obj\Debug\ImdbMobile.Goofs.resources
+C:\Users\Noreen\Downloads\ImdbMobile\ImdbMobile\ImdbMobile\obj\Debug\ImdbMobile.MoreDetails.resources
+C:\Users\Noreen\Downloads\ImdbMobile\ImdbMobile\ImdbMobile\obj\Debug\ImdbMobile.Movie.resources
+C:\Users\Noreen\Downloads\ImdbMobile\ImdbMobile\ImdbMobile\obj\Debug\ImdbMobile.PhotoViewer.resources
+C:\Users\Noreen\Downloads\ImdbMobile\ImdbMobile\ImdbMobile\obj\Debug\ImdbMobile.Properties.Resources.resources
+C:\Users\Noreen\Downloads\ImdbMobile\ImdbMobile\ImdbMobile\obj\Debug\ImdbMobile.Quotes.resources
+C:\Users\Noreen\Downloads\ImdbMobile\ImdbMobile\ImdbMobile\obj\Debug\ImdbMobile.Settings.resources
+C:\Users\Noreen\Downloads\ImdbMobile\ImdbMobile\ImdbMobile\obj\Debug\ImdbMobile.Top250.resources
+C:\Users\Noreen\Downloads\ImdbMobile\ImdbMobile\ImdbMobile\obj\Debug\ImdbMobile.Viewer.resources
+C:\Users\Noreen\Downloads\ImdbMobile\ImdbMobile\ImdbMobile\obj\Debug\ImdbMobile.csproj.GenerateResource.Cache
+C:\Users\Noreen\Downloads\ImdbMobile\ImdbMobile\ImdbMobile\obj\Debug\ImdbMobile.exe
+C:\Users\Noreen\Downloads\ImdbMobile\ImdbMobile\ImdbMobile\obj\Debug\ImdbMobile.pdb
+C:\Users\Noreen\Downloads\ImdbMobile\ImdbMobile\ImdbMobile\bin\Debug\ImdbMobile.exe
+C:\Users\Noreen\Downloads\ImdbMobile\ImdbMobile\ImdbMobile\bin\Debug\ImdbMobile.pdb
+C:\Users\Noreen\Downloads\ImdbMobile\ImdbMobile\ImdbMobile\bin\Debug\OpenNETCF.Configuration.dll
+C:\Users\Noreen\Downloads\ImdbMobile\ImdbMobile\ImdbMobile\bin\Debug\OpenNETCF.xml
+C:\Users\Noreen\Downloads\ImdbMobile\ImdbMobile\ImdbMobile\bin\Debug\OpenNETCF.Configuration.xml
+C:\Users\Noreen\Downloads\ImdbMobile\ImdbMobile\ImdbMobile\obj\Debug\ImdbMobile.Trailers.resources
+C:\Users\Noreen\Downloads\ImdbMobile\ImdbMobile\ImdbMobile\bin\Debug\IMDbMobile.xml
+C:\Users\Noreen\Downloads\ImdbMobile\ImdbMobile\ImdbMobile\bin\Debug\IMDbMobile.ico
+C:\Users\Noreen\Downloads\ImdbMobile\ImdbMobile\ImdbMobile\obj\Debug\ImdbMobile.Trivia.resources
+X:\Source Code\New IMDB Mobile\ImdbMobile\obj\Debug\ResolveAssemblyReference.cache
+X:\Source Code\New IMDB Mobile\ImdbMobile\obj\Debug\ImdbMobile.Actor.resources
+X:\Source Code\New IMDB Mobile\ImdbMobile\obj\Debug\ImdbMobile.Cast.resources
+X:\Source Code\New IMDB Mobile\ImdbMobile\obj\Debug\ImdbMobile.ComingSoon.resources
+X:\Source Code\New IMDB Mobile\ImdbMobile\obj\Debug\ImdbMobile.Filmography.resources
+X:\Source Code\New IMDB Mobile\ImdbMobile\obj\Debug\ImdbMobile.Form1.resources
+X:\Source Code\New IMDB Mobile\ImdbMobile\obj\Debug\ImdbMobile.Goofs.resources
+X:\Source Code\New IMDB Mobile\ImdbMobile\obj\Debug\ImdbMobile.MoreDetails.resources
+X:\Source Code\New IMDB Mobile\ImdbMobile\obj\Debug\ImdbMobile.Movie.resources
+X:\Source Code\New IMDB Mobile\ImdbMobile\obj\Debug\ImdbMobile.PhotoViewer.resources
+X:\Source Code\New IMDB Mobile\ImdbMobile\obj\Debug\ImdbMobile.Properties.Resources.resources
+X:\Source Code\New IMDB Mobile\ImdbMobile\obj\Debug\ImdbMobile.Quotes.resources
+X:\Source Code\New IMDB Mobile\ImdbMobile\obj\Debug\ImdbMobile.Settings.resources
+X:\Source Code\New IMDB Mobile\ImdbMobile\obj\Debug\ImdbMobile.Top250.resources
+X:\Source Code\New IMDB Mobile\ImdbMobile\obj\Debug\ImdbMobile.Trailers.resources
+X:\Source Code\New IMDB Mobile\ImdbMobile\obj\Debug\ImdbMobile.Trivia.resources
+X:\Source Code\New IMDB Mobile\ImdbMobile\obj\Debug\ImdbMobile.Viewer.resources
+X:\Source Code\New IMDB Mobile\ImdbMobile\obj\Debug\ImdbMobile.csproj.GenerateResource.Cache
+X:\Source Code\New IMDB Mobile\ImdbMobile\obj\Debug\ImdbMobile.exe
+X:\Source Code\New IMDB Mobile\ImdbMobile\bin\Debug\IMDbMobile.ico
+X:\Source Code\New IMDB Mobile\ImdbMobile\bin\Debug\IMDbMobile.xml
+X:\Source Code\New IMDB Mobile\ImdbMobile\bin\Debug\ImdbMobile.exe
+X:\Source Code\New IMDB Mobile\ImdbMobile\bin\Debug\ImdbMobile.pdb
+X:\Source Code\New IMDB Mobile\ImdbMobile\bin\Debug\OpenNETCF.Configuration.dll
+X:\Source Code\New IMDB Mobile\ImdbMobile\bin\Debug\OpenNETCF.xml
+X:\Source Code\New IMDB Mobile\ImdbMobile\bin\Debug\OpenNETCF.Configuration.xml
+X:\Source Code\New IMDB Mobile\ImdbMobile\obj\Debug\ImdbMobile.pdb
+D:\Downloads\imdbmobile_imdbmobile\ImdbMobile\bin\Debug\IMDbMobile.ico
+D:\Downloads\imdbmobile_imdbmobile\ImdbMobile\bin\Debug\IMDbMobile.xml
+D:\Downloads\imdbmobile_imdbmobile\ImdbMobile\bin\Debug\ImdbMobile.exe
+D:\Downloads\imdbmobile_imdbmobile\ImdbMobile\bin\Debug\ImdbMobile.pdb
+D:\Downloads\imdbmobile_imdbmobile\ImdbMobile\bin\Debug\OpenNETCF.Configuration.dll
+D:\Downloads\imdbmobile_imdbmobile\ImdbMobile\bin\Debug\OpenNETCF.xml
+D:\Downloads\imdbmobile_imdbmobile\ImdbMobile\bin\Debug\OpenNETCF.Configuration.xml
+D:\Downloads\imdbmobile_imdbmobile\ImdbMobile\obj\Debug\ResolveAssemblyReference.cache
+D:\Downloads\imdbmobile_imdbmobile\ImdbMobile\obj\Debug\ImdbMobile.Actor.resources
+D:\Downloads\imdbmobile_imdbmobile\ImdbMobile\obj\Debug\ImdbMobile.Cast.resources
+D:\Downloads\imdbmobile_imdbmobile\ImdbMobile\obj\Debug\ImdbMobile.ComingSoon.resources
+D:\Downloads\imdbmobile_imdbmobile\ImdbMobile\obj\Debug\ImdbMobile.Filmography.resources
+D:\Downloads\imdbmobile_imdbmobile\ImdbMobile\obj\Debug\ImdbMobile.Form1.resources
+D:\Downloads\imdbmobile_imdbmobile\ImdbMobile\obj\Debug\ImdbMobile.Goofs.resources
+D:\Downloads\imdbmobile_imdbmobile\ImdbMobile\obj\Debug\ImdbMobile.Movie.resources
+D:\Downloads\imdbmobile_imdbmobile\ImdbMobile\obj\Debug\ImdbMobile.PhotoViewer.resources
+D:\Downloads\imdbmobile_imdbmobile\ImdbMobile\obj\Debug\ImdbMobile.Properties.Resources.resources
+D:\Downloads\imdbmobile_imdbmobile\ImdbMobile\obj\Debug\ImdbMobile.Quotes.resources
+D:\Downloads\imdbmobile_imdbmobile\ImdbMobile\obj\Debug\ImdbMobile.Settings.resources
+D:\Downloads\imdbmobile_imdbmobile\ImdbMobile\obj\Debug\ImdbMobile.Top250.resources
+D:\Downloads\imdbmobile_imdbmobile\ImdbMobile\obj\Debug\ImdbMobile.Trailers.resources
+D:\Downloads\imdbmobile_imdbmobile\ImdbMobile\obj\Debug\ImdbMobile.Trivia.resources
+D:\Downloads\imdbmobile_imdbmobile\ImdbMobile\obj\Debug\ImdbMobile.csproj.GenerateResource.Cache
+D:\Downloads\imdbmobile_imdbmobile\ImdbMobile\obj\Debug\ImdbMobile.exe
+D:\Downloads\imdbmobile_imdbmobile\ImdbMobile\obj\Debug\ImdbMobile.pdb
+X:\Source Code\IMDBMobile\ImdbMobile\bin\Debug\IMDbMobile.ico
+X:\Source Code\IMDBMobile\ImdbMobile\bin\Debug\IMDbMobile.xml
+X:\Source Code\IMDBMobile\ImdbMobile\bin\Debug\ImdbMobile.exe
+X:\Source Code\IMDBMobile\ImdbMobile\bin\Debug\ImdbMobile.pdb
+X:\Source Code\IMDBMobile\ImdbMobile\bin\Debug\OpenNETCF.Configuration.dll
+X:\Source Code\IMDBMobile\ImdbMobile\bin\Debug\OpenNETCF.xml
+X:\Source Code\IMDBMobile\ImdbMobile\bin\Debug\OpenNETCF.Configuration.xml
+X:\Source Code\IMDBMobile\ImdbMobile\obj\Debug\ResolveAssemblyReference.cache
+X:\Source Code\IMDBMobile\ImdbMobile\obj\Debug\ImdbMobile.Actor.resources
+X:\Source Code\IMDBMobile\ImdbMobile\obj\Debug\ImdbMobile.Cast.resources
+X:\Source Code\IMDBMobile\ImdbMobile\obj\Debug\ImdbMobile.ComingSoon.resources
+X:\Source Code\IMDBMobile\ImdbMobile\obj\Debug\ImdbMobile.Filmography.resources
+X:\Source Code\IMDBMobile\ImdbMobile\obj\Debug\ImdbMobile.Form1.resources
+X:\Source Code\IMDBMobile\ImdbMobile\obj\Debug\ImdbMobile.Goofs.resources
+X:\Source Code\IMDBMobile\ImdbMobile\obj\Debug\ImdbMobile.Movie.resources
+X:\Source Code\IMDBMobile\ImdbMobile\obj\Debug\ImdbMobile.PhotoViewer.resources
+X:\Source Code\IMDBMobile\ImdbMobile\obj\Debug\ImdbMobile.Properties.Resources.resources
+X:\Source Code\IMDBMobile\ImdbMobile\obj\Debug\ImdbMobile.Quotes.resources
+X:\Source Code\IMDBMobile\ImdbMobile\obj\Debug\ImdbMobile.Settings.resources
+X:\Source Code\IMDBMobile\ImdbMobile\obj\Debug\ImdbMobile.Top250.resources
+X:\Source Code\IMDBMobile\ImdbMobile\obj\Debug\ImdbMobile.Trailers.resources
+X:\Source Code\IMDBMobile\ImdbMobile\obj\Debug\ImdbMobile.Trivia.resources
+X:\Source Code\IMDBMobile\ImdbMobile\obj\Debug\ImdbMobile.csproj.GenerateResource.Cache
+X:\Source Code\IMDBMobile\ImdbMobile\obj\Debug\ImdbMobile.exe
+X:\Source Code\IMDBMobile\ImdbMobile\obj\Debug\ImdbMobile.pdb
+X:\Source Code\IMDBMobile\ImdbMobile\obj\Debug\ImdbMobile.SeasonList.resources
+X:\Source Code\IMDBMobile\ImdbMobile\obj\Debug\ImdbMobile.EpisodeList.resources
+D:\imdbmobile_imdbmobile\ImdbMobile\obj\Debug\ResolveAssemblyReference.cache
+D:\imdbmobile_imdbmobile\ImdbMobile\obj\Debug\ImdbMobile.Form1.resources
+D:\imdbmobile_imdbmobile\ImdbMobile\obj\Debug\ImdbMobile.Properties.Resources.resources
+D:\imdbmobile_imdbmobile\ImdbMobile\obj\Debug\ImdbMobile.Settings.resources
+D:\imdbmobile_imdbmobile\ImdbMobile\obj\Debug\ImdbMobile.csproj.GenerateResource.Cache
+D:\imdbmobile_imdbmobile\ImdbMobile\obj\Debug\ImdbMobile.exe
+D:\imdbmobile_imdbmobile\ImdbMobile\obj\Debug\ImdbMobile.pdb
+D:\imdbmobile_imdbmobile\ImdbMobile\bin\Debug\IMDbMobile.ico
+D:\imdbmobile_imdbmobile\ImdbMobile\bin\Debug\IMDbMobile.xml
+D:\imdbmobile_imdbmobile\ImdbMobile\bin\Debug\Translations\English.xml
+D:\imdbmobile_imdbmobile\ImdbMobile\bin\Debug\ImdbMobile.exe
+D:\imdbmobile_imdbmobile\ImdbMobile\bin\Debug\ImdbMobile.pdb
+D:\imdbmobile_imdbmobile\ImdbMobile\bin\Debug\OpenNETCF.Configuration.dll
+D:\imdbmobile_imdbmobile\ImdbMobile\bin\Debug\OpenNETCF.xml
+D:\imdbmobile_imdbmobile\ImdbMobile\bin\Debug\OpenNETCF.Configuration.xml
+D:\imdbmobile_imdbmobile\ImdbMobile\obj\Debug\ImdbMobile.Controls.ActorControl.resources
+D:\imdbmobile_imdbmobile\ImdbMobile\obj\Debug\ImdbMobile.Controls.CastControl.resources
+D:\imdbmobile_imdbmobile\ImdbMobile\obj\Debug\ImdbMobile.Controls.ComingSoonControl.resources
+D:\imdbmobile_imdbmobile\ImdbMobile\obj\Debug\ImdbMobile.Controls.EpisodeListControl.resources
+D:\imdbmobile_imdbmobile\ImdbMobile\obj\Debug\ImdbMobile.Controls.FilmographyControl.resources
+D:\imdbmobile_imdbmobile\ImdbMobile\obj\Debug\ImdbMobile.Controls.GoofsControl.resources
+D:\imdbmobile_imdbmobile\ImdbMobile\obj\Debug\ImdbMobile.Controls.MainControl.resources
+D:\imdbmobile_imdbmobile\ImdbMobile\obj\Debug\ImdbMobile.Controls.MovieControl.resources
+D:\imdbmobile_imdbmobile\ImdbMobile\obj\Debug\ImdbMobile.Controls.PhotoViewerControl.resources
+D:\imdbmobile_imdbmobile\ImdbMobile\obj\Debug\ImdbMobile.Controls.QuotesControl.resources
+D:\imdbmobile_imdbmobile\ImdbMobile\obj\Debug\ImdbMobile.Controls.SeasonListControl.resources
+D:\imdbmobile_imdbmobile\ImdbMobile\obj\Debug\ImdbMobile.Controls.Top250Control.resources
+D:\imdbmobile_imdbmobile\ImdbMobile\obj\Debug\ImdbMobile.Controls.TrailersControl.resources
+D:\imdbmobile_imdbmobile\ImdbMobile\obj\Debug\ImdbMobile.Controls.TriviaControl.resources
+D:\imdbmobile_imdbmobile\ImdbMobile\obj\Debug\ImdbMobile.Controls.AboutControl.resources
+D:\imdbmobile_imdbmobile\ImdbMobile\obj\Debug\ImdbMobile.Controls.ParentalGuide.resources
+D:\imdbmobile_imdbmobile\ImdbMobile\obj\Debug\ImdbMobile.Controls.ExternalReviews.resources
+D:\imdbmobile_imdbmobile\ImdbMobile\obj\Debug\ImdbMobile.Controls.UserReviews.resources
+D:\imdbmobile_imdbmobile\ImdbMobile\obj\Debug\ImdbMobile.Controls.ViewReview.resources
