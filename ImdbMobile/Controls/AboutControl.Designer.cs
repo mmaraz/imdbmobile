@@ -50,7 +50,6 @@
             this.Controls.Add(this.kListControl1);
             this.Name = "AboutControl";
             this.Size = new System.Drawing.Size(474, 377);
-            this.Click += new System.EventHandler(this.AboutControl_Click);
             this.ResumeLayout(false);
 
         }

@@ -13,19 +13,15 @@ namespace ImdbMobile.UI
         {
             _xml = new System.Xml.XmlDocument();
             string Filename = IMDBData.SettingsWrapper.GlobalSettings.UILanguage;
-            if (string.IsNullOrEmpty(Filename))
+            if (string.IsNullOrEmpty(Filename) || !System.IO.File.Exists(Filename))
             {
-                Filename = IMDBData.SettingsWrapper.ApplicationPath + "//Translations//English.xml";
+                Filename = IMDBData.SettingsWrapper.ApplicationPath + "\\Translations\\English.xml";
             }
             else
             {
-                Filename = IMDBData.SettingsWrapper.ApplicationPath + "//Translations//" + IMDBData.SettingsWrapper.GlobalSettings.UILanguage + ".xml";
+                Filename = IMDBData.SettingsWrapper.ApplicationPath + "\\Translations\\" + IMDBData.SettingsWrapper.GlobalSettings.UILanguage + ".xml";
             }
-            if (!System.IO.File.Exists(Filename))
-            {
-                System.Windows.Forms.MessageBox.Show("Could not load translation XML!");
-                System.Windows.Forms.Application.Exit();
-            }
+            
             _xml.Load(Filename);
         }
 

@@ -31,7 +31,14 @@ namespace ImdbMobile.IMDBData
                     foreach (JToken comment in comments)
                     {
                         ImdbUserReview iur = new ImdbUserReview();
-                        iur.Date = DateTime.Parse((string)comment["date"]);
+                        if (General.ContainsKey(comment, "date"))
+                        {
+                            iur.Date = DateTime.Parse((string)comment["date"]);
+                        }
+                        else
+                        {
+                            iur.Date = DateTime.Now;
+                        }
                         iur.FullText = (string)comment["text"];
                         iur.Status = (string)comment["status"];
                         iur.Summary = (string)comment["summary"];

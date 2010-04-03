@@ -177,3 +177,37 @@ D:\imdbmobile_imdbmobile\ImdbMobile\obj\Debug\ImdbMobile.Controls.ParentalGuide.
 D:\imdbmobile_imdbmobile\ImdbMobile\obj\Debug\ImdbMobile.Controls.ExternalReviews.resources
 D:\imdbmobile_imdbmobile\ImdbMobile\obj\Debug\ImdbMobile.Controls.UserReviews.resources
 D:\imdbmobile_imdbmobile\ImdbMobile\obj\Debug\ImdbMobile.Controls.ViewReview.resources
+X:\Source Code\IMDB Mobile Exported\IMDBMobile\ImdbMobile\obj\Debug\ResolveAssemblyReference.cache
+X:\Source Code\IMDB Mobile Exported\IMDBMobile\ImdbMobile\obj\Debug\ImdbMobile.Controls.AboutControl.resources
+X:\Source Code\IMDB Mobile Exported\IMDBMobile\ImdbMobile\obj\Debug\ImdbMobile.Controls.ActorControl.resources
+X:\Source Code\IMDB Mobile Exported\IMDBMobile\ImdbMobile\obj\Debug\ImdbMobile.Controls.CastControl.resources
+X:\Source Code\IMDB Mobile Exported\IMDBMobile\ImdbMobile\obj\Debug\ImdbMobile.Controls.ComingSoonControl.resources
+X:\Source Code\IMDB Mobile Exported\IMDBMobile\ImdbMobile\obj\Debug\ImdbMobile.Controls.EpisodeListControl.resources
+X:\Source Code\IMDB Mobile Exported\IMDBMobile\ImdbMobile\obj\Debug\ImdbMobile.Controls.ExternalReviews.resources
+X:\Source Code\IMDB Mobile Exported\IMDBMobile\ImdbMobile\obj\Debug\ImdbMobile.Controls.FilmographyControl.resources
+X:\Source Code\IMDB Mobile Exported\IMDBMobile\ImdbMobile\obj\Debug\ImdbMobile.Controls.GoofsControl.resources
+X:\Source Code\IMDB Mobile Exported\IMDBMobile\ImdbMobile\obj\Debug\ImdbMobile.Controls.MainControl.resources
+X:\Source Code\IMDB Mobile Exported\IMDBMobile\ImdbMobile\obj\Debug\ImdbMobile.Controls.MovieControl.resources
+X:\Source Code\IMDB Mobile Exported\IMDBMobile\ImdbMobile\obj\Debug\ImdbMobile.Controls.ParentalGuide.resources
+X:\Source Code\IMDB Mobile Exported\IMDBMobile\ImdbMobile\obj\Debug\ImdbMobile.Controls.PhotoViewerControl.resources
+X:\Source Code\IMDB Mobile Exported\IMDBMobile\ImdbMobile\obj\Debug\ImdbMobile.Controls.QuotesControl.resources
+X:\Source Code\IMDB Mobile Exported\IMDBMobile\ImdbMobile\obj\Debug\ImdbMobile.Controls.SeasonListControl.resources
+X:\Source Code\IMDB Mobile Exported\IMDBMobile\ImdbMobile\obj\Debug\ImdbMobile.Controls.Top250Control.resources
+X:\Source Code\IMDB Mobile Exported\IMDBMobile\ImdbMobile\obj\Debug\ImdbMobile.Controls.TrailersControl.resources
+X:\Source Code\IMDB Mobile Exported\IMDBMobile\ImdbMobile\obj\Debug\ImdbMobile.Controls.TriviaControl.resources
+X:\Source Code\IMDB Mobile Exported\IMDBMobile\ImdbMobile\obj\Debug\ImdbMobile.Controls.UserReviews.resources
+X:\Source Code\IMDB Mobile Exported\IMDBMobile\ImdbMobile\obj\Debug\ImdbMobile.Controls.ViewReview.resources
+X:\Source Code\IMDB Mobile Exported\IMDBMobile\ImdbMobile\obj\Debug\ImdbMobile.Form1.resources
+X:\Source Code\IMDB Mobile Exported\IMDBMobile\ImdbMobile\obj\Debug\ImdbMobile.Properties.Resources.resources
+X:\Source Code\IMDB Mobile Exported\IMDBMobile\ImdbMobile\obj\Debug\ImdbMobile.Settings.resources
+X:\Source Code\IMDB Mobile Exported\IMDBMobile\ImdbMobile\obj\Debug\ImdbMobile.csproj.GenerateResource.Cache
+X:\Source Code\IMDB Mobile Exported\IMDBMobile\ImdbMobile\obj\Debug\ImdbMobile.exe
+X:\Source Code\IMDB Mobile Exported\IMDBMobile\ImdbMobile\bin\Debug\Translations\English.xml
+X:\Source Code\IMDB Mobile Exported\IMDBMobile\ImdbMobile\bin\Debug\IMDbMobile.ico
+X:\Source Code\IMDB Mobile Exported\IMDBMobile\ImdbMobile\bin\Debug\IMDbMobile.xml
+X:\Source Code\IMDB Mobile Exported\IMDBMobile\ImdbMobile\bin\Debug\ImdbMobile.exe
+X:\Source Code\IMDB Mobile Exported\IMDBMobile\ImdbMobile\bin\Debug\ImdbMobile.pdb
+X:\Source Code\IMDB Mobile Exported\IMDBMobile\ImdbMobile\bin\Debug\OpenNETCF.Configuration.dll
+X:\Source Code\IMDB Mobile Exported\IMDBMobile\ImdbMobile\bin\Debug\OpenNETCF.xml
+X:\Source Code\IMDB Mobile Exported\IMDBMobile\ImdbMobile\bin\Debug\OpenNETCF.Configuration.xml
+X:\Source Code\IMDB Mobile Exported\IMDBMobile\ImdbMobile\obj\Debug\ImdbMobile.pdb
