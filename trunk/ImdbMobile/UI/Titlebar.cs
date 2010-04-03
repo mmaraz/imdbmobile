@@ -33,6 +33,19 @@ namespace ImdbMobile.UI
 
         public void DrawTitlebar()
         {
+            Panel holderPanel = new Panel();
+            if (Screen.PrimaryScreen.Bounds.Height > 360)
+            {
+                // (W)VGA Devices
+                holderPanel.Size = new Size(this.ParentForm.Width, 148);
+                holderPanel.Location = new Point(0, 0);
+                holderPanel.Paint += new PaintEventHandler(holderPanel_Paint);
+            }
+            else
+            {
+                // (W)QVGA Devices
+                holderPanel.Size = new Size(this.ParentForm.Width, 93);
+            }
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Italic);
@@ -53,18 +66,43 @@ namespace ImdbMobile.UI
             this.pbSearch.Size = new System.Drawing.Size(47, 46);
             this.pbSearch.Click += new EventHandler(pbSearch_Click);
 
-            this.pictureBox1 = new PictureBox();
-            this.pictureBox1.Image = global::ImdbMobile.Properties.Resources.heading;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(480, 150);
-
-
-            ParentForm.Controls.Add(pictureBox1);
+            ParentForm.Controls.Add(holderPanel);
             ParentForm.Controls.Add(this.pbSearch);
             ParentForm.Controls.Add(this.textBox1);
             this.textBox1.BringToFront();
             this.pbSearch.BringToFront();
+        }
+
+        // Draw (W)VGA
+        void holderPanel_Paint(object sender, PaintEventArgs e)
+        {
+            e.Graphics.Clear(Color.Black);
+            Color TransparentColor = Color.FromArgb(255, 0, 220);
+            System.Drawing.Imaging.ImageAttributes TransAtt = new System.Drawing.Imaging.ImageAttributes();
+            TransAtt.SetColorKey(TransparentColor, TransparentColor);
+
+            Rectangle DestRect = new Rectangle(0, 0, Screen.PrimaryScreen.WorkingArea.Width, 148);
+            Bitmap image = global::ImdbMobile.Properties.Resources.HeadingTile_Large;
+            e.Graphics.DrawImage(image, DestRect, 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, TransAtt);
+
+            image = global::ImdbMobile.Properties.Resources.IMDB_Logo_Large;
+            int LogoX = (Screen.PrimaryScreen.WorkingArea.Width / 2) - (image.Width / 2);
+            DestRect = new Rectangle(LogoX, 5, image.Width, image.Height);
+            e.Graphics.DrawImage(image, DestRect, 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, TransAtt);
+
+            int TextboxY = 5 + image.Height + 5;
+            int TextboxX = 5;
+
+            // Draw left edge
+            image = global::ImdbMobile.Properties.Resources.TextInput_Large_Left;
+            DestRect = new Rectangle(5, TextboxY, image.Width, image.Height);
+            e.Graphics.DrawImage(image, DestRect, 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, TransAtt);
+
+            image = global::ImdbMobile.Properties.Resources.TextInput_Large_Right;
+            DestRect = new Rectangle(TextboxX, TextboxY, image.Width, image.Height);
+            TextboxX = Screen.PrimaryScreen.WorkingArea.Width - 5 - global::ImdbMobile.Properties.Resources.TextInput_Large_Right.Width;
+            e.Graphics.DrawImage(global::ImdbMobile.Properties.Resources.TextInput_Large_Right, TextboxX, TextboxY);
+
         }
 
         private void textBox1_GotFocus(object sender, EventArgs e)

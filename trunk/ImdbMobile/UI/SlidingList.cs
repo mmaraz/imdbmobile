@@ -53,9 +53,6 @@ namespace ImdbMobile.UI
             this.Location = new System.Drawing.Point(0, 156);
             this.Width = this.ParentForm.Width;
             this.Height = this.ParentForm.Height - 156;
-            this.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
             this.ParentForm.Controls.Add(this);
             this.BringToFront();
             SlideInLeft();

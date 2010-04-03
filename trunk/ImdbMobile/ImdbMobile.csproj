@@ -2,7 +2,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.30729</ProductVersion>
+    <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{820D2D2C-8CA2-4CE2-A76C-A6CFA50798F0}</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -338,8 +338,20 @@
     <None Include="Resources\ExternalReview_Over.png" />
     <None Include="Resources\UserReview.png" />
     <None Include="Resources\UserReview_Over.png" />
+    <None Include="Resources\HeadingTile_Large.png" />
+    <None Include="Resources\HeadingTile_Small.png" />
+    <None Include="Resources\IMDB_Logo_Large.png" />
+    <None Include="Resources\IMDB_Logo_Small.png" />
+    <None Include="Resources\SearchButton_Large.png" />
+    <None Include="Resources\SearchButton_Small.png" />
+    <None Include="Resources\TextInput_Large_Center.png" />
+    <None Include="Resources\TextInput_Large_Left.png" />
+    <None Include="Resources\TextInput_Large_Right.png" />
+    <None Include="Resources\TextInput_Small_Center.png" />
+    <None Include="Resources\TextInput_Small_Left.png" />
+    <None Include="Resources\TextInput_Small_Right.png" />
     <Content Include="Translations\English.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Translations\Swedish.xml" />
     <None Include="Resources\episodes.png" />

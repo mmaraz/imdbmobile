@@ -155,9 +155,30 @@ namespace ImdbMobile.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap heading {
+        internal static System.Drawing.Bitmap HeadingTile_Large {
             get {
-                object obj = ResourceManager.GetObject("heading", resourceCulture);
+                object obj = ResourceManager.GetObject("HeadingTile_Large", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap HeadingTile_Small {
+            get {
+                object obj = ResourceManager.GetObject("HeadingTile_Small", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap IMDB_Logo_Large {
+            get {
+                object obj = ResourceManager.GetObject("IMDB_Logo_Large", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap IMDB_Logo_Small {
+            get {
+                object obj = ResourceManager.GetObject("IMDB_Logo_Small", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -239,6 +260,20 @@ namespace ImdbMobile.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap SearchButton_Large {
+            get {
+                object obj = ResourceManager.GetObject("SearchButton_Large", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap SearchButton_Small {
+            get {
+                object obj = ResourceManager.GetObject("SearchButton_Small", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap Settings {
             get {
                 object obj = ResourceManager.GetObject("Settings", resourceCulture);
@@ -263,6 +298,48 @@ namespace ImdbMobile.Properties {
         internal static System.Drawing.Bitmap star_over {
             get {
                 object obj = ResourceManager.GetObject("star_over", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap TextInput_Large_Center {
+            get {
+                object obj = ResourceManager.GetObject("TextInput_Large_Center", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap TextInput_Large_Left {
+            get {
+                object obj = ResourceManager.GetObject("TextInput_Large_Left", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap TextInput_Large_Right {
+            get {
+                object obj = ResourceManager.GetObject("TextInput_Large_Right", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap TextInput_Small_Center {
+            get {
+                object obj = ResourceManager.GetObject("TextInput_Small_Center", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap TextInput_Small_Left {
+            get {
+                object obj = ResourceManager.GetObject("TextInput_Small_Left", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap TextInput_Small_Right {
+            get {
+                object obj = ResourceManager.GetObject("TextInput_Small_Right", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

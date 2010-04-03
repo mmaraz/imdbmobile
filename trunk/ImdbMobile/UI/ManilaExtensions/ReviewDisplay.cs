@@ -176,8 +176,11 @@ namespace ImdbMobile.UI
 
         public void Render(Graphics g, Rectangle Bounds, bool Param)
         {
-            int CurrY = Bounds.Y + PaddingTop;
-            g.DrawImage(this.DrawnImage, 0, Bounds.Y + PaddingTop);
+            if (this.DrawnImage != null)
+            {
+                int CurrY = Bounds.Y + PaddingTop;
+                g.DrawImage(this.DrawnImage, 0, Bounds.Y + PaddingTop);
+            }
         }
 
         public void OnMouseDown(int X, int Y, ref bool IsSamePoint)
