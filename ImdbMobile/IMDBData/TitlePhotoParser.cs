@@ -21,6 +21,8 @@ namespace ImdbMobile.IMDBData
 
             JObject Obj = JObject.Parse(Response);
 
+            int PhotoCount = 0;
+
             if (General.ContainsKey(Obj, "data"))
             {
                 JToken data = Obj["data"];
@@ -30,6 +32,7 @@ namespace ImdbMobile.IMDBData
                     foreach (JToken photo in photos)
                     {
                         ImdbPhoto ip = new ImdbPhoto();
+                        PhotoCount++;
                         if (General.ContainsKey(photo, "caption"))
                         {
                             ip.Caption = (string)photo["caption"];
@@ -46,6 +49,11 @@ namespace ImdbMobile.IMDBData
                             ip.Image.Width = (int)photo["image"]["width"];
                         }
                         title.Photos.Add(ip);
+                        // Only download 50 photos
+                        if (PhotoCount > 50)
+                        {
+                            break;
+                        }
                     }
                 }
             }

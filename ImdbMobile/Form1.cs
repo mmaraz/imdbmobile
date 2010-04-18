@@ -23,14 +23,14 @@ namespace ImdbMobile
             this.menuItem2.Text = UI.Translations.GetTranslated("0006");
             this.menuItem1.Text = UI.Translations.GetTranslated("0007");
             this.Text = UI.Translations.GetTranslated("0032");
-
-            Titlebar = new ImdbMobile.UI.Titlebar(this);
-            Titlebar.DrawTitlebar();
         }
 
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            Titlebar = new ImdbMobile.UI.Titlebar(this);
+            Titlebar.DrawTitlebar();
+
             Main = new MainControl();
             UI.WindowHandler.OpenForm(Main);
 

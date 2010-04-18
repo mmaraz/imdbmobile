@@ -18,6 +18,7 @@ namespace ImdbMobile.IMDBData
         public string CachePath { get; set; }
         public string UILanguage { get; set; }
         public bool UseAnimations { get; set; }
+        public int NumToDisplay { get; set; }
 
         public Settings()
         {
@@ -66,6 +67,7 @@ namespace ImdbMobile.IMDBData
                     s.VideoPlayerPath = "\\Windows\\wmplayer.exe";
                     s.UseAnimations = false;
                     s.UILanguage = ApplicationPath + "//Translations//English.xml";
+                    s.NumToDisplay = 50;
 
                     Save(s);
                 }

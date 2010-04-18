@@ -20,7 +20,7 @@ namespace ImdbMobile.Controls
             Title.Parent = this.kListControl1;
             Title.Text = "Developed By: Blade0rz\n\nThis project could not have existed without the help of:";
             Title.YIndex = 0;
-            Title.CalculateHeight(this.kListControl1.Width);
+            Title.CalculateHeight(Screen.PrimaryScreen.WorkingArea.Width);
             this.kListControl1.AddItem(Title);
 
             MichyPrima.ManilaDotNetSDK.ManilaPanelItem IMDB = new MichyPrima.ManilaDotNetSDK.ManilaPanelItem();
