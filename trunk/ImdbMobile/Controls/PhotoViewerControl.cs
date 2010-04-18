@@ -19,12 +19,13 @@ namespace ImdbMobile.Controls
         private delegate void ShowLoading();
 
         private static ImdbTitle CurrentTitle;
-        private static int StartIndex;
-        private static int Pages;
-        private static int CurrentPage = 0;
+        private static int Index;
 
         private System.Threading.Thread ThumbThread;
         private System.Threading.Thread FullThread;
+
+        private static Size SmallImageDimensions;
+        private static Size LargeImageDimensions;
 
         public PhotoViewerControl(ImdbTitle title)
         {
@@ -40,6 +41,8 @@ namespace ImdbMobile.Controls
 
             ThumbThread = new System.Threading.Thread(LoadImdbInformation);
             ThumbThread.Start();
+
+            this.ThreadList.Add(ThumbThread);
         }
 
         private void SetError(string Message)
@@ -52,69 +55,79 @@ namespace ImdbMobile.Controls
         }
 
 
-        private void NextPage()
+        private void CreateHolders()
         {
-            if (CurrentPage < Pages)
+            try
             {
-                CurrentPage++;
-                StartIndex = CurrentPage * 6;
-                GetImages gi = new GetImages(DownloadImages);
+                GetImages gi = delegate
+                {
+                    int YIndex = 0;
+                    SmallImageDimensions = new Size((this.kListControl1.Width - 20) / 3, (this.kListControl1.Height - 20) / 3);
+                    LargeImageDimensions = new Size(Screen.PrimaryScreen.WorkingArea.Width, Screen.PrimaryScreen.WorkingArea.Height);
+
+                    int ControlCount = (int)Math.Floor((double)CurrentTitle.Photos.Count / 3.0);
+                    // Loop through each photo control
+                    for (int i = 1; i <= ControlCount; i++)
+                    {
+                        for (int x = 1; x <= 3; x++)
+                        {
+                            YIndex++;
+                            if ((i + x) < CurrentTitle.Photos.Count)
+                            {
+                                UI.PhotoDisplay pd = new ImdbMobile.UI.PhotoDisplay();
+                                pd.MouseUp += new ImdbMobile.UI.PhotoDisplay.MouseEvent(pd_MouseUp);
+                                pd.Parent = this.kListControl1;
+                                pd.YIndex = YIndex;
+                                pd.CalculateHeight(Screen.PrimaryScreen.WorkingArea.Width);
+                                this.kListControl1.AddItem(pd);
+                            }
+                        }
+                    }
+                    this.LoadingList.Visible = false;
+                };
                 this.Invoke(gi);
             }
+            catch (Exception e) { }
         }
 
-        private void PreviousPage()
+        void pd_MouseUp(ImdbMobile.UI.PhotoDisplay Sender, int PhotoIndex)
         {
-            if (CurrentPage > 1)
-            {
-                CurrentPage--;
-                StartIndex = CurrentPage * 6;
-                GetImages gi = new GetImages(DownloadImages);
-                this.Invoke(gi);
-            }
+            Index = (Sender.YIndex * 3) + (PhotoIndex - 1);
+            GetFullImage();
         }
 
         private void DownloadImages()
         {
-            this.label1.Text = UI.Translations.GetTranslated("0049") + " " + CurrentPage + " " + UI.Translations.GetTranslated("0050") + " " + Pages;
-            int Counter = 1;
-            for (int i = StartIndex; i < StartIndex + 6; i++)
+            int ControlCount = (int)Math.Floor((double)CurrentTitle.Photos.Count / 3.0);
+            // Loop through each photo control
+            for (int i = 1; i <= ControlCount; i++)
             {
-                if (i < CurrentTitle.Photos.Count)
+                for (int x = 1; x <= 3; x++)
                 {
-                    DownloadImage(CurrentTitle.Photos[i], true, Counter);
-                    if (Counter == 1)
+                    if ((i + x) < CurrentTitle.Photos.Count)
                     {
-                        pb1.Image = new Bitmap(SettingsWrapper.GlobalSettings.CachePath + "\\Photo" + Counter + "_thumb.jpg");
-                    }
-                    else if (Counter == 2)
-                    {
-                        pb2.Image = new Bitmap(SettingsWrapper.GlobalSettings.CachePath + "\\Photo" + Counter + "_thumb.jpg");
-                    }
-                    else if (Counter == 3)
-                    {
-                        pb3.Image = new Bitmap(SettingsWrapper.GlobalSettings.CachePath + "\\Photo" + Counter + "_thumb.jpg");
-                    }
-                    else if (Counter == 4)
-                    {
-                        pb4.Image = new Bitmap(SettingsWrapper.GlobalSettings.CachePath + "\\Photo" + Counter + "_thumb.jpg");
-                    }
-                    else if (Counter == 5)
-                    {
-                        pb5.Image = new Bitmap(SettingsWrapper.GlobalSettings.CachePath + "\\Photo" + Counter + "_thumb.jpg");
-                    }
-                    else if (Counter == 6)
-                    {
-                        pb6.Image = new Bitmap(SettingsWrapper.GlobalSettings.CachePath + "\\Photo" + Counter + "_thumb.jpg");
+                        try
+                        {
+                            GetImages gi = delegate
+                            {
+                                this.LoadingList.Visible = false;
+                                UI.PhotoDisplay pd = (UI.PhotoDisplay)this.kListControl1[(i - 1)];
+                                ImdbPhoto CurrentPhoto = CurrentTitle.Photos[(pd.YIndex * 3) + (x - 1)];
+                                DownloadImage(CurrentPhoto, true, (pd.YIndex * 3) + (x - 1));
+                                switch (x)
+                                {
+                                    case 1: pd.Image1 = new Bitmap(SettingsWrapper.GlobalSettings.CachePath + "\\Photo" + ((pd.YIndex * 3) + (x - 1)) + "_thumb.jpg"); break;
+                                    case 2: pd.Image2 = new Bitmap(SettingsWrapper.GlobalSettings.CachePath + "\\Photo" + ((pd.YIndex * 3) + (x - 1)) + "_thumb.jpg"); break;
+                                    case 3: pd.Image3 = new Bitmap(SettingsWrapper.GlobalSettings.CachePath + "\\Photo" + ((pd.YIndex * 3) + (x - 1)) + "_thumb.jpg"); break;
+                                }
+                                System.IO.File.Delete(SettingsWrapper.GlobalSettings.CachePath + "\\Photo" + ((pd.YIndex * 3) + (x - 1)) + "_thumb.jpg");
+                            };
+                            this.Invoke(gi);
+                        }
+                        catch (Exception) { }
                     }
                 }
-                else
-                {
-                    break;
-                }
-                Counter++;
             }
-            this.LoadingList.Visible = false;
         }
 
         private void LoadImdbInformation()
@@ -135,9 +148,22 @@ namespace ImdbMobile.Controls
                     return;
                 }
 
-                Pages = (int)Math.Ceiling((double)CurrentTitle.Photos.Count / 6d);
+                CreateHolders();
 
-                NextPage();
+                DownloadImages();
+
+                try
+                {
+                    GetImages giFull = delegate
+                    {
+                        FullThread = new System.Threading.Thread(DownloadImages);
+                        FullThread.Start();
+
+                        this.ThreadList.Add(FullThread);
+                    };
+                    this.Invoke(giFull);
+                }
+                catch (Exception) { }
             }
             catch (Exception e)
             {
@@ -150,7 +176,6 @@ namespace ImdbMobile.Controls
             }
         }
 
-
         private void DownloadImage(ImdbPhoto ip, bool thumb, int ImageIndex)
         {
             try
@@ -159,12 +184,12 @@ namespace ImdbMobile.Controls
                 string SavePath = "";
                 if (thumb)
                 {
-                    webReq = (WebRequest)HttpWebRequest.Create(ip.Image.URL.Replace(".jpg", "SX160_SY106.jpg"));
+                    webReq = (WebRequest)HttpWebRequest.Create(ip.Image.URL.Replace(".jpg", "SX" + SmallImageDimensions.Width + "_SY" + SmallImageDimensions.Height + ".jpg"));
                     SavePath = SettingsWrapper.GlobalSettings.CachePath + "\\Photo" + ImageIndex + "_thumb.jpg";
                 }
                 else
                 {
-                    webReq = (WebRequest)HttpWebRequest.Create(ip.Image.URL.Replace(".jpg", "SX360_SY600.jpg"));
+                    webReq = (WebRequest)HttpWebRequest.Create(ip.Image.URL.Replace(".jpg", "SX" + LargeImageDimensions.Width + "_SY" + LargeImageDimensions.Height + ".jpg"));
                     SavePath = SettingsWrapper.GlobalSettings.CachePath + "\\Photo" + ImageIndex + ".jpg";
                 }
                 HttpWebResponse resp = (HttpWebResponse)webReq.GetResponse();
@@ -197,11 +222,6 @@ namespace ImdbMobile.Controls
             }
         }
 
-        private void pb1_Click(object sender, EventArgs e)
-        {
-            GetFullImage(1);
-        }
-
         private void ShowLoadingImage()
         {
             ShowLoading sl = new ShowLoading(LoadingImage);
@@ -210,62 +230,26 @@ namespace ImdbMobile.Controls
 
         private void LoadingImage()
         {
+            UI.KListFunctions.ShowLoading("Downloading Image", this.LoadingList);
             this.LoadingList.Visible = true;
         }
 
-        private void GetFullImage(int Index)
+        private void GetFullImage()
         {
             ShowLoadingImage();
-            DownloadImage(CurrentTitle.Photos[StartIndex], false, Index);
+            DownloadImage(CurrentTitle.Photos[Index], false, Index);
+            this.LoadingList.Visible = false;
             System.Diagnostics.Process p = System.Diagnostics.Process.Start(SettingsWrapper.GlobalSettings.CachePath + "\\Photo" + Index + ".jpg", null);
-            p.WaitForExit(2000);
+
+            System.Threading.Thread DownloadThread = new System.Threading.Thread(DeleteImage);
+        }
+
+        private void DeleteImage()
+        {
+            System.Threading.Thread.Sleep(20000);
             System.IO.File.Delete(SettingsWrapper.GlobalSettings.CachePath + "\\Photo" + Index + ".jpg");
-            try
-            {
-                FullThread.Abort();
-            }
-            catch (Exception) { }
             this.LoadingList.Visible = false;
         }
 
-        private void pb2_Click(object sender, EventArgs e)
-        {
-            GetFullImage(2);
-        }
-
-        private void pb3_Click(object sender, EventArgs e)
-        {
-            GetFullImage(3);
-        }
-
-        private void pb4_Click(object sender, EventArgs e)
-        {
-            GetFullImage(4);
-        }
-
-        private void pb5_Click(object sender, EventArgs e)
-        {
-            GetFullImage(5);
-        }
-
-        private void pb6_Click(object sender, EventArgs e)
-        {
-            GetFullImage(6);
-        }
-
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            this.LoadingList.Visible = true;
-            ThumbThread = new System.Threading.Thread(PreviousPage);
-            ThumbThread.Start();
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-            this.LoadingList.Visible = true;
-            ThumbThread = new System.Threading.Thread(NextPage);
-            ThumbThread.Start();
-        }
     }
 }

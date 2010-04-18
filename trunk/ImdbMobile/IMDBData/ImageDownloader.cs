@@ -63,6 +63,7 @@ namespace ImdbMobile.IMDBData
         }
 
         System.Threading.Thread Worker;
+        public int KListOffset { get; set; }
 
         public ImageDownloader()
         {
@@ -168,7 +169,7 @@ namespace ImdbMobile.IMDBData
 
         private void DownloadImages(List<ImdbCover> ImageList, MichyPrima.ManilaDotNetSDK.KListControl KList, System.Windows.Forms.Form ParentForm)
         {
-            DownloadImageWrapper diw = new DownloadImageWrapper(ImageList, KList, ParentForm);
+            DownloadImageWrapper diw = new DownloadImageWrapper(ImageList, KList, ParentForm, this.KListOffset);
             this.Kill();
             Worker = new System.Threading.Thread(diw.DownloadImage);
             Worker.Start();
@@ -183,12 +184,14 @@ namespace ImdbMobile.IMDBData
         private List<ImdbCover> Images;
         private MichyPrima.ManilaDotNetSDK.KListControl ParentKList;
         private System.Windows.Forms.Form ParentFormControl;
+        private int KListOffset;
 
-        public DownloadImageWrapper(List<ImdbCover> Images, MichyPrima.ManilaDotNetSDK.KListControl ParentKList, System.Windows.Forms.Form ParentFormControl)
+        public DownloadImageWrapper(List<ImdbCover> Images, MichyPrima.ManilaDotNetSDK.KListControl ParentKList, System.Windows.Forms.Form ParentFormControl, int KListOffset)
         {
             this.Images = Images;
             this.ParentKList = ParentKList;
             this.ParentFormControl = ParentFormControl;
+            this.KListOffset = KListOffset;
         }
 
         public void DownloadImage()
@@ -226,7 +229,7 @@ namespace ImdbMobile.IMDBData
         {
             try
             {
-                MichyPrima.ManilaDotNetSDK.ManilaPanelItem mpi = ((MichyPrima.ManilaDotNetSDK.ManilaPanelItem)ParentKList[Index]);
+                MichyPrima.ManilaDotNetSDK.ManilaPanelItem mpi = ((MichyPrima.ManilaDotNetSDK.ManilaPanelItem)ParentKList[Index+this.KListOffset]);
                 System.Drawing.Bitmap b = new System.Drawing.Bitmap(FileName);
                 int Width = (mpi.Height / 3) * 2;
                 System.Drawing.Image i = Extensions.Resize(b, new System.Drawing.Size(Width, mpi.Height));

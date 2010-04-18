@@ -49,10 +49,18 @@ namespace ImdbMobile.UI
 
         public void Initialise()
         {
-            // TODO - (W)QVGA
-            this.Location = new System.Drawing.Point(0, 156);
-            this.Width = this.ParentForm.Width;
-            this.Height = this.ParentForm.Height - 156;
+            if (System.Windows.Forms.Screen.PrimaryScreen.Bounds.Height > 360)
+            {
+                this.Location = new System.Drawing.Point(0, 156);
+                this.Width = this.ParentForm.Width;
+                this.Height = this.ParentForm.Height - 156;
+            }
+            else
+            {
+                this.Location = new System.Drawing.Point(0, 83);
+                this.Width = this.ParentForm.Width;
+                this.Height = this.ParentForm.Height - 83;
+            }
             this.ParentForm.Controls.Add(this);
             this.BringToFront();
             SlideInLeft();

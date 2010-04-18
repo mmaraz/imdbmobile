@@ -21,12 +21,17 @@ namespace ImdbMobile.UI
         private Image _image2;
         private Image _image3;
 
+        public Rectangle Image1Rect { get; set; }
+        public Rectangle Image2Rect { get; set; }
+        public Rectangle Image3Rect { get; set; }
+
         public Image Image1
         {
             get { return _image1; }
             set
             {
                 _image1 = value;
+                Redraw();
             }
         }
 
@@ -36,6 +41,7 @@ namespace ImdbMobile.UI
             set
             {
                 _image2 = value;
+                Redraw();
             }
         }
 
@@ -45,6 +51,7 @@ namespace ImdbMobile.UI
             set
             {
                 _image3 = value;
+                Redraw();
             }
         }
         
@@ -53,10 +60,58 @@ namespace ImdbMobile.UI
         public Color BackgroundColor { get; set; }
         public bool ShowSeparator { get; set; }
 
+        private Bitmap DrawnBitmap;
+
         public PhotoDisplay()
         {
             PaddingTop = 5;
             PaddingBottom = 5;
+        }
+
+        private void Redraw()
+        {
+            if (DrawnBitmap == null)
+            {
+                DrawnBitmap = new Bitmap(this.Parent.Width, this.Height);
+                using (Graphics g = Graphics.FromImage(DrawnBitmap))
+                {
+                    g.Clear(Color.LightGoldenrodYellow);
+                }
+            }
+            using (Graphics g = Graphics.FromImage(DrawnBitmap))
+            {
+                // List width - 5px gap to left and right of image
+                int ImageWidth = (this.Parent.Width - 20) / 3;
+                int ImageHeight = (this.Parent.Height - 20) / 3;
+
+                if (this.Image1 == null)
+                {
+                    this.Image1Rect = new Rectangle(5, PaddingTop, ImageWidth, ImageHeight);
+                    g.DrawRectangle(new Pen(Color.Black), Image1Rect);
+                }
+                else
+                {
+                    g.DrawImage(this.Image1, 5, PaddingTop);
+                }
+                if (this.Image2 == null)
+                {
+                    this.Image2Rect = new Rectangle(10 + ImageWidth, PaddingTop, ImageWidth, ImageHeight);
+                    g.DrawRectangle(new Pen(Color.Black), this.Image2Rect);
+                }
+                else
+                {
+                    g.DrawImage(this.Image2, 10 + ImageWidth, PaddingTop);
+                }
+                if (this.Image3 == null)
+                {
+                    this.Image3Rect = new Rectangle(15 + (ImageWidth * 2), PaddingTop, ImageWidth, ImageHeight);
+                    g.DrawRectangle(new Pen(Color.Black), this.Image3Rect);
+                }
+                else
+                {
+                    g.DrawImage(this.Image3, 15 + (ImageWidth * 2), PaddingTop);
+                }
+            }
         }
 
         public void CalculateHeight(int ParentWidth)
@@ -64,34 +119,19 @@ namespace ImdbMobile.UI
             this.Height = 0;
             this.Height += (PaddingBottom + PaddingTop);
 
-            this.Height += 154;
+            this.Height += ((this.Parent.Height) / 3);
         }
 
-        public void Render(Graphics g, Rectangle Bounds, bool Param)
+         public void Render(Graphics g, Rectangle Bounds, bool Param)
         {
-            if (this.Image1 == null)
+            if (this.DrawnBitmap != null)
             {
-                g.DrawRectangle(new Pen(Color.Black), new Rectangle(15, Bounds.Y + PaddingTop, 108, 72));
+                g.DrawImage(this.DrawnBitmap, 0, Bounds.Y);
             }
             else
             {
-                g.DrawImage(this.Image1, 15, Bounds.Y + PaddingTop);
-            }
-            if (this.Image2 == null)
-            {
-                g.DrawRectangle(new Pen(Color.Black), new Rectangle(186, Bounds.Y + PaddingTop, 108, 72));
-            }
-            else
-            {
-                g.DrawImage(this.Image2, 186, Bounds.Y + PaddingTop);
-            }
-            if (this.Image3 == null)
-            {
-                g.DrawRectangle(new Pen(Color.Black), new Rectangle(357, Bounds.Y + PaddingTop, 108, 72));
-            }
-            else
-            {
-                g.DrawImage(this.Image3, 357, Bounds.Y + PaddingTop);
+                Redraw();
+                g.DrawImage(this.DrawnBitmap, 0, Bounds.Y);
             }
         }
 
@@ -107,17 +147,30 @@ namespace ImdbMobile.UI
             }
         }
 
+        private bool IntersectsRect(int X, int Y, Rectangle Rect)
+        {
+            Y = Y + this.Bounds.Y;
+            if (X > Rect.X && X < (Rect.X + Rect.Width))
+            {
+                if (Y > Rect.Y && Y < (Rect.Y + Rect.Height))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
         private int GetImage(int X, int Y)
         {
-            if ((X >= 15 & X <= 123) && (Y >= PaddingTop && Y <= PaddingTop + 72))
+            if (IntersectsRect(X, Y, this.Image1Rect))
             {
                 return 1;
             }
-            if ((X >= 186 & X <= 294) && (Y >= PaddingTop && Y <= PaddingTop + 72))
+            if (IntersectsRect(X, Y, this.Image2Rect))
             {
                 return 2;
             }
-            if ((X >= 357 & X <= 465) && (Y >= PaddingTop && Y <= PaddingTop + 72))
+            if (IntersectsRect(X, Y, this.Image3Rect))
             {
                 return 3;
             }

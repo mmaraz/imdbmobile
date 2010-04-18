@@ -19,7 +19,7 @@ namespace ImdbMobile.UI
             }
             else
             {
-                Filename = IMDBData.SettingsWrapper.ApplicationPath + "\\Translations\\" + IMDBData.SettingsWrapper.GlobalSettings.UILanguage + ".xml";
+                Filename = IMDBData.SettingsWrapper.GlobalSettings.UILanguage;
             }
             
             _xml.Load(Filename);

@@ -197,6 +197,20 @@ namespace ImdbMobile.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap next {
+            get {
+                object obj = ResourceManager.GetObject("next", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap next_Over {
+            get {
+                object obj = ResourceManager.GetObject("next_Over", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap no_dvd {
             get {
                 object obj = ResourceManager.GetObject("no_dvd", resourceCulture);
@@ -235,6 +249,20 @@ namespace ImdbMobile.Properties {
         internal static System.Drawing.Bitmap Photos_Over {
             get {
                 object obj = ResourceManager.GetObject("Photos_Over", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap previous {
+            get {
+                object obj = ResourceManager.GetObject("previous", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap previous_Over {
+            get {
+                object obj = ResourceManager.GetObject("previous_Over", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
