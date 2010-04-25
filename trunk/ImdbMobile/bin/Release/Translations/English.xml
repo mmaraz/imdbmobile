@@ -76,9 +76,9 @@
     <Phrase English="Loading Top 250" ID="0068"><![CDATA[Loading Top 250]]></Phrase>
     <Phrase English="Votes" ID="0069"><![CDATA[Votes]]></Phrase>
     <!-- Context: "Watch Trailer (Low Resolution)" -->
-    <Phrase English="Watch Trailer (Low-Res)" ID="0070"><![CDATA[Watch Trailer (Low-Res)]]></Phrase>
+    <Phrase English="EDGE" ID="0070"><![CDATA[EDGE]]></Phrase>
     <!-- Context: "Watch Trailer (High Resolution)" -->
-    <Phrase English="Watch Trailer (High-Res)" ID="0071"><![CDATA[Watch Trailer (High Resolution)]]></Phrase>
+    <Phrase English="ThreeG" ID="0071"><![CDATA[ThreeG]]></Phrase>
     <Phrase English="There are no Trailers available for this title" ID="0072"><![CDATA[There are no Trailers available for this title]]></Phrase>
     <Phrase English="Downloading Trailer Info" ID="0073"><![CDATA[Downloading Trailer Info]]></Phrase>
     <Phrase English="Loading Trivia" ID="0074"><![CDATA[Loading Trivia]]></Phrase>
@@ -96,5 +96,15 @@
     <Phrase English="Certificate" ID="0086"><![CDATA[Certificate]]></Phrase>
     <Phrase English="Stage" ID="0087"><![CDATA[Stage]]></Phrase>
     <Phrase English="Loading Movie Info" ID="0088"><![CDATA[Loading Movie Info]]></Phrase>
+    <Phrase English="About" ID="0089"><![CDATA[About]]></Phrase>
+    <Phrase English="User Reviews" ID="0090"><![CDATA[User Reviews]]></Phrase>
+    <Phrase English="External Reviews" ID="0091"><![CDATA[External Reviews]]></Phrase>
+    <Phrase English="Parental Guide" ID="0092"><![CDATA[Parental Guide]]></Phrase>
+    <Phrase English="Loading Parental Guide" ID="0093"><![CDATA[Loading Parental Guide]]></Phrase>
+    <Phrase English="Loading External Reviews" ID="0094"><![CDATA[Loading External Reviews]]></Phrase>
+    <Phrase English="Loading User Reviews" ID="0095"><![CDATA[Loading User Reviews]]></Phrase>
+    <Phrase English="HD 480p" ID="0096"><![CDATA[HD 480p]]></Phrase>
+    <Phrase English="HD 720p" ID="0097"><![CDATA[HD 720p]]></Phrase>
+    <Phrase English="There are no User Reviews for this title" ID="0098"><![CDATA[There are no User Reviews for this title]]></Phrase>
   </Phrases>
 </Translation>

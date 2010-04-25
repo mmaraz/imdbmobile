@@ -44,3 +44,37 @@ D:\imdbmobile_imdbmobile\ImdbMobile\obj\Release\ImdbMobile.Controls.Top250Contro
 D:\imdbmobile_imdbmobile\ImdbMobile\obj\Release\ImdbMobile.Controls.TrailersControl.resources
 D:\imdbmobile_imdbmobile\ImdbMobile\obj\Release\ImdbMobile.Controls.TriviaControl.resources
 D:\imdbmobile_imdbmobile\ImdbMobile\obj\Release\ImdbMobile.Controls.MainControl.resources
+D:\IMDb Mobile Google\ImdbMobile\bin\Release\IMDbMobile.ico
+D:\IMDb Mobile Google\ImdbMobile\bin\Release\IMDbMobile.xml
+D:\IMDb Mobile Google\ImdbMobile\bin\Release\Translations\English.xml
+D:\IMDb Mobile Google\ImdbMobile\bin\Release\ImdbMobile.exe
+D:\IMDb Mobile Google\ImdbMobile\bin\Release\ImdbMobile.pdb
+D:\IMDb Mobile Google\ImdbMobile\bin\Release\OpenNETCF.Configuration.dll
+D:\IMDb Mobile Google\ImdbMobile\bin\Release\OpenNETCF.xml
+D:\IMDb Mobile Google\ImdbMobile\bin\Release\OpenNETCF.Configuration.xml
+D:\IMDb Mobile Google\ImdbMobile\obj\Release\ResolveAssemblyReference.cache
+D:\IMDb Mobile Google\ImdbMobile\obj\Release\ImdbMobile.Controls.AboutControl.resources
+D:\IMDb Mobile Google\ImdbMobile\obj\Release\ImdbMobile.Controls.ActorControl.resources
+D:\IMDb Mobile Google\ImdbMobile\obj\Release\ImdbMobile.Controls.CastControl.resources
+D:\IMDb Mobile Google\ImdbMobile\obj\Release\ImdbMobile.Controls.ComingSoonControl.resources
+D:\IMDb Mobile Google\ImdbMobile\obj\Release\ImdbMobile.Controls.EpisodeListControl.resources
+D:\IMDb Mobile Google\ImdbMobile\obj\Release\ImdbMobile.Controls.ExternalReviews.resources
+D:\IMDb Mobile Google\ImdbMobile\obj\Release\ImdbMobile.Controls.FilmographyControl.resources
+D:\IMDb Mobile Google\ImdbMobile\obj\Release\ImdbMobile.Controls.GoofsControl.resources
+D:\IMDb Mobile Google\ImdbMobile\obj\Release\ImdbMobile.Controls.MainControl.resources
+D:\IMDb Mobile Google\ImdbMobile\obj\Release\ImdbMobile.Controls.MovieControl.resources
+D:\IMDb Mobile Google\ImdbMobile\obj\Release\ImdbMobile.Controls.ParentalGuide.resources
+D:\IMDb Mobile Google\ImdbMobile\obj\Release\ImdbMobile.Controls.PhotoViewerControl.resources
+D:\IMDb Mobile Google\ImdbMobile\obj\Release\ImdbMobile.Controls.QuotesControl.resources
+D:\IMDb Mobile Google\ImdbMobile\obj\Release\ImdbMobile.Controls.SeasonListControl.resources
+D:\IMDb Mobile Google\ImdbMobile\obj\Release\ImdbMobile.Controls.Top250Control.resources
+D:\IMDb Mobile Google\ImdbMobile\obj\Release\ImdbMobile.Controls.TrailersControl.resources
+D:\IMDb Mobile Google\ImdbMobile\obj\Release\ImdbMobile.Controls.TriviaControl.resources
+D:\IMDb Mobile Google\ImdbMobile\obj\Release\ImdbMobile.Controls.UserReviews.resources
+D:\IMDb Mobile Google\ImdbMobile\obj\Release\ImdbMobile.Controls.ViewReview.resources
+D:\IMDb Mobile Google\ImdbMobile\obj\Release\ImdbMobile.Form1.resources
+D:\IMDb Mobile Google\ImdbMobile\obj\Release\ImdbMobile.Properties.Resources.resources
+D:\IMDb Mobile Google\ImdbMobile\obj\Release\ImdbMobile.Settings.resources
+D:\IMDb Mobile Google\ImdbMobile\obj\Release\ImdbMobile.csproj.GenerateResource.Cache
+D:\IMDb Mobile Google\ImdbMobile\obj\Release\ImdbMobile.exe
+D:\IMDb Mobile Google\ImdbMobile\obj\Release\ImdbMobile.pdb
