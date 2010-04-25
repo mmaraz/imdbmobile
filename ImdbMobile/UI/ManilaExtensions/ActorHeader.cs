@@ -66,11 +66,12 @@ namespace ImdbMobile.UI
             this.Height = 0;
             this.Height += (PaddingBottom + PaddingTop);
 
-            Graphics g = Parent.CreateGraphics();
-
-            // Movie Title
-            SizeF TitleSize = Extensions.MeasureStringExtended(g, this.Name, _bold, (this.Parent.Width - 200));
-            this.Height = 100 + (int)TitleSize.Height + PaddingBottom + PaddingTop;
+            using (Graphics g = Parent.CreateGraphics())
+            {
+                // Movie Title
+                SizeF TitleSize = Extensions.MeasureStringExtended(g, this.Name, _bold, (UI.WindowHandler.ParentForm.Width - 200));
+                this.Height = 100 + (int)TitleSize.Height + PaddingBottom + PaddingTop;
+            }
         }
 
         public void Render(Graphics g, Rectangle Bounds, bool Param)

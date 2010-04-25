@@ -47,8 +47,6 @@ namespace ImdbMobile.Controls
             CurrentTitle = title;
             InitializeComponent();
 
-            this.id.KListOffset = 1;
-
             this.ImageDownloaderList.Add(id);
             this.ThreadList.Add(LoadingThread);
 
@@ -113,29 +111,7 @@ namespace ImdbMobile.Controls
 
         private void ShowData()
         {
-            HideStatus ShowLoading = delegate
-            {
-                try
-                {
-                    if (this.kListControl1[0].GetType() == typeof(UI.PagerDisplay))
-                    {
-                        UI.PagerDisplay pd = (UI.PagerDisplay)this.kListControl1[0];
-                        pd.CurrentPage = CurrentPage + 1;
-                        this.kListControl1.Clear();
-                        this.kListControl1.AddItem(pd);
-                    }
-                }
-                catch (Exception) { }
-                UI.KListFunctions.ShowLoading(UI.Translations.GetTranslated("0018") + ".\n" + UI.Translations.GetTranslated("0002") + "...", this.LoadingList);
-                id.Kill();
-            };
-            this.Invoke(ShowLoading);
-
-            int Start = CurrentPage * SettingsWrapper.GlobalSettings.NumToDisplay;
-            int Take = SettingsWrapper.GlobalSettings.NumToDisplay;
-
-            int Counter = 1;
-            foreach (ImdbCharacter actor in CurrentTitle.Cast.Skip(Start).Take(Take))
+            foreach (ImdbCharacter actor in CurrentTitle.Cast)
             {
                 MichyPrima.ManilaDotNetSDK.ManilaPanelItem mpi = new MichyPrima.ManilaDotNetSDK.ManilaPanelItem();
                 mpi.MainText = actor.Name;
@@ -143,16 +119,18 @@ namespace ImdbMobile.Controls
                 if (actor.TitleAttribute != null)
                     secondaryText += " " + actor.TitleAttribute;
                 mpi.SecondaryText = secondaryText;
-                mpi.YIndex = Counter;
+                mpi.YIndex = CurrentTitle.Cast.IndexOf(actor);
                 mpi.OnClick += new MichyPrima.ManilaDotNetSDK.ManilaPanelItem.OnClickEventHandler(mpi_OnClick);
 
-                AddCharacterItem aci = new AddCharacterItem(AddCharacter);
-                this.Invoke(aci, new object[] { mpi });
+                try
+                {
+                    AddCharacterItem aci = new AddCharacterItem(AddCharacter);
+                    this.Invoke(aci, new object[] { mpi });
 
-                UpdateStatus us = new UpdateStatus(Update);
-                this.Invoke(us, new object[] { mpi.YIndex, Take });
-
-                Counter++;
+                    UpdateStatus us = new UpdateStatus(Update);
+                    this.Invoke(us, new object[] { mpi.YIndex, CurrentTitle.Cast.Count });
+                }
+                catch (ObjectDisposedException) { }
             }
 
             ClearList cl = new ClearList(Clear);
@@ -179,27 +157,7 @@ namespace ImdbMobile.Controls
                 IMDBData.ParseCast pc = new ImdbMobile.IMDBData.ParseCast();
                 CurrentTitle = pc.ParseFullCast(CurrentTitle);
 
-                if (CurrentTitle.Cast.Count > SettingsWrapper.GlobalSettings.NumToDisplay)
-                {
-                    TotalPages = (int)Math.Ceiling((double)CurrentTitle.Cast.Count / (double)SettingsWrapper.GlobalSettings.NumToDisplay);
-                    HideStatus Pager = delegate
-                    {
-                        UI.PagerDisplay pd = new ImdbMobile.UI.PagerDisplay();
-                        pd.TotalPages = TotalPages;
-                        pd.CurrentPage = 1;
-                        pd.Parent = this.kListControl1;
-                        pd.YIndex = 0;
-                        pd.Next += new ImdbMobile.UI.PagerDisplay.MouseEvent(pd_Next);
-                        pd.Previous += new ImdbMobile.UI.PagerDisplay.MouseEvent(pd_Previous);
-                        pd.CalculateHeight();
-                        this.kListControl1.AddItem(pd);
-                    };
-                    this.Invoke(Pager);
-                }
-
-                TotalPages = 1;
-                CurrentPage = -1;
-                NextPage();
+                ShowData();
             }
             catch (Exception e)
             {

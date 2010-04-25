@@ -21,7 +21,7 @@ namespace ImdbMobile.Controls
             rd.Rating = iur.UserRating;
             rd.Text = iur.FullText + "\n\n" + iur.Username + ",\n" + iur.UserLocation;
             rd.YIndex = 0;
-            rd.CalculateHeight(this.kListControl1.Width);
+            rd.CalculateHeight(UI.WindowHandler.ParentForm.Width);
             this.kListControl1.AddItem(rd);
         }
     }

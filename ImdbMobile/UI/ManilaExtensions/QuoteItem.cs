@@ -43,61 +43,67 @@ namespace ImdbMobile.UI
 
             foreach (IMDBData.ImdbQuote iq in this.QuoteSection.Quotes)
             {
-                SizeF textSize = Extensions.MeasureStringExtended(Parent.CreateGraphics(), iq.Quote, _unbold, ListWidth - 15);
-                this.Height += (int)textSize.Height;
-
-                textSize = Extensions.MeasureStringExtended(Parent.CreateGraphics(), iq.Character.CharacterName, _bold, ListWidth - 15);
-                this.Height += (int)textSize.Height;
-            }
-
-            Bitmap b = new Bitmap(ListWidth, this.Height);
-            Graphics g = Graphics.FromImage(b);
-
-            Rectangle CurrentBounds = new Rectangle(0, 0, ListWidth, this.Height);
-
-            if (this.BackgroundColor != Color.Empty)
-            {
-                g.FillRectangle(new SolidBrush(this.BackgroundColor), CurrentBounds);
-            }
-            else
-            {
-                g.FillRectangle(new SolidBrush(Color.LightGoldenrodYellow), CurrentBounds);
-            }
-            if (this.Icon != null)
-            {
-                g.DrawImage(this.Icon, 5, PaddingTop);
-            }
-
-            int CurrY = 0;
-            foreach (IMDBData.ImdbQuote q in this.QuoteSection.Quotes)
-            {
-                string CharText = "";
-                if (string.IsNullOrEmpty(q.Character.CharacterName))
+                using (Graphics g = Parent.CreateGraphics())
                 {
-                    CharText = "(" + UI.Translations.GetTranslated("0087") + "):";
+                    SizeF textSize = Extensions.MeasureStringExtended(g, iq.Quote, _unbold, UI.WindowHandler.ParentForm.Width - 15);
+                    this.Height += (int)textSize.Height;
+
+                    textSize = Extensions.MeasureStringExtended(g, iq.Character.CharacterName, _bold, UI.WindowHandler.ParentForm.Width - 15);
+                    this.Height += (int)textSize.Height;
+                }
+
+                
+            }
+
+            Bitmap b = new Bitmap(UI.WindowHandler.ParentForm.Width, this.Height);
+            using (Graphics g = Graphics.FromImage(b))
+            {
+
+                Rectangle CurrentBounds = new Rectangle(0, 0, UI.WindowHandler.ParentForm.Width, this.Height);
+
+                if (this.BackgroundColor != Color.Empty)
+                {
+                    g.FillRectangle(new SolidBrush(this.BackgroundColor), CurrentBounds);
                 }
                 else
                 {
-                    CharText = q.Character.CharacterName + ":";
+                    g.FillRectangle(new SolidBrush(Color.LightGoldenrodYellow), CurrentBounds);
                 }
-                // Draw Character Name
-                SizeF charSize = Extensions.MeasureStringExtended(Parent.CreateGraphics(), CharText, _bold, ListWidth);
-                g.DrawString(CharText, _bold, new SolidBrush(Color.Black), new RectangleF(5, CurrY, this.ListWidth, charSize.Height));
-                CurrY += (int)charSize.Height;
+                if (this.Icon != null)
+                {
+                    g.DrawImage(this.Icon, 5, PaddingTop);
+                }
 
-                // Draw Quote
-                SizeF qSize = Extensions.MeasureStringExtended(Parent.CreateGraphics(), q.Quote, _unbold, ListWidth);
-                g.DrawString(q.Quote, _unbold, new SolidBrush(Color.Black), new RectangleF(5, CurrY, this.ListWidth, qSize.Height));
-                CurrY += (int)qSize.Height;
+                int CurrY = 0;
+                foreach (IMDBData.ImdbQuote q in this.QuoteSection.Quotes)
+                {
+                    string CharText = "";
+                    if (string.IsNullOrEmpty(q.Character.CharacterName))
+                    {
+                        CharText = "(" + UI.Translations.GetTranslated("0087") + "):";
+                    }
+                    else
+                    {
+                        CharText = q.Character.CharacterName + ":";
+                    }
+                    // Draw Character Name
+                    SizeF charSize = Extensions.MeasureStringExtended(g, CharText, _bold, UI.WindowHandler.ParentForm.Width);
+                    g.DrawString(CharText, _bold, new SolidBrush(Color.Black), new RectangleF(5, CurrY, UI.WindowHandler.ParentForm.Width, charSize.Height));
+                    CurrY += (int)charSize.Height;
+
+                    // Draw Quote
+                    SizeF qSize = Extensions.MeasureStringExtended(g, q.Quote, _unbold, ListWidth);
+                    g.DrawString(q.Quote, _unbold, new SolidBrush(Color.Black), new RectangleF(5, CurrY, UI.WindowHandler.ParentForm.Width, qSize.Height));
+                    CurrY += (int)qSize.Height;
+                }
+                CurrY += PaddingBottom;
+                // Draw Separator
+                g.DrawLine(new Pen(Color.Black), 5, CurrY, UI.WindowHandler.ParentForm.Width - 5, CurrY);
+                this.Height += 5;
+
+                this.DrawnImage = b;
+
             }
-            CurrY += PaddingBottom;
-            // Draw Separator
-            g.DrawLine(new Pen(Color.Black), 5, CurrY, ListWidth - 5, CurrY);
-            this.Height += 5;
-
-            this.DrawnImage = b;
-
-            g.Dispose();
         }
 
         public void Render(Graphics g, Rectangle Bounds, bool Param)

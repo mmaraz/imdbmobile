@@ -89,7 +89,7 @@ namespace ImdbMobile.Controls
             td.Text = title.Plot;
             td.YIndex = 1;
             td.Parent = this.kListControl1;
-            td.CalculateHeight(this.kListControl1.Width);
+            td.CalculateHeight();
             this.kListControl1.AddItem(td);
 
             UI.ActionButton CastButton = new ImdbMobile.UI.ActionButton();
@@ -122,7 +122,7 @@ namespace ImdbMobile.Controls
             ExternalReviewButton.MouseUp += new ImdbMobile.UI.ActionButton.MouseEvent(ExternalReviewButton_MouseUp);
             this.kListControl1.AddItem(ExternalReviewButton);
 
-            UI.ActionButton PhotoButton = new ImdbMobile.UI.ActionButton();
+            /*UI.ActionButton PhotoButton = new ImdbMobile.UI.ActionButton();
             PhotoButton.Icon = global::ImdbMobile.Properties.Resources.Photos;
             PhotoButton.HoverIcon = global::ImdbMobile.Properties.Resources.Photos_Over;
             PhotoButton.Parent = this.kListControl1;
@@ -130,14 +130,14 @@ namespace ImdbMobile.Controls
             PhotoButton.YIndex = 5;
             PhotoButton.CalculateHeight();
             PhotoButton.MouseUp += new ImdbMobile.UI.ActionButton.MouseEvent(PhotoButton_MouseUp);
-            this.kListControl1.AddItem(PhotoButton);
+            this.kListControl1.AddItem(PhotoButton);*/
 
             UI.ActionButton TrailerButton = new ImdbMobile.UI.ActionButton();
             TrailerButton.Icon = global::ImdbMobile.Properties.Resources.Trailers;
             TrailerButton.HoverIcon = global::ImdbMobile.Properties.Resources.Trailers_Over;
             TrailerButton.Parent = this.kListControl1;
             TrailerButton.Text = UI.Translations.GetTranslated("0045");
-            TrailerButton.YIndex = 6;
+            TrailerButton.YIndex = 5;
             TrailerButton.CalculateHeight();
             TrailerButton.MouseUp += new ImdbMobile.UI.ActionButton.MouseEvent(TrailerButton_MouseUp);
             this.kListControl1.AddItem(TrailerButton);
@@ -147,7 +147,7 @@ namespace ImdbMobile.Controls
             QuoteButton.HoverIcon = global::ImdbMobile.Properties.Resources.Quote_Over;
             QuoteButton.Parent = this.kListControl1;
             QuoteButton.Text = UI.Translations.GetTranslated("0046");
-            QuoteButton.YIndex = 7;
+            QuoteButton.YIndex = 6;
             QuoteButton.CalculateHeight();
             QuoteButton.MouseUp += new ImdbMobile.UI.ActionButton.MouseEvent(QuoteButton_MouseUp);
             this.kListControl1.AddItem(QuoteButton);
@@ -157,7 +157,7 @@ namespace ImdbMobile.Controls
             TriviaButton.HoverIcon = global::ImdbMobile.Properties.Resources.Trivia_Over;
             TriviaButton.Parent = this.kListControl1;
             TriviaButton.Text = UI.Translations.GetTranslated("0005");
-            TriviaButton.YIndex = 8;
+            TriviaButton.YIndex = 7;
             TriviaButton.CalculateHeight();
             TriviaButton.MouseUp += new ImdbMobile.UI.ActionButton.MouseEvent(TriviaButton_MouseUp);
             this.kListControl1.AddItem(TriviaButton);
@@ -167,7 +167,7 @@ namespace ImdbMobile.Controls
             GoofButton.HoverIcon = global::ImdbMobile.Properties.Resources.MoreInfo_Over;
             GoofButton.Parent = this.kListControl1;
             GoofButton.Text = UI.Translations.GetTranslated("0042");
-            GoofButton.YIndex = 9;
+            GoofButton.YIndex = 8;
             GoofButton.CalculateHeight();
             GoofButton.MouseUp += new ImdbMobile.UI.ActionButton.MouseEvent(GoofButton_MouseUp);
             this.kListControl1.AddItem(GoofButton);
@@ -177,7 +177,7 @@ namespace ImdbMobile.Controls
             ParentalButton.HoverIcon = global::ImdbMobile.Properties.Resources.ParentalGuide_Over;
             ParentalButton.Parent = this.kListControl1;
             ParentalButton.Text = UI.Translations.GetTranslated("0092");
-            ParentalButton.YIndex = 10;
+            ParentalButton.YIndex = 9;
             ParentalButton.CalculateHeight();
             ParentalButton.MouseUp += new ImdbMobile.UI.ActionButton.MouseEvent(ParentalButton_MouseUp);
             this.kListControl1.AddItem(ParentalButton);
@@ -188,7 +188,7 @@ namespace ImdbMobile.Controls
                 EpisodeButton.Icon = global::ImdbMobile.Properties.Resources.episodes;
                 EpisodeButton.Parent = this.kListControl1;
                 EpisodeButton.Text = UI.Translations.GetTranslated("0047");
-                EpisodeButton.YIndex = 11;
+                EpisodeButton.YIndex = 10;
                 EpisodeButton.CalculateHeight();
                 EpisodeButton.MouseUp += new ImdbMobile.UI.ActionButton.MouseEvent(EpisodeButton_MouseUp);
                 this.kListControl1.AddItem(EpisodeButton);
@@ -263,8 +263,12 @@ namespace ImdbMobile.Controls
                 ImdbTitle title = tp.ParseFullDetails(CurrentTitle);
                 if (title != null)
                 {
-                    LoadImdbInformation li = new LoadImdbInformation(SetImdbInformation);
-                    this.Invoke(li, new object[] { title });
+                    try
+                    {
+                        LoadImdbInformation li = new LoadImdbInformation(SetImdbInformation);
+                        this.Invoke(li, new object[] { title });
+                    }
+                    catch (ObjectDisposedException) { }
                 }
             }
             catch (Exception e)

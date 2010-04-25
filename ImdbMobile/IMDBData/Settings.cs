@@ -67,7 +67,7 @@ namespace ImdbMobile.IMDBData
                     s.VideoPlayerPath = "\\Windows\\wmplayer.exe";
                     s.UseAnimations = false;
                     s.UILanguage = ApplicationPath + "//Translations//English.xml";
-                    s.NumToDisplay = 50;
+                    s.NumToDisplay = 500;
 
                     Save(s);
                 }

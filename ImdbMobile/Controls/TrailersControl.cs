@@ -42,6 +42,8 @@ namespace ImdbMobile.Controls
                     {
                         case ImdbEncoding.VideoType.ThreeG: mpi.Text = UI.Translations.GetTranslated("0071"); break;
                         case ImdbEncoding.VideoType.EDGE: mpi.Text = UI.Translations.GetTranslated("0070"); break;
+                        case ImdbEncoding.VideoType.HD480p: mpi.Text = UI.Translations.GetTranslated("0096"); break;
+                        case ImdbEncoding.VideoType.HD720p: mpi.Text = UI.Translations.GetTranslated("0097"); break;
                     }
                     mpi.Parent = this.kListControl1;
                     mpi.Icon = global::ImdbMobile.Properties.Resources.Trailers;
@@ -61,14 +63,14 @@ namespace ImdbMobile.Controls
                     catch (Exception) { }
                 }
             }
-            if (this.kListControl1.Count == 0)
+            else
             {
-                UI.ErrorButton eb = new ImdbMobile.UI.ErrorButton();
-                eb.Parent = this.kListControl1;
-                eb.Text = "There are no Trailers available for this title";
-                eb.YIndex = 0;
-                eb.CalculateHeight();
-                this.kListControl1.AddItem(eb);
+                try
+                {
+                    ShowErrorInfo sr = new ShowErrorInfo(ShowError);
+                    this.Invoke(sr, new object[] { UI.Translations.GetTranslated("0072") });
+                }
+                catch (Exception) { }
             }
         }
 
@@ -78,8 +80,15 @@ namespace ImdbMobile.Controls
             UI.KListFunctions.ShowLoading(UI.Translations.GetTranslated("0073") + ".\n" + UI.Translations.GetTranslated("0002") + "...", this.LoadingList);
             SelectedEncoding = CurrentTitle.Trailer.Encodings[Sender.YIndex];
 
-            LoadingThread = new System.Threading.Thread(GetTrailerURL);
-            LoadingThread.Start();
+            if (SelectedEncoding.VideoURL.ToLower().Contains("totaleclips"))
+            {
+                LoadingThread = new System.Threading.Thread(GetTrailerURL);
+                LoadingThread.Start();
+            }
+            else
+            {
+                ShowTrailer(SelectedEncoding.VideoURL);
+            }
         }
 
         private void ShowTrailer(string URL)
@@ -126,8 +135,12 @@ namespace ImdbMobile.Controls
 
                 MP4URL += m.Groups[0].Value;
 
-                ShowTrailerVideo stv = new ShowTrailerVideo(ShowTrailer);
-                this.Invoke(stv, new object[] { MP4URL });
+                try
+                {
+                    ShowTrailerVideo stv = new ShowTrailerVideo(ShowTrailer);
+                    this.Invoke(stv, new object[] { MP4URL });
+                }
+                catch (ObjectDisposedException) { }
             }
             catch (Exception e)
             {

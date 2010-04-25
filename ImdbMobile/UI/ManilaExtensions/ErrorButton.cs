@@ -43,9 +43,12 @@ namespace ImdbMobile.UI
             this.Height = 0;
             this.Height += (PaddingBottom + PaddingTop);
 
-            SizeF textSize = Extensions.MeasureStringExtended(Parent.CreateGraphics(), _text, _mainFont, System.Windows.Forms.Screen.PrimaryScreen.WorkingArea.Width);
-            _textHeight = (int)textSize.Height;
-            this.Height += (int)textSize.Height;
+            using (Graphics g = Parent.CreateGraphics())
+            {
+                SizeF textSize = Extensions.MeasureStringExtended(g, _text, _mainFont, UI.WindowHandler.ParentForm.Width);
+                _textHeight = (int)textSize.Height;
+                this.Height += (int)textSize.Height;
+            }
         }
 
         public void Render(Graphics g, Rectangle Bounds, bool Param)
@@ -64,7 +67,9 @@ namespace ImdbMobile.UI
             }
             StringFormat sf = new StringFormat();
             sf.Alignment = StringAlignment.Center;
-            g.DrawString(this.Text, _mainFont, new SolidBrush(Color.Black), (Bounds.Width / 2), Bounds.Y + this.Icon.Height + 10, sf);
+
+            SizeF textSize = Extensions.MeasureStringExtended(g, this.Text, _mainFont, UI.WindowHandler.ParentForm.Width);
+            g.DrawString(this.Text, _mainFont, new SolidBrush(Color.Black), new RectangleF(0, Bounds.Y + 48, textSize.Width, textSize.Height), sf);
         }
 
         public void OnMouseDown(int x, int y, ref bool StateChanged) { }

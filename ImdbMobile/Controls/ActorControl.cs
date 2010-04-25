@@ -54,8 +54,12 @@ namespace ImdbMobile.Controls
                 ImdbActor actor = ap.ParseDetails();
                 CurrentActor = actor;
 
-                LoadImdbInformation li = new LoadImdbInformation(SetImdbInformation);
-                this.Invoke(li, new object[] { actor });
+                try
+                {
+                    LoadImdbInformation li = new LoadImdbInformation(SetImdbInformation);
+                    this.Invoke(li, new object[] { actor });
+                }
+                catch (ObjectDisposedException) { }
             }
             catch (Exception e)
             {
@@ -119,7 +123,7 @@ namespace ImdbMobile.Controls
                 td.Parent = this.kListControl1;
                 td.Text = CurrentActor.Bio;
                 td.YIndex = 1;
-                td.CalculateHeight(this.kListControl1.Width);
+                td.CalculateHeight();
                 this.kListControl1.AddItem(td);
 
                 // Add Holder Control
@@ -145,7 +149,7 @@ namespace ImdbMobile.Controls
                 this.kListControl1.AddItem(Trivia);
 
             }
-            catch (ObjectDisposedException) { }
+            catch (ObjectDisposedException oe) { }
         }
 
         void Trivia_MouseUp(int X, int Y, MichyPrima.ManilaDotNetSDK.KListControl Parent, UI.ActionButton Sender)

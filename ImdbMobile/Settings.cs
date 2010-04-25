@@ -29,9 +29,6 @@ namespace ImdbMobile
             this.lblCustomArgs.Text = UI.Translations.GetTranslated("0066") + ":";
             this.lblCachePath.Text = UI.Translations.GetTranslated("0067") + ":";
             this.Text = UI.Translations.GetTranslated("0030");
-
-            UI.Titlebar t = new ImdbMobile.UI.Titlebar(this);
-            t.DrawTitlebar();
         }
 
         private void Settings_Load(object sender, EventArgs e)
@@ -50,7 +47,7 @@ namespace ImdbMobile
                 {
                     System.Xml.XmlDocument xd = new System.Xml.XmlDocument();
                     xd.Load(str);
-                    var TranslationInfo = new { EnglishName = xd.SelectSingleNode("/Translation/Name").Attributes["English"].InnerText, File = System.IO.Path.GetFileName(str) };
+                    var TranslationInfo = new { EnglishName = xd.SelectSingleNode("/Translation/Name").Attributes["English"].InnerText, File = IMDBData.SettingsWrapper.ApplicationPath + "//Translations//" + System.IO.Path.GetFileName(str) };
                     TranslationList.Add(TranslationInfo);
                 }
                 catch (Exception) { }
@@ -58,6 +55,7 @@ namespace ImdbMobile
             this.comboBox1.DataSource = TranslationList;
             this.comboBox1.DisplayMember = "EnglishName";
             this.comboBox1.ValueMember = "File";
+            this.comboBox1.SelectedValue = SettingsWrapper.GlobalSettings.UILanguage;
 
             try
             {
@@ -75,6 +73,7 @@ namespace ImdbMobile
             this.txtCustomArgs.Text = SettingsWrapper.GlobalSettings.VideoPlayerArguments;
             this.txtCachePath.Text = SettingsWrapper.GlobalSettings.CachePath;
             this.chkThumbnails.Checked = SettingsWrapper.GlobalSettings.DownloadThumbnails;
+            this.chkEnableAnimate.Checked = SettingsWrapper.GlobalSettings.UseAnimations;
         }
 
         private void Settings_Closing(object sender, CancelEventArgs e)
@@ -106,8 +105,10 @@ namespace ImdbMobile
                         break;
                     }
                 }
+                SettingsWrapper.GlobalSettings.UILanguage = (string)this.comboBox1.SelectedValue;
                 SettingsWrapper.GlobalSettings.VideoPlayerPath = this.txtCustomVideo.Text;
                 SettingsWrapper.GlobalSettings.VideoPlayerArguments = this.txtCustomArgs.Text;
+                SettingsWrapper.GlobalSettings.UseAnimations = this.chkEnableAnimate.Checked;
                 SettingsWrapper.Save(SettingsWrapper.GlobalSettings);
             }
         }

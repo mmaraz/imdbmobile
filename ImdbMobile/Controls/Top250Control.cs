@@ -15,7 +15,7 @@ namespace ImdbMobile.Controls
         private delegate void AddItem(MichyPrima.ManilaDotNetSDK.ManilaPanelItem mpi);
         private delegate void ShowError(string Message);
         private delegate void ShowComplete();
-        ImageDownloader id;
+        ImageDownloader id = new ImageDownloader();
         System.Threading.Thread LoadingThread;
 
         private delegate void ClearList();
@@ -76,7 +76,6 @@ namespace ImdbMobile.Controls
             try
             {
                 //this.lblStatus.Visible = false;
-                id = new ImageDownloader();
                 id.DownloadImages(SearchResults, this.kListControl1, this.ParentForm);
             }
             catch (ObjectDisposedException) { }
@@ -100,18 +99,26 @@ namespace ImdbMobile.Controls
                     mpi.YIndex = Index;
                     mpi.OnClick += new MichyPrima.ManilaDotNetSDK.ManilaPanelItem.OnClickEventHandler(mpi_OnClick);
 
-                    AddItem ai = new AddItem(AddPanelItem);
-                    this.Invoke(ai, new object[] { mpi });
+                    try
+                    {
+                        AddItem ai = new AddItem(AddPanelItem);
+                        this.Invoke(ai, new object[] { mpi });
 
-                    UpdateStatus us = new UpdateStatus(Update);
-                    this.Invoke(us, new object[] { mpi.YIndex+1, SearchResults.Count });
+                        UpdateStatus us = new UpdateStatus(Update);
+                        this.Invoke(us, new object[] { mpi.YIndex + 1, SearchResults.Count });
+                    }
+                    catch (ObjectDisposedException) { }
                 }
 
-                ClearList cl = new ClearList(Clear);
-                this.Invoke(cl);
+                try
+                {
+                    ClearList cl = new ClearList(Clear);
+                    this.Invoke(cl);
 
-                ShowComplete sc = new ShowComplete(SetComplete);
-                this.Invoke(sc);
+                    ShowComplete sc = new ShowComplete(SetComplete);
+                    this.Invoke(sc);
+                }
+                catch (ObjectDisposedException) { }
             }
             catch (Exception e)
             {

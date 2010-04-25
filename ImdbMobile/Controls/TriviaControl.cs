@@ -17,7 +17,7 @@ namespace ImdbMobile.Controls
         private static List<string> Trivia;
 
         private delegate void ShowError(string Error);
-        private delegate void AddTrivia(string str, int y);
+        private delegate void AddTrivia(List<string> Trivia);
         private delegate ImdbTitle GetTitle();
         private delegate ImdbActor GetActor();
 
@@ -101,75 +101,42 @@ namespace ImdbMobile.Controls
             catch (ObjectDisposedException) { }
         }
 
-        private void AddTriviaItem(string Trivia, int YIndex)
+        private void AddTriviaItems(List<string> Trivia)
         {
             try
             {
-                UI.TextDisplay td = new ImdbMobile.UI.TextDisplay();
-                td.Text = Trivia;
-                td.YIndex = YIndex;
-                td.Parent = this.kListControl1;
-                td.ShowSeparator = true;
-                td.CalculateHeight(this.kListControl1.Width);
-                this.kListControl1.AddItem(td);
+                List<UI.TextDisplay> tdList = new List<ImdbMobile.UI.TextDisplay>();
+                for (int i = 0; i < Trivia.Count; i++)
+                {
+                    UI.TextDisplay td = new ImdbMobile.UI.TextDisplay();
+                    td.Text = Trivia[i];
+                    td.YIndex = i;
+                    td.Parent = this.kListControl1;
+                    td.ShowSeparator = true;
+                    td.CalculateHeight();
+                    tdList.Add(td);
+                }
+                for (int i = 0; i < Trivia.Count; i++)
+                {
+                    this.kListControl1.AddItem(tdList[i]);
+                    Update(i, Trivia.Count);
+                }
+
+                try
+                {
+                    ClearList cl = new ClearList(Clear);
+                    this.Invoke(cl);
+                }
+                catch (ObjectDisposedException) { }
             }
             catch (ObjectDisposedException) { }
         }
 
-        private void NextPage()
-        {
-            if (CurrentPage < TotalPages - 1)
-            {
-                CurrentPage++;
-                ShowData();
-            }
-        }
-
-        private void PrevPage()
-        {
-            if (CurrentPage > 0)
-            {
-                CurrentPage--;
-                ShowData();
-            }
-        }
 
         private void ShowData()
         {
-            ClearList ShowLoading = delegate
-            {
-                try
-                {
-                    if (this.kListControl1[0].GetType() == typeof(UI.PagerDisplay))
-                    {
-                        UI.PagerDisplay pd = (UI.PagerDisplay)this.kListControl1[0];
-                        pd.CurrentPage = CurrentPage + 1;
-                        this.kListControl1.Clear();
-                        this.kListControl1.AddItem(pd);
-                    }
-                }
-                catch (Exception) { }
-                UI.KListFunctions.ShowLoading(UI.Translations.GetTranslated("0018") + ".\n" + UI.Translations.GetTranslated("0002") + "...", this.LoadingList);
-            };
-            this.Invoke(ShowLoading);
-
-            int Start = CurrentPage * SettingsWrapper.GlobalSettings.NumToDisplay;
-            int Take = SettingsWrapper.GlobalSettings.NumToDisplay;
-            int Counter = 1;
-
-            foreach (string str in Trivia.Skip(Start).Take(Take))
-            {
-                AddTrivia at = new AddTrivia(AddTriviaItem);
-                this.Invoke(at, new object[] { str, Counter });
-
-                UpdateStatus us = new UpdateStatus(Update);
-                this.Invoke(us, new object[] { Counter, Take });
-
-                Counter++;
-            }
-
-            ClearList cl = new ClearList(Clear);
-            this.Invoke(cl);
+            AddTrivia at = new AddTrivia(AddTriviaItems);
+            this.Invoke(at, new object[] { Trivia });
 
             if (Trivia.Count == 0)
             {
@@ -209,27 +176,7 @@ namespace ImdbMobile.Controls
                     Trivia = title.Trivia;
                 }
 
-                if (Trivia.Count > SettingsWrapper.GlobalSettings.NumToDisplay)
-                {
-                    TotalPages = (int)Math.Ceiling((double)Trivia.Count / (double)SettingsWrapper.GlobalSettings.NumToDisplay);
-                    ClearList Pager = delegate
-                    {
-                        UI.PagerDisplay pd = new ImdbMobile.UI.PagerDisplay();
-                        pd.TotalPages = TotalPages;
-                        pd.CurrentPage = 1;
-                        pd.Parent = this.kListControl1;
-                        pd.YIndex = 0;
-                        pd.Next += new ImdbMobile.UI.PagerDisplay.MouseEvent(pd_Next);
-                        pd.Previous += new ImdbMobile.UI.PagerDisplay.MouseEvent(pd_Previous);
-                        pd.CalculateHeight();
-                        this.kListControl1.AddItem(pd);
-                    };
-                    this.Invoke(Pager);
-                }
-
-                TotalPages = 1;
-                CurrentPage = -1;
-                NextPage();
+                ShowData();
             }
             catch (Exception e)
             {
@@ -240,16 +187,6 @@ namespace ImdbMobile.Controls
                 }
                 catch (Exception) { }
             }
-        }
-
-        void pd_Previous(int X, int Y, MichyPrima.ManilaDotNetSDK.KListControl Parent, ImdbMobile.UI.PagerDisplay Sender)
-        {
-            PrevPage();
-        }
-
-        void pd_Next(int X, int Y, MichyPrima.ManilaDotNetSDK.KListControl Parent, ImdbMobile.UI.PagerDisplay Sender)
-        {
-            NextPage();
         }
     }
 }

@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImdbMobile", "ImdbMobile\ImdbMobile.csproj", "{820D2D2C-8CA2-4CE2-A76C-A6CFA50798F0}"
 EndProject
+Project("{B900F1C2-3D47-4FEC-85B3-04AAF18C3634}") = "ImdbInstaller", "ImdbInstaller\ImdbInstaller.vddproj", "{F2880C6E-B7EF-42C0-A80A-D1090F48B7EC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{820D2D2C-8CA2-4CE2-A76C-A6CFA50798F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{820D2D2C-8CA2-4CE2-A76C-A6CFA50798F0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{820D2D2C-8CA2-4CE2-A76C-A6CFA50798F0}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{F2880C6E-B7EF-42C0-A80A-D1090F48B7EC}.Debug|Any CPU.ActiveCfg = Debug
+		{F2880C6E-B7EF-42C0-A80A-D1090F48B7EC}.Debug|Any CPU.Build.0 = Debug
+		{F2880C6E-B7EF-42C0-A80A-D1090F48B7EC}.Release|Any CPU.ActiveCfg = Release
+		{F2880C6E-B7EF-42C0-A80A-D1090F48B7EC}.Release|Any CPU.Build.0 = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

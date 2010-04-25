@@ -73,7 +73,15 @@ namespace ImdbMobile.Controls
             try
             {
                 this.kListControl1.Clear();
-                int Counter = 0;
+
+                if (title.UserReviews.Count == 0)
+                {
+                    ShowErrorInfo si = new ShowErrorInfo(ShowError);
+                    this.Invoke(si, new object[] { UI.Translations.GetTranslated("0098") });
+                    return;
+                }
+
+                List<UI.ReviewDisplay> rdList = new List<ImdbMobile.UI.ReviewDisplay>();
                 foreach (ImdbUserReview iur in title.UserReviews)
                 {
                     UI.ReviewDisplay rd = new ImdbMobile.UI.ReviewDisplay();
@@ -81,16 +89,25 @@ namespace ImdbMobile.Controls
                     rd.Parent = this.kListControl1;
                     rd.Rating = iur.UserRating;
                     rd.Text = iur.Username + "\n" + iur.UserLocation;
-                    rd.YIndex = Counter;
+                    rd.YIndex = title.UserReviews.IndexOf(iur);
                     rd.ShowSeparator = true;
                     rd.MouseUp += new ImdbMobile.UI.ReviewDisplay.MouseEvent(rd_MouseUp);
                     rd.CalculateHeight(this.kListControl1.Width);
-                    this.kListControl1.AddItem(rd);
-                    Counter++;
-
-                    UpdateStatus us = new UpdateStatus(Update);
-                    this.Invoke(us, new object[] { rd.YIndex + 1, title.UserReviews.Count });
+                    rdList.Add(rd);                
                 }
+                foreach (UI.ReviewDisplay rd in rdList)
+                {
+                    this.kListControl1.AddItem(rd);
+
+                    try
+                    {
+                        UpdateStatus us = new UpdateStatus(Update);
+                        this.Invoke(us, new object[] { rd.YIndex + 1, title.UserReviews.Count });
+                    }
+                    catch (ObjectDisposedException) { }
+                }
+                
+
                 this.LoadingList.Visible = false;
             }
             catch (Exception) { }

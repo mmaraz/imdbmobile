@@ -83,6 +83,8 @@ namespace ImdbMobile.IMDBData
                             {
                                 case "iPhone 3G": ie.Type = ImdbEncoding.VideoType.ThreeG; break;
                                 case "iPhone EDGE": ie.Type = ImdbEncoding.VideoType.EDGE; break;
+                                case "HD 480p": ie.Type = ImdbEncoding.VideoType.HD480p; break;
+                                case "HD 720p": ie.Type = ImdbEncoding.VideoType.HD720p; break;
                             }
                             iv.Encodings.Add(ie);
                         }
