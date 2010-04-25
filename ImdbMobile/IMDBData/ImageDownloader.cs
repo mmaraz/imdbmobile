@@ -81,29 +81,31 @@ namespace ImdbMobile.IMDBData
                 if (!string.IsNullOrEmpty(URL))
                 {
                     WebRequest webReq = (WebRequest)HttpWebRequest.Create(GetMoviePoster(URL));
-                    HttpWebResponse resp = (HttpWebResponse)webReq.GetResponse();
-
-                    Stream s = resp.GetResponseStream();
-                    FileStream fs = File.Open(SettingsWrapper.GlobalSettings.CachePath + "\\tempimg.jpg", FileMode.Create, FileAccess.Write, FileShare.None);
-
-                    int maxRead = 10240;
-                    byte[] buffer = new byte[maxRead];
-                    int bytesRead = 0;
-                    int totalBytesRead = 0;
-
-                    while ((bytesRead = s.Read(buffer, 0, maxRead)) > 0)
+                    using (HttpWebResponse resp = (HttpWebResponse)webReq.GetResponse())
                     {
-                        totalBytesRead += bytesRead;
-                        fs.Write(buffer, 0, bytesRead);
-                    }
-                    fs.Flush();
-                    fs.Close();
-                    resp.Close();
+                        using (Stream s = resp.GetResponseStream())
+                        {
+                            using (FileStream fs = File.Open(SettingsWrapper.GlobalSettings.CachePath + "\\tempimg.jpg", FileMode.Create, FileAccess.Write, FileShare.None))
+                            {
+                                int maxRead = 10240;
+                                byte[] buffer = new byte[maxRead];
+                                int bytesRead = 0;
+                                int totalBytesRead = 0;
 
-                    return SettingsWrapper.GlobalSettings.CachePath + "\\tempimg.jpg";
+                                while ((bytesRead = s.Read(buffer, 0, maxRead)) > 0)
+                                {
+                                    totalBytesRead += bytesRead;
+                                    fs.Write(buffer, 0, bytesRead);
+                                }
+                                fs.Flush();
+                            }
+
+                            return SettingsWrapper.GlobalSettings.CachePath + "\\tempimg.jpg";
+                        }
+                    }
                 }
             }
-            catch (Exception) { }
+            catch (Exception ex) { }
             return null;
         }
 
@@ -250,24 +252,27 @@ namespace ImdbMobile.IMDBData
                     string[] splitter = ic.URL.Split('/');
                     string fileName = splitter[splitter.Length - 1];
                     WebRequest webReq = (WebRequest)HttpWebRequest.Create(GetThumbnailURL(ic.URL));
-                    HttpWebResponse resp = (HttpWebResponse)webReq.GetResponse();
-
-                    Stream s = resp.GetResponseStream();
-                    FileStream fs = File.Open(SettingsWrapper.GlobalSettings.CachePath + "\\" + fileName, FileMode.Create, FileAccess.Write, FileShare.None);
-
-                    int maxRead = 10240;
-                    byte[] buffer = new byte[maxRead];
-                    int bytesRead = 0;
-                    int totalBytesRead = 0;
-
-                    while ((bytesRead = s.Read(buffer, 0, maxRead)) > 0)
+                    using (HttpWebResponse resp = (HttpWebResponse)webReq.GetResponse())
                     {
-                        totalBytesRead += bytesRead;
-                        fs.Write(buffer, 0, bytesRead);
+                        using (Stream s = resp.GetResponseStream())
+                        {
+                            using (FileStream fs = File.Open(SettingsWrapper.GlobalSettings.CachePath + "\\" + fileName, FileMode.Create, FileAccess.Write, FileShare.None))
+                            {
+
+                                int maxRead = 10240;
+                                byte[] buffer = new byte[maxRead];
+                                int bytesRead = 0;
+                                int totalBytesRead = 0;
+
+                                while ((bytesRead = s.Read(buffer, 0, maxRead)) > 0)
+                                {
+                                    totalBytesRead += bytesRead;
+                                    fs.Write(buffer, 0, bytesRead);
+                                }
+                                fs.Flush();
+                            }
+                        }
                     }
-                    fs.Flush();
-                    fs.Close();
-                    resp.Close();
 
                     return SettingsWrapper.GlobalSettings.CachePath + "\\" + fileName;
                 }

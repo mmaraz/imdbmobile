@@ -117,30 +117,34 @@ namespace ImdbMobile.Controls
             try
             {
                 HttpWebRequest hwr = (HttpWebRequest)WebRequest.Create(SelectedEncoding.VideoURL);
-                WebResponse resp = hwr.GetResponse();
-
-                string[] pathSplit = resp.ResponseUri.PathAndQuery.Split('/');
-
-                string MP4URL = "http://" + resp.ResponseUri.Host + "/" + pathSplit[1] + "/";
-
-                Stream responseStream = resp.GetResponseStream();
-                string str = "";
-                StreamReader sr = new StreamReader(responseStream);
-                str = sr.ReadToEnd();
-                responseStream.Close();
-                resp.Close();
-
-                Regex r = new Regex("(([a-zA-Z]|[0-9])[0-9]*_[0-9]*).mp4");
-                Match m = r.Match(str);
-
-                MP4URL += m.Groups[0].Value;
-
-                try
+                using (WebResponse resp = hwr.GetResponse())
                 {
-                    ShowTrailerVideo stv = new ShowTrailerVideo(ShowTrailer);
-                    this.Invoke(stv, new object[] { MP4URL });
+
+                    string[] pathSplit = resp.ResponseUri.PathAndQuery.Split('/');
+
+                    string MP4URL = "http://" + resp.ResponseUri.Host + "/" + pathSplit[1] + "/";
+
+                    string str = "";
+                    using (Stream responseStream = resp.GetResponseStream())
+                    {
+                        using (StreamReader sr = new StreamReader(responseStream))
+                        {
+                            str = sr.ReadToEnd();
+                        }
+                    }
+
+                    Regex r = new Regex("(([a-zA-Z]|[0-9])[0-9]*_[0-9]*).mp4");
+                    Match m = r.Match(str);
+
+                    MP4URL += m.Groups[0].Value;
+
+                    try
+                    {
+                        ShowTrailerVideo stv = new ShowTrailerVideo(ShowTrailer);
+                        this.Invoke(stv, new object[] { MP4URL });
+                    }
+                    catch (ObjectDisposedException) { }
                 }
-                catch (ObjectDisposedException) { }
             }
             catch (Exception e)
             {

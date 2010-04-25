@@ -172,13 +172,17 @@ namespace ImdbMobile.IMDBData
                 string RequestURL = BaseURL + "&sig=" + sig;
                 WebRequest webReq = (WebRequest)HttpWebRequest.Create(RequestURL + "-" + EncodeURL(RequestURL));
 
-                HttpWebResponse resp = (HttpWebResponse)webReq.GetResponse();
-
-                Stream s = resp.GetResponseStream();
-                StreamReader sr = new StreamReader(s);
-                string Result = sr.ReadToEnd();
-                sr.Close();
-                resp.Close();
+                string Result = "";
+                using (HttpWebResponse resp = (HttpWebResponse)webReq.GetResponse())
+                {
+                    using (Stream s = resp.GetResponseStream())
+                    {
+                        using (StreamReader sr = new StreamReader(s))
+                        {
+                            Result = sr.ReadToEnd();
+                        }
+                    }
+                }
 
                 return Result;
             }
