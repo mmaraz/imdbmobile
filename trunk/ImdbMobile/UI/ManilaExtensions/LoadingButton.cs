@@ -43,9 +43,12 @@ namespace ImdbMobile.UI
             this.Height = 0;
             this.Height += (PaddingBottom + PaddingTop);
 
-            SizeF textSize = Extensions.MeasureStringExtended(Parent.CreateGraphics(), _text, _mainFont, this.Parent.Width);
-            _textHeight = (int)textSize.Height;
-            this.Height += (int)textSize.Height;
+            using (Graphics g = Parent.CreateGraphics())
+            {
+                SizeF textSize = Extensions.MeasureStringExtended(g, _text, _mainFont, this.Parent.Width);
+                _textHeight = (int)textSize.Height;
+                this.Height += (int)textSize.Height;
+            }
         }
 
         public void Render(Graphics g, Rectangle Bounds, bool Param)

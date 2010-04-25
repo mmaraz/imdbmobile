@@ -92,68 +92,72 @@ namespace ImdbMobile.UI
             this.Height = 0;
             this.Height += (PaddingBottom + PaddingTop);
 
-            Graphics gHolder = Parent.CreateGraphics();
+            SizeF TitleSize = new SizeF();
 
-            // Movie Title
-            SizeF TitleSize = Extensions.MeasureStringExtended(gHolder, this.MovieTitle, _bold, (this.Parent.Width - 200));
-            this.Height = 220 + (int)TitleSize.Height + PaddingBottom + PaddingTop;
-            gHolder.Dispose();
+            using (Graphics gHolder = Parent.CreateGraphics())
+            {
+
+                // Movie Title
+                TitleSize = Extensions.MeasureStringExtended(gHolder, this.MovieTitle, _bold, (this.Parent.Width - 200));
+                this.Height = 220 + (int)TitleSize.Height + PaddingBottom + PaddingTop;
+            }
 
             this.DrawnImage = new Bitmap(480, this.Height);
 
-            Graphics g = Graphics.FromImage(this.DrawnImage);
-            g.Clear(Color.LightGoldenrodYellow);
+            using (Graphics g = Graphics.FromImage(this.DrawnImage))
+            {
+                g.Clear(Color.LightGoldenrodYellow);
 
-            if (this.BackgroundColor != Color.Empty)
-            {
-                g.FillRectangle(new SolidBrush(this.BackgroundColor), 0, 0, 480, this.Height*2);
-            }
-            else
-            {
-                g.FillRectangle(new SolidBrush(Color.LightGoldenrodYellow), 0, 0, 480, this.Height*2);
-            }
-            if (this.Icon != null)
-            {
-                g.DrawImage(this.Icon, 5, PaddingTop);
-            }
-            else
-            {
-                g.DrawRectangle(new Pen(Color.Black), new Rectangle(5, PaddingTop, 98, 140));
-            }
-            StringFormat sf = new StringFormat();
-            int TitleY = PaddingTop;
+                if (this.BackgroundColor != Color.Empty)
+                {
+                    g.FillRectangle(new SolidBrush(this.BackgroundColor), 0, 0, 480, this.Height * 2);
+                }
+                else
+                {
+                    g.FillRectangle(new SolidBrush(Color.LightGoldenrodYellow), 0, 0, 480, this.Height * 2);
+                }
+                if (this.Icon != null)
+                {
+                    g.DrawImage(this.Icon, 5, PaddingTop);
+                }
+                else
+                {
+                    g.DrawRectangle(new Pen(Color.Black), new Rectangle(5, PaddingTop, 98, 140));
+                }
+                StringFormat sf = new StringFormat();
+                int TitleY = PaddingTop;
 
-            g.DrawString(this.MovieTitle, _bold, new SolidBrush(Color.Black), new RectangleF(15 + 108, TitleY, (this.DrawnImage.Width - 200), TitleSize.Height));
-            TitleY += ((int)TitleSize.Height - 25);
-            int CurrX = 15 + 108;
+                g.DrawString(this.MovieTitle, _bold, new SolidBrush(Color.Black), new RectangleF(15 + 108, TitleY, (this.DrawnImage.Width - 200), TitleSize.Height));
+                TitleY += ((int)TitleSize.Height - 25);
+                int CurrX = 15 + 108;
 
-            int intRating = (int)Math.Floor(this.Rating);
-            for (int i = 0; i < intRating; i++)
-            {
-                g.DrawImage(global::ImdbMobile.Properties.Resources.star_over, CurrX, TitleY + 30);
-                CurrX += 20;
-            }
-            for (int i = intRating; i < 10; i++)
-            {
-                g.DrawImage(global::ImdbMobile.Properties.Resources.star_out, CurrX, TitleY + 30);
-                CurrX += 20;
-            }
-            g.DrawString("" + this.Rating, _bold, new SolidBrush(Color.Black), CurrX + 15, TitleY + 25);
+                int intRating = (int)Math.Floor(this.Rating);
+                for (int i = 0; i < intRating; i++)
+                {
+                    g.DrawImage(global::ImdbMobile.Properties.Resources.star_over, CurrX, TitleY + 30);
+                    CurrX += 20;
+                }
+                for (int i = intRating; i < 10; i++)
+                {
+                    g.DrawImage(global::ImdbMobile.Properties.Resources.star_out, CurrX, TitleY + 30);
+                    CurrX += 20;
+                }
+                g.DrawString("" + this.Rating, _bold, new SolidBrush(Color.Black), CurrX + 15, TitleY + 25);
 
-            TitleY -= 25;
-            g.DrawString(UI.Translations.GetTranslated("0083") + ":", _unbold, new SolidBrush(Color.Black), 15 + 108, (74 + TitleY));
-            g.DrawString(this.Director, _bold, new SolidBrush(Color.Black), 15 + 108, (96 + TitleY));
-            g.DrawString(UI.Translations.GetTranslated("0084") + ":", _unbold, new SolidBrush(Color.Black), 15 + 108, (123 + TitleY));
-            g.DrawString(this.Writer, _bold, new SolidBrush(Color.Black), 15 + 108, (145 + TitleY));
-            g.DrawString(UI.Translations.GetTranslated("0085") + ":", _unbold, new SolidBrush(Color.Black), 15 + 108, (171 + TitleY));
-            g.DrawString(this.Genres, _bold, new SolidBrush(Color.Black), 15 + 108, (194 + TitleY));
-            if (this.Certificate != null)
-            {
-                g.DrawString(UI.Translations.GetTranslated("0086") + ":", _unbold, new SolidBrush(Color.Black), 15 + 108, (219 + TitleY));
-                g.DrawString(this.Certificate, _bold, new SolidBrush(Color.Black), 15 + 108, (242 + TitleY));
-            }
+                TitleY -= 25;
+                g.DrawString(UI.Translations.GetTranslated("0083") + ":", _unbold, new SolidBrush(Color.Black), 15 + 108, (74 + TitleY));
+                g.DrawString(this.Director, _bold, new SolidBrush(Color.Black), 15 + 108, (96 + TitleY));
+                g.DrawString(UI.Translations.GetTranslated("0084") + ":", _unbold, new SolidBrush(Color.Black), 15 + 108, (123 + TitleY));
+                g.DrawString(this.Writer, _bold, new SolidBrush(Color.Black), 15 + 108, (145 + TitleY));
+                g.DrawString(UI.Translations.GetTranslated("0085") + ":", _unbold, new SolidBrush(Color.Black), 15 + 108, (171 + TitleY));
+                g.DrawString(this.Genres, _bold, new SolidBrush(Color.Black), 15 + 108, (194 + TitleY));
+                if (this.Certificate != null)
+                {
+                    g.DrawString(UI.Translations.GetTranslated("0086") + ":", _unbold, new SolidBrush(Color.Black), 15 + 108, (219 + TitleY));
+                    g.DrawString(this.Certificate, _bold, new SolidBrush(Color.Black), 15 + 108, (242 + TitleY));
+                }
 
-            g.Dispose();
+            }
         }
 
         public void Render(Graphics g, Rectangle Bounds, bool Param)

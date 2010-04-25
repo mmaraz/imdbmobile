@@ -83,22 +83,30 @@ namespace ImdbMobile.Controls
 
         private void ShowData()
         {
-            ClearList ShowLoading = delegate
+            try
             {
                 try
                 {
-                    if (this.kListControl1[0].GetType() == typeof(UI.PagerDisplay))
+                    ClearList ShowLoading = delegate
                     {
-                        UI.PagerDisplay pd = (UI.PagerDisplay)this.kListControl1[0];
-                        pd.CurrentPage = CurrentPage + 1;
-                        this.kListControl1.Clear();
-                        this.kListControl1.AddItem(pd);
-                    }
+                        try
+                        {
+                            if (this.kListControl1[0].GetType() == typeof(UI.PagerDisplay))
+                            {
+                                UI.PagerDisplay pd = (UI.PagerDisplay)this.kListControl1[0];
+                                pd.CurrentPage = CurrentPage + 1;
+                                this.kListControl1.Clear();
+                                this.kListControl1.AddItem(pd);
+                            }
+                        }
+                        catch (Exception) { }
+                        UI.KListFunctions.ShowLoading(UI.Translations.GetTranslated("0018") + ".\n" + UI.Translations.GetTranslated("0002") + "...", this.LoadingList);
+                    };
+                    this.Invoke(ShowLoading);
                 }
-                catch (Exception) { }
-                UI.KListFunctions.ShowLoading(UI.Translations.GetTranslated("0018") + ".\n" + UI.Translations.GetTranslated("0002") + "...", this.LoadingList);
-            };
-            this.Invoke(ShowLoading);
+                catch (ObjectDisposedException) { }
+            }
+            catch (ObjectDisposedException) { }
 
             int Start = CurrentPage * SettingsWrapper.GlobalSettings.NumToDisplay;
             int Take = SettingsWrapper.GlobalSettings.NumToDisplay;
@@ -117,15 +125,23 @@ namespace ImdbMobile.Controls
                 }
                 mpi.YIndex = Counter;
                 mpi.OnClick += new MichyPrima.ManilaDotNetSDK.ManilaPanelItem.OnClickEventHandler(mpi_OnClick);
-                AddMovieItem ami = new AddMovieItem(AddItem);
-                this.Invoke(ami, new object[] { mpi });
+                try
+                {
+                    AddMovieItem ami = new AddMovieItem(AddItem);
+                    this.Invoke(ami, new object[] { mpi });
 
-                UpdateStatus us = new UpdateStatus(Update);
-                this.Invoke(us, new object[] { Counter, Take });
+                    UpdateStatus us = new UpdateStatus(Update);
+                    this.Invoke(us, new object[] { Counter, Take });
+                }
+                catch (ObjectDisposedException) { }
                 Counter++;
             }
-            ClearList cl = new ClearList(Clear);
-            this.Invoke(cl);
+            try
+            {
+                ClearList cl = new ClearList(Clear);
+                this.Invoke(cl);
+            }
+            catch (ObjectDisposedException) { }
         }
 
         private void SetImdbInformation(ImdbActor actor)
@@ -136,20 +152,24 @@ namespace ImdbMobile.Controls
 
                 if (CurrentActor.KnownForFull.Count > SettingsWrapper.GlobalSettings.NumToDisplay)
                 {
-                    TotalPages = (int)Math.Ceiling((double)CurrentActor.KnownForFull.Count / (double)SettingsWrapper.GlobalSettings.NumToDisplay);
-                    ClearList Pager = delegate
+                    try
                     {
-                        UI.PagerDisplay pd = new ImdbMobile.UI.PagerDisplay();
-                        pd.TotalPages = TotalPages;
-                        pd.CurrentPage = 1;
-                        pd.Parent = this.kListControl1;
-                        pd.YIndex = 0;
-                        pd.Next += new ImdbMobile.UI.PagerDisplay.MouseEvent(pd_Next);
-                        pd.Previous += new ImdbMobile.UI.PagerDisplay.MouseEvent(pd_Previous);
-                        pd.CalculateHeight();
-                        this.kListControl1.AddItem(pd);
-                    };
-                    this.Invoke(Pager);
+                        TotalPages = (int)Math.Ceiling((double)CurrentActor.KnownForFull.Count / (double)SettingsWrapper.GlobalSettings.NumToDisplay);
+                        ClearList Pager = delegate
+                        {
+                            UI.PagerDisplay pd = new ImdbMobile.UI.PagerDisplay();
+                            pd.TotalPages = TotalPages;
+                            pd.CurrentPage = 1;
+                            pd.Parent = this.kListControl1;
+                            pd.YIndex = 0;
+                            pd.Next += new ImdbMobile.UI.PagerDisplay.MouseEvent(pd_Next);
+                            pd.Previous += new ImdbMobile.UI.PagerDisplay.MouseEvent(pd_Previous);
+                            pd.CalculateHeight();
+                            this.kListControl1.AddItem(pd);
+                        };
+                        this.Invoke(Pager);
+                    }
+                    catch (ObjectDisposedException) { }
                 }
 
                 TotalPages = 1;
@@ -192,8 +212,12 @@ namespace ImdbMobile.Controls
                 IMDBData.FilmographyParser fp = new ImdbMobile.IMDBData.FilmographyParser(CurrentActor);
                 ImdbActor actor = fp.ParseDetails();
 
-                SetInformation si = new SetInformation(SetImdbInformation);
-                this.Invoke(si, new object[] { actor });
+                try
+                {
+                    SetInformation si = new SetInformation(SetImdbInformation);
+                    this.Invoke(si, new object[] { actor });
+                }
+                catch (ObjectDisposedException) { }
             }
             catch (Exception e)
             {

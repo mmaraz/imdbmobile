@@ -85,95 +85,102 @@ public static class Extensions
 
     public static SizeF MeasureStringExtended(Graphics g, string text, Font font, int desWidth)
     {
-        string tempString = text;
-        string workString = "";
-        string outputstring = "";
-        int npos = 1;
-        int sp_pos = 0;
-        int sp_pos1 = 0;
-        int sp_pos2 = 0;
-        int sp_pos3 = 0;
-        bool bNeeded = false;
-        int line = 0;
-        int nWidth = 0;
-
-        //get original size
-        SizeF size = g.MeasureString(text, font);
-
-        if (size.Width > desWidth)
+        try
         {
-            while (tempString.Length > 0)
-            {
-                //Check for the last lane
-                if (npos > tempString.Length)
-                {
-                    outputstring = outputstring + tempString;
-                    line++;
-                    break;
-                }
-                workString = tempString.Substring(0, npos);
-                //get the current width
-                nWidth = (int)g.MeasureString(workString, font).Width;
-                //check if we've got out of the destWidth
-                if (nWidth > desWidth)
-                {
-                    //try to find a space
+            string tempString = text;
+            string workString = "";
+            string outputstring = "";
+            int npos = 1;
+            int sp_pos = 0;
+            int sp_pos1 = 0;
+            int sp_pos2 = 0;
+            int sp_pos3 = 0;
+            bool bNeeded = false;
+            int line = 0;
+            int nWidth = 0;
 
-                    sp_pos1 = workString.LastIndexOf(" ");
-                    sp_pos2 = workString.LastIndexOf(";");
-                    sp_pos3 = workString.IndexOf("\r\n");
-                    if (sp_pos3 > 0)
+            //get original size
+            SizeF size = g.MeasureString(text, font);
+
+            if (size.Width > desWidth)
+            {
+                while (tempString.Length > 0)
+                {
+                    //Check for the last lane
+                    if (npos > tempString.Length)
                     {
-                        sp_pos = sp_pos3;
-                        bNeeded = false;
+                        outputstring = outputstring + tempString;
+                        line++;
+                        break;
                     }
-                    else
+                    workString = tempString.Substring(0, npos);
+                    //get the current width
+                    nWidth = (int)g.MeasureString(workString, font).Width;
+                    //check if we've got out of the destWidth
+                    if (nWidth > desWidth)
                     {
-                        if ((sp_pos2 > 0) && (sp_pos2 > sp_pos1))
+                        //try to find a space
+
+                        sp_pos1 = workString.LastIndexOf(" ");
+                        sp_pos2 = workString.LastIndexOf(";");
+                        sp_pos3 = workString.IndexOf("\r\n");
+                        if (sp_pos3 > 0)
                         {
-                            sp_pos = sp_pos2;
-                            bNeeded = true;
-                        }
-                        else if (sp_pos1 > 0)
-                        {
-                            sp_pos = sp_pos1;
-                            bNeeded = true;
+                            sp_pos = sp_pos3;
+                            bNeeded = false;
                         }
                         else
                         {
-                            sp_pos = 0;
-                            bNeeded = true;
+                            if ((sp_pos2 > 0) && (sp_pos2 > sp_pos1))
+                            {
+                                sp_pos = sp_pos2;
+                                bNeeded = true;
+                            }
+                            else if (sp_pos1 > 0)
+                            {
+                                sp_pos = sp_pos1;
+                                bNeeded = true;
+                            }
+                            else
+                            {
+                                sp_pos = 0;
+                                bNeeded = true;
+                            }
+                        }
+
+                        if (sp_pos > 0)
+                        {
+                            //cut out the wrap lane we've found
+                            outputstring = outputstring + tempString.Substring(0, sp_pos + 1);
+                            if (bNeeded) outputstring = outputstring + "\r\n";
+                            tempString = tempString.Substring((sp_pos + 1), tempString.Length - (sp_pos + 1));
+                            line++;
+                            npos = 0;
+                        }
+                        else //no space
+                        {
+                            outputstring = outputstring + tempString.Substring(0, npos + 1);
+                            if (bNeeded) outputstring = outputstring + "\r\n";
+                            tempString = tempString.Substring(npos, tempString.Length - npos);
+                            line++;
+                            npos = 0;
+
                         }
                     }
-
-                    if (sp_pos > 0)
-                    {
-                        //cut out the wrap lane we've found
-                        outputstring = outputstring + tempString.Substring(0, sp_pos + 1);
-                        if (bNeeded) outputstring = outputstring + "\r\n";
-                        tempString = tempString.Substring((sp_pos + 1), tempString.Length - (sp_pos + 1));
-                        line++;
-                        npos = 0;
-                    }
-                    else //no space
-                    {
-                        outputstring = outputstring + tempString.Substring(0, npos + 1);
-                        if (bNeeded) outputstring = outputstring + "\r\n";
-                        tempString = tempString.Substring(npos, tempString.Length - npos);
-                        line++;
-                        npos = 0;
-
-                    }
+                    npos++;
                 }
-                npos++;
             }
-        }
-        else
-        {
-            outputstring = text;
-        }
+            else
+            {
+                outputstring = text;
+            }
 
-        SizeF returnSize = g.MeasureString(outputstring, font);
-        return returnSize;
+            SizeF returnSize = g.MeasureString(outputstring, font);
+            return returnSize;
+        }
+        catch (Exception e)
+        {
+            return new SizeF();
+        }
     }
 }

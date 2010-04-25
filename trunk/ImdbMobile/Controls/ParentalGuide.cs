@@ -55,8 +55,12 @@ namespace ImdbMobile.Controls
                 Dictionary<string, string> ParentalGuide = tgp.ParseParentalGuide(this.CurrentTitle);
                 this.CurrentTitle.ParentalGuide = ParentalGuide;
 
-                LoadImdbInformation li = new LoadImdbInformation(SetImdbInformation);
-                this.Invoke(li, new object[] { this.CurrentTitle });
+                try
+                {
+                    LoadImdbInformation li = new LoadImdbInformation(SetImdbInformation);
+                    this.Invoke(li, new object[] { this.CurrentTitle });
+                }
+                catch (ObjectDisposedException) { }
             }
             catch (Exception e)
             {
@@ -82,12 +86,16 @@ namespace ImdbMobile.Controls
                     td.Parent = this.kListControl1;
                     td.Text = kvp.Value;
                     td.YIndex = Counter;
-                    td.CalculateHeight(this.kListControl1.Width);
+                    td.CalculateHeight();
                     this.kListControl1.AddItem(td);
                     Counter++;
 
-                    UpdateStatus us = new UpdateStatus(Update);
-                    this.Invoke(us, new object[] { td.YIndex + 1, title.ParentalGuide.Count });
+                    try
+                    {
+                        UpdateStatus us = new UpdateStatus(Update);
+                        this.Invoke(us, new object[] { td.YIndex + 1, title.ParentalGuide.Count });
+                    }
+                    catch (ObjectDisposedException) { }
                 }
                 this.LoadingList.Visible = false;
             }

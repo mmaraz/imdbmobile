@@ -14,7 +14,7 @@ namespace ImdbMobile.Controls
     {
         private static ImdbTitle CurrentTitle;
         private static int ListWidth;
-        private delegate void AddQuoteItem(UI.QuoteItem qi);
+        private delegate void AddQuoteItem();
         private delegate void LoadingDone();
         private delegate void ShowError(string Error);
         System.Threading.Thread LoadingThread;
@@ -64,86 +64,61 @@ namespace ImdbMobile.Controls
             catch (ObjectDisposedException) { }
         }
 
-        private void AddQuote(UI.QuoteItem qi)
+        private void AddQuotes()
         {
             try
             {
-                this.kListControl1.AddItem(qi);
+                if (CurrentTitle.Quotes.Count == 0)
+                {
+                    try
+                    {
+                        ShowError sr = new ShowError(SetError);
+                        this.Invoke(sr, new object[] { UI.Translations.GetTranslated("0054") });
+                    }
+                    catch (Exception) { }
+                    return;
+                }
+
+                List<UI.QuoteItem> qList = new List<ImdbMobile.UI.QuoteItem>();
+                foreach (ImdbQuoteSection iqs in CurrentTitle.Quotes)
+                {
+                    UI.QuoteItem qi = new ImdbMobile.UI.QuoteItem();
+                    qi.QuoteSection = iqs;
+                    qi.YIndex = CurrentTitle.Quotes.IndexOf(iqs);
+                    qi.Parent = this.kListControl1;
+                    qi.ListWidth = ListWidth;
+                    qi.CalculateHeight();
+                    qList.Add(qi);
+                }
+                foreach (UI.QuoteItem qi in qList)
+                {
+                    this.kListControl1.AddItem(qi);
+                    Update(qList.IndexOf(qi), qList.Count);
+                }
+
+                try
+                {
+                    ClearList cl = new ClearList(Clear);
+                    this.Invoke(cl);
+                }
+                catch (ObjectDisposedException) { }
             }
             catch (ObjectDisposedException) { }
         }
 
-        private void NextPage()
-        {
-            if (CurrentPage < TotalPages - 1)
-            {
-                CurrentPage++;
-                ShowData();
-            }
-        }
-
-        private void PrevPage()
-        {
-            if (CurrentPage > 0)
-            {
-                CurrentPage--;
-                ShowData();
-            }
-        }
-
         private void ShowData()
         {
-            ClearList ShowLoading = delegate
+
+            try
             {
-                try
-                {
-                    if (this.kListControl1[0].GetType() == typeof(UI.PagerDisplay))
-                    {
-                        UI.PagerDisplay pd = (UI.PagerDisplay)this.kListControl1[0];
-                        pd.CurrentPage = CurrentPage + 1;
-                        this.kListControl1.Clear();
-                        this.kListControl1.AddItem(pd);
-                    }
-                }
-                catch (Exception) { }
-                UI.KListFunctions.ShowLoading(UI.Translations.GetTranslated("0018") + ".\n" + UI.Translations.GetTranslated("0002") + "...", this.LoadingKlist);
-            };
-            this.Invoke(ShowLoading);
-
-            int Start = CurrentPage * SettingsWrapper.GlobalSettings.NumToDisplay;
-            int Take = SettingsWrapper.GlobalSettings.NumToDisplay;
-            int Counter = 1;
-
-            foreach (ImdbQuoteSection iqs in CurrentTitle.Quotes.Skip(Start).Take(Take))
-            {
-                UI.QuoteItem qi = new ImdbMobile.UI.QuoteItem();
-                qi.QuoteSection = iqs;
-                qi.YIndex = Counter;
-                qi.Parent = this.kListControl1;
-                qi.ListWidth = ListWidth;
-                qi.CalculateHeight();
-
-                AddQuoteItem aqi = new AddQuoteItem(AddQuote);
-                this.Invoke(aqi, new object[] { qi });
-
-                UpdateStatus us = new UpdateStatus(Update);
-                this.Invoke(us, new object[] { Counter, Take });
-
-                Counter++;
+                AddQuoteItem aqi = new AddQuoteItem(AddQuotes);
+                this.Invoke(aqi);
             }
+            catch (ObjectDisposedException) { }
 
-            ClearList cl = new ClearList(Clear);
-            this.Invoke(cl);
+            
 
-            if (CurrentTitle.Quotes.Count == 0)
-            {
-                try
-                {
-                    ShowError sr = new ShowError(SetError);
-                    this.Invoke(sr, new object[] { UI.Translations.GetTranslated("0054") });
-                }
-                catch (Exception) { }
-            }
+            
         }
 
         private void LoadImdbInformation()
@@ -153,27 +128,7 @@ namespace ImdbMobile.Controls
                 TitleQuoteParser tqp = new TitleQuoteParser();
                 ImdbTitle title = tqp.ParseQuotes(CurrentTitle);
 
-                if (CurrentTitle.Quotes.Count > SettingsWrapper.GlobalSettings.NumToDisplay)
-                {
-                    TotalPages = (int)Math.Ceiling((double)CurrentTitle.Quotes.Count / (double)SettingsWrapper.GlobalSettings.NumToDisplay);
-                    ClearList Pager = delegate
-                    {
-                        UI.PagerDisplay pd = new ImdbMobile.UI.PagerDisplay();
-                        pd.TotalPages = TotalPages;
-                        pd.CurrentPage = 1;
-                        pd.Parent = this.kListControl1;
-                        pd.YIndex = 0;
-                        pd.Next += new ImdbMobile.UI.PagerDisplay.MouseEvent(pd_Next);
-                        pd.Previous += new ImdbMobile.UI.PagerDisplay.MouseEvent(pd_Previous);
-                        pd.CalculateHeight();
-                        this.kListControl1.AddItem(pd);
-                    };
-                    this.Invoke(Pager);
-                }
-
-                TotalPages = 1;
-                CurrentPage = -1;
-                NextPage();
+                ShowData();
             }
             catch (Exception e)
             {
@@ -184,16 +139,6 @@ namespace ImdbMobile.Controls
                 }
                 catch (Exception) { }
             }
-        }
-
-        void pd_Previous(int X, int Y, MichyPrima.ManilaDotNetSDK.KListControl Parent, ImdbMobile.UI.PagerDisplay Sender)
-        {
-            PrevPage();
-        }
-
-        void pd_Next(int X, int Y, MichyPrima.ManilaDotNetSDK.KListControl Parent, ImdbMobile.UI.PagerDisplay Sender)
-        {
-            NextPage();
         }
     }
 }

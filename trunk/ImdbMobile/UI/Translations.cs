@@ -34,7 +34,7 @@ namespace ImdbMobile.UI
             }
             else
             {
-                return "";
+                return node.Attributes["English"].InnerText;
             }
         }
     }

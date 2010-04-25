@@ -62,77 +62,84 @@ namespace ImdbMobile.UI
             PaddingBottom = 5;
         }
 
-        public void CalculateHeight(int ParentWidth)
+        public void CalculateHeight()
         {
+            int ParentWidth = UI.WindowHandler.ParentForm.Width;
+
             this.Height = 0;
             this.Height += (PaddingBottom + PaddingTop);
 
-            Graphics graphicsHolder = Graphics.FromImage(new Bitmap(1, 1));
-
-            // Heading
-            HeadingSize = Extensions.MeasureStringExtended(graphicsHolder, _heading, _bold, ParentWidth - 57);
-            this.Height += (int)HeadingSize.Height;
-
-            // Body
-            TextSize = Extensions.MeasureStringExtended(graphicsHolder, _text, _unbold, ParentWidth - 57);
-            this.Height += (int)TextSize.Height + 25;
-
-            // If it has an icon, ensure that the height is at least 48 + Padding
-            if (this.Icon != null && (this.Height < 48 + PaddingBottom + PaddingTop))
+            using (Graphics graphicsHolder = Parent.CreateGraphics())
             {
-                this.Height = 48 + PaddingTop + PaddingBottom;
-            }
+                // Heading
+                HeadingSize = Extensions.MeasureStringExtended(graphicsHolder, _heading, _bold, ParentWidth - 57);
+                this.Height += (int)HeadingSize.Height;
 
-            graphicsHolder.Dispose();
+                // Body
+                TextSize = Extensions.MeasureStringExtended(graphicsHolder, _text, _unbold, ParentWidth - 57);
+                this.Height += (int)TextSize.Height;
 
-            this.DrawnImage = new Bitmap(480, this.Height);
-
-            Graphics g = Graphics.FromImage(this.DrawnImage);
-            if (this.BackgroundColor != Color.Empty)
-            {
-                g.Clear(this.BackgroundColor);
-            }
-            else
-            {
-                g.Clear(Color.LightGoldenrodYellow);
-            }
-            if (this.Icon != null)
-            {
-                int Y = Bounds.Y + PaddingTop;
-                g.DrawImage(this.Icon, 5, Y);
-                if (this.Heading != null)
+                // If it has an icon, ensure that the height is at least 48 + Padding
+                if (this.Icon != null && (this.Height < this.Icon.Height + PaddingBottom + PaddingTop))
                 {
-                    g.DrawString(this.Heading, _bold, new SolidBrush(Color.Black), new RectangleF(53, Y, (ParentWidth - 53), HeadingSize.Height));
-                    Y += (int)HeadingSize.Height + 5;
+                    this.Height = this.Icon.Height + PaddingTop + PaddingBottom;
                 }
-                g.DrawString(this.Text, _unbold, new SolidBrush(Color.Black), new RectangleF(53, Y, (ParentWidth - 53), TextSize.Height));
-                Y += (int)TextSize.Height + 15;
+
                 if (this.ShowSeparator)
                 {
-                    g.DrawLine(new Pen(Color.Black), 53, Y, (ParentWidth - 53), Y);
+                    this.Height += 18;
                 }
             }
-            else
+
+            this.DrawnImage = new Bitmap(UI.WindowHandler.ParentForm.Width, this.Height);
+
+            using (Graphics g = Graphics.FromImage(this.DrawnImage))
             {
-                int Y = Bounds.Y + PaddingTop;
-                if (this.Heading != null)
+                if (this.BackgroundColor != Color.Empty)
                 {
-                    g.DrawString(this.Heading, _bold, new SolidBrush(Color.Black), new RectangleF(5, Y, (ParentWidth - 5), HeadingSize.Height));
-                    Y += (int)HeadingSize.Height + 5;
+                    g.Clear(this.BackgroundColor);
                 }
-                g.DrawString(this.Text, _unbold, new SolidBrush(Color.Black), new RectangleF(5, Y, (ParentWidth - 5), TextSize.Height));
-                Y += (int)TextSize.Height + 15;
-                if (this.ShowSeparator)
+                else
                 {
-                    g.DrawLine(new Pen(Color.Black), 5, Y, (ParentWidth - 5), Y);
+                    g.Clear(Color.LightGoldenrodYellow);
+                }
+                if (this.Icon != null)
+                {
+                    int Y = Bounds.Y + PaddingTop;
+                    g.DrawImage(this.Icon, 5, Y);
+                    if (this.Heading != null)
+                    {
+                        g.DrawString(this.Heading, _bold, new SolidBrush(Color.Black), new RectangleF(53, Y, (ParentWidth - 53), HeadingSize.Height));
+                        Y += (int)HeadingSize.Height + 5;
+                    }
+                    g.DrawString(this.Text, _unbold, new SolidBrush(Color.Black), new RectangleF(53, Y, (ParentWidth - 53), TextSize.Height));
+                    Y += (int)TextSize.Height + 15;
+                    if (this.ShowSeparator)
+                    {
+                        g.DrawLine(new Pen(Color.Black), 53, Y, (ParentWidth - 53), Y);
+                    }
+                }
+                else
+                {
+                    int Y = Bounds.Y + PaddingTop;
+                    if (this.Heading != null)
+                    {
+                        g.DrawString(this.Heading, _bold, new SolidBrush(Color.Black), new RectangleF(5, Y, (ParentWidth - 5), HeadingSize.Height));
+                        Y += (int)HeadingSize.Height + 5;
+                    }
+                    g.DrawString(this.Text, _unbold, new SolidBrush(Color.Black), new RectangleF(5, Y, (ParentWidth - 5), TextSize.Height));
+                    Y += (int)TextSize.Height + 15;
+                    if (this.ShowSeparator)
+                    {
+                        g.DrawLine(new Pen(Color.Black), 5, Y, (ParentWidth - 5), Y);
+                    }
                 }
             }
         }
 
         public void Render(Graphics g, Rectangle Bounds, bool Param)
         {
-            int CurrY = Bounds.Y + PaddingTop;
-            g.DrawImage(this.DrawnImage, 0, Bounds.Y + PaddingTop);
+            g.DrawImage(this.DrawnImage, 0, Bounds.Y);
         }
 
         public void OnMouseDown(int X, int Y, ref bool IsSamePoint)

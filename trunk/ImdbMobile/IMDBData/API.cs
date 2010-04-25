@@ -157,28 +157,33 @@ namespace ImdbMobile.IMDBData
 
         public string GetResponse(string Function, Dictionary<string, string> Arguments)
         {
-            string BaseURL = "http://app.imdb.com/" + Function + "?api=" + api + "&appid=" + appid + "&locale=" + locale + "&timestamp=" + GetTimestamp() + "&";
-            if (Arguments.Count > 0)
+            try
             {
-                foreach (KeyValuePair<string, string> kvp in Arguments)
+                string BaseURL = "http://app.imdb.com/" + Function + "?api=" + api + "&appid=" + appid + "&locale=" + locale + "&timestamp=" + GetTimestamp() + "&";
+                if (Arguments.Count > 0)
                 {
-                    BaseURL += kvp.Key + "=" + kvp.Value + "&";
+                    foreach (KeyValuePair<string, string> kvp in Arguments)
+                    {
+                        BaseURL += kvp.Key + "=" + kvp.Value + "&";
+                    }
                 }
+                BaseURL = BaseURL.TrimEnd(new char[] { '&' });
+                BaseURL = BaseURL.TrimEnd(new char[] { '&' });
+                string RequestURL = BaseURL + "&sig=" + sig;
+                WebRequest webReq = (WebRequest)HttpWebRequest.Create(RequestURL + "-" + EncodeURL(RequestURL));
+
+                HttpWebResponse resp = (HttpWebResponse)webReq.GetResponse();
+
+                Stream s = resp.GetResponseStream();
+                StreamReader sr = new StreamReader(s);
+                string Result = sr.ReadToEnd();
+                sr.Close();
+                resp.Close();
+
+                return Result;
             }
-            BaseURL = BaseURL.TrimEnd(new char[] { '&' });
-            BaseURL = BaseURL.TrimEnd(new char[] { '&' });
-            string RequestURL = BaseURL + "&sig=" + sig;
-            WebRequest webReq = (WebRequest)HttpWebRequest.Create(RequestURL + "-" + EncodeURL(RequestURL));
-
-            HttpWebResponse resp = (HttpWebResponse)webReq.GetResponse();
-
-            Stream s = resp.GetResponseStream();
-            StreamReader sr = new StreamReader(s);
-            string Result = sr.ReadToEnd();
-            sr.Close();
-            resp.Close();
-
-            return Result;
+            catch (ObjectDisposedException) { }
+            return "";
         }
 
         private string GetTimestamp()

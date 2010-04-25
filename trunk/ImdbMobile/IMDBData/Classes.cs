@@ -178,7 +178,9 @@ namespace ImdbMobile.IMDBData
         public enum VideoType
         {
             ThreeG,
-            EDGE
+            EDGE,
+            HD480p,
+            HD720p
         }
 
         public string VideoURL { get; set; }
