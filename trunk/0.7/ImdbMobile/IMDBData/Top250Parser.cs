@@ -6,17 +6,30 @@ using Newtonsoft.Json.Linq;
 
 namespace ImdbMobile.IMDBData
 {
-    class Top250Parser
+    class Top250Parser : APIParser
     {
+        public List<ImdbSearchResult> Results;
+
         public Top250Parser()
         {
 
         }
 
-        public List<ImdbSearchResult> ParseTop250()
+        public void ParseTop250()
         {
-            API a = new API();
-            string Response = a.GetTop250();
+            UI.WindowHandler.APIWorker = new API();
+            UI.WindowHandler.APIWorker.DataDownloaded += new EventHandler(APIWorker_DataDownloaded);
+            this.OnDownloadingData();
+            UI.WindowHandler.APIWorker.GetTop250();
+        }
+
+        void APIWorker_DataDownloaded(object sender, EventArgs e)
+        {
+            APIEvent ae = (APIEvent)e;
+            this.OnDownloadComplete(ae.EventData);
+
+            this.OnParsingData();
+            string Response = ae.EventData;
 
             List<ImdbSearchResult> isrList = new List<ImdbSearchResult>();
 
@@ -27,7 +40,7 @@ namespace ImdbMobile.IMDBData
                 if (General.ContainsKey(data, "list"))
                 {
                     JToken outerList = data["list"];
-                    if(General.ContainsKey(outerList, "list"))
+                    if (General.ContainsKey(outerList, "list"))
                     {
                         JToken innerList = outerList["list"];
 
@@ -48,7 +61,8 @@ namespace ImdbMobile.IMDBData
                 }
             }
 
-            return isrList;
+            this.Results = isrList;
+            this.OnParsingComplete();
         }
 
         private string ParseRating(JToken data)

@@ -6,17 +6,31 @@ using Newtonsoft.Json.Linq;
 
 namespace ImdbMobile.IMDBData
 {
-    class TitleEpisodeParser
+    class TitleEpisodeParser : APIParser
     {
+        public ImdbTitle Title;
+
         public TitleEpisodeParser()
         {
 
         }
 
-        public ImdbTitle ParseTitleEpisodes(ImdbTitle title)
+        public void ParseTitleEpisodes(ImdbTitle title)
         {
-            API a = new API();
-            string Response = a.GetTitleEpisodes(title.ImdbId);
+            this.Title = title;
+            UI.WindowHandler.APIWorker = new API();
+            UI.WindowHandler.APIWorker.DataDownloaded += new EventHandler(APIWorker_DataDownloaded);
+            this.OnDownloadingData();
+            UI.WindowHandler.APIWorker.GetTitleEpisodes(title.ImdbId);
+        }
+
+        void APIWorker_DataDownloaded(object sender, EventArgs e)
+        {
+            APIEvent ae = (APIEvent)e;
+            this.OnDownloadComplete(ae.EventData);
+
+            this.OnParsingData();
+            string Response = ae.EventData;
 
             List<ImdbSeason> Seasons = new List<ImdbSeason>();
             JObject Obj = JObject.Parse(Response);
@@ -50,8 +64,8 @@ namespace ImdbMobile.IMDBData
                     }
                 }
             }
-            title.Seasons = Seasons;
-            return title;
+            this.Title.Seasons = Seasons;
+            this.OnParsingComplete();
         }
     }
 }

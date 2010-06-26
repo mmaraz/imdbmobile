@@ -106,7 +106,7 @@ namespace ImdbMobile.UI
             }
         }
 
-        public void Render(Graphics g, Rectangle Bounds, bool Param)
+        public void Render(Graphics g, Rectangle Bounds)
         {
             int CurrY = Bounds.Y + PaddingTop;
             g.DrawImage(this.DrawnImage, 0, Bounds.Y + PaddingTop);
@@ -126,6 +126,11 @@ namespace ImdbMobile.UI
             {
                 MouseUp(X, Y, this.Parent);
             }
+        }
+
+        public void OnMouseMove(int X, int Y)
+        {
+
         }
     }
 }

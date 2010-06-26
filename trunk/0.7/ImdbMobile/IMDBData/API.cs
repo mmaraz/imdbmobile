@@ -5,25 +5,55 @@ using System.Text;
 using System.Net;
 using System.IO;
 using OpenNETCF.Security.Cryptography;
+using System.IO.Compression;
 
 namespace ImdbMobile.IMDBData
 {
     public class API
     {
+        public delegate void EventCallback();
+
+        public event EventHandler ResponseReceived;
+        public event EventHandler DataDownloaded;
+        public event EventHandler Error;
+
+        private RequestState CurrentState;
+
         string api = "v1";
         string appid = "iphone1";
         string locale = SettingsWrapper.GlobalSettings.Language.Locale;
         string sig = "app1";
         string apiKey = "2wex6aeu6a8q9e49k7sfvufd6rhh0n";
 
-        public API() {}
+        class RequestState
+        {
+            const int BufferSize = 1024;
+            public StringBuilder RequestData;
+            public byte[] BufferRead;
+            public WebRequest Request;
+            public Stream ResponseStream;
+            public GZipStream CompressedStream;
 
-        public string GetShowtimes(string Location, DateTime Date)
+            public RequestState()
+            {
+                BufferRead = new byte[BufferSize];
+                RequestData = new StringBuilder(String.Empty);
+                Request = null;
+                ResponseStream = null;
+            }
+        }
+
+        public API()
+        {
+            
+        }
+
+        public void GetShowtimes(string Location, DateTime Date)
         {
             Dictionary<string, string> n = new Dictionary<string, string>();
             n.Add("location", Location);
             n.Add("date", Date.Year + "-" + FormatInt(Date.Month) + "-" + FormatInt(Date.Day));
-            return GetResponse("showtimes/location", n);
+            GetResponse("showtimes/location", n);
         }
 
         private string FormatInt(int Integer)
@@ -35,127 +65,127 @@ namespace ImdbMobile.IMDBData
             return "" + Integer;
         }
 
-        public string GetParentalGuide(string tconst)
+        public void GetParentalGuide(string tconst)
         {
             Dictionary<string, string> n = new Dictionary<string, string>();
             n.Add("tconst", tconst);
-            return GetResponse("title/parentalguide", n);
+            GetResponse("title/parentalguide", n);
         }
 
-        public string GetUserReviews(string tconst)
+        public void GetUserReviews(string tconst)
         {
             Dictionary<string, string> n = new Dictionary<string, string>();
             n.Add("tconst", tconst);
-            return GetResponse("title/usercomments", n);
+            GetResponse("title/usercomments", n);
         }
 
-        public string GetExternalReviews(string tconst)
+        public void GetExternalReviews(string tconst)
         {
             Dictionary<string, string> n = new Dictionary<string, string>();
             n.Add("tconst", tconst);
-            return GetResponse("title/external_reviews", n);
+            GetResponse("title/external_reviews", n);
         }
 
-        public string GetComingSoon()
+        public void GetComingSoon()
         {
-            return GetResponse("feature/comingsoon");
+            GetResponse("feature/comingsoon");
         }
 
-        public string GetTop250()
+        public void GetTop250()
         {
-            return GetResponse("chart/top");
+            GetResponse("chart/top");
         }
 
-        public string GetActorQuotes(string nconst)
-        {
-            Dictionary<string, string> n = new Dictionary<string, string>();
-            n.Add("nconst", nconst);
-            return GetResponse("name/quotes", n);
-        }
-
-        public string GetActorTrivia(string nconst)
+        public void GetActorQuotes(string nconst)
         {
             Dictionary<string, string> n = new Dictionary<string, string>();
             n.Add("nconst", nconst);
-            return GetResponse("name/trivia", n);
+            GetResponse("name/quotes", n);
         }
 
-        public string GetActorFilmography(string nconst)
+        public void GetActorTrivia(string nconst)
         {
             Dictionary<string, string> n = new Dictionary<string, string>();
             n.Add("nconst", nconst);
-            return GetResponse("name/filmography", n);
+            GetResponse("name/trivia", n);
         }
 
-        public string GetActorDetails(string nconst)
+        public void GetActorFilmography(string nconst)
         {
             Dictionary<string, string> n = new Dictionary<string, string>();
             n.Add("nconst", nconst);
-            return GetResponse("name/maindetails", n);
+            GetResponse("name/filmography", n);
         }
 
-        public string GetTitleEpisodes(string tconst)
+        public void GetActorDetails(string nconst)
+        {
+            Dictionary<string, string> n = new Dictionary<string, string>();
+            n.Add("nconst", nconst);
+            GetResponse("name/maindetails", n);
+        }
+
+        public void GetTitleEpisodes(string tconst)
         {
             Dictionary<string, string> t = new Dictionary<string, string>();
             t.Add("tconst", tconst);
-            return GetResponse("title/episodes", t);
+            GetResponse("title/episodes", t);
         }
 
-        public string GetTitleGoofs(string tconst)
+        public void GetTitleGoofs(string tconst)
         {
             Dictionary<string, string> t = new Dictionary<string, string>();
             t.Add("tconst", tconst);
-            return GetResponse("title/goofs", t);
+            GetResponse("title/goofs", t);
         }
 
-        public string GetTitleQuotes(string tconst)
+        public void GetTitleQuotes(string tconst)
         {
             Dictionary<string, string> t = new Dictionary<string, string>();
             t.Add("tconst", tconst);
-            return GetResponse("title/quotes", t);
+            GetResponse("title/quotes", t);
         }
 
-        public string GetTitleTrivia(string tconst)
+        public void GetTitleTrivia(string tconst)
         {
             Dictionary<string, string> t = new Dictionary<string, string>();
             t.Add("tconst", tconst);
-            return GetResponse("title/trivia", t);
+            GetResponse("title/trivia", t);
         }
 
-        public string GetTitlePhotos(string tconst)
+        public void GetTitlePhotos(string tconst)
         {
             Dictionary<string, string> t = new Dictionary<string, string>();
             t.Add("tconst", tconst);
-            return GetResponse("title/photos", t);
+            GetResponse("title/photos", t);
         }
 
-        public string GetFullDetails(string tconst)
+        public void GetFullDetails(string tconst)
         {
             Dictionary<string, string> t = new Dictionary<string, string>();
             t.Add("tconst", tconst);
-            return GetResponse("title/maindetails", t);
+            GetResponse("title/maindetails", t);
         }
 
-        public string GetFullCast(string tconst)
+        public void GetFullCast(string tconst)
         {
             Dictionary<string, string> t = new Dictionary<string, string>();
             t.Add("tconst", tconst);
-            return GetResponse("title/fullcredits", t);
+            GetResponse("title/fullcredits", t);
         }
 
-        public string GetSearch(string Query)
+        public void GetSearch(string Query)
         {
             Dictionary<string, string> d = new Dictionary<string, string>();
             d.Add("q", URLEncode(Query));
-            return GetResponse("find", d);
+            GetResponse("find", d);
         }
 
-        public string GetResponse(string Function)
+        public void GetResponse(string Function)
         {
-            return GetResponse(Function, new Dictionary<string, string>());
+            GetResponse(Function, new Dictionary<string, string>());
         }
 
-        public string GetResponse(string Function, Dictionary<string, string> Arguments)
+        public void GetResponse(string Function, Dictionary<string, string> Arguments)
         {
             try
             {
@@ -170,24 +200,166 @@ namespace ImdbMobile.IMDBData
                 BaseURL = BaseURL.TrimEnd(new char[] { '&' });
                 BaseURL = BaseURL.TrimEnd(new char[] { '&' });
                 string RequestURL = BaseURL + "&sig=" + sig;
-                WebRequest webReq = (WebRequest)HttpWebRequest.Create(RequestURL + "-" + EncodeURL(RequestURL));
 
-                string Result = "";
-                using (HttpWebResponse resp = (HttpWebResponse)webReq.GetResponse())
+                System.Net.HttpWebRequest hwr = (HttpWebRequest)WebRequest.Create(BaseURL);
+                if (SettingsWrapper.GlobalSettings.UseCompression)
                 {
-                    using (Stream s = resp.GetResponseStream())
-                    {
-                        using (StreamReader sr = new StreamReader(s))
-                        {
-                            Result = sr.ReadToEnd();
-                        }
-                    }
+                    hwr.Headers.Add("Accept-Encoding: gzip,deflate");
+                }
+                this.CurrentState = new RequestState();
+                this.CurrentState.Request = hwr;
+
+                hwr.BeginGetResponse(new AsyncCallback(OnHTTPOK), this.CurrentState);
+            }
+            catch (Exception ex)
+            {
+                if (this.Error != null)
+                {
+                    UI.WindowHandler.ParentForm.Invoke(
+                        new EventCallback(
+                            delegate()
+                            {
+                                this.Error(null, null);
+                            }
+                        )
+                        );
+                }
+            }
+        }
+
+        public void Abort()
+        {
+            if (this.CurrentState != null)
+            {
+                if (this.CurrentState.CompressedStream != null)
+                {
+                    this.CurrentState.CompressedStream.Dispose();
+                }
+                if (this.CurrentState.Request != null)
+                {
+                    this.CurrentState.Request.Abort();
+                }
+                if (this.CurrentState.ResponseStream != null)
+                {
+                    this.CurrentState.ResponseStream.Dispose();
+                }
+            }
+        }
+
+        private void OnHTTPOK(IAsyncResult result)
+        {
+            try
+            {
+                RequestState rs = (RequestState)result.AsyncState;
+                WebResponse resp = rs.Request.EndGetResponse(result);
+                rs.ResponseStream = resp.GetResponseStream();
+                if (!resp.Headers.ToString().Contains("\r\nContent-Encoding: gzip\r\n"))
+                {
+                    // Server hasn't returned a GZip compressed page,
+                    // switch off compression
+                    IMDBData.SettingsWrapper.GlobalSettings.UseCompression = false;
+                }
+                
+                if (this.ResponseReceived != null)
+                {
+                    UI.WindowHandler.ParentForm.Invoke(
+                            new EventCallback(
+                                delegate()
+                                {
+                                    this.ResponseReceived(this, null);
+                                }
+                            )
+                            );
                 }
 
-                return Result;
+                if (IMDBData.SettingsWrapper.GlobalSettings.UseCompression)
+                {
+                    GZipStream gs = new GZipStream(rs.ResponseStream, CompressionMode.Decompress);
+                    rs.CompressedStream = gs;
+                    gs.BeginRead(rs.BufferRead, 0, 1024, OnStreamOK, rs);
+                }
+                else
+                {
+                    rs.ResponseStream.BeginRead(rs.BufferRead, 0, 1024, OnStreamOK, rs);
+                }
             }
-            catch (ObjectDisposedException) { }
-            return "";
+            catch (ObjectDisposedException)
+            {
+                // User aborted operation
+            }
+            catch (Exception ex)
+            {
+                if (this.Error != null)
+                {
+                    UI.WindowHandler.ParentForm.Invoke(
+                            new EventCallback(
+                                delegate()
+                                {
+                                    APIEvent ae = new APIEvent(ex.Message);
+                                    this.Error(this, ae);
+                                }
+                            )
+                            );
+                }
+            }
+        }
+
+        private void OnStreamOK(IAsyncResult result)
+        {
+            try
+            {
+                RequestState rs = (RequestState)result.AsyncState;
+
+                int Read = -1;
+                if (SettingsWrapper.GlobalSettings.UseCompression)
+                {
+                    Read = rs.CompressedStream.EndRead(result);
+                }
+                else
+                {
+                    Read = rs.ResponseStream.EndRead(result);
+                }
+                if (Read > 0)
+                {
+                    string Text = System.Text.Encoding.UTF8.GetString(rs.BufferRead, 0, Read);
+                    rs.RequestData.Append(Text);
+
+                    if (SettingsWrapper.GlobalSettings.UseCompression)
+                    {
+                        rs.CompressedStream.BeginRead(rs.BufferRead, 0, 1024, OnStreamOK, rs);
+                    }
+                    else
+                    {
+                        rs.ResponseStream.BeginRead(rs.BufferRead, 0, 1024, OnStreamOK, rs);
+                    }
+                }
+                else
+                {
+                    if (rs.CompressedStream != null)
+                    {
+                        rs.CompressedStream.Close();
+                    }
+
+                    rs.ResponseStream.Close();
+
+                    if (this.DataDownloaded != null)
+                    {
+                        UI.WindowHandler.ParentForm.Invoke(
+                            new EventCallback(
+                                delegate()
+                                {
+                                    APIEvent ae = new APIEvent(rs.RequestData.ToString());
+                                    this.DataDownloaded(this, ae);
+                                }
+                            )
+                            );
+                    }
+                }
+            }
+            catch (ObjectDisposedException)
+            {
+                // User aborted operation
+            }
         }
 
         private string GetTimestamp()
@@ -199,12 +371,10 @@ namespace ImdbMobile.IMDBData
 
         private string EncodeURL(string URL)
         {
-            System.Text.ASCIIEncoding encoding = new System.Text.ASCIIEncoding();
-
-            byte[] keyByte = encoding.GetBytes(apiKey);
+            byte[] keyByte = System.Text.Encoding.UTF8.GetBytes(apiKey);
 
             HMACSHA1 hmacsha1 = new HMACSHA1(keyByte);
-            byte[] messageBytes = encoding.GetBytes(URL);
+            byte[] messageBytes = System.Text.Encoding.UTF8.GetBytes(URL);
             byte[] hashmessage = hmacsha1.ComputeHash(messageBytes);
             return ByteToString(hashmessage);
 

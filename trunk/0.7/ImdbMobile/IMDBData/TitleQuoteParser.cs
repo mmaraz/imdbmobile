@@ -6,19 +6,32 @@ using Newtonsoft.Json.Linq;
 
 namespace ImdbMobile.IMDBData
 {
-    class TitleQuoteParser
+    class TitleQuoteParser : APIParser
     {
+        public ImdbTitle Title;
 
         public TitleQuoteParser()
         {
 
         }
 
-        public ImdbTitle ParseQuotes(ImdbTitle title)
+        public void ParseQuotes(ImdbTitle title)
         {
-            API a = new API();
-            string Response = a.GetTitleQuotes(title.ImdbId);
-            title.Quotes = new List<ImdbQuoteSection>();
+            this.Title = title;
+            UI.WindowHandler.APIWorker = new API();
+            UI.WindowHandler.APIWorker.DataDownloaded += new EventHandler(APIWorker_DataDownloaded);
+            this.OnDownloadingData();
+            UI.WindowHandler.APIWorker.GetTitleQuotes(title.ImdbId);
+        }
+
+        void APIWorker_DataDownloaded(object sender, EventArgs e)
+        {
+            APIEvent ae = (APIEvent)e;
+            this.OnDownloadComplete(ae.EventData);
+
+            this.OnParsingData();
+            string Response = ae.EventData;
+            this.Title.Quotes = new List<ImdbQuoteSection>();
 
             JObject Obj = JObject.Parse(Response);
             if (General.ContainsKey(Obj, "data"))
@@ -49,13 +62,14 @@ namespace ImdbMobile.IMDBData
                                 iq.Quote = (string)singleQuote["stage"];
                             }
                             iqs.Quotes.Add(iq);
-                            
+
                         }
-                        title.Quotes.Add(iqs);
+                        this.Title.Quotes.Add(iqs);
                     }
                 }
             }
-            return title;
+
+            this.OnParsingComplete();
         }
     }
 }

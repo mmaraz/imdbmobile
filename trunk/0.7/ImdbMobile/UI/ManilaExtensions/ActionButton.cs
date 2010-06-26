@@ -58,7 +58,7 @@ namespace ImdbMobile.UI
             this.Parent.MouseMove += new System.Windows.Forms.MouseEventHandler(Parent_MouseMove);
         }
 
-        public void Render(Graphics g, Rectangle Bounds, bool Param)
+        public void Render(Graphics g, Rectangle Bounds)
         {
             if (this.BackgroundColor != Color.Empty)
             {
@@ -104,6 +104,11 @@ namespace ImdbMobile.UI
             {
                 MouseUp(X, Y, this.Parent, this);
             }
+        }
+
+        public void OnMouseMove(int X, int Y)
+        {
+
         }
     }
 }

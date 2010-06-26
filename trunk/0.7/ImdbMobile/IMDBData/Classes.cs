@@ -105,6 +105,8 @@ namespace ImdbMobile.IMDBData
             TVEpisode
         }
 
+        public bool HasFullCast { get; set; }
+
         public string Title { get; set; }
         public string ImdbId { get; set; }
         public TitleType Type { get; set; }

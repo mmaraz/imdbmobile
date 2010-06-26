@@ -6,26 +6,37 @@ using Newtonsoft.Json.Linq;
 
 namespace ImdbMobile.IMDBData
 {
-    class ParseCast
+    class ParseCast : APIParser
     {
-        private ImdbTitle CurrentTitle;
+        public ImdbTitle Title;
 
         public ParseCast()
         {
 
         }
 
-        public ImdbTitle ParseFullCast(ImdbTitle title)
+        public void ParseFullCast(ImdbTitle title)
         {
-            this.CurrentTitle = title;
-            API a = new API();
-            ParseFullCast(a.GetFullCast(title.ImdbId));
-            return this.CurrentTitle;
+            this.Title = title;
+            UI.WindowHandler.APIWorker = new API();
+            UI.WindowHandler.APIWorker.DataDownloaded += new EventHandler(APIWorker_DataDownloaded);
+            this.OnDownloadingData();
+            UI.WindowHandler.APIWorker.GetFullCast(title.ImdbId);
+        }
+
+        void APIWorker_DataDownloaded(object sender, EventArgs e)
+        {
+            APIEvent ae = (APIEvent)e;
+            this.OnDownloadComplete(ae.EventData);
+            this.OnParsingData();
+            ParseFullCast(ae.EventData);
+            this.OnParsingComplete();
+            this.Title.HasFullCast = true;
         }
 
         private void ParseFullCast(string Response)
         {
-            this.CurrentTitle.Cast = new List<ImdbCharacter>();
+            this.Title.Cast = new List<ImdbCharacter>();
             JObject Obj = JObject.Parse(Response);
             if (General.ContainsKey(Obj, "data"))
             {
@@ -54,7 +65,7 @@ namespace ImdbMobile.IMDBData
                                     ic.Headshot.Height = (int)headshot["height"];
                                 }
                                 ic.TitleAttribute = (string)character["attr"];
-                                this.CurrentTitle.Cast.Add(ic);
+                                this.Title.Cast.Add(ic);
                             }
                         }
                     }

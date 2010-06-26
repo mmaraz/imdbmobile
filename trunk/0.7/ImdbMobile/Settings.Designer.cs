@@ -69,7 +69,7 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.Location = new System.Drawing.Point(3, 10);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(119, 40);
+            this.label2.Size = new System.Drawing.Size(93, 40);
             this.label2.Text = "IMDb Language";
             // 
             // ddlLanguage
@@ -85,7 +85,7 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.chkThumbnails.Location = new System.Drawing.Point(-2, 129);
             this.chkThumbnails.Name = "chkThumbnails";
-            this.chkThumbnails.Size = new System.Drawing.Size(370, 40);
+            this.chkThumbnails.Size = new System.Drawing.Size(344, 40);
             this.chkThumbnails.TabIndex = 10;
             // 
             // lblVideoPlayer
@@ -94,7 +94,7 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.lblVideoPlayer.Location = new System.Drawing.Point(3, 169);
             this.lblVideoPlayer.Name = "lblVideoPlayer";
-            this.lblVideoPlayer.Size = new System.Drawing.Size(365, 40);
+            this.lblVideoPlayer.Size = new System.Drawing.Size(339, 40);
             // 
             // ddlVideoPlayer
             // 
@@ -113,7 +113,7 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCustomVideo.Location = new System.Drawing.Point(3, 256);
             this.lblCustomVideo.Name = "lblCustomVideo";
-            this.lblCustomVideo.Size = new System.Drawing.Size(365, 40);
+            this.lblCustomVideo.Size = new System.Drawing.Size(339, 40);
             // 
             // txtCustomVideo
             // 
@@ -135,7 +135,7 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCustomArgs.Location = new System.Drawing.Point(3, 353);
             this.lblCustomArgs.Name = "lblCustomArgs";
-            this.lblCustomArgs.Size = new System.Drawing.Size(365, 40);
+            this.lblCustomArgs.Size = new System.Drawing.Size(339, 40);
             // 
             // txtCachePath
             // 
@@ -150,7 +150,7 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCachePath.Location = new System.Drawing.Point(3, 452);
             this.lblCachePath.Name = "lblCachePath";
-            this.lblCachePath.Size = new System.Drawing.Size(365, 40);
+            this.lblCachePath.Size = new System.Drawing.Size(339, 40);
             // 
             // chkEnableAnimate
             // 
@@ -173,7 +173,7 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.Location = new System.Drawing.Point(0, 57);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(122, 40);
+            this.label1.Size = new System.Drawing.Size(96, 40);
             this.label1.Text = "UI Language:";
             // 
             // Settings

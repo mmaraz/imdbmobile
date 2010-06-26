@@ -13,12 +13,9 @@ namespace ImdbMobile.Controls
     public partial class ActorControl : ImdbMobile.UI.SlidingList
     {
         private ImdbActor CurrentActor;
-        private delegate void SetImage();
-        private delegate void LoadImdbInformation(ImdbActor actor);
-        private delegate void ShowErrorInfo(string ErrorMessage);
+
         public UI.ActorHeader ah;
         System.Threading.Thread ImageThread;
-        System.Threading.Thread LoadingThread;
 
         public ActorControl(ImdbActor actor)
         {
@@ -29,127 +26,127 @@ namespace ImdbMobile.Controls
             this.Text = UI.Translations.GetTranslated("0009");
 
             this.ThreadList.Add(ImageThread);
-            this.ThreadList.Add(LoadingThread);
 
             UI.KListFunctions.ShowLoading(UI.Translations.GetTranslated("0001") + ".\n" + UI.Translations.GetTranslated("0002") + "...", this.kListControl1);
-
-            LoadingThread = new System.Threading.Thread(LoadActorData);
-            LoadingThread.Start();
+            LoadActorData();
         }
 
         private void ShowError(string ErrorMessage)
         {
-            try
-            {
-                UI.KListFunctions.ShowLoading(ErrorMessage, this.kListControl1);
-            }
-            catch (ObjectDisposedException) { }
+            UI.KListFunctions.ShowLoading(ErrorMessage, this.kListControl1);
         }
 
         private void LoadActorData()
         {
-            try
-            {
-                IMDBData.ActorParser ap = new ImdbMobile.IMDBData.ActorParser(this.CurrentActor);
-                ImdbActor actor = ap.ParseDetails();
-                CurrentActor = actor;
+            IMDBData.ActorParser ap = new ImdbMobile.IMDBData.ActorParser(this.CurrentActor);
+            ap.DownloadingData += new EventHandler(ap_DownloadingData);
+            ap.DownloadComplete += new EventHandler(ap_DownloadComplete);
+            ap.ParsingData += new EventHandler(ap_ParsingData);
+            ap.ParsingComplete += new EventHandler(ap_ParsingComplete);
+            ap.Error += new EventHandler(ap_Error);
+            ap.ParseDetails();
+        }
 
-                try
-                {
-                    LoadImdbInformation li = new LoadImdbInformation(SetImdbInformation);
-                    this.Invoke(li, new object[] { actor });
-                }
-                catch (ObjectDisposedException) { }
-            }
-            catch (Exception e)
-            {
-                try
-                {
-                    ShowErrorInfo si = new ShowErrorInfo(ShowError);
-                    this.Invoke(si, new object[] { e.Message });
-                }
-                catch (Exception) { }
-            }
+        void ap_Error(object sender, EventArgs e)
+        {
+            APIEvent ae = (APIEvent)e;
+            UI.KListFunctions.ShowLoading("Error: " + ae.EventData + ".\n" + UI.Translations.GetTranslated("0002") + "...", this.kListControl1);
+        }
+
+        void ap_ParsingComplete(object sender, EventArgs e)
+        {
+            ActorParser ap = (ActorParser)sender;
+            SetImdbInformation(ap.OriginalActor);
+        }
+
+        void ap_ParsingData(object sender, EventArgs e)
+        {
+            UI.KListFunctions.ShowLoading("Parsing Data.\n" + UI.Translations.GetTranslated("0002") + "...", this.kListControl1);
+        }
+
+        void ap_DownloadComplete(object sender, EventArgs e)
+        {
+            UI.KListFunctions.ShowLoading("Done.\n" + UI.Translations.GetTranslated("0002") + "...", this.kListControl1);
+        }
+
+        void ap_DownloadingData(object sender, EventArgs e)
+        {
+            UI.KListFunctions.ShowLoading("Downloading Data.\n" + UI.Translations.GetTranslated("0002") + "...", this.kListControl1);
         }
 
         private void SetImdbInformation(ImdbActor actor)
         {
-            try
+            this.kListControl1.Items.Clear();
+            ah = new ImdbMobile.UI.ActorHeader();
+            if (string.IsNullOrEmpty(CurrentActor.Bio))
             {
-                this.kListControl1.Clear();
-                ah = new ImdbMobile.UI.ActorHeader();
-                if (string.IsNullOrEmpty(CurrentActor.Bio))
-                {
-                    ah.Bio = "N/A";
-                }
-                else
-                {
-                    ah.Bio = CurrentActor.Bio;
-                }
-                if (!string.IsNullOrEmpty(CurrentActor.Birthday))
-                {
-                    ah.Birthday = CurrentActor.Birthday;
-                }
-                if (!string.IsNullOrEmpty(CurrentActor.Name))
-                {
-                    ah.Name = CurrentActor.Name;
-                }
-                if (string.IsNullOrEmpty(CurrentActor.RealName))
-                {
-                    ah.RealName = CurrentActor.Name;
-                }
-                else
-                {
-                    ah.RealName = CurrentActor.RealName;
-                    if (string.IsNullOrEmpty(CurrentActor.Name))
-                    {
-                        ah.Name = CurrentActor.RealName;
-                    }
-                }
-                ah.YIndex = 0;
-                ah.Parent = this.kListControl1;
-                ah.CalculateHeight();
-                this.kListControl1.AddItem(ah);
-
-                if (CurrentActor.Headshot != null)
-                {
-                    DownloadCover dc = new DownloadCover(CurrentActor.Headshot.URL, this);
-                    ImageThread = new System.Threading.Thread(dc.Download);
-                    ImageThread.Start();
-                }
-
-                UI.TextDisplay td = new ImdbMobile.UI.TextDisplay();
-                td.Heading = UI.Translations.GetTranslated("0003") + ":";
-                td.Parent = this.kListControl1;
-                td.Text = CurrentActor.Bio;
-                td.YIndex = 1;
-                td.CalculateHeight();
-                this.kListControl1.AddItem(td);
-
-                // Add Holder Control
-                UI.ActionButton Filmography = new ImdbMobile.UI.ActionButton();
-                Filmography.Icon = global::ImdbMobile.Properties.Resources.Trailers;
-                Filmography.HoverIcon = global::ImdbMobile.Properties.Resources.Trailers_Over;
-                Filmography.Parent = this.kListControl1;
-                Filmography.Text = UI.Translations.GetTranslated("0004");
-                Filmography.MouseUp += new ImdbMobile.UI.ActionButton.MouseEvent(Filmography_MouseUp);
-                Filmography.YIndex = 2;
-                Filmography.CalculateHeight();
-                this.kListControl1.AddItem(Filmography);
-
-                // Add Holder Control
-                UI.ActionButton Trivia = new ImdbMobile.UI.ActionButton();
-                Trivia.Icon = global::ImdbMobile.Properties.Resources.Trivia;
-                Trivia.HoverIcon = global::ImdbMobile.Properties.Resources.Trivia_Over;
-                Trivia.Parent = this.kListControl1;
-                Trivia.Text = UI.Translations.GetTranslated("0005");
-                Trivia.YIndex = 3;
-                Trivia.MouseUp += new ImdbMobile.UI.ActionButton.MouseEvent(Trivia_MouseUp);
-                Trivia.CalculateHeight();
-                this.kListControl1.AddItem(Trivia);
-
+                ah.Bio = "N/A";
             }
-            catch (ObjectDisposedException oe) { }
+            else
+            {
+                ah.Bio = CurrentActor.Bio;
+            }
+            if (!string.IsNullOrEmpty(CurrentActor.Birthday))
+            {
+                ah.Birthday = CurrentActor.Birthday;
+            }
+            if (!string.IsNullOrEmpty(CurrentActor.Name))
+            {
+                ah.Name = CurrentActor.Name;
+            }
+            if (string.IsNullOrEmpty(CurrentActor.RealName))
+            {
+                ah.RealName = CurrentActor.Name;
+            }
+            else
+            {
+                ah.RealName = CurrentActor.RealName;
+                if (string.IsNullOrEmpty(CurrentActor.Name))
+                {
+                    ah.Name = CurrentActor.RealName;
+                }
+            }
+            ah.YIndex = 0;
+            ah.Parent = this.kListControl1;
+            ah.CalculateHeight();
+            this.kListControl1.Items.Add(ah);
+
+            if (CurrentActor.Headshot != null)
+            {
+                DownloadCover dc = new DownloadCover(CurrentActor.Headshot.URL, this);
+                ImageThread = new System.Threading.Thread(dc.Download);
+                ImageThread.Start();
+            }
+
+            UI.TextDisplay td = new ImdbMobile.UI.TextDisplay();
+            td.Heading = UI.Translations.GetTranslated("0003") + ":";
+            td.Parent = this.kListControl1;
+            td.Text = CurrentActor.Bio;
+            td.YIndex = 1;
+            td.CalculateHeight();
+            this.kListControl1.Items.Add(td);
+
+            // Add Holder Control
+            UI.ActionButton Filmography = new ImdbMobile.UI.ActionButton();
+            Filmography.Icon = global::ImdbMobile.Properties.Resources.Trailers;
+            Filmography.HoverIcon = global::ImdbMobile.Properties.Resources.Trailers_Over;
+            Filmography.Parent = this.kListControl1;
+            Filmography.Text = UI.Translations.GetTranslated("0004");
+            Filmography.MouseUp += new ImdbMobile.UI.ActionButton.MouseEvent(Filmography_MouseUp);
+            Filmography.YIndex = 2;
+            Filmography.CalculateHeight();
+            this.kListControl1.Items.Add(Filmography);
+
+            // Add Holder Control
+            UI.ActionButton Trivia = new ImdbMobile.UI.ActionButton();
+            Trivia.Icon = global::ImdbMobile.Properties.Resources.Trivia;
+            Trivia.HoverIcon = global::ImdbMobile.Properties.Resources.Trivia_Over;
+            Trivia.Parent = this.kListControl1;
+            Trivia.Text = UI.Translations.GetTranslated("0005");
+            Trivia.YIndex = 3;
+            Trivia.MouseUp += new ImdbMobile.UI.ActionButton.MouseEvent(Trivia_MouseUp);
+            Trivia.CalculateHeight();
+            this.kListControl1.Items.Add(Trivia);
         }
 
         void Trivia_MouseUp(int X, int Y, MichyPrima.ManilaDotNetSDK.KListControl Parent, UI.ActionButton Sender)

@@ -22,7 +22,7 @@ namespace ImdbMobile.Controls
             rd.Text = iur.FullText + "\n\n" + iur.Username + ",\n" + iur.UserLocation;
             rd.YIndex = 0;
             rd.CalculateHeight(UI.WindowHandler.ParentForm.Width);
-            this.kListControl1.AddItem(rd);
+            this.kListControl1.Items.Add(rd);
         }
     }
 }

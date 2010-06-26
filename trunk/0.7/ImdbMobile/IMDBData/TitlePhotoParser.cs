@@ -6,18 +6,32 @@ using Newtonsoft.Json.Linq;
 
 namespace ImdbMobile.IMDBData
 {
-    class TitlePhotoParser
+    class TitlePhotoParser : APIParser
     {
+        public ImdbTitle Title;
+
         public TitlePhotoParser()
         {
 
         }
 
-        public ImdbTitle ParsePhotos(ImdbTitle title)
+        public void ParsePhotos(ImdbTitle title)
         {
-            API a = new API();
-            string Response = a.GetTitlePhotos(title.ImdbId);
-            title.Photos = new List<ImdbPhoto>();
+            this.Title = title;
+            UI.WindowHandler.APIWorker = new API();
+            UI.WindowHandler.APIWorker.DataDownloaded += new EventHandler(APIWorker_DataDownloaded);
+            this.OnDownloadingData();
+            UI.WindowHandler.APIWorker.GetTitlePhotos(title.ImdbId);
+        }
+
+        void APIWorker_DataDownloaded(object sender, EventArgs e)
+        {
+            APIEvent ae = (APIEvent)e;
+            this.OnDownloadComplete(ae.EventData);
+            this.OnParsingData();
+
+            string Response = ae.EventData;
+            this.Title.Photos = new List<ImdbPhoto>();
 
             JObject Obj = JObject.Parse(Response);
 
@@ -48,7 +62,7 @@ namespace ImdbMobile.IMDBData
                             ip.Image.Height = (int)photo["image"]["height"];
                             ip.Image.Width = (int)photo["image"]["width"];
                         }
-                        title.Photos.Add(ip);
+                        this.Title.Photos.Add(ip);
                         // Only download 50 photos
                         if (PhotoCount > 50)
                         {
@@ -58,7 +72,7 @@ namespace ImdbMobile.IMDBData
                 }
             }
 
-            return title;
+            this.OnParsingComplete();
         }
     }
 }

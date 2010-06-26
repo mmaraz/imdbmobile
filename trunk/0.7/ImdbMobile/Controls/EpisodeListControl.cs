@@ -14,11 +14,6 @@ namespace ImdbMobile.Controls
     public partial class EpisodeListControl : ImdbMobile.UI.SlidingList
     {
         private static ImdbSeason CurrentSeason;
-        private static string ImdbConst;
-        private System.Threading.Thread LoadingThread;
-
-        private delegate void AddItem(int YIndex, string Text);
-        private delegate void ShowList();
 
         public EpisodeListControl(ImdbSeason season)
         {
@@ -35,12 +30,11 @@ namespace ImdbMobile.Controls
             foreach (ImdbEpisode ie in CurrentSeason.Episodes)
             {
                 MichyPrima.ManilaDotNetSDK.ManilaPanelItem mpi = new MichyPrima.ManilaDotNetSDK.ManilaPanelItem();
-                mpi.YIndex = CurrentSeason.Episodes.IndexOf(ie);
                 mpi.MainText = ie.Title;
                 mpi.SecondaryText = UI.Translations.GetTranslated("0016") + ": " + ie.ReleaseDate.ToShortDateString();
                 mpi.ShowSeparator = true;
                 mpi.OnClick += new MichyPrima.ManilaDotNetSDK.ManilaPanelItem.OnClickEventHandler(mpi_OnClick);
-                this.kListControl1.AddItem(mpi);
+                this.kListControl1.Items.Add(mpi);
             }
         }
 
@@ -59,7 +53,7 @@ namespace ImdbMobile.Controls
             try
             {
                 API a = new API();
-                string Response = a.GetFullDetails(ImdbConst);
+                string Response = "";//TODO a.GetFullDetails(ImdbConst);
 
                 JObject data = JObject.Parse(Response);
                 if (General.ContainsKey(data, "data"))

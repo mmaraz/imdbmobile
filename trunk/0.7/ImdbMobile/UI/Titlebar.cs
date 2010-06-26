@@ -26,36 +26,32 @@ namespace ImdbMobile.UI
 
         void ParentForm_Resize(object sender, EventArgs e)
         {
-            try
+            if (Screen.PrimaryScreen.Bounds.Height > 360)
             {
-                if (Screen.PrimaryScreen.Bounds.Height > 360)
-                {
-                    this.DrawnBitmap = new Bitmap(Screen.PrimaryScreen.Bounds.Width, 148);
-                    this.DrawVGA();
-                    // (W)VGA Devices
-                    holderPanel.Size = new Size(this.ParentForm.Width, 148);
+                this.DrawnBitmap = new Bitmap(Screen.PrimaryScreen.Bounds.Width, 148);
+                this.DrawVGA();
+                // (W)VGA Devices
+                holderPanel.Size = new Size(this.ParentForm.Width, 148);
 
-                    this.pbSearch.Image = global::ImdbMobile.Properties.Resources.SearchButton_Large;
-                    this.pbSearch.Size = new System.Drawing.Size(33, 32);
-                }
-                else
-                {
-                    this.DrawnBitmap = new Bitmap(Screen.PrimaryScreen.Bounds.Width, 93);
-                    this.DrawQVGA();
-                    // (W)QVGA Devices
-                    holderPanel.Size = new Size(this.ParentForm.Width, 93);
-
-                    this.pbSearch.Image = global::ImdbMobile.Properties.Resources.SearchButton_Small;
-                    this.pbSearch.Size = new System.Drawing.Size(24, 23);
-                }
-                ParentForm.Invalidate();
-                foreach (SlidingList sl in WindowHandler.ControlList)
-                {
-                    ParentForm.Controls.Remove(sl);
-                    sl.Initialise();
-                }
+                this.pbSearch.Image = global::ImdbMobile.Properties.Resources.SearchButton_Large;
+                this.pbSearch.Size = new System.Drawing.Size(33, 32);
             }
-            catch (ObjectDisposedException) { }
+            else
+            {
+                this.DrawnBitmap = new Bitmap(Screen.PrimaryScreen.Bounds.Width, 93);
+                this.DrawQVGA();
+                // (W)QVGA Devices
+                holderPanel.Size = new Size(this.ParentForm.Width, 93);
+
+                this.pbSearch.Image = global::ImdbMobile.Properties.Resources.SearchButton_Small;
+                this.pbSearch.Size = new System.Drawing.Size(24, 23);
+            }
+            ParentForm.Invalidate();
+            foreach (SlidingList sl in WindowHandler.ControlList)
+            {
+                ParentForm.Controls.Remove(sl);
+                sl.Initialise();
+            }
         }
 
         void pbSearch_Click(object sender, EventArgs e)
@@ -220,7 +216,6 @@ namespace ImdbMobile.UI
                 this.textBox1.ForeColor = Color.Black;
                 this.textBox1.Text = "";
             }
-            sip.Enabled = true;
         }
 
         private void textBox1_LostFocus(object sender, EventArgs e)
@@ -232,7 +227,6 @@ namespace ImdbMobile.UI
                 this.textBox1.Font = original;
                 this.textBox1.ForeColor = Color.LightGray;
             }
-            sip.Enabled = false;
         }
 
         private void textBox1_KeyUp(object sender, KeyEventArgs e)

@@ -12,34 +12,23 @@ namespace ImdbMobile.Controls
 {
     public partial class CastControl : ImdbMobile.UI.SlidingList
     {
-        private delegate void AddCharacterItem(MichyPrima.ManilaDotNetSDK.ManilaPanelItem mpi);
-        private delegate void HideStatus();
-        private delegate void ShowError(string Message);
         ImageDownloader id = new ImageDownloader();
-        System.Threading.Thread LoadingThread;
 
-        private delegate void ClearList();
-        private delegate void UpdateStatus(int Current, int Total);
-
-        private static int CurrentPage = -1;
-        private static int TotalPages = 1;
+        private int CurrentPage = -1;
+        private int TotalPages = 1;
 
         private void Update(int Current, int Total)
         {
-            ((UI.LoadingButton)this.LoadingList[0]).Text = UI.Translations.GetTranslated("0010") + ".\n(" + Current + " " + UI.Translations.GetTranslated("0050") + " " + Total + ")";
+            ((UI.LoadingButton)this.LoadingList.Items[0]).Text = UI.Translations.GetTranslated("0010") + ".\n(" + Current + " " + UI.Translations.GetTranslated("0050") + " " + Total + ")";
             this.LoadingList.Invalidate();
         }
 
         private void Clear()
         {
-            try
-            {
-                this.LoadingList.Visible = false;
-            }
-            catch (ObjectDisposedException) { }
+            this.LoadingList.Visible = false;
         }
         
-        private static ImdbTitle CurrentTitle;
+        private ImdbTitle CurrentTitle;
         
 
         public CastControl(ImdbTitle title)
@@ -48,47 +37,30 @@ namespace ImdbMobile.Controls
             InitializeComponent();
 
             this.ImageDownloaderList.Add(id);
-            this.ThreadList.Add(LoadingThread);
 
             this.Name = UI.Translations.GetTranslated("0012");
             this.Text = UI.Translations.GetTranslated("0012");
 
             UI.KListFunctions.ShowLoading(UI.Translations.GetTranslated("0010") + ".\n" + UI.Translations.GetTranslated("0002") + "...", this.LoadingList);
 
-            this.LoadingThread = new System.Threading.Thread(LoadImdbInformation);
-            this.LoadingThread.Start();
+            LoadImdbInformation();
         }
 
         private void SetError(string Message)
         {
-            try
-            {
-                UI.KListFunctions.ShowError(Message, this.kListControl1);
-            }
-            catch (ObjectDisposedException) { }
+            UI.KListFunctions.ShowError(Message, this.kListControl1);
         }
 
         private void SetStatus()
         {
-            try
-            {
-                int Start = CurrentPage * SettingsWrapper.GlobalSettings.NumToDisplay;
-                int Take = SettingsWrapper.GlobalSettings.NumToDisplay;
-                id.DownloadImages(CurrentTitle.Cast.Skip(Start).Take(Take).ToList(), this.kListControl1, this.ParentForm);
-            }
-            catch (ObjectDisposedException)
-            {
-
-            }
+            int Start = CurrentPage * SettingsWrapper.GlobalSettings.NumToDisplay;
+            int Take = SettingsWrapper.GlobalSettings.NumToDisplay;
+            id.DownloadImages(CurrentTitle.Cast.Skip(Start).Take(Take).ToList(), this.kListControl1, this.ParentForm);
         }
 
         private void AddCharacter(MichyPrima.ManilaDotNetSDK.ManilaPanelItem mpi)
         {
-            try
-            {
-                this.kListControl1.AddItem(mpi);
-            }
-            catch (ObjectDisposedException) { }
+            this.kListControl1.Items.Add(mpi);
         }
 
         private void NextPage()
@@ -119,55 +91,60 @@ namespace ImdbMobile.Controls
                 if (actor.TitleAttribute != null)
                     secondaryText += " " + actor.TitleAttribute;
                 mpi.SecondaryText = secondaryText;
-                mpi.YIndex = CurrentTitle.Cast.IndexOf(actor);
                 mpi.OnClick += new MichyPrima.ManilaDotNetSDK.ManilaPanelItem.OnClickEventHandler(mpi_OnClick);
 
-                try
-                {
-                    AddCharacterItem aci = new AddCharacterItem(AddCharacter);
-                    this.Invoke(aci, new object[] { mpi });
-
-                    UpdateStatus us = new UpdateStatus(Update);
-                    this.Invoke(us, new object[] { mpi.YIndex, CurrentTitle.Cast.Count });
-                }
-                catch (ObjectDisposedException) { }
+                AddCharacter(mpi);
+                int YIndex = UI.KListFunctions.GetIndexOf(mpi, this.kListControl1);
+                Update(YIndex, CurrentTitle.Cast.Count);
             }
 
-            ClearList cl = new ClearList(Clear);
-            this.Invoke(cl);
-            HideStatus hs = new HideStatus(SetStatus);
-            this.Invoke(hs);
+            if (!CurrentTitle.HasFullCast)
+            {
+                UI.ActionButton ab = new ImdbMobile.UI.ActionButton();
+                ab.Icon = global::ImdbMobile.Properties.Resources.Cast;
+                ab.Text = "Full Cast...";
+                ab.Parent = this.kListControl1;
+                ab.YIndex = CurrentTitle.Cast.Count;
+                ab.MouseUp += new ImdbMobile.UI.ActionButton.MouseEvent(ab_MouseUp);
+                ab.CalculateHeight();
+                this.kListControl1.Items.Add(ab);
+            }
 
+            Clear();
+            SetStatus();
+            
             if (CurrentTitle.Cast.Count == 0)
             {
-                try
-                {
-                    ShowError sr = new ShowError(SetError);
-                    this.Invoke(sr, new object[] { UI.Translations.GetTranslated("0011") });
-                }
-                catch (Exception) { }
+                SetError(UI.Translations.GetTranslated("0011"));
+                return;
             }
+        }
+
+        void ab_MouseUp(int X, int Y, MichyPrima.ManilaDotNetSDK.KListControl Parent, ImdbMobile.UI.ActionButton Sender)
+        {
+            GetFullCast();
         }
 
         private void LoadImdbInformation()
         {
-            try
-            {
-                
-                IMDBData.ParseCast pc = new ImdbMobile.IMDBData.ParseCast();
-                CurrentTitle = pc.ParseFullCast(CurrentTitle);
+            ShowData();
+        }
 
-                ShowData();
-            }
-            catch (Exception e)
-            {
-                try
-                {
-                    ShowError sr = new ShowError(SetError);
-                    this.Invoke(sr, new object[] { e.Message });
-                }
-                catch (Exception) { }
-            }
+        private void GetFullCast()
+        {
+            UI.KListFunctions.ShowLoading(UI.Translations.GetTranslated("0010") + ".\n" + UI.Translations.GetTranslated("0002") + "...", this.LoadingList);
+            this.LoadingList.Visible = true;
+
+            IMDBData.ParseCast pc = new ImdbMobile.IMDBData.ParseCast();
+            pc.ParsingComplete += new EventHandler(pc_ParsingComplete);
+            pc.ParseFullCast(CurrentTitle);
+        }
+
+        void pc_ParsingComplete(object sender, EventArgs e)
+        {
+            ParseCast pc = (ParseCast)sender;
+            this.CurrentTitle = pc.Title;
+            ShowData();
         }
 
         void pd_Previous(int X, int Y, MichyPrima.ManilaDotNetSDK.KListControl Parent, ImdbMobile.UI.PagerDisplay Sender)
@@ -182,7 +159,9 @@ namespace ImdbMobile.Controls
 
         void mpi_OnClick(object Sender)
         {
-            ActorControl a = new ActorControl(CurrentTitle.Cast[((MichyPrima.ManilaDotNetSDK.ManilaPanelItem)Sender).YIndex]);
+            MichyPrima.ManilaDotNetSDK.ManilaPanelItem mpi = ((MichyPrima.ManilaDotNetSDK.ManilaPanelItem)Sender); 
+            int YIndex = UI.KListFunctions.GetIndexOf(mpi, this.kListControl1);
+            ActorControl a = new ActorControl(CurrentTitle.Cast[YIndex]);
             UI.WindowHandler.OpenForm(a);
         }
 

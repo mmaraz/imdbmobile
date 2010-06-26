@@ -10,6 +10,7 @@ namespace ImdbMobile.UI
     {
         public static List<SlidingList> ControlList;
         public static Form1 ParentForm;
+        public static IMDBData.API APIWorker;
 
         public static void OpenForm(SlidingList sl)
         {
@@ -25,6 +26,8 @@ namespace ImdbMobile.UI
 
         public static void Back()
         {
+            // Kill any current web/read requests
+            APIWorker.Abort();
             if (ControlList.Count > 1)
             {
                 SlidingList sl = ControlList[ControlList.Count - 1];
@@ -45,6 +48,8 @@ namespace ImdbMobile.UI
 
         public static void Home()
         {
+            // Kill any current web/read requests
+            APIWorker.Abort();
             if (ControlList.Count > 1)
             {
                 for (int i = 1; i < ControlList.Count; i++)

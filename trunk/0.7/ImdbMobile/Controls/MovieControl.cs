@@ -13,11 +13,8 @@ namespace ImdbMobile.Controls
     public partial class MovieControl : ImdbMobile.UI.SlidingList
     {
         private ImdbTitle CurrentTitle;
-        private delegate void LoadImdbInformation(ImdbTitle title);
-        private delegate void ShowErrorInfo(string ErrorMessage);
         public UI.MovieHeader mh;
         System.Threading.Thread ImageThread;
-        System.Threading.Thread LoadingThread;
 
         public MovieControl(ImdbTitle title)
         {
@@ -27,12 +24,10 @@ namespace ImdbMobile.Controls
             this.Text = UI.Translations.GetTranslated("0024");
 
             this.ThreadList.Add(ImageThread);
-            this.ThreadList.Add(LoadingThread);
 
             UI.KListFunctions.ShowLoading(UI.Translations.GetTranslated("0088") + ".\n" + UI.Translations.GetTranslated("0002") + "...", this.kListControl1);
 
-            LoadingThread = new System.Threading.Thread(LoadMovieData);
-            LoadingThread.Start();
+            LoadMovieData();
         }
 
         private void ShowError(string ErrorMessage)
@@ -42,7 +37,7 @@ namespace ImdbMobile.Controls
 
         public void SetImdbInformation(ImdbTitle title)
         {
-            this.kListControl1.Clear();
+            this.kListControl1.Items.Clear();
             mh = new ImdbMobile.UI.MovieHeader();
             mh.Director = "";
             if (title.Directors.Count > 0)
@@ -78,7 +73,7 @@ namespace ImdbMobile.Controls
             }
             mh.Rating = Stars;
             mh.CalculateHeight();
-            this.kListControl1.AddItem(mh);
+            this.kListControl1.Items.Add(mh);
 
             DownloadCover dc = new DownloadCover(title.Cover.URL, this);
             ImageThread = new System.Threading.Thread(dc.Download);
@@ -90,7 +85,7 @@ namespace ImdbMobile.Controls
             td.YIndex = 1;
             td.Parent = this.kListControl1;
             td.CalculateHeight();
-            this.kListControl1.AddItem(td);
+            this.kListControl1.Items.Add(td);
 
             UI.ActionButton CastButton = new ImdbMobile.UI.ActionButton();
             CastButton.Icon = global::ImdbMobile.Properties.Resources.Cast;
@@ -100,7 +95,7 @@ namespace ImdbMobile.Controls
             CastButton.YIndex = 2;
             CastButton.CalculateHeight();
             CastButton.MouseUp += new ImdbMobile.UI.ActionButton.MouseEvent(CastButton_MouseUp);
-            this.kListControl1.AddItem(CastButton);
+            this.kListControl1.Items.Add(CastButton);
 
             UI.ActionButton UserReviewButton = new ImdbMobile.UI.ActionButton();
             UserReviewButton.Icon = global::ImdbMobile.Properties.Resources.UserReview;
@@ -110,7 +105,7 @@ namespace ImdbMobile.Controls
             UserReviewButton.YIndex = 3;
             UserReviewButton.CalculateHeight();
             UserReviewButton.MouseUp += new ImdbMobile.UI.ActionButton.MouseEvent(UserReviewButton_MouseUp);
-            this.kListControl1.AddItem(UserReviewButton);
+            this.kListControl1.Items.Add(UserReviewButton);
 
             UI.ActionButton ExternalReviewButton = new ImdbMobile.UI.ActionButton();
             ExternalReviewButton.Icon = global::ImdbMobile.Properties.Resources.ExternalReview;
@@ -120,7 +115,7 @@ namespace ImdbMobile.Controls
             ExternalReviewButton.YIndex = 4;
             ExternalReviewButton.CalculateHeight();
             ExternalReviewButton.MouseUp += new ImdbMobile.UI.ActionButton.MouseEvent(ExternalReviewButton_MouseUp);
-            this.kListControl1.AddItem(ExternalReviewButton);
+            this.kListControl1.Items.Add(ExternalReviewButton);
 
             /*UI.ActionButton PhotoButton = new ImdbMobile.UI.ActionButton();
             PhotoButton.Icon = global::ImdbMobile.Properties.Resources.Photos;
@@ -130,7 +125,7 @@ namespace ImdbMobile.Controls
             PhotoButton.YIndex = 5;
             PhotoButton.CalculateHeight();
             PhotoButton.MouseUp += new ImdbMobile.UI.ActionButton.MouseEvent(PhotoButton_MouseUp);
-            this.kListControl1.AddItem(PhotoButton);*/
+            this.kListControl1.Items.Add(PhotoButton);*/
 
             UI.ActionButton TrailerButton = new ImdbMobile.UI.ActionButton();
             TrailerButton.Icon = global::ImdbMobile.Properties.Resources.Trailers;
@@ -140,7 +135,7 @@ namespace ImdbMobile.Controls
             TrailerButton.YIndex = 5;
             TrailerButton.CalculateHeight();
             TrailerButton.MouseUp += new ImdbMobile.UI.ActionButton.MouseEvent(TrailerButton_MouseUp);
-            this.kListControl1.AddItem(TrailerButton);
+            this.kListControl1.Items.Add(TrailerButton);
 
             UI.ActionButton QuoteButton = new ImdbMobile.UI.ActionButton();
             QuoteButton.Icon = global::ImdbMobile.Properties.Resources.Quote;
@@ -150,7 +145,7 @@ namespace ImdbMobile.Controls
             QuoteButton.YIndex = 6;
             QuoteButton.CalculateHeight();
             QuoteButton.MouseUp += new ImdbMobile.UI.ActionButton.MouseEvent(QuoteButton_MouseUp);
-            this.kListControl1.AddItem(QuoteButton);
+            this.kListControl1.Items.Add(QuoteButton);
 
             UI.ActionButton TriviaButton = new ImdbMobile.UI.ActionButton();
             TriviaButton.Icon = global::ImdbMobile.Properties.Resources.Trivia;
@@ -160,7 +155,7 @@ namespace ImdbMobile.Controls
             TriviaButton.YIndex = 7;
             TriviaButton.CalculateHeight();
             TriviaButton.MouseUp += new ImdbMobile.UI.ActionButton.MouseEvent(TriviaButton_MouseUp);
-            this.kListControl1.AddItem(TriviaButton);
+            this.kListControl1.Items.Add(TriviaButton);
 
             UI.ActionButton GoofButton = new ImdbMobile.UI.ActionButton();
             GoofButton.Icon = global::ImdbMobile.Properties.Resources.MoreInfo;
@@ -170,7 +165,7 @@ namespace ImdbMobile.Controls
             GoofButton.YIndex = 8;
             GoofButton.CalculateHeight();
             GoofButton.MouseUp += new ImdbMobile.UI.ActionButton.MouseEvent(GoofButton_MouseUp);
-            this.kListControl1.AddItem(GoofButton);
+            this.kListControl1.Items.Add(GoofButton);
 
             UI.ActionButton ParentalButton = new ImdbMobile.UI.ActionButton();
             ParentalButton.Icon = global::ImdbMobile.Properties.Resources.ParentalGuide;
@@ -180,7 +175,7 @@ namespace ImdbMobile.Controls
             ParentalButton.YIndex = 9;
             ParentalButton.CalculateHeight();
             ParentalButton.MouseUp += new ImdbMobile.UI.ActionButton.MouseEvent(ParentalButton_MouseUp);
-            this.kListControl1.AddItem(ParentalButton);
+            this.kListControl1.Items.Add(ParentalButton);
 
             if (CurrentTitle.Type == ImdbTitle.TitleType.TVSeries)
             {
@@ -191,7 +186,7 @@ namespace ImdbMobile.Controls
                 EpisodeButton.YIndex = 10;
                 EpisodeButton.CalculateHeight();
                 EpisodeButton.MouseUp += new ImdbMobile.UI.ActionButton.MouseEvent(EpisodeButton_MouseUp);
-                this.kListControl1.AddItem(EpisodeButton);
+                this.kListControl1.Items.Add(EpisodeButton);
             }
 
         }
@@ -246,8 +241,8 @@ namespace ImdbMobile.Controls
 
         void PhotoButton_MouseUp(int X, int Y, MichyPrima.ManilaDotNetSDK.KListControl Parent, UI.ActionButton Sender)
         {
-            PhotoViewerControl pv = new PhotoViewerControl(CurrentTitle);
-            UI.WindowHandler.OpenForm(pv);
+            //PhotoViewerControl pv = new PhotoViewerControl(CurrentTitle);
+            //UI.WindowHandler.OpenForm(pv);
         }
 
         void CastButton_MouseUp(int X, int Y, MichyPrima.ManilaDotNetSDK.KListControl Parent, UI.ActionButton Sender)
@@ -257,29 +252,16 @@ namespace ImdbMobile.Controls
         }
         public void LoadMovieData()
         {
-            try
-            {
-                IMDBData.TitleParser tp = new ImdbMobile.IMDBData.TitleParser();
-                ImdbTitle title = tp.ParseFullDetails(CurrentTitle);
-                if (title != null)
-                {
-                    try
-                    {
-                        LoadImdbInformation li = new LoadImdbInformation(SetImdbInformation);
-                        this.Invoke(li, new object[] { title });
-                    }
-                    catch (ObjectDisposedException) { }
-                }
-            }
-            catch (Exception e)
-            {
-                try
-                {
-                    ShowErrorInfo se = new ShowErrorInfo(ShowError);
-                    this.Invoke(se, new object[] { e.Message });
-                }
-                catch (ObjectDisposedException) { }
-            }
+            IMDBData.TitleParser tp = new ImdbMobile.IMDBData.TitleParser();
+            tp.ParsingComplete += new EventHandler(tp_ParsingComplete);
+            tp.ParseFullDetails(this.CurrentTitle);
+        }
+
+        void tp_ParsingComplete(object sender, EventArgs e)
+        {
+            TitleParser tp = (TitleParser)sender;
+            this.CurrentTitle = tp.Title;
+            SetImdbInformation(tp.Title);
         }
     }
 }

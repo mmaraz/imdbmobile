@@ -6,17 +6,30 @@ using Newtonsoft.Json.Linq;
 
 namespace ImdbMobile.IMDBData
 {
-    public class ShowtimeParser
+    public class ShowtimeParser : APIParser
     {
+        public List<ImdbCinema> Showtimes;
+
         public ShowtimeParser()
         {
 
         }
 
-        public List<ImdbCinema> ParseShowtimes(string Location, DateTime Date)
+        public void ParseShowtimes(string Location, DateTime Date)
         {
-            API a = new API();
-            string Response = a.GetShowtimes(Location, Date);
+            UI.WindowHandler.APIWorker = new API();
+            UI.WindowHandler.APIWorker.DataDownloaded += new EventHandler(APIWorker_DataDownloaded);
+            this.OnDownloadingData();
+            UI.WindowHandler.APIWorker.GetShowtimes(Location, Date);
+        }
+
+        void APIWorker_DataDownloaded(object sender, EventArgs e)
+        {
+            APIEvent ae = (APIEvent)e;
+            this.OnDownloadComplete(ae.EventData);
+
+            this.OnParsingData();
+            string Response = ae.EventData;
 
             List<ImdbCinema> sList = new List<ImdbCinema>();
 
@@ -99,7 +112,8 @@ namespace ImdbMobile.IMDBData
                 }
             }
 
-            return sList;
+            this.Showtimes = sList;
+            this.OnParsingComplete();
         }
     }
 }
