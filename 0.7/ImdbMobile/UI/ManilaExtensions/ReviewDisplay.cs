@@ -16,8 +16,6 @@ namespace ImdbMobile.UI
         private string _text;
         private double _rating;
 
-        private int _textHeight;
-
         public Font _bold = new Font(FontFamily.GenericSansSerif, 8f, FontStyle.Bold);
         private Font _unbold = new Font(FontFamily.GenericSansSerif, 8f, FontStyle.Regular);
 
@@ -175,7 +173,7 @@ namespace ImdbMobile.UI
             catch (Exception e) { }
         }
 
-        public void Render(Graphics g, Rectangle Bounds, bool Param)
+        public void Render(Graphics g, Rectangle Bounds)
         {
             if (this.DrawnImage != null)
             {
@@ -198,6 +196,11 @@ namespace ImdbMobile.UI
             {
                 MouseUp(X, Y, this.Parent, this);
             }
+        }
+
+        public void OnMouseMove(int X, int Y)
+        {
+
         }
     }
 }

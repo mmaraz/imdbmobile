@@ -228,7 +228,7 @@ namespace ImdbMobile.IMDBData
         {
             try
             {
-                MichyPrima.ManilaDotNetSDK.ManilaPanelItem mpi = ((MichyPrima.ManilaDotNetSDK.ManilaPanelItem)ParentKList[Index]);
+                MichyPrima.ManilaDotNetSDK.ManilaPanelItem mpi = ((MichyPrima.ManilaDotNetSDK.ManilaPanelItem)ParentKList.Items[Index]);
                 System.Drawing.Bitmap b = new System.Drawing.Bitmap(FileName);
                 int Width = (mpi.Height / 3) * 2;
                 System.Drawing.Image i = Extensions.Resize(b, new System.Drawing.Size(Width, mpi.Height));

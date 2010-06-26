@@ -8,22 +8,33 @@ using Newtonsoft.Json.Linq;
 
 namespace ImdbMobile.IMDBData
 {
-    class FilmographyParser
+    class FilmographyParser : APIParser
     {
-        private ImdbActor CurrentActor;
+        public ImdbActor CurrentActor;
 
         public FilmographyParser(ImdbActor actor)
         {
             this.CurrentActor = actor;
         }
 
-        public ImdbActor ParseDetails()
+        public void ParseDetails()
         {
-            string Response = GetResponse();
-            return ParseDetails(Response);
+            UI.WindowHandler.APIWorker = new API();
+            UI.WindowHandler.APIWorker.DataDownloaded += new EventHandler(APIWorker_DataDownloaded);
+            this.OnDownloadingData();
+            UI.WindowHandler.APIWorker.GetActorFilmography(this.CurrentActor.ImdbId);
         }
 
-        private ImdbActor ParseDetails(string Response)
+        void APIWorker_DataDownloaded(object sender, EventArgs e)
+        {
+            APIEvent ae = (APIEvent)e;
+            this.OnDownloadComplete(ae.EventData);
+            this.OnParsingData();
+            ParseDetails(ae.EventData);
+            this.OnParsingComplete();
+        }
+
+        private void ParseDetails(string Response)
         {
             ImdbActor actor = this.CurrentActor;
 
@@ -33,7 +44,7 @@ namespace ImdbMobile.IMDBData
                 JToken data = Obj["data"];
                 actor.KnownForFull = ParseFilmography(data);
             }
-            return actor;
+            this.CurrentActor = actor;
         }
 
         private List<ImdbKnownFor> ParseFilmography(JToken data)
@@ -72,12 +83,6 @@ namespace ImdbMobile.IMDBData
                 }
             }
             return retList;
-        }
-
-        private string GetResponse()
-        {
-            API a = new API();
-            return a.GetActorFilmography(this.CurrentActor.ImdbId);
         }
     }
 }

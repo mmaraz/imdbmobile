@@ -12,11 +12,7 @@ namespace ImdbMobile.Controls
 {
     public partial class SeasonListControl : ImdbMobile.UI.SlidingList
     {
-        private static ImdbTitle CurrentTitle;
-        private System.Threading.Thread LoadingThread;
-
-        private delegate void AddItem(int YIndex, string Text);
-        private delegate void ShowList();
+        private ImdbTitle CurrentTitle;
 
         public SeasonListControl(ImdbTitle title)
         {
@@ -27,55 +23,38 @@ namespace ImdbMobile.Controls
             UI.KListFunctions.ShowLoading(UI.Translations.GetTranslated("0055") + ".\n" + UI.Translations.GetTranslated("0002") + "...", this.LoadingList);
             CurrentTitle = title;
 
-            this.ThreadList.Add(LoadingThread);
-
-            LoadingThread = new System.Threading.Thread(LoadImdbInformation);
-            LoadingThread.Start();
+            LoadImdbInformation();
         }
 
         private void ShowComplete()
         {
-            try
-            {
-                this.LoadingList.Visible = false;
-            }
-            catch (ObjectDisposedException) { }
+            this.LoadingList.Visible = false;
         }
 
         private void Add(int YIndex, string Label)
         {
-            try
-            {
-                UI.ActionButton ab = new ImdbMobile.UI.ActionButton();
-                ab.Text = Label;
-                ab.Parent = this.kListControl1;
-                ab.YIndex = YIndex;
-                ab.MouseUp += new ImdbMobile.UI.ActionButton.MouseEvent(ab_MouseUp);
-                ab.CalculateHeight();
-                this.kListControl1.AddItem(ab);
-            }
-            catch (ObjectDisposedException) { }
+            UI.ActionButton ab = new ImdbMobile.UI.ActionButton();
+            ab.Text = Label;
+            ab.Parent = this.kListControl1;
+            ab.YIndex = YIndex;
+            ab.MouseUp += new ImdbMobile.UI.ActionButton.MouseEvent(ab_MouseUp);
+            ab.CalculateHeight();
+            this.kListControl1.Items.Add(ab);
         }
 
         private void LoadImdbInformation()
         {
-            try
+            TitleEpisodeParser tep = new TitleEpisodeParser();
+            tep.ParsingComplete += new EventHandler(tep_ParsingComplete);
+            tep.ParseTitleEpisodes(CurrentTitle);
+        }
+
+        void tep_ParsingComplete(object sender, EventArgs e)
+        {
+            TitleEpisodeParser tep = (TitleEpisodeParser)sender;
+            foreach (ImdbSeason isea in tep.Title.Seasons)
             {
-                TitleEpisodeParser tep = new TitleEpisodeParser();
-                CurrentTitle = tep.ParseTitleEpisodes(CurrentTitle);
-
-                foreach (ImdbSeason isea in CurrentTitle.Seasons)
-                {
-                    AddItem ai = new AddItem(Add);
-                    this.Invoke(ai, new object[] { CurrentTitle.Seasons.IndexOf(isea), isea.Label });
-                }
-
-                ShowList sl = new ShowList(ShowComplete);
-                this.Invoke(sl);
-            }
-            catch (Exception e)
-            {
-
+                Add(CurrentTitle.Seasons.IndexOf(isea), isea.Label);
             }
         }
 

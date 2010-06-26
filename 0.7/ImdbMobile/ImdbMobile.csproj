@@ -47,9 +47,9 @@
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ManilaDotNetSDK, Version=2.1.3591.34568, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="ManilaDotNetSDK, Version=3.0.3723.35311, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Desktop\ManilaDotNetSDK.dll</HintPath>
+      <HintPath>C:\Users\RyanG\Desktop\ManilaDotNetSDK.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.WindowsCE.Forms" />
     <Reference Include="mscorlib" />
@@ -138,12 +138,6 @@
     <Compile Include="Controls\ParentalGuide.Designer.cs">
       <DependentUpon>ParentalGuide.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\PhotoViewerControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\PhotoViewerControl.Designer.cs">
-      <DependentUpon>PhotoViewerControl.cs</DependentUpon>
-    </Compile>
     <Compile Include="Controls\QuotesControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -155,6 +149,12 @@
     </Compile>
     <Compile Include="Controls\SeasonListControl.Designer.cs">
       <DependentUpon>SeasonListControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SettingsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\SettingsControl.Designer.cs">
+      <DependentUpon>SettingsControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\Top250Control.cs">
       <SubType>UserControl</SubType>
@@ -186,6 +186,7 @@
     <Compile Include="Controls\ViewReview.Designer.cs">
       <DependentUpon>ViewReview.cs</DependentUpon>
     </Compile>
+    <Compile Include="IMDBData\APIParser.cs" />
     <Compile Include="IMDBData\ShowtimeParser.cs" />
     <Compile Include="IMDBData\TitleExternalReviewParser.cs" />
     <Compile Include="IMDBData\TitleParentalGuideParser.cs" />
@@ -251,14 +252,14 @@
     <EmbeddedResource Include="Controls\ParentalGuide.resx">
       <DependentUpon>ParentalGuide.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\PhotoViewerControl.resx">
-      <DependentUpon>PhotoViewerControl.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Controls\QuotesControl.resx">
       <DependentUpon>QuotesControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\SeasonListControl.resx">
       <DependentUpon>SeasonListControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SettingsControl.resx">
+      <DependentUpon>SettingsControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Top250Control.resx">
       <DependentUpon>Top250Control.cs</DependentUpon>

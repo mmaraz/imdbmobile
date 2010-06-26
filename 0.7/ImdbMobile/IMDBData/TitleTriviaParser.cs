@@ -6,18 +6,33 @@ using Newtonsoft.Json.Linq;
 
 namespace ImdbMobile.IMDBData
 {
-    class TitleTriviaParser
+    class TitleTriviaParser : APIParser
     {
+        public ImdbTitle Title;
+
         public TitleTriviaParser()
         {
 
         }
 
-        public ImdbTitle ParseTitleTrivia(ImdbTitle title)
+        public void ParseTitleTrivia(ImdbTitle title)
         {
-            API a = new API();
-            string Response = a.GetTitleTrivia(title.ImdbId);
-            title.Trivia = new List<string>();
+            this.Title = title;
+            UI.WindowHandler.APIWorker = new API();
+            UI.WindowHandler.APIWorker.DataDownloaded += new EventHandler(APIWorker_DataDownloaded);
+            this.OnDownloadingData();
+            UI.WindowHandler.APIWorker.GetTitleTrivia(title.ImdbId);
+        }
+
+        void APIWorker_DataDownloaded(object sender, EventArgs e)
+        {
+            APIEvent ae = (APIEvent)e;
+            this.OnDownloadComplete(ae.EventData);
+
+            this.OnParsingData();
+
+            string Response = ae.EventData;
+            this.Title.Trivia = new List<string>();
 
             JObject Obj = JObject.Parse(Response);
             if (General.ContainsKey(Obj, "data"))
@@ -28,12 +43,12 @@ namespace ImdbMobile.IMDBData
                     JToken trivias = data["unspoilt"];
                     foreach (JToken trivia in trivias)
                     {
-                        title.Trivia.Add((string)trivia["text"]);
+                        this.Title.Trivia.Add((string)trivia["text"]);
                     }
                 }
             }
-            
-            return title;
+
+            this.OnParsingComplete();
         }
     }
 }

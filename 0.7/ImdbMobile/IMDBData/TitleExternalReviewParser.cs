@@ -6,17 +6,30 @@ using Newtonsoft.Json.Linq;
 
 namespace ImdbMobile.IMDBData
 {
-    class TitleExternalReviewParser
+    class TitleExternalReviewParser : APIParser
     {
+        public ImdbTitle Title;
+
         public TitleExternalReviewParser()
         {
 
         }
 
-        public List<ImdbExternalReview> ParseExternalReviews(ImdbTitle it)
+        public void ParseExternalReviews(ImdbTitle it)
         {
-            API a = new API();
-            string Response = a.GetExternalReviews(it.ImdbId);
+            this.Title = it;
+            UI.WindowHandler.APIWorker = new API();
+            UI.WindowHandler.APIWorker.DataDownloaded += new EventHandler(APIWorker_DataDownloaded);
+            this.OnDownloadingData();
+            UI.WindowHandler.APIWorker.GetExternalReviews(it.ImdbId);
+        }
+
+        void APIWorker_DataDownloaded(object sender, EventArgs e)
+        {
+            APIEvent ae = (APIEvent)e;
+            this.OnDownloadComplete(ae.EventData);
+
+            string Response = ae.EventData;
 
             JObject Obj = JObject.Parse(Response);
 
@@ -45,7 +58,8 @@ namespace ImdbMobile.IMDBData
                 }
             }
 
-            return Reviews;
+            this.Title.ExternalReviews = Reviews;
+            this.OnParsingComplete();
         }
     }
 }

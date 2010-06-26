@@ -8,19 +8,30 @@ using Newtonsoft.Json.Linq;
 
 namespace ImdbMobile.IMDBData
 {
-    class ActorParser
+    class ActorParser : APIParser
     {
-        private ImdbActor OriginalActor;
+        public ImdbActor OriginalActor;
 
         public ActorParser(ImdbActor actor)
         {
             this.OriginalActor = actor;
         }
 
-        public ImdbActor ParseDetails()
+        public void ParseDetails()
         {
-            string Response = GetResponse();
-            return ParseDetails(Response);
+            this.OnDownloadingData();
+            UI.WindowHandler.APIWorker = new API();
+            UI.WindowHandler.APIWorker.DataDownloaded += new EventHandler(Worker_DataDownloaded);
+            UI.WindowHandler.APIWorker.GetActorDetails(this.OriginalActor.ImdbId);
+        }
+
+        void Worker_DataDownloaded(object sender, EventArgs e)
+        {
+            APIEvent ae = (APIEvent)e;
+            this.OnDownloadComplete(ae.EventData);
+            this.OnParsingData();
+            this.OriginalActor = ParseDetails(ae.EventData);
+            this.OnParsingComplete();
         }
 
         public ImdbActor ParseDetails(string Response)
@@ -146,12 +157,6 @@ namespace ImdbMobile.IMDBData
                 }
             }
             return retList;
-        }
-
-        private string GetResponse()
-        {
-            API a = new API();
-            return a.GetActorDetails(this.OriginalActor.ImdbId);
         }
     }
 }

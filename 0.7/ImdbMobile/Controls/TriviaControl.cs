@@ -14,54 +14,17 @@ namespace ImdbMobile.Controls
     {
         private ImdbTitle CurrentTitle;
         private ImdbActor CurrentActor;
-        private static List<string> Trivia;
-
-        private delegate void ShowError(string Error);
-        private delegate void AddTrivia(List<string> Trivia);
-        private delegate ImdbTitle GetTitle();
-        private delegate ImdbActor GetActor();
-
-        System.Threading.Thread LoadingThread;
-
-        private delegate void ClearList();
-        private delegate void UpdateStatus(int Current, int Total);
-
-        private static int CurrentPage = -1;
-        private static int TotalPages = 1;
+        private List<string> Trivia;
 
         private void Update(int Current, int Total)
         {
-            ((UI.LoadingButton)this.LoadingList[0]).Text = UI.Translations.GetTranslated("0074") + ".\n(" + Current + " " + UI.Translations.GetTranslated("0050") + " " + Total + ")";
+            ((UI.LoadingButton)this.LoadingList.Items[0]).Text = UI.Translations.GetTranslated("0074") + ".\n(" + Current + " " + UI.Translations.GetTranslated("0050") + " " + Total + ")";
             this.LoadingList.Invalidate();
         }
 
         private void Clear()
         {
-            try
-            {
-                this.LoadingList.Visible = false;
-            }
-            catch (ObjectDisposedException) { }
-        }
-
-        private ImdbTitle GetTitleData()
-        {
-            try
-            {
-                return this.CurrentTitle;
-            }
-            catch (ObjectDisposedException) { }
-            return null;
-        }
-
-        private ImdbActor GetActorData()
-        {
-            try
-            {
-                return this.CurrentActor;
-            }
-            catch (ObjectDisposedException) { }
-            return null;
+            this.LoadingList.Visible = false;
         }
 
         public TriviaControl(ImdbActor actor)
@@ -74,8 +37,7 @@ namespace ImdbMobile.Controls
 
             UI.KListFunctions.ShowLoading(UI.Translations.GetTranslated("0075") + ".\n" + UI.Translations.GetTranslated("0002") + "...", this.LoadingList);
 
-            LoadingThread = new System.Threading.Thread(LoadImdbInformation);
-            LoadingThread.Start();
+            LoadImdbInformation();
         }
 
         public TriviaControl(ImdbTitle title)
@@ -88,105 +50,82 @@ namespace ImdbMobile.Controls
 
             UI.KListFunctions.ShowLoading(UI.Translations.GetTranslated("0076") + ".\n" + UI.Translations.GetTranslated("0002") + "...", this.LoadingList);
 
-            LoadingThread = new System.Threading.Thread(LoadImdbInformation);
-            LoadingThread.Start();
+            LoadImdbInformation();
         }
 
         private void SetError(string Message)
         {
-            try
-            {
-                UI.KListFunctions.ShowError(Message, this.kListControl1);
-            }
-            catch (ObjectDisposedException) { }
+            UI.KListFunctions.ShowError(Message, this.kListControl1);
         }
 
         private void AddTriviaItems(List<string> Trivia)
         {
-            try
+            List<UI.TextDisplay> tdList = new List<ImdbMobile.UI.TextDisplay>();
+            for (int i = 0; i < Trivia.Count; i++)
             {
-                List<UI.TextDisplay> tdList = new List<ImdbMobile.UI.TextDisplay>();
-                for (int i = 0; i < Trivia.Count; i++)
-                {
-                    UI.TextDisplay td = new ImdbMobile.UI.TextDisplay();
-                    td.Text = Trivia[i];
-                    td.YIndex = i;
-                    td.Parent = this.kListControl1;
-                    td.ShowSeparator = true;
-                    td.CalculateHeight();
-                    tdList.Add(td);
-                }
-                for (int i = 0; i < Trivia.Count; i++)
-                {
-                    this.kListControl1.AddItem(tdList[i]);
-                    Update(i, Trivia.Count);
-                }
-
-                try
-                {
-                    ClearList cl = new ClearList(Clear);
-                    this.Invoke(cl);
-                }
-                catch (ObjectDisposedException) { }
+                UI.TextDisplay td = new ImdbMobile.UI.TextDisplay();
+                td.Text = Trivia[i];
+                td.YIndex = i;
+                td.Parent = this.kListControl1;
+                td.ShowSeparator = true;
+                td.CalculateHeight();
+                tdList.Add(td);
             }
-            catch (ObjectDisposedException) { }
+            for (int i = 0; i < Trivia.Count; i++)
+            {
+                this.kListControl1.Items.Add(tdList[i]);
+                Update(i, Trivia.Count);
+            }
+
+            Clear();
         }
 
 
         private void ShowData()
         {
-            AddTrivia at = new AddTrivia(AddTriviaItems);
-            this.Invoke(at, new object[] { Trivia });
+            AddTriviaItems(Trivia);
 
             if (Trivia.Count == 0)
             {
-                try
+                if (CurrentTitle == null)
                 {
-                    ShowError sr = new ShowError(SetError);
-                    if (CurrentTitle == null)
-                    {
-                        this.Invoke(sr, new object[] { UI.Translations.GetTranslated("0077") });
-                    }
-                    else
-                    {
-                        this.Invoke(sr, new object[] { UI.Translations.GetTranslated("0078") });
-                    }
+                    SetError(UI.Translations.GetTranslated("0077"));
                 }
-                catch (Exception) { }
+                else
+                {
+                    SetError(UI.Translations.GetTranslated("0078"));
+                }
             }
         }
 
         private void LoadImdbInformation()
         {
-            try
+            if (CurrentTitle == null)
             {
-                ImdbActor CurrentActor = (ImdbActor)this.Invoke(new GetActor(GetActorData));
-                ImdbTitle CurrentTitle = (ImdbTitle)this.Invoke(new GetTitle(GetTitleData));
-
-                if (CurrentTitle == null)
-                {
-                    ActorTriviaParser atp = new ActorTriviaParser();
-                    ImdbActor actor = atp.ParseTitleTrivia(CurrentActor);
-                    Trivia = actor.Trivia;
-                }
-                else
-                {
-                    TitleTriviaParser ttp = new TitleTriviaParser();
-                    ImdbTitle title = ttp.ParseTitleTrivia(CurrentTitle);
-                    Trivia = title.Trivia;
-                }
-
-                ShowData();
+                ActorTriviaParser atp = new ActorTriviaParser();
+                atp.ParsingComplete += new EventHandler(atp_ParsingComplete);
+                atp.ParseTitleTrivia(CurrentActor);
             }
-            catch (Exception e)
+            else
             {
-                try
-                {
-                    ShowError se = new ShowError(SetError);
-                    this.Invoke(se, new object[] { e.Message });
-                }
-                catch (Exception) { }
+                TitleTriviaParser ttp = new TitleTriviaParser();
+                ttp.ParsingComplete += new EventHandler(ttp_ParsingComplete);
+                ttp.ParseTitleTrivia(CurrentTitle);
             }
+        }
+
+        void ttp_ParsingComplete(object sender, EventArgs e)
+        {
+            TitleTriviaParser ttp = (TitleTriviaParser)sender;
+            this.Trivia = ttp.Title.Trivia;
+            ShowData();
+        }
+
+        void atp_ParsingComplete(object sender, EventArgs e)
+        {
+            ActorTriviaParser atp = (ActorTriviaParser)sender;
+            this.Trivia = atp.Actor.Trivia;
+            ShowData();
         }
     }
 }

@@ -6,16 +6,28 @@ using Newtonsoft.Json.Linq;
 
 namespace ImdbMobile.IMDBData
 {
-    class ComingSoonParser
+    class ComingSoonParser : APIParser
     {
+        public List<ImdbSearchResult> Results;
+
         public ComingSoonParser() { }
 
-        public List<ImdbSearchResult> ParseComingSoon()
+        public void ParseComingSoon()
         {
-            List<ImdbSearchResult> isrList = new List<ImdbSearchResult>();
+            UI.WindowHandler.APIWorker = new API();
+            UI.WindowHandler.APIWorker.DataDownloaded += new EventHandler(APIWorker_DataDownloaded);
+            this.OnDownloadingData();
+            UI.WindowHandler.APIWorker.GetComingSoon();
+        }
 
-            API a = new API();
-            string Response = a.GetComingSoon();
+        void APIWorker_DataDownloaded(object sender, EventArgs e)
+        {
+            APIEvent ae = (APIEvent)e;
+            string Response = ae.EventData;
+            this.OnDownloadComplete(Response);
+
+            this.OnParsingData();
+            List<ImdbSearchResult> isrList = new List<ImdbSearchResult>();
 
             JObject Obj = JObject.Parse(Response);
             if (General.ContainsKey(Obj, "data"))
@@ -60,7 +72,8 @@ namespace ImdbMobile.IMDBData
                 }
             }
 
-            return isrList;
+            this.Results = isrList;
+            this.OnParsingComplete();
         }
     }
 }

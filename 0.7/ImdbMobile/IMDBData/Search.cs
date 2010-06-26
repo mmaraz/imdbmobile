@@ -8,10 +8,10 @@ using Newtonsoft.Json.Linq;
 
 namespace ImdbMobile.IMDBData
 {
-    class Search
+    class Search : APIParser
     {
         private string Query;
-        List<ImdbSearchResult> Results;
+        public List<ImdbSearchResult> Results;
         public int ResultLimit { get; set; }
 
         public Search()
@@ -19,22 +19,23 @@ namespace ImdbMobile.IMDBData
 
         }
 
-        public List<ImdbSearchResult> QueryIMDB(string Query)
+        public void QueryIMDB(string Query)
         {
             this.Results = new List<ImdbSearchResult>();
             this.Query = Query;
 
-            string Response = GetResponse();
-
-            ParseJSON(Response);
-
-            return this.Results;
+            UI.WindowHandler.APIWorker = new API();
+            UI.WindowHandler.APIWorker.DataDownloaded += new EventHandler(a_DataDownloaded);
+            this.OnDownloadingData();
+            UI.WindowHandler.APIWorker.GetSearch(Query);
         }
 
-        private string GetResponse()
+        void a_DataDownloaded(object sender, EventArgs e)
         {
-            ImdbMobile.IMDBData.API a = new ImdbMobile.IMDBData.API();
-            return a.GetSearch(Query);
+            APIEvent ae = (APIEvent)e;
+            this.OnDownloadComplete(ae.EventData);
+            this.OnParsingData();
+            ParseJSON(ae.EventData);
         }
 
         private void ParseJSON(string JSON)
@@ -44,6 +45,7 @@ namespace ImdbMobile.IMDBData
             {
                 ReadResults(data["data"]["results"]);
             }
+            this.OnParsingComplete();
         }
 
 

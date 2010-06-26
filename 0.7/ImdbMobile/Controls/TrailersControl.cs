@@ -51,7 +51,7 @@ namespace ImdbMobile.Controls
                     mpi.YIndex = CurrentTitle.Trailer.Encodings.IndexOf(ie);
                     mpi.MouseUp += new ImdbMobile.UI.ActionButton.MouseEvent(mpi_MouseUp);
                     mpi.CalculateHeight();
-                    this.kListControl1.AddItem(mpi);
+                    this.kListControl1.Items.Add(mpi);
                 }
                 if (CurrentTitle.Trailer.Encodings.Count == 0)
                 {

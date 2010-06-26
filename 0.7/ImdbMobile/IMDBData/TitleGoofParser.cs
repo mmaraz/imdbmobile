@@ -6,15 +6,29 @@ using Newtonsoft.Json.Linq;
 
 namespace ImdbMobile.IMDBData
 {
-    class TitleGoofParser
+    class TitleGoofParser : APIParser
     {
+        public ImdbTitle Title;
+
         public TitleGoofParser() { }
 
-        public ImdbTitle ParseGoofs(ImdbTitle title)
+        public void ParseGoofs(ImdbTitle title)
         {
-            API a = new API();
-            string Response = a.GetTitleGoofs(title.ImdbId);
-            title.Goofs = new List<ImdbGoof>();
+            this.Title = title;
+            UI.WindowHandler.APIWorker = new API();
+            UI.WindowHandler.APIWorker.DataDownloaded += new EventHandler(APIWorker_DataDownloaded);
+            this.OnDownloadingData();
+            UI.WindowHandler.APIWorker.GetTitleGoofs(title.ImdbId);
+        }
+
+        void APIWorker_DataDownloaded(object sender, EventArgs e)
+        {
+            APIEvent ae = (APIEvent)e;
+            this.OnDownloadComplete(ae.EventData);
+
+            this.OnParsingData();
+            string Response = ae.EventData;
+            this.Title.Goofs = new List<ImdbGoof>();
 
             JObject Obj = JObject.Parse(Response);
             if (General.ContainsKey(Obj, "data"))
@@ -35,11 +49,11 @@ namespace ImdbMobile.IMDBData
                             case "GOOF-FAIR": g.Type = ImdbGoof.GoofType.IncorrectlyRegarded; break;
                             case "GOOF-PLOT": g.Type = ImdbGoof.GoofType.PlotHoles; break;
                         }
-                        title.Goofs.Add(g);
+                        this.Title.Goofs.Add(g);
                     }
                 }
             }
-            return title;
+            this.OnParsingComplete();
         }
     }
 }

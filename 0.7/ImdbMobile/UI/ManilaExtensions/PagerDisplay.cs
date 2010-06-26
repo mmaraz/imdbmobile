@@ -14,7 +14,6 @@ namespace ImdbMobile.UI
         public event MouseEvent MouseDown;
 
         private string _text;
-        private int _textHeight;
 
         public int CurrentPage { get; set; }
         public int TotalPages { get; set; }
@@ -58,7 +57,7 @@ namespace ImdbMobile.UI
             this.Parent.MouseMove += new System.Windows.Forms.MouseEventHandler(Parent_MouseMove);
         }
 
-        public void Render(Graphics g, Rectangle Bounds, bool Param)
+        public void Render(Graphics g, Rectangle Bounds)
         {
             if (this.ShowHoverLeft)
             {
@@ -124,6 +123,11 @@ namespace ImdbMobile.UI
                     Next(X, Y, this.Parent, this);
                 }
             }
+        }
+
+        public void OnMouseMove(int X, int Y)
+        {
+
         }
     }
 }

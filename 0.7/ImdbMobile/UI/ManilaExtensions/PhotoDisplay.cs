@@ -122,7 +122,7 @@ namespace ImdbMobile.UI
             this.Height += ((this.Parent.Height) / 3);
         }
 
-         public void Render(Graphics g, Rectangle Bounds, bool Param)
+         public void Render(Graphics g, Rectangle Bounds)
         {
             if (this.DrawnBitmap != null)
             {
@@ -187,6 +187,11 @@ namespace ImdbMobile.UI
                     MouseUp(this, gImage);
                 }
             }
+        }
+
+        public void OnMouseMove(int X, int Y)
+        {
+
         }
     }
 }

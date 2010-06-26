@@ -6,17 +6,31 @@ using Newtonsoft.Json.Linq;
 
 namespace ImdbMobile.IMDBData
 {
-    class TitleParentalGuideParser
+    class TitleParentalGuideParser : APIParser
     {
+        public ImdbTitle Title;
+
         public TitleParentalGuideParser()
         {
 
         }
 
-        public Dictionary<string, string> ParseParentalGuide(ImdbTitle it)
+        public void ParseParentalGuide(ImdbTitle it)
         {
-            API a = new API();
-            string Response = a.GetParentalGuide(it.ImdbId);
+            this.Title = it;
+            UI.WindowHandler.APIWorker = new API();
+            UI.WindowHandler.APIWorker.DataDownloaded += new EventHandler(APIWorker_DataDownloaded);
+            this.OnDownloadingData();
+            UI.WindowHandler.APIWorker.GetParentalGuide(it.ImdbId);
+        }
+
+        void APIWorker_DataDownloaded(object sender, EventArgs e)
+        {
+            APIEvent ae = (APIEvent)e;
+            this.OnDownloadComplete(ae.EventData);
+
+            this.OnParsingData();
+            string Response = ae.EventData;
 
             JObject Obj = JObject.Parse(Response);
 
@@ -33,7 +47,8 @@ namespace ImdbMobile.IMDBData
                     }
                 }
             }
-            return Guides;
+            this.Title.ParentalGuide = Guides;
+            this.OnParsingComplete();
         }
     }
 }

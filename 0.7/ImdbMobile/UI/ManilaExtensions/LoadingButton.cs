@@ -51,7 +51,7 @@ namespace ImdbMobile.UI
             }
         }
 
-        public void Render(Graphics g, Rectangle Bounds, bool Param)
+        public void Render(Graphics g, Rectangle Bounds)
         {
             if (this.BackgroundColor != Color.Empty)
             {
@@ -72,6 +72,11 @@ namespace ImdbMobile.UI
 
         public void OnMouseDown(int x, int y, ref bool StateChanged) { }
         public void OnMouseUp(int x, int y, bool StateChanged) { }
+
+        public void OnMouseMove(int X, int Y)
+        {
+
+        }
     }
 }
 

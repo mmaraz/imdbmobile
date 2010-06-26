@@ -19,6 +19,7 @@ namespace ImdbMobile.IMDBData
         public string UILanguage { get; set; }
         public bool UseAnimations { get; set; }
         public int NumToDisplay { get; set; }
+        public bool UseCompression { get; set; }
 
         public Settings()
         {
