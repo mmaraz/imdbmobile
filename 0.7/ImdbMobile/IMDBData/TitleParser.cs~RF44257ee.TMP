@@ -1,0 +1,255 @@
+﻿using System;
+using System.Linq;
+using System.Collections.Generic;
+using System.Text;
+using System.Net;
+using System.IO;
+using LitJson;
+using ImdbJson.IMDBData;
+using Newtonsoft.Json.Linq;
+
+namespace ImdbMobile.IMDBData
+{
+    class TitleParser
+    {
+        private ImdbTitle OriginalTitle;
+
+        public TitleParser()
+        {
+
+        }
+
+        public ImdbJson.IMDBData.ImdbTitle ParseFullDetails(ImdbTitle OriginalTitle)
+        {
+            this.OriginalTitle = OriginalTitle;
+
+            string Response = GetResponse();
+            return ParseData(Response);
+        }
+
+        private ImdbJson.IMDBData.ImdbTitle ParseData(string Response)
+        {
+            ImdbJson.IMDBData.ImdbTitle title = this.OriginalTitle;
+            JObject jd = JObject.Parse(Response);
+            
+
+            if (General.ContainsKey(jd, "data"))
+            {
+                JObject Obj = jd["data"];
+                title.Photos = ParsePhotos(Obj);
+                title.Directors = ParseDirectors(Obj);
+                title.Writers = ParseWriters(Obj);
+                title.Rating = ParseRating(Obj);
+                title.NumberOfVotes = ParseNumberOfVotes(Obj);
+                title.Genres = ParseGenres(Obj);
+                title.ReleaseDate = ParseReleaseDate(Obj);
+                title.Tagline = ParseTagline(Obj);
+                title.Runtime = ParseRuntime(Obj);
+                title.Cast = ParseCast(Obj);
+                title.Plot = ParsePlot(Obj);
+            }
+
+            return title;
+        }
+
+        private string ParsePlot(JObject data)
+        {
+            if (General.ContainsKey(data, "plot"))
+            {
+                JObject plot = data["plot"];
+                if (General.ContainsKey(plot, "outline"))
+                {
+                    return (string)plot["outline"];
+                }
+            }
+            return null;
+        }
+
+        private List<ImdbCharacter> ParseCast(JObject data)
+        {
+            List<ImdbCharacter> retList = new List<ImdbCharacter>();
+            if (General.ContainsKey(data, "cast_summary"))
+            {
+                JObject cast = data["cast_summary"];
+                foreach (JObject actor in cast)
+                {
+                    ImdbCharacter ic = new ImdbCharacter();
+                    if (General.ContainsKey(actor, "char"))
+                    {
+                        ic.CharacterName = (string)actor["char"];
+                    }
+                    if (General.ContainsKey(actor, "name"))
+                    {
+                        JObject name = actor["name"];
+                        ic.ImdbId = (string)name["nconst"];
+                        ic.Name = (string)name["name"];
+                        if (General.ContainsKey(name, "image"))
+                        {
+                            ic.Headshot.URL = (string)name["image"]["url"];
+                            ic.Headshot.Height = (int)name["image"]["height"];
+                            ic.Headshot.Width = (int)name["image"]["width"];
+                        }
+                    }
+                    retList.Add(ic);
+                }
+            }
+            return retList;
+        }
+
+        private string ParseRuntime(JObject data)
+        {
+            if (General.ContainsKey(data, "runtime"))
+            {
+                JObject runtime = data["runtime"];
+                if (General.ContainsKey(runtime, "time"))
+                {
+                    return (string)runtime["time"];
+                }
+            }
+            return null;
+        }
+
+        private string ParseTagline(JObject data)
+        {
+            if (General.ContainsKey(data, "tagline"))
+            {
+                return (string)data["tagline"];
+            }
+            return null;
+        }
+
+        private ImdbCover ParseImage(JObject data)
+        {
+            JObject cover = new ImdbCover();
+            if (General.ContainsKey(data, "image"))
+            {
+                cover.URL = (string)data["image"]["url"];
+                cover.Width = (int)data["image"]["width"];
+                cover.Height = (int)data["image"]["height"];
+            }
+            return cover;
+        }
+
+        private string ParseReleaseDate(JObject data)
+        {
+            if (General.ContainsKey(data, "release_date"))
+            {
+                JObject release = data["release_date"];
+                if (General.ContainsKey(release, "normal"))
+                {
+                    return (string)release["normal"];
+                }
+            }
+            return null;
+        }
+
+        private List<string> ParseGenres(JObject data)
+        {
+            List<string> retList = new List<string>();
+            if (General.ContainsKey(data, "genres"))
+            {
+                JObject genres = data["genres"];
+                foreach (JObject g in genres)
+                {
+                    retList.Add((string)g);
+                }
+            }
+            return retList;
+        }
+
+        private int ParseNumberOfVotes(JObject data)
+        {
+            if (General.ContainsKey(data, "num_votes"))
+            {
+                return int.Parse((string)data["num_votes"]);
+            }
+            return -1;
+        }
+
+        private string ParseRating(JObject data)
+        {
+            if (General.ContainsKey(data, "rating"))
+            {
+                return (string)data["rating"];
+            }
+            return null;
+        }
+
+        private List<ImdbWriter> ParseWriters(JObject data)
+        {
+            List<ImdbWriter> retList = new List<ImdbWriter>();
+            if (General.ContainsKey(data, "writers_summary"))
+            {
+                JObject writers = data["writers_summary"];
+                foreach (JsonData writer in writers)
+                {
+                    ImdbWriter iw = new ImdbWriter();
+                    if (General.ContainsKey(writer, "name"))
+                    {
+                        JObject name = writer["name"];
+                        iw.Name = (string)name["name"];
+                        iw.ImdbId = (string)name["nconst"];
+                    }
+                    if (General.ContainsKey(writer, "attr"))
+                    {
+                        iw.TitleAttribute = (string)writer["attr"];
+                    }
+                    retList.Add(iw);
+                }
+            }
+            return retList;
+        }
+
+        private List<ImdbActor> ParseDirectors(JObject data)
+        {
+            List<ImdbActor> retList = new List<ImdbActor>();
+            if (General.ContainsKey(data, "directors_summary"))
+            {
+                JObject Obj = data["directors_summary"];
+                foreach (JObject jsd in Obj)
+                {
+                    if (General.ContainsKey(jsd, "name"))
+                    {
+                        JObject dirname = jsd["name"];
+                        ImdbActor ia = new ImdbActor();
+                        ia.ImdbId = (string)dirname["nconst"];
+                        ia.Name = (string)dirname["name"];
+                        retList.Add(ia);
+                    }
+                }
+            }
+            return retList;
+        }
+
+        private List<ImdbJson.IMDBData.ImdbCover> ParsePhotos(JObject data)
+        {
+            List<ImdbCover> retList = new List<ImdbCover>();
+            if (General.ContainsKey(data, "photos"))
+            {
+                JObject photos = data["photos"];
+                foreach (JObject photo in photos)
+                {
+                    ImdbCover ic = new ImdbCover();
+                    ic.Height = (int)photo["height"];
+                    ic.Width = (int)photo["width"];
+                    ic.URL = (string)photo["url"];
+                    retList.Add(ic);
+                }
+            }
+            return retList;
+        }
+
+        private string GetResponse()
+        {
+            WebRequest webReq = (WebRequest)HttpWebRequest.Create("http://66.197.138.149/Imdbphp/Movie.php?n=" + this.OriginalTitle.ImdbId);
+            HttpWebResponse resp = (HttpWebResponse)webReq.GetResponse();
+
+            Stream s = resp.GetResponseStream();
+            StreamReader sr = new StreamReader(s);
+            string Result = sr.ReadToEnd();
+            resp.Close();
+
+            return Result;
+        }
+    }
+}

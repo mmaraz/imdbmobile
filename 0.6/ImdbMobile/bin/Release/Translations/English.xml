@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Translation>
+  <Name English="English"></Name>
+  <Phrases>
+    <Phrase English="Loading Actor Info" ID="0001"><![CDATA[Loading Actor Info]]></Phrase>
+    <Phrase English="Please Wait" ID="0002"><![CDATA[Please Wait]]></Phrase>
+    <!--Context: "Bio" / Biography -->
+    <Phrase English="Bio" ID="0003"><![CDATA[Bio]]></Phrase>
+    <Phrase English="Filmography" ID="0004"><![CDATA[Filmography]]></Phrase>
+    <Phrase English="Trivia" ID="0005"><![CDATA[Trivia]]></Phrase>
+    <Phrase English="Home" ID="0006"><![CDATA[Home]]></Phrase>
+    <Phrase English="Back" ID="0007"><![CDATA[Back]]></Phrase>
+    <Phrase English="Actor" ID="0008"><![CDATA[Actor]]></Phrase>
+    <Phrase English="Actor Details" ID="0009"><![CDATA[Actor Details]]></Phrase>
+    <Phrase English="Loading Cast" ID="0010"><![CDATA[Loading Cast]]></Phrase>
+    <Phrase English="There is no Cast available for this title" ID="0011"><![CDATA[There is no Cast available for this title]]></Phrase>
+    <Phrase English="Cast" ID="0012"><![CDATA[Cast]]></Phrase>
+    <Phrase English="Loading Coming Soon" ID="0013"><![CDATA[Loading Coming Soon]]></Phrase>
+    <Phrase English="There are no titles in the Coming Soon section" ID="0014"><![CDATA[There are no titles in the Coming Soon section]]></Phrase>
+    <Phrase English="Coming Soon" ID="0015"><![CDATA[Coming Soon]]></Phrase>
+    <Phrase English="Air Date" ID="0016"><![CDATA[Air Date]]></Phrase>
+    <Phrase English="Episode List" ID="0017"><![CDATA[Episode List]]></Phrase>
+    <Phrase English="Loading Filmography" ID="0018"><![CDATA[Loading Filmography]]></Phrase>
+    <!--Context: Samuel L. Jackson "as" himself -->
+    <Phrase English="as" ID="0019"><![CDATA[as]]></Phrase>
+    <Phrase English="Filmography" ID="0020"><![CDATA[Filmography]]></Phrase>
+    <Phrase English="Error connecting to IMDb" ID="0021"><![CDATA[Error connecting to IMDb]]></Phrase>
+    <Phrase English="No results found" ID="0022"><![CDATA[No results found]]></Phrase>
+    <Phrase English="Known For" ID="0023"><![CDATA[Known For]]></Phrase>
+    <Phrase English="Movie" ID="0024"><![CDATA[Movie]]></Phrase>
+    <Phrase English="TV Series" ID="0025"><![CDATA[TV Series]]></Phrase>
+    <Phrase English="Video Game" ID="0026"><![CDATA[Video Game]]></Phrase>
+    <Phrase English="Searching IMDb" ID="0027"><![CDATA[Searching IMDb]]></Phrase>
+    <Phrase English="Top 250" ID="0028"><![CDATA[Top 250]]></Phrase>
+    <Phrase English="Coming Soon" ID="0029"><![CDATA[Coming Soon]]></Phrase>
+    <Phrase English="Settings" ID="0030"><![CDATA[Settings]]></Phrase>
+    <Phrase English="Exit" ID="0031"><![CDATA[Exit]]></Phrase>
+    <Phrase English="IMDb Mobile" ID="0032"><![CDATA[IMDb Mobile]]></Phrase>
+    <Phrase English="Loading Goofs" ID="0033"><![CDATA[Loading Goofs]]></Phrase>
+    <Phrase English="Continuity" ID="0034"><![CDATA[Continuity]]></Phrase>
+    <Phrase English="Crew or equipment visible" ID="0035"><![CDATA[Crew or equipment visible]]></Phrase>
+    <Phrase English="Factual errors" ID="0036"><![CDATA[Factual errors]]></Phrase>
+    <Phrase English="Incorrectly regarded as goofs" ID="0037"><![CDATA[Incorrectly regarded as goofs]]></Phrase>
+    <Phrase English="Plot holes" ID="0038"><![CDATA[Plot holes]]></Phrase>
+    <Phrase English="Revealing mistakes" ID="0039"><![CDATA[Revealing mistakes]]></Phrase>
+    <Phrase English="Miscellaneous" ID="0040"><![CDATA[Miscellaneous]]></Phrase>
+    <Phrase English="There are no Goofs available for this title" ID="0041"><![CDATA[There are no Goofs available for this title]]></Phrase>
+    <Phrase English="Goofs" ID="0042"><![CDATA[Goofs]]></Phrase>
+    <Phrase English="Plot" ID="0043"><![CDATA[Plot]]></Phrase>
+    <Phrase English="Photos" ID="0044"><![CDATA[Photos]]></Phrase>
+    <Phrase English="Trailers" ID="0045"><![CDATA[Trailers]]></Phrase>
+    <Phrase English="Quotes" ID="0046"><![CDATA[Quotes]]></Phrase>
+    <Phrase English="Episodes" ID="0047"><![CDATA[Episodes]]></Phrase>
+    <Phrase English="Loading Thumbnails" ID="0048"><![CDATA[Loading Thumbnails]]></Phrase>
+    <!-- Context: "Page" 1 of 9 -->
+    <Phrase English="Page" ID="0049"><![CDATA[Page]]></Phrase>
+    <!-- Context: Page 1 "of" 9 -->
+    <Phrase English="of" ID="0050"><![CDATA[of]]></Phrase>
+    <Phrase English="There are no Photos available for this title" ID="0051"><![CDATA[There are no Photos available for this title]]></Phrase>
+    <Phrase English="Photo Viewer" ID="0052"><![CDATA[Photo Viewer]]></Phrase>
+    <Phrase English="Loading Quotes" ID="0053"><![CDATA[Loading Quotes]]></Phrase>
+    <Phrase English="There are no Quotes available for this title" ID="0054"><![CDATA[There are no Quotes available for this title]]></Phrase>
+    <Phrase English="Loading Episode List" ID="0055"><![CDATA[Loading Episode List]]></Phrase>
+    <Phrase English="Season List" ID="0056"><![CDATA[Season List]]></Phrase>
+    <Phrase English="No Video Player has been selected. If you do this, you will not be able to view Trailers. Are you sure you want to do this?" ID="0057"><![CDATA[No Video Player has been selected. If you do this, you will not be able to view Trailers. Are you sure you want to do this?]]></Phrase>
+    <Phrase English="The path to the Custom Video Player does not exist. Do you want to change it?" ID="0058"><![CDATA[The path to the Custom Video Player does not exist. Do you want to change it?]]></Phrase>
+    <Phrase English="Could not find CorePlayer on your phone. If you are sure it is installed, please select the 'Custom Video Player' option and enter the location of player.exe" ID="0059"><![CDATA[Could not find CorePlayer on your phone. If you are sure it is installed, please select the 'Custom Video Player' option and enter the location of player.exe]]></Phrase>
+    <Phrase English="Save" ID="0060"><![CDATA[Save]]></Phrase>
+    <Phrase English="Cancel" ID="0061"><![CDATA[Cancel]]></Phrase>
+    <Phrase English="IMDb Language" ID="0062"><![CDATA[IMDb Language]]></Phrase>
+    <Phrase English="Download Thumbnails?" ID="0063"><![CDATA[Download Thumbnails?]]></Phrase>
+    <Phrase English="Default Video Player" ID="0064"><![CDATA[Default Video Player]]></Phrase>
+    <Phrase English="Custom Video Player" ID="0065"><![CDATA[Custom Video Player]]></Phrase>
+    <Phrase English="Command Line Arguments" ID="0066"><![CDATA[Command Line Arguments]]></Phrase>
+    <Phrase English="Download Images To" ID="0067"><![CDATA[Download Images To]]></Phrase>
+    <Phrase English="Loading Top 250" ID="0068"><![CDATA[Loading Top 250]]></Phrase>
+    <Phrase English="Votes" ID="0069"><![CDATA[Votes]]></Phrase>
+    <!-- Context: "Watch Trailer (Low Resolution)" -->
+    <Phrase English="EDGE" ID="0070"><![CDATA[EDGE]]></Phrase>
+    <!-- Context: "Watch Trailer (High Resolution)" -->
+    <Phrase English="ThreeG" ID="0071"><![CDATA[ThreeG]]></Phrase>
+    <Phrase English="There are no Trailers available for this title" ID="0072"><![CDATA[There are no Trailers available for this title]]></Phrase>
+    <Phrase English="Downloading Trailer Info" ID="0073"><![CDATA[Downloading Trailer Info]]></Phrase>
+    <Phrase English="Loading Trivia" ID="0074"><![CDATA[Loading Trivia]]></Phrase>
+    <Phrase English="Loading Actor Trivia" ID="0075"><![CDATA[Loading Actor Trivia]]></Phrase>
+    <Phrase English="Loading Movie Trivia" ID="0076"><![CDATA[Loading Movie Trivia]]></Phrase>
+    <Phrase English="There is no Trivia available for this actor" ID="0077"><![CDATA[There is no Trivia available for this actor]]></Phrase>
+    <Phrase English="There is no Trivia available for this title" ID="0078"><![CDATA[There is no Trivia available for this title]]></Phrase>
+    <Phrase English="An error has occurred" ID="0079"><![CDATA[An error has occurred]]></Phrase>
+    <Phrase English="Search For" ID="0080"><![CDATA[Search For]]></Phrase>
+    <Phrase English="Real Name" ID="0081"><![CDATA[Real Name]]></Phrase>
+    <Phrase English="Birthday" ID="0082"><![CDATA[Birthday]]></Phrase>
+    <Phrase English="Directed By" ID="0083"><![CDATA[Directed By]]></Phrase>
+    <Phrase English="Written By" ID="0084"><![CDATA[Written By]]></Phrase>
+    <Phrase English="Genres" ID="0085"><![CDATA[Genres]]></Phrase>
+    <Phrase English="Certificate" ID="0086"><![CDATA[Certificate]]></Phrase>
+    <Phrase English="Stage" ID="0087"><![CDATA[Stage]]></Phrase>
+    <Phrase English="Loading Movie Info" ID="0088"><![CDATA[Loading Movie Info]]></Phrase>
+    <Phrase English="About" ID="0089"><![CDATA[About]]></Phrase>
+    <Phrase English="User Reviews" ID="0090"><![CDATA[User Reviews]]></Phrase>
+    <Phrase English="External Reviews" ID="0091"><![CDATA[External Reviews]]></Phrase>
+    <Phrase English="Parental Guide" ID="0092"><![CDATA[Parental Guide]]></Phrase>
+    <Phrase English="Loading Parental Guide" ID="0093"><![CDATA[Loading Parental Guide]]></Phrase>
+    <Phrase English="Loading External Reviews" ID="0094"><![CDATA[Loading External Reviews]]></Phrase>
+    <Phrase English="Loading User Reviews" ID="0095"><![CDATA[Loading User Reviews]]></Phrase>
+    <Phrase English="HD 480p" ID="0096"><![CDATA[HD 480p]]></Phrase>
+    <Phrase English="HD 720p" ID="0097"><![CDATA[HD 720p]]></Phrase>
+    <Phrase English="There are no User Reviews for this title" ID="0098"><![CDATA[There are no User Reviews for this title]]></Phrase>
+  </Phrases>
+</Translation>
