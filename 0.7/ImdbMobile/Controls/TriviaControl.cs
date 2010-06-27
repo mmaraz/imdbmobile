@@ -100,17 +100,24 @@ namespace ImdbMobile.Controls
 
         private void LoadImdbInformation()
         {
-            if (CurrentTitle == null)
+            if (this.Trivia != null && this.Trivia.Count > 0)
             {
-                ActorTriviaParser atp = new ActorTriviaParser();
-                atp.ParsingComplete += new EventHandler(atp_ParsingComplete);
-                atp.ParseTitleTrivia(CurrentActor);
+                ShowData();
             }
             else
             {
-                TitleTriviaParser ttp = new TitleTriviaParser();
-                ttp.ParsingComplete += new EventHandler(ttp_ParsingComplete);
-                ttp.ParseTitleTrivia(CurrentTitle);
+                if (CurrentTitle == null)
+                {
+                    ActorTriviaParser atp = new ActorTriviaParser();
+                    atp.ParsingComplete += new EventHandler(atp_ParsingComplete);
+                    atp.ParseTitleTrivia(CurrentActor);
+                }
+                else
+                {
+                    TitleTriviaParser ttp = new TitleTriviaParser();
+                    ttp.ParsingComplete += new EventHandler(ttp_ParsingComplete);
+                    ttp.ParseTitleTrivia(CurrentTitle);
+                }
             }
         }
 

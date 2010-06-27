@@ -37,14 +37,22 @@ namespace ImdbMobile.Controls
 
         private void SetError(string Message)
         {
+            this.LoadingList.Visible = false;
             UI.KListFunctions.ShowError(Message, this.kListControl1);
         }
 
         private void LoadImdbInformation()
         {
-            TitleGoofParser tgp = new TitleGoofParser();
-            tgp.ParsingComplete += new EventHandler(tgp_ParsingComplete);
-            tgp.ParseGoofs(CurrentTitle);
+            if (this.CurrentTitle.Goofs != null && this.CurrentTitle.Goofs.Count > 0)
+            {
+                AddItems();
+            }
+            else
+            {
+                TitleGoofParser tgp = new TitleGoofParser();
+                tgp.ParsingComplete += new EventHandler(tgp_ParsingComplete);
+                tgp.ParseGoofs(CurrentTitle);
+            }
         }
 
         void tgp_ParsingComplete(object sender, EventArgs e)

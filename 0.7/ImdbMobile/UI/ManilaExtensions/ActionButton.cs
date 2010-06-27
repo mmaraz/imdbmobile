@@ -54,8 +54,6 @@ namespace ImdbMobile.UI
                 _textHeight = (int)textSize.Height;
                 this.Height += (int)textSize.Height;
             }
-
-            this.Parent.MouseMove += new System.Windows.Forms.MouseEventHandler(Parent_MouseMove);
         }
 
         public void Render(Graphics g, Rectangle Bounds)
@@ -79,27 +77,22 @@ namespace ImdbMobile.UI
             g.DrawString(this.Text, _mainFont, new SolidBrush(Color.Black), 65, Bounds.Y + PaddingTop);
         }
 
-        void Parent_MouseMove(object sender, System.Windows.Forms.MouseEventArgs e)
-        {
-            try
-            {
-                this.ShowHover = false;
-            }
-            catch (Exception) { }
-        }
-
         public void OnMouseDown(int X, int Y, ref bool IsSamePoint)
         {
+            if (IsSamePoint)
+            {
+                this.ShowHover = true;
+            }
             this.Parent.Invalidate();
             if (this.MouseDown != null)
             {
-                this.ShowHover = true;
                 MouseDown(X, Y, this.Parent, this);
             }
         }
 
         public void OnMouseUp(int X, int Y, bool IsSamePoint)
         {
+            this.ShowHover = false;
             if (this.MouseUp != null)
             {
                 MouseUp(X, Y, this.Parent, this);
@@ -108,7 +101,7 @@ namespace ImdbMobile.UI
 
         public void OnMouseMove(int X, int Y)
         {
-
+            this.ShowHover = false;
         }
     }
 }

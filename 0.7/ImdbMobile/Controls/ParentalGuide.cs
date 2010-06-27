@@ -38,9 +38,16 @@ namespace ImdbMobile.Controls
 
         private void LoadParentalData()
         {
-            IMDBData.TitleParentalGuideParser tgp = new TitleParentalGuideParser();
-            tgp.ParsingComplete += new EventHandler(tgp_ParsingComplete);
-            tgp.ParseParentalGuide(this.CurrentTitle);
+            if (this.CurrentTitle.ParentalGuide != null && this.CurrentTitle.ParentalGuide.Count > 0)
+            {
+                SetImdbInformation(this.CurrentTitle);
+            }
+            else
+            {
+                IMDBData.TitleParentalGuideParser tgp = new TitleParentalGuideParser();
+                tgp.ParsingComplete += new EventHandler(tgp_ParsingComplete);
+                tgp.ParseParentalGuide(this.CurrentTitle);
+            }
         }
 
         void tgp_ParsingComplete(object sender, EventArgs e)
