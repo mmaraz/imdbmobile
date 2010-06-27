@@ -259,7 +259,7 @@ namespace ImdbMobile.IMDBData
                     // switch off compression
                     IMDBData.SettingsWrapper.GlobalSettings.UseCompression = false;
                 }
-                
+
                 if (this.ResponseReceived != null)
                 {
                     UI.WindowHandler.ParentForm.Invoke(
@@ -287,19 +287,26 @@ namespace ImdbMobile.IMDBData
             {
                 // User aborted operation
             }
-            catch (Exception ex)
+            catch (WebException ex)
             {
-                if (this.Error != null)
+                if (ex.Status == WebExceptionStatus.RequestCanceled)
                 {
-                    UI.WindowHandler.ParentForm.Invoke(
-                            new EventCallback(
-                                delegate()
-                                {
-                                    APIEvent ae = new APIEvent(ex.Message);
-                                    this.Error(this, ae);
-                                }
-                            )
-                            );
+                    // User aborted. Dodgy MS spelling :)
+                }
+                else
+                {
+                    if (this.Error != null)
+                    {
+                        UI.WindowHandler.ParentForm.Invoke(
+                                new EventCallback(
+                                    delegate()
+                                    {
+                                        APIEvent ae = new APIEvent(ex.Message);
+                                        this.Error(this, ae);
+                                    }
+                                )
+                                );
+                    }
                 }
             }
         }
@@ -357,6 +364,10 @@ namespace ImdbMobile.IMDBData
                 }
             }
             catch (ObjectDisposedException)
+            {
+                // User aborted operation
+            }
+            catch (InvalidOperationException)
             {
                 // User aborted operation
             }
