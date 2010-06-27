@@ -16,12 +16,14 @@ namespace ImdbMobile.UI
         Form ParentForm;
         Microsoft.WindowsCE.Forms.InputPanel sip;
         Bitmap DrawnBitmap;
+        public bool ShowSearch { get; set; }
 
         public Titlebar(System.Windows.Forms.Form ParentForm)
         {
             this.ParentForm = ParentForm;
             sip = new Microsoft.WindowsCE.Forms.InputPanel();
             ParentForm.Resize += new EventHandler(ParentForm_Resize);
+            this.ShowSearch = true;
         }
 
         void ParentForm_Resize(object sender, EventArgs e)
@@ -33,8 +35,11 @@ namespace ImdbMobile.UI
                 // (W)VGA Devices
                 holderPanel.Size = new Size(this.ParentForm.Width, 148);
 
-                this.pbSearch.Image = global::ImdbMobile.Properties.Resources.SearchButton_Large;
-                this.pbSearch.Size = new System.Drawing.Size(33, 32);
+                if (this.ShowSearch)
+                {
+                    this.pbSearch.Image = global::ImdbMobile.Properties.Resources.SearchButton_Large;
+                    this.pbSearch.Size = new System.Drawing.Size(33, 32);
+                }
             }
             else
             {
@@ -43,8 +48,11 @@ namespace ImdbMobile.UI
                 // (W)QVGA Devices
                 holderPanel.Size = new Size(this.ParentForm.Width, 93);
 
-                this.pbSearch.Image = global::ImdbMobile.Properties.Resources.SearchButton_Small;
-                this.pbSearch.Size = new System.Drawing.Size(24, 23);
+                if (this.ShowSearch)
+                {
+                    this.pbSearch.Image = global::ImdbMobile.Properties.Resources.SearchButton_Small;
+                    this.pbSearch.Size = new System.Drawing.Size(24, 23);
+                }
             }
             ParentForm.Invalidate();
             foreach (SlidingList sl in WindowHandler.ControlList)
@@ -76,8 +84,11 @@ namespace ImdbMobile.UI
                 // (W)VGA Devices
                 holderPanel.Size = new Size(this.ParentForm.Width, 148);
 
-                this.pbSearch.Image = global::ImdbMobile.Properties.Resources.SearchButton_Large;
-                this.pbSearch.Size = new System.Drawing.Size(33, 32);
+                if (this.ShowSearch)
+                {
+                    this.pbSearch.Image = global::ImdbMobile.Properties.Resources.SearchButton_Large;
+                    this.pbSearch.Size = new System.Drawing.Size(33, 32);
+                }
             }
             else
             {
@@ -86,33 +97,39 @@ namespace ImdbMobile.UI
                 // (W)QVGA Devices
                 holderPanel.Size = new Size(this.ParentForm.Width, 93);
 
-                this.pbSearch.Image = global::ImdbMobile.Properties.Resources.SearchButton_Small;
-                this.pbSearch.Size = new System.Drawing.Size(24, 23);
+                if (this.ShowSearch)
+                {
+                    this.pbSearch.Image = global::ImdbMobile.Properties.Resources.SearchButton_Small;
+                    this.pbSearch.Size = new System.Drawing.Size(24, 23);
+                }
             }
 
             holderPanel.Location = new Point(0, 0);
             holderPanel.Paint += new PaintEventHandler(holderPanel_Paint);
-
-            this.pbSearch.Name = "pbSearch";
-            this.pbSearch.Click += new EventHandler(pbSearch_Click);
-
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Italic);
-            this.textBox1.ForeColor = System.Drawing.Color.LightGray;
-            this.textBox1.Location = new System.Drawing.Point(27, 97);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(388, 40);
-            this.textBox1.TabIndex = 11;
-            this.textBox1.Text = UI.Translations.GetTranslated("0080") + "...";
-            this.textBox1.GotFocus += new System.EventHandler(this.textBox1_GotFocus);
-            this.textBox1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyUp);
-            this.textBox1.LostFocus += new System.EventHandler(this.textBox1_LostFocus);
-
             ParentForm.Controls.Add(holderPanel);
-            ParentForm.Controls.Add(this.pbSearch);
-            ParentForm.Controls.Add(this.textBox1);
-            this.textBox1.BringToFront();
-            this.pbSearch.BringToFront();
+
+            if (this.ShowSearch)
+            {
+                this.pbSearch.Name = "pbSearch";
+                this.pbSearch.Click += new EventHandler(pbSearch_Click);
+
+                this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+                this.textBox1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Italic);
+                this.textBox1.ForeColor = System.Drawing.Color.LightGray;
+                this.textBox1.Location = new System.Drawing.Point(27, 97);
+                this.textBox1.Name = "textBox1";
+                this.textBox1.Size = new System.Drawing.Size(388, 40);
+                this.textBox1.TabIndex = 11;
+                this.textBox1.Text = UI.Translations.GetTranslated("0080") + "...";
+                this.textBox1.GotFocus += new System.EventHandler(this.textBox1_GotFocus);
+                this.textBox1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyUp);
+                this.textBox1.LostFocus += new System.EventHandler(this.textBox1_LostFocus);
+
+                ParentForm.Controls.Add(this.pbSearch);
+                ParentForm.Controls.Add(this.textBox1);
+                this.textBox1.BringToFront();
+                this.pbSearch.BringToFront();
+            }
         }
 
         private void DrawVGA()
@@ -133,28 +150,31 @@ namespace ImdbMobile.UI
                 DestRect = new Rectangle(LogoX, 5, image.Width, image.Height);
                 g.DrawImage(image, DestRect, 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, TransAtt);
 
-                int TextboxY = 5 + image.Height + 5;
-                int TextboxX = 5;
+                if (this.ShowSearch)
+                {
+                    int TextboxY = 5 + image.Height + 5;
+                    int TextboxX = 5;
 
-                // Draw left edge
-                image = global::ImdbMobile.Properties.Resources.TextInput_Large_Left;
-                DestRect = new Rectangle(5, TextboxY, image.Width, image.Height);
-                g.DrawImage(image, DestRect, 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, TransAtt);
+                    // Draw left edge
+                    image = global::ImdbMobile.Properties.Resources.TextInput_Large_Left;
+                    DestRect = new Rectangle(5, TextboxY, image.Width, image.Height);
+                    g.DrawImage(image, DestRect, 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, TransAtt);
 
 
-                TextboxX = Screen.PrimaryScreen.WorkingArea.Width - 5 - global::ImdbMobile.Properties.Resources.TextInput_Large_Right.Width;
-                image = global::ImdbMobile.Properties.Resources.TextInput_Large_Right;
-                DestRect = new Rectangle(TextboxX, TextboxY, image.Width, image.Height);
-                g.DrawImage(image, DestRect, 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, TransAtt);
+                    TextboxX = Screen.PrimaryScreen.WorkingArea.Width - 5 - global::ImdbMobile.Properties.Resources.TextInput_Large_Right.Width;
+                    image = global::ImdbMobile.Properties.Resources.TextInput_Large_Right;
+                    DestRect = new Rectangle(TextboxX, TextboxY, image.Width, image.Height);
+                    g.DrawImage(image, DestRect, 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, TransAtt);
 
-                image = global::ImdbMobile.Properties.Resources.TextInput_Large_Center;
-                DestRect = new Rectangle(5 + global::ImdbMobile.Properties.Resources.TextInput_Large_Left.Width, TextboxY, TextboxX - global::ImdbMobile.Properties.Resources.TextInput_Large_Left.Width, image.Height);
-                g.DrawImage(image, DestRect, 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, TransAtt);
+                    image = global::ImdbMobile.Properties.Resources.TextInput_Large_Center;
+                    DestRect = new Rectangle(5 + global::ImdbMobile.Properties.Resources.TextInput_Large_Left.Width, TextboxY, TextboxX - global::ImdbMobile.Properties.Resources.TextInput_Large_Left.Width, image.Height);
+                    g.DrawImage(image, DestRect, 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, TransAtt);
 
-                int PBX = Screen.PrimaryScreen.WorkingArea.Width - 5 - global::ImdbMobile.Properties.Resources.TextInput_Large_Right.Width - 15;
-                this.pbSearch.Location = new System.Drawing.Point(PBX, 96);
+                    int PBX = Screen.PrimaryScreen.WorkingArea.Width - 5 - global::ImdbMobile.Properties.Resources.TextInput_Large_Right.Width - 15;
+                    this.pbSearch.Location = new System.Drawing.Point(PBX, 96);
 
-                this.textBox1.Size = new System.Drawing.Size(PBX - 5, 40);
+                    this.textBox1.Size = new System.Drawing.Size(PBX - 5, 40);
+                }
             }
         }
 
@@ -176,29 +196,33 @@ namespace ImdbMobile.UI
                 DestRect = new Rectangle(LogoX, 2, image.Width, image.Height);
                 g.DrawImage(image, DestRect, 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, TransAtt);
 
-                int TextboxY = 2 + image.Height + 2;
-                int TextboxX = 5;
-
-                // Draw left edge
-                image = global::ImdbMobile.Properties.Resources.TextInput_Small_Left;
-                DestRect = new Rectangle(5, TextboxY, image.Width, image.Height);
-                g.DrawImage(image, DestRect, 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, TransAtt);
+                if (this.ShowSearch)
+                {
+                    int TextboxY = 2 + image.Height + 2;
+                    int TextboxX = 5;
 
 
-                TextboxX = Screen.PrimaryScreen.WorkingArea.Width - 5 - global::ImdbMobile.Properties.Resources.TextInput_Small_Right.Width;
-                image = global::ImdbMobile.Properties.Resources.TextInput_Small_Right;
-                DestRect = new Rectangle(TextboxX, TextboxY, image.Width, image.Height);
-                g.DrawImage(image, DestRect, 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, TransAtt);
+                    // Draw left edge
+                    image = global::ImdbMobile.Properties.Resources.TextInput_Small_Left;
+                    DestRect = new Rectangle(5, TextboxY, image.Width, image.Height);
+                    g.DrawImage(image, DestRect, 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, TransAtt);
 
-                image = global::ImdbMobile.Properties.Resources.TextInput_Small_Center;
-                DestRect = new Rectangle(5 + global::ImdbMobile.Properties.Resources.TextInput_Small_Left.Width, TextboxY, TextboxX - global::ImdbMobile.Properties.Resources.TextInput_Small_Left.Width, image.Height);
-                g.DrawImage(image, DestRect, 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, TransAtt);
 
-                int PBX = Screen.PrimaryScreen.WorkingArea.Width - 5 - global::ImdbMobile.Properties.Resources.TextInput_Small_Right.Width - 15;
-                this.pbSearch.Location = new System.Drawing.Point(PBX, 54);
+                    TextboxX = Screen.PrimaryScreen.WorkingArea.Width - 5 - global::ImdbMobile.Properties.Resources.TextInput_Small_Right.Width;
+                    image = global::ImdbMobile.Properties.Resources.TextInput_Small_Right;
+                    DestRect = new Rectangle(TextboxX, TextboxY, image.Width, image.Height);
+                    g.DrawImage(image, DestRect, 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, TransAtt);
 
-                this.textBox1.Size = new System.Drawing.Size(PBX - this.pbSearch.Width - 2, 32);
-                this.textBox1.Location = new System.Drawing.Point(22, 54);
+                    image = global::ImdbMobile.Properties.Resources.TextInput_Small_Center;
+                    DestRect = new Rectangle(5 + global::ImdbMobile.Properties.Resources.TextInput_Small_Left.Width, TextboxY, TextboxX - global::ImdbMobile.Properties.Resources.TextInput_Small_Left.Width, image.Height);
+                    g.DrawImage(image, DestRect, 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, TransAtt);
+
+                    int PBX = Screen.PrimaryScreen.WorkingArea.Width - 5 - global::ImdbMobile.Properties.Resources.TextInput_Small_Right.Width - 15;
+                    this.pbSearch.Location = new System.Drawing.Point(PBX, 54);
+
+                    this.textBox1.Size = new System.Drawing.Size(PBX - this.pbSearch.Width - 2, 32);
+                    this.textBox1.Location = new System.Drawing.Point(22, 54);
+                }
             }
         }
 
