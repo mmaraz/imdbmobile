@@ -44,9 +44,19 @@ namespace ImdbMobile.Controls
 
         private void LoadImdbInformation()
         {
-            TitleEpisodeParser tep = new TitleEpisodeParser();
-            tep.ParsingComplete += new EventHandler(tep_ParsingComplete);
-            tep.ParseTitleEpisodes(CurrentTitle);
+            if (this.CurrentTitle.Seasons != null && this.CurrentTitle.Seasons.Count > 0)
+            {
+                foreach (ImdbSeason isea in this.CurrentTitle.Seasons)
+                {
+                    Add(CurrentTitle.Seasons.IndexOf(isea), isea.Label);
+                }
+            }
+            else
+            {
+                TitleEpisodeParser tep = new TitleEpisodeParser();
+                tep.ParsingComplete += new EventHandler(tep_ParsingComplete);
+                tep.ParseTitleEpisodes(CurrentTitle);
+            }
         }
 
         void tep_ParsingComplete(object sender, EventArgs e)

@@ -20,7 +20,7 @@ namespace ImdbMobile.Controls
 
         private void BuildUI()
         {
-
+            
         }
     }
 }

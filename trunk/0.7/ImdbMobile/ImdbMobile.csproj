@@ -341,7 +341,6 @@
     <None Include="Resources\UserReview.png" />
     <None Include="Resources\UserReview_Over.png" />
     <None Include="Resources\HeadingTile_Large.png" />
-    <None Include="Resources\HeadingTile_Small.png" />
     <None Include="Resources\IMDB_Logo_Large.png" />
     <None Include="Resources\IMDB_Logo_Small.png" />
     <None Include="Resources\SearchButton_Large.png" />
@@ -356,6 +355,8 @@
     <None Include="Resources\previous.png" />
     <None Include="Resources\next_Over.png" />
     <None Include="Resources\previous_Over.png" />
+    <None Include="Resources\HeadingTitle_Large.png" />
+    <None Include="Resources\HeadingTile_Small.png" />
     <Content Include="Translations\English.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

@@ -52,6 +52,22 @@ namespace ImdbMobile.IMDBData
     {
         public void Kill()
         {
+            if (diw != null)
+            {
+                try
+                {
+                    diw.Abort();
+                }
+                catch (Exception) { }
+            }
+            if (webReq != null)
+            {
+                try
+                {
+                    webReq.Abort();
+                }
+                catch (Exception) { }
+            }
             if (Worker != null)
             {
                 try
@@ -63,6 +79,9 @@ namespace ImdbMobile.IMDBData
         }
 
         System.Threading.Thread Worker;
+        private static HttpWebRequest webReq;
+        DownloadImageWrapper diw;
+
 
         public ImageDownloader()
         {
@@ -80,7 +99,7 @@ namespace ImdbMobile.IMDBData
             {
                 if (!string.IsNullOrEmpty(URL))
                 {
-                    WebRequest webReq = (WebRequest)HttpWebRequest.Create(GetMoviePoster(URL));
+                    webReq = (HttpWebRequest)WebRequest.Create(GetMoviePoster(URL));
                     using (HttpWebResponse resp = (HttpWebResponse)webReq.GetResponse())
                     {
                         using (Stream s = resp.GetResponseStream())
@@ -170,7 +189,7 @@ namespace ImdbMobile.IMDBData
 
         private void DownloadImages(List<ImdbCover> ImageList, MichyPrima.ManilaDotNetSDK.KListControl KList, System.Windows.Forms.Form ParentForm)
         {
-            DownloadImageWrapper diw = new DownloadImageWrapper(ImageList, KList, ParentForm);
+            diw = new DownloadImageWrapper(ImageList, KList, ParentForm);
             this.Kill();
             Worker = new System.Threading.Thread(diw.DownloadImage);
             Worker.Start();
@@ -185,12 +204,25 @@ namespace ImdbMobile.IMDBData
         private List<ImdbCover> Images;
         private MichyPrima.ManilaDotNetSDK.KListControl ParentKList;
         private System.Windows.Forms.Form ParentFormControl;
+        private HttpWebRequest webReq;
 
         public DownloadImageWrapper(List<ImdbCover> Images, MichyPrima.ManilaDotNetSDK.KListControl ParentKList, System.Windows.Forms.Form ParentFormControl)
         {
             this.Images = Images;
             this.ParentKList = ParentKList;
             this.ParentFormControl = ParentFormControl;
+        }
+
+        public void Abort()
+        {
+            if (webReq != null)
+            {
+                try
+                {
+                    webReq.Abort();
+                }
+                catch (Exception) { }
+            }
         }
 
         public void DownloadImage()
@@ -251,7 +283,7 @@ namespace ImdbMobile.IMDBData
                 {
                     string[] splitter = ic.URL.Split('/');
                     string fileName = splitter[splitter.Length - 1];
-                    WebRequest webReq = (WebRequest)HttpWebRequest.Create(GetThumbnailURL(ic.URL));
+                    webReq = (HttpWebRequest)WebRequest.Create(GetThumbnailURL(ic.URL));
                     using (HttpWebResponse resp = (HttpWebResponse)webReq.GetResponse())
                     {
                         using (Stream s = resp.GetResponseStream())

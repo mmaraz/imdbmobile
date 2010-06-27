@@ -55,22 +55,12 @@ namespace ImdbMobile.Controls
                 }
                 if (CurrentTitle.Trailer.Encodings.Count == 0)
                 {
-                    try
-                    {
-                        ShowErrorInfo sr = new ShowErrorInfo(ShowError);
-                        this.Invoke(sr, new object[] { UI.Translations.GetTranslated("0072") });
-                    }
-                    catch (Exception) { }
+                    ShowError(UI.Translations.GetTranslated("0072"));
                 }
             }
             else
             {
-                try
-                {
-                    ShowErrorInfo sr = new ShowErrorInfo(ShowError);
-                    this.Invoke(sr, new object[] { UI.Translations.GetTranslated("0072") });
-                }
-                catch (Exception) { }
+                ShowError(UI.Translations.GetTranslated("0072"));
             }
         }
 
@@ -159,12 +149,8 @@ namespace ImdbMobile.Controls
 
         private void ShowError(string Message)
         {
-            try
-            {
-                this.LoadingList.Visible = false;
-                UI.KListFunctions.ShowError(Message, this.kListControl1);
-            }
-            catch (ObjectDisposedException) { }
+            this.LoadingList.Visible = false;
+            UI.KListFunctions.ShowError(Message, this.kListControl1);
         }
     }
 }

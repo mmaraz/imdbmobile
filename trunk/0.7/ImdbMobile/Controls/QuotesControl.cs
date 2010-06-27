@@ -74,9 +74,16 @@ namespace ImdbMobile.Controls
 
         private void LoadImdbInformation()
         {
-            TitleQuoteParser tqp = new TitleQuoteParser();
-            tqp.ParsingComplete += new EventHandler(tqp_ParsingComplete);
-            tqp.ParseQuotes(this.CurrentTitle);
+            if (this.CurrentTitle.Quotes != null && this.CurrentTitle.Quotes.Count > 0)
+            {
+                AddQuotes();
+            }
+            else
+            {
+                TitleQuoteParser tqp = new TitleQuoteParser();
+                tqp.ParsingComplete += new EventHandler(tqp_ParsingComplete);
+                tqp.ParseQuotes(this.CurrentTitle);
+            }
         }
 
         void tqp_ParsingComplete(object sender, EventArgs e)

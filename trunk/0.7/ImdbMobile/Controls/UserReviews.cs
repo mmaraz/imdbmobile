@@ -38,9 +38,16 @@ namespace ImdbMobile.Controls
 
         private void LoadUserData()
         {
-            TitleUserReviewParser tup = new TitleUserReviewParser();
-            tup.ParsingComplete += new EventHandler(tup_ParsingComplete);
-            tup.ParseUserReviews(this.CurrentTitle);
+            if (this.CurrentTitle.UserReviews != null && this.CurrentTitle.UserReviews.Count > 0)
+            {
+                SetImdbInformation(this.CurrentTitle);
+            }
+            else
+            {
+                TitleUserReviewParser tup = new TitleUserReviewParser();
+                tup.ParsingComplete += new EventHandler(tup_ParsingComplete);
+                tup.ParseUserReviews(this.CurrentTitle);
+            }
         }
 
         void tup_ParsingComplete(object sender, EventArgs e)

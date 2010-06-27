@@ -38,9 +38,16 @@ namespace ImdbMobile.Controls
 
         private void LoadExternalData()
         {
-            IMDBData.TitleExternalReviewParser erp = new TitleExternalReviewParser();
-            erp.ParsingComplete += new EventHandler(erp_ParsingComplete);
-            erp.ParseExternalReviews(this.CurrentTitle);
+            if (this.CurrentTitle.ExternalReviews != null && this.CurrentTitle.ExternalReviews.Count > 0)
+            {
+                SetImdbInformation(this.CurrentTitle);
+            }
+            else
+            {
+                IMDBData.TitleExternalReviewParser erp = new TitleExternalReviewParser();
+                erp.ParsingComplete += new EventHandler(erp_ParsingComplete);
+                erp.ParseExternalReviews(this.CurrentTitle);
+            }
         }
 
         void erp_ParsingComplete(object sender, EventArgs e)
