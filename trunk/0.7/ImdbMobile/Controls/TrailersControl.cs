@@ -47,7 +47,6 @@ namespace ImdbMobile.Controls
                     }
                     mpi.Parent = this.kListControl1;
                     mpi.Icon = global::ImdbMobile.Properties.Resources.Trailers;
-                    mpi.HoverIcon = global::ImdbMobile.Properties.Resources.Trailers_Over;
                     mpi.YIndex = CurrentTitle.Trailer.Encodings.IndexOf(ie);
                     mpi.MouseUp += new ImdbMobile.UI.ActionButton.MouseEvent(mpi_MouseUp);
                     mpi.CalculateHeight();

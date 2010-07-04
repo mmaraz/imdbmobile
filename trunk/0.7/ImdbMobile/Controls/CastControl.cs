@@ -134,6 +134,7 @@ namespace ImdbMobile.Controls
         {
             UI.KListFunctions.ShowLoading(UI.Translations.GetTranslated("0010") + ".\n" + UI.Translations.GetTranslated("0002") + "...", this.LoadingList);
             this.LoadingList.Visible = true;
+            this.kListControl1.Items.Clear();
 
             IMDBData.ParseCast pc = new ImdbMobile.IMDBData.ParseCast();
             pc.ParsingComplete += new EventHandler(pc_ParsingComplete);
@@ -144,6 +145,7 @@ namespace ImdbMobile.Controls
         {
             ParseCast pc = (ParseCast)sender;
             this.CurrentTitle = pc.Title;
+            this.CurrentTitle.HasFullCast = true;
             ShowData();
         }
 

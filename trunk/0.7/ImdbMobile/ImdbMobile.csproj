@@ -2,7 +2,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.30729</ProductVersion>
+    <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{820D2D2C-8CA2-4CE2-A76C-A6CFA50798F0}</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -191,6 +191,9 @@
     <Compile Include="IMDBData\TitleExternalReviewParser.cs" />
     <Compile Include="IMDBData\TitleParentalGuideParser.cs" />
     <Compile Include="IMDBData\TitleUserReviewParser.cs" />
+    <Compile Include="UI\GradientFill.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="UI\ManilaExtensions\PagerDisplay.cs" />
     <Compile Include="UI\ManilaExtensions\ReviewDisplay.cs" />
     <Compile Include="UI\Translations.cs" />
@@ -340,7 +343,6 @@
     <None Include="Resources\ExternalReview_Over.png" />
     <None Include="Resources\UserReview.png" />
     <None Include="Resources\UserReview_Over.png" />
-    <None Include="Resources\HeadingTile_Large.png" />
     <None Include="Resources\IMDB_Logo_Large.png" />
     <None Include="Resources\IMDB_Logo_Small.png" />
     <None Include="Resources\SearchButton_Large.png" />
@@ -357,6 +359,15 @@
     <None Include="Resources\previous_Over.png" />
     <None Include="Resources\HeadingTitle_Large.png" />
     <None Include="Resources\HeadingTile_Small.png" />
+    <None Include="Resources\HeadingTile_Large.png" />
+    <None Include="Resources\Loader1.jpg" />
+    <None Include="Resources\Loader2.jpg" />
+    <None Include="Resources\Loader3.jpg" />
+    <None Include="Resources\Loader4.jpg" />
+    <None Include="Resources\Loader5.jpg" />
+    <None Include="Resources\Loader6.jpg" />
+    <None Include="Resources\Loader7.jpg" />
+    <None Include="Resources\Loader8.jpg" />
     <Content Include="Translations\English.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

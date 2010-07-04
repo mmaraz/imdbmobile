@@ -31,6 +31,7 @@ namespace ImdbMobile
             this.ddlImdbLocale.DataSource = ils.SupportedLanguages;
             this.ddlImdbLocale.DisplayMember = "Country";
             this.ddlImdbLocale.ValueMember = "Locale";
+            this.ddlImdbLocale.SelectedValue = SettingsWrapper.GlobalSettings.Language.Locale;
 
             this.ddlUILang.Items.Clear();
             List<object> TranslationList = new List<object>();
@@ -74,7 +75,7 @@ namespace ImdbMobile
         {
             if (this.ddlVideoPlayer.SelectedIndex > 0)
             {
-                this.txtCustomVideo.ReadOnly = false;
+                this.txtCustomVideo.ReadOnly = true;
                 string StartupPath = Environment.GetFolderPath(Environment.SpecialFolder.Startup);
                 string[] Splitted = StartupPath.Split('\\');
                 string WindowsPath = Splitted[1];
@@ -87,7 +88,7 @@ namespace ImdbMobile
             }
             else
             {
-                this.txtCustomVideo.ReadOnly = true;
+                this.txtCustomVideo.ReadOnly = false;
             }
         }
 

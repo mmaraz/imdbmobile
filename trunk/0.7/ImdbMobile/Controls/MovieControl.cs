@@ -89,7 +89,6 @@ namespace ImdbMobile.Controls
 
             UI.ActionButton CastButton = new ImdbMobile.UI.ActionButton();
             CastButton.Icon = global::ImdbMobile.Properties.Resources.Cast;
-            CastButton.HoverIcon = global::ImdbMobile.Properties.Resources.Cast_Over;
             CastButton.Parent = this.kListControl1;
             CastButton.Text = UI.Translations.GetTranslated("0012");
             CastButton.YIndex = 2;
@@ -99,7 +98,6 @@ namespace ImdbMobile.Controls
 
             UI.ActionButton UserReviewButton = new ImdbMobile.UI.ActionButton();
             UserReviewButton.Icon = global::ImdbMobile.Properties.Resources.UserReview;
-            UserReviewButton.HoverIcon = global::ImdbMobile.Properties.Resources.UserReview_Over;
             UserReviewButton.Parent = this.kListControl1;
             UserReviewButton.Text = UI.Translations.GetTranslated("0090");
             UserReviewButton.YIndex = 3;
@@ -109,7 +107,6 @@ namespace ImdbMobile.Controls
 
             UI.ActionButton ExternalReviewButton = new ImdbMobile.UI.ActionButton();
             ExternalReviewButton.Icon = global::ImdbMobile.Properties.Resources.ExternalReview;
-            ExternalReviewButton.HoverIcon = global::ImdbMobile.Properties.Resources.ExternalReview_Over;
             ExternalReviewButton.Parent = this.kListControl1;
             ExternalReviewButton.Text = UI.Translations.GetTranslated("0091");
             ExternalReviewButton.YIndex = 4;
@@ -129,7 +126,6 @@ namespace ImdbMobile.Controls
 
             UI.ActionButton TrailerButton = new ImdbMobile.UI.ActionButton();
             TrailerButton.Icon = global::ImdbMobile.Properties.Resources.Trailers;
-            TrailerButton.HoverIcon = global::ImdbMobile.Properties.Resources.Trailers_Over;
             TrailerButton.Parent = this.kListControl1;
             TrailerButton.Text = UI.Translations.GetTranslated("0045");
             TrailerButton.YIndex = 5;
@@ -139,7 +135,6 @@ namespace ImdbMobile.Controls
 
             UI.ActionButton QuoteButton = new ImdbMobile.UI.ActionButton();
             QuoteButton.Icon = global::ImdbMobile.Properties.Resources.Quote;
-            QuoteButton.HoverIcon = global::ImdbMobile.Properties.Resources.Quote_Over;
             QuoteButton.Parent = this.kListControl1;
             QuoteButton.Text = UI.Translations.GetTranslated("0046");
             QuoteButton.YIndex = 6;
@@ -149,7 +144,6 @@ namespace ImdbMobile.Controls
 
             UI.ActionButton TriviaButton = new ImdbMobile.UI.ActionButton();
             TriviaButton.Icon = global::ImdbMobile.Properties.Resources.Trivia;
-            TriviaButton.HoverIcon = global::ImdbMobile.Properties.Resources.Trivia_Over;
             TriviaButton.Parent = this.kListControl1;
             TriviaButton.Text = UI.Translations.GetTranslated("0005");
             TriviaButton.YIndex = 7;
@@ -159,7 +153,6 @@ namespace ImdbMobile.Controls
 
             UI.ActionButton GoofButton = new ImdbMobile.UI.ActionButton();
             GoofButton.Icon = global::ImdbMobile.Properties.Resources.MoreInfo;
-            GoofButton.HoverIcon = global::ImdbMobile.Properties.Resources.MoreInfo_Over;
             GoofButton.Parent = this.kListControl1;
             GoofButton.Text = UI.Translations.GetTranslated("0042");
             GoofButton.YIndex = 8;
