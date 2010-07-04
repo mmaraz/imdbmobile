@@ -129,7 +129,6 @@ namespace ImdbMobile.Controls
             // Add Holder Control
             UI.ActionButton Filmography = new ImdbMobile.UI.ActionButton();
             Filmography.Icon = global::ImdbMobile.Properties.Resources.Trailers;
-            Filmography.HoverIcon = global::ImdbMobile.Properties.Resources.Trailers_Over;
             Filmography.Parent = this.kListControl1;
             Filmography.Text = UI.Translations.GetTranslated("0004");
             Filmography.MouseUp += new ImdbMobile.UI.ActionButton.MouseEvent(Filmography_MouseUp);
@@ -140,7 +139,6 @@ namespace ImdbMobile.Controls
             // Add Holder Control
             UI.ActionButton Trivia = new ImdbMobile.UI.ActionButton();
             Trivia.Icon = global::ImdbMobile.Properties.Resources.Trivia;
-            Trivia.HoverIcon = global::ImdbMobile.Properties.Resources.Trivia_Over;
             Trivia.Parent = this.kListControl1;
             Trivia.Text = UI.Translations.GetTranslated("0005");
             Trivia.YIndex = 3;

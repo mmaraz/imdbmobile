@@ -29,7 +29,6 @@ namespace ImdbMobile.Controls
 
             UI.ActionButton Top250 = new ImdbMobile.UI.ActionButton();
             Top250.Icon = global::ImdbMobile.Properties.Resources.MoreInfo;
-            Top250.HoverIcon = global::ImdbMobile.Properties.Resources.MoreInfo_Over;
             Top250.Parent = this.kListControl1;
             Top250.Text = UI.Translations.GetTranslated("0028");
             Top250.MouseUp += new ImdbMobile.UI.ActionButton.MouseEvent(Top250_MouseUp);
@@ -38,7 +37,6 @@ namespace ImdbMobile.Controls
 
             UI.ActionButton ComingSoon = new ImdbMobile.UI.ActionButton();
             ComingSoon.Icon = global::ImdbMobile.Properties.Resources.ComingSoon;
-            ComingSoon.HoverIcon = global::ImdbMobile.Properties.Resources.ComingSoon_Over;
             ComingSoon.Parent = this.kListControl1;
             ComingSoon.Text = UI.Translations.GetTranslated("0029");
             ComingSoon.MouseUp += new ImdbMobile.UI.ActionButton.MouseEvent(ComingSoon_MouseUp);
@@ -47,7 +45,6 @@ namespace ImdbMobile.Controls
 
             UI.ActionButton Settings = new ImdbMobile.UI.ActionButton();
             Settings.Icon = global::ImdbMobile.Properties.Resources.Settings;
-            Settings.HoverIcon = global::ImdbMobile.Properties.Resources.Settings_Over;
             Settings.Parent = this.kListControl1;
             Settings.Text = UI.Translations.GetTranslated("0030");
             Settings.MouseUp += new ImdbMobile.UI.ActionButton.MouseEvent(Settings_MouseUp);
@@ -56,7 +53,6 @@ namespace ImdbMobile.Controls
 
             UI.ActionButton About = new ImdbMobile.UI.ActionButton();
             About.Icon = global::ImdbMobile.Properties.Resources.about;
-            About.HoverIcon = global::ImdbMobile.Properties.Resources.about_over;
             About.Parent = this.kListControl1;
             About.Text = UI.Translations.GetTranslated("0089");
             About.MouseUp += new ImdbMobile.UI.ActionButton.MouseEvent(About_MouseUp);
@@ -65,7 +61,6 @@ namespace ImdbMobile.Controls
 
             UI.ActionButton Exit = new ImdbMobile.UI.ActionButton();
             Exit.Icon = global::ImdbMobile.Properties.Resources.Close;
-            Exit.HoverIcon = global::ImdbMobile.Properties.Resources.Close_Over;
             Exit.Parent = this.kListControl1;
             Exit.Text = UI.Translations.GetTranslated("0031");
             Exit.MouseUp += new ImdbMobile.UI.ActionButton.MouseEvent(Exit_MouseUp);

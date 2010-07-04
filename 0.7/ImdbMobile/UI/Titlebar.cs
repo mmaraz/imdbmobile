@@ -137,15 +137,18 @@ namespace ImdbMobile.UI
             using (Graphics g = Graphics.FromImage(this.DrawnBitmap))
             {
                 g.Clear(Color.Black);
+                
                 Color TransparentColor = Color.FromArgb(255, 0, 220);
                 System.Drawing.Imaging.ImageAttributes TransAtt = new System.Drawing.Imaging.ImageAttributes();
                 TransAtt.SetColorKey(TransparentColor, TransparentColor);
 
                 Rectangle DestRect = new Rectangle(0, 0, Screen.PrimaryScreen.WorkingArea.Width, 148);
-                Bitmap image = global::ImdbMobile.Properties.Resources.HeadingTile_Large;
-                g.DrawImage(image, DestRect, 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, TransAtt);
+                Color start = Color.FromArgb(52, 60, 67);
+                Color stop = Color.FromArgb(27, 31, 29);
+                GradientFill.Fill(g, DestRect, start, stop, GradientFill.FillDirection.TopToBottom);
 
-                image = global::ImdbMobile.Properties.Resources.IMDB_Logo_Large;
+                
+                Bitmap image = global::ImdbMobile.Properties.Resources.IMDB_Logo_Large;
                 int LogoX = (Screen.PrimaryScreen.WorkingArea.Width / 2) - (image.Width / 2);
                 DestRect = new Rectangle(LogoX, 5, image.Width, image.Height);
                 g.DrawImage(image, DestRect, 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, TransAtt);
@@ -188,10 +191,11 @@ namespace ImdbMobile.UI
                 TransAtt.SetColorKey(TransparentColor, TransparentColor);
 
                 Rectangle DestRect = new Rectangle(0, 0, Screen.PrimaryScreen.WorkingArea.Width, 93);
-                Bitmap image = global::ImdbMobile.Properties.Resources.HeadingTile_Small;
-                g.DrawImage(image, DestRect, 0, 0, image.Width, image.Height - 20, GraphicsUnit.Pixel, TransAtt);
+                Color start = Color.FromArgb(52, 60, 67);
+                Color stop = Color.FromArgb(27, 31, 29);
+                GradientFill.Fill(g, DestRect, start, stop, GradientFill.FillDirection.TopToBottom);
 
-                image = global::ImdbMobile.Properties.Resources.IMDB_Logo_Small;
+                Bitmap image = global::ImdbMobile.Properties.Resources.IMDB_Logo_Small;
                 int LogoX = (Screen.PrimaryScreen.WorkingArea.Width / 2) - (image.Width / 2);
                 DestRect = new Rectangle(LogoX, 2, image.Width, image.Height);
                 g.DrawImage(image, DestRect, 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, TransAtt);

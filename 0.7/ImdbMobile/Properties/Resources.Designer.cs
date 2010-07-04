@@ -64,23 +64,9 @@ namespace ImdbMobile.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap about_over {
-            get {
-                object obj = ResourceManager.GetObject("about_over", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
         internal static System.Drawing.Bitmap Cast {
             get {
                 object obj = ResourceManager.GetObject("Cast", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap Cast_Over {
-            get {
-                object obj = ResourceManager.GetObject("Cast_Over", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -92,23 +78,9 @@ namespace ImdbMobile.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap Close_Over {
-            get {
-                object obj = ResourceManager.GetObject("Close_Over", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
         internal static System.Drawing.Bitmap ComingSoon {
             get {
                 object obj = ResourceManager.GetObject("ComingSoon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap ComingSoon_Over {
-            get {
-                object obj = ResourceManager.GetObject("ComingSoon_Over", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -134,13 +106,6 @@ namespace ImdbMobile.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap ExternalReview_Over {
-            get {
-                object obj = ResourceManager.GetObject("ExternalReview_Over", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
         internal static System.Drawing.Bitmap Filmography {
             get {
                 object obj = ResourceManager.GetObject("Filmography", resourceCulture);
@@ -151,6 +116,13 @@ namespace ImdbMobile.Properties {
         internal static System.Drawing.Bitmap Filmography_Over {
             get {
                 object obj = ResourceManager.GetObject("Filmography_Over", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap heading {
+            get {
+                object obj = ResourceManager.GetObject("heading", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -169,6 +141,13 @@ namespace ImdbMobile.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap HeadingTitle_Large {
+            get {
+                object obj = ResourceManager.GetObject("HeadingTitle_Large", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap IMDB_Logo_Large {
             get {
                 object obj = ResourceManager.GetObject("IMDB_Logo_Large", resourceCulture);
@@ -183,16 +162,65 @@ namespace ImdbMobile.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap MoreInfo {
+        internal static System.Drawing.Bitmap Loader1 {
             get {
-                object obj = ResourceManager.GetObject("MoreInfo", resourceCulture);
+                object obj = ResourceManager.GetObject("Loader1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap MoreInfo_Over {
+        internal static System.Drawing.Bitmap Loader2 {
             get {
-                object obj = ResourceManager.GetObject("MoreInfo_Over", resourceCulture);
+                object obj = ResourceManager.GetObject("Loader2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Loader3 {
+            get {
+                object obj = ResourceManager.GetObject("Loader3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Loader4 {
+            get {
+                object obj = ResourceManager.GetObject("Loader4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Loader5 {
+            get {
+                object obj = ResourceManager.GetObject("Loader5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Loader6 {
+            get {
+                object obj = ResourceManager.GetObject("Loader6", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Loader7 {
+            get {
+                object obj = ResourceManager.GetObject("Loader7", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Loader8 {
+            get {
+                object obj = ResourceManager.GetObject("Loader8", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap MoreInfo {
+            get {
+                object obj = ResourceManager.GetObject("MoreInfo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -207,20 +235,6 @@ namespace ImdbMobile.Properties {
         internal static System.Drawing.Bitmap next_Over {
             get {
                 object obj = ResourceManager.GetObject("next_Over", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap no_dvd {
-            get {
-                object obj = ResourceManager.GetObject("no_dvd", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap no_photo {
-            get {
-                object obj = ResourceManager.GetObject("no_photo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -246,13 +260,6 @@ namespace ImdbMobile.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap Photos_Over {
-            get {
-                object obj = ResourceManager.GetObject("Photos_Over", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
         internal static System.Drawing.Bitmap previous {
             get {
                 object obj = ResourceManager.GetObject("previous", resourceCulture);
@@ -270,13 +277,6 @@ namespace ImdbMobile.Properties {
         internal static System.Drawing.Bitmap Quote {
             get {
                 object obj = ResourceManager.GetObject("Quote", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap Quote_Over {
-            get {
-                object obj = ResourceManager.GetObject("Quote_Over", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -305,13 +305,6 @@ namespace ImdbMobile.Properties {
         internal static System.Drawing.Bitmap Settings {
             get {
                 object obj = ResourceManager.GetObject("Settings", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap Settings_Over {
-            get {
-                object obj = ResourceManager.GetObject("Settings_Over", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -379,13 +372,6 @@ namespace ImdbMobile.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap Trailers_Over {
-            get {
-                object obj = ResourceManager.GetObject("Trailers_Over", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
         internal static System.Drawing.Bitmap Trivia {
             get {
                 object obj = ResourceManager.GetObject("Trivia", resourceCulture);
@@ -393,23 +379,9 @@ namespace ImdbMobile.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap Trivia_Over {
-            get {
-                object obj = ResourceManager.GetObject("Trivia_Over", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
         internal static System.Drawing.Bitmap UserReview {
             get {
                 object obj = ResourceManager.GetObject("UserReview", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap UserReview_Over {
-            get {
-                object obj = ResourceManager.GetObject("UserReview_Over", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
