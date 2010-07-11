@@ -15,7 +15,7 @@ namespace ImdbMobile.UI
         private string _text;
         private int _textHeight;
 
-        private Font _mainFont = new Font(FontFamily.GenericSansSerif, 12f, FontStyle.Bold);
+        private Font _mainFont = new Font(IMDBData.SettingsWrapper.GlobalSettings.FontName, IMDBData.SettingsWrapper.GlobalSettings.FontSize_Large, IMDBData.SettingsWrapper.GlobalSettings.FontStyle_Large);
 
         public string Text
         {
@@ -30,7 +30,7 @@ namespace ImdbMobile.UI
         public int Height { get; set; }
         public MichyPrima.ManilaDotNetSDK.KListControl Parent { get; set; }
         public Rectangle Bounds { get; set; }
-        public Image Icon { get; set; }
+        public string Icon { get; set; }
         public Image HoverIcon { get; set; }
         public int PaddingTop;
         public int PaddingBottom;
@@ -59,6 +59,7 @@ namespace ImdbMobile.UI
 
         public void Render(Graphics g, Rectangle Bounds)
         {
+            GDIPlus.SetSmoothingMode(g, GDIPlus.SmoothingMode.SmoothingModeAntiAlias);
             if (this.BackgroundColor != Color.Empty)
             {
                 g.FillRectangle(new SolidBrush(this.BackgroundColor), Bounds);
@@ -71,8 +72,12 @@ namespace ImdbMobile.UI
             {
                 System.Drawing.Imaging.ImageAttributes ia = new System.Drawing.Imaging.ImageAttributes();
                 ia.SetColorKey(Color.FromArgb(250, 250, 210), Color.FromArgb(250, 250, 210));
-                g.DrawImage(this.Icon, new Rectangle(5, Bounds.Y + PaddingTop, this.Icon.Width, this.Icon.Height), 0, 0, this.Icon.Width, this.Icon.Height, GraphicsUnit.Pixel, ia);
+                Size s = Extensions.GetBitmapDimensions(this.Icon);
+                Extensions.DrawBitmap(g, new Rectangle(5, Bounds.Y + PaddingTop, s.Width, s.Height), this.Icon);
             }
+
+            Size s2 = Extensions.GetBitmapDimensions("next");
+            Extensions.DrawBitmap(g, new Rectangle(this.Parent.Width - s2.Width - 5, Bounds.Y + ((this.Height / 2) - (s2.Height / 2)), s2.Width, s2.Height), "next");
             g.DrawString(this.Text, _mainFont, new SolidBrush(this.FontColor), 65, Bounds.Y + PaddingTop);
         }
 

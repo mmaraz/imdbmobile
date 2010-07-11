@@ -78,3 +78,29 @@ D:\IMDb Mobile Google\ImdbMobile\obj\Release\ImdbMobile.Settings.resources
 D:\IMDb Mobile Google\ImdbMobile\obj\Release\ImdbMobile.csproj.GenerateResource.Cache
 D:\IMDb Mobile Google\ImdbMobile\obj\Release\ImdbMobile.exe
 D:\IMDb Mobile Google\ImdbMobile\obj\Release\ImdbMobile.pdb
+D:\imdbmobile\0.7\ImdbMobile\obj\Release\ResolveAssemblyReference.cache
+D:\imdbmobile\0.7\ImdbMobile\obj\Release\ImdbMobile.Controls.AboutControl.resources
+D:\imdbmobile\0.7\ImdbMobile\obj\Release\ImdbMobile.Controls.ActorControl.resources
+D:\imdbmobile\0.7\ImdbMobile\obj\Release\ImdbMobile.Controls.CastControl.resources
+D:\imdbmobile\0.7\ImdbMobile\obj\Release\ImdbMobile.Controls.ComingSoonControl.resources
+D:\imdbmobile\0.7\ImdbMobile\obj\Release\ImdbMobile.Controls.EpisodeListControl.resources
+D:\imdbmobile\0.7\ImdbMobile\obj\Release\ImdbMobile.Controls.ExternalReviews.resources
+D:\imdbmobile\0.7\ImdbMobile\obj\Release\ImdbMobile.Controls.FilmographyControl.resources
+D:\imdbmobile\0.7\ImdbMobile\obj\Release\ImdbMobile.Controls.GoofsControl.resources
+D:\imdbmobile\0.7\ImdbMobile\obj\Release\ImdbMobile.Controls.MainControl.resources
+D:\imdbmobile\0.7\ImdbMobile\obj\Release\ImdbMobile.Controls.MovieControl.resources
+D:\imdbmobile\0.7\ImdbMobile\obj\Release\ImdbMobile.Controls.ParentalGuide.resources
+D:\imdbmobile\0.7\ImdbMobile\obj\Release\ImdbMobile.Controls.QuotesControl.resources
+D:\imdbmobile\0.7\ImdbMobile\obj\Release\ImdbMobile.Controls.SeasonListControl.resources
+D:\imdbmobile\0.7\ImdbMobile\obj\Release\ImdbMobile.Controls.SettingsControl.resources
+D:\imdbmobile\0.7\ImdbMobile\obj\Release\ImdbMobile.Controls.Top250Control.resources
+D:\imdbmobile\0.7\ImdbMobile\obj\Release\ImdbMobile.Controls.TrailersControl.resources
+D:\imdbmobile\0.7\ImdbMobile\obj\Release\ImdbMobile.Controls.TriviaControl.resources
+D:\imdbmobile\0.7\ImdbMobile\obj\Release\ImdbMobile.Controls.UserReviews.resources
+D:\imdbmobile\0.7\ImdbMobile\obj\Release\ImdbMobile.Controls.ViewReview.resources
+D:\imdbmobile\0.7\ImdbMobile\obj\Release\ImdbMobile.Form1.resources
+D:\imdbmobile\0.7\ImdbMobile\obj\Release\ImdbMobile.Properties.Resources.resources
+D:\imdbmobile\0.7\ImdbMobile\obj\Release\ImdbMobile.Settings.resources
+D:\imdbmobile\0.7\ImdbMobile\obj\Release\ImdbMobile.csproj.GenerateResource.Cache
+D:\imdbmobile\0.7\ImdbMobile\obj\Release\ImdbMobile.exe
+D:\imdbmobile\0.7\ImdbMobile\obj\Release\ImdbMobile.pdb

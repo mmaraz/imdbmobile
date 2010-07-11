@@ -108,25 +108,12 @@
             Provides access to configuration settings in a specified configuration section. This class cannot be inherited.
             </summary>
         </member>
-        <member name="M:OpenNETCF.Configuration.ConfigurationSettings.Reload">
-            <summary>
-            Forces the settings provider to re-load the settings from the configuration file.
-            </summary>
-        </member>
         <member name="M:OpenNETCF.Configuration.ConfigurationSettings.GetConfig(System.String)">
             <summary>
             Returns configuration settings for a user-defined configuration section.  
             </summary>
             <param name="sectionName">The configuration section to read.</param>
             <returns>The configuration settings for sectionName.</returns>
-        </member>
-        <member name="M:OpenNETCF.Configuration.ConfigurationSettings.GetConfig(System.String,System.Object)">
-            <summary>
-            Returns configuration settings for a user-defined configuration section. 
-            </summary>
-            <param name="sectionName">The configuration section to read.</param>
-            <param name="context"></param>
-            <returns></returns>
         </member>
         <member name="P:OpenNETCF.Configuration.ConfigurationSettings.AppSettings">
             <summary>
@@ -232,12 +219,11 @@
             
             </summary>
         </member>
-        <member name="M:OpenNETCF.Configuration.IConfigurationSystem.GetConfig(System.String,System.Object)">
+        <member name="M:OpenNETCF.Configuration.IConfigurationSystem.GetConfig(System.String)">
             <summary>
             Returns the config object for the specified key.  
             </summary>
             <param name="configKey">Section name of config object to retrieve. </param>
-            <param name="context">Application provided context object that gets passed into the Create method of the IConfigurationSectionHandler</param>
             <returns></returns>
         </member>
         <member name="M:OpenNETCF.Configuration.IConfigurationSystem.Init">

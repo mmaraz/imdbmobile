@@ -109,16 +109,32 @@ namespace ImdbMobile.Controls
                 if (CurrentTitle == null)
                 {
                     ActorTriviaParser atp = new ActorTriviaParser();
+                    atp.Error += new EventHandler(atp_Error);
                     atp.ParsingComplete += new EventHandler(atp_ParsingComplete);
                     atp.ParseTitleTrivia(CurrentActor);
                 }
                 else
                 {
                     TitleTriviaParser ttp = new TitleTriviaParser();
+                    ttp.Error += new EventHandler(ttp_Error);
                     ttp.ParsingComplete += new EventHandler(ttp_ParsingComplete);
                     ttp.ParseTitleTrivia(CurrentTitle);
                 }
             }
+        }
+
+        void ttp_Error(object sender, EventArgs e)
+        {
+            APIEvent ae = (APIEvent)e;
+            this.LoadingList.Visible = false;
+            UI.KListFunctions.ShowError("Error: " + ae.EventData + ".\n" + UI.Translations.GetTranslated("0002") + "...", this.kListControl1);
+        }
+
+        void atp_Error(object sender, EventArgs e)
+        {
+            APIEvent ae = (APIEvent)e;
+            this.LoadingList.Visible = false;
+            UI.KListFunctions.ShowError("Error: " + ae.EventData + ".\n" + UI.Translations.GetTranslated("0002") + "...", this.kListControl1);
         }
 
         void ttp_ParsingComplete(object sender, EventArgs e)

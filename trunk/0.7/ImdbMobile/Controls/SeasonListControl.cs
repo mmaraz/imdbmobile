@@ -54,9 +54,17 @@ namespace ImdbMobile.Controls
             else
             {
                 TitleEpisodeParser tep = new TitleEpisodeParser();
+                tep.Error += new EventHandler(tep_Error);
                 tep.ParsingComplete += new EventHandler(tep_ParsingComplete);
                 tep.ParseTitleEpisodes(CurrentTitle);
             }
+        }
+
+        void tep_Error(object sender, EventArgs e)
+        {
+            APIEvent ae = (APIEvent)e;
+            this.LoadingList.Visible = false;
+            UI.KListFunctions.ShowError("Error: " + ae.EventData + ".\n" + UI.Translations.GetTranslated("0002") + "...", this.kListControl1);
         }
 
         void tep_ParsingComplete(object sender, EventArgs e)

@@ -82,8 +82,16 @@ namespace ImdbMobile.Controls
         private void LoadImdbInformation()
         {
             IMDBData.FilmographyParser fp = new ImdbMobile.IMDBData.FilmographyParser(CurrentActor);
+            fp.Error += new EventHandler(fp_Error);
             fp.ParsingComplete += new EventHandler(fp_ParsingComplete);
             fp.ParseDetails();
+        }
+
+        void fp_Error(object sender, EventArgs e)
+        {
+            APIEvent ae = (APIEvent)e;
+            this.LoadingList.Visible = false;
+            UI.KListFunctions.ShowError("Error: " + ae.EventData + ".\n" + UI.Translations.GetTranslated("0002") + "...", this.kListControl1);
         }
 
         void fp_ParsingComplete(object sender, EventArgs e)

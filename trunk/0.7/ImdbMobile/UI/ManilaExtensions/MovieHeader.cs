@@ -130,14 +130,17 @@ namespace ImdbMobile.UI
                 int CurrX = 15 + 108;
 
                 int intRating = (int)Math.Floor(this.Rating);
+                Size starSize = Extensions.GetBitmapDimensions("star_over");
                 for (int i = 0; i < intRating; i++)
                 {
-                    g.DrawImage(global::ImdbMobile.Properties.Resources.star_over, CurrX, TitleY + 30);
+                    Rectangle DestRect = new Rectangle(CurrX, TitleY + 30, starSize.Width, starSize.Height);
+                    Extensions.DrawBitmap(g, DestRect, "star_over");
                     CurrX += 20;
                 }
                 for (int i = intRating; i < 10; i++)
                 {
-                    g.DrawImage(global::ImdbMobile.Properties.Resources.star_out, CurrX, TitleY + 30);
+                    Rectangle DestRect = new Rectangle(CurrX, TitleY + 30, starSize.Width, starSize.Height);
+                    Extensions.DrawBitmap(g, DestRect, "star_out");
                     CurrX += 20;
                 }
                 g.DrawString("" + this.Rating, _bold, new SolidBrush(Color.Black), CurrX + 15, TitleY + 25);

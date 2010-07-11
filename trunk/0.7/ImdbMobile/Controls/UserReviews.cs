@@ -45,9 +45,17 @@ namespace ImdbMobile.Controls
             else
             {
                 TitleUserReviewParser tup = new TitleUserReviewParser();
+                tup.Error += new EventHandler(tup_Error);
                 tup.ParsingComplete += new EventHandler(tup_ParsingComplete);
                 tup.ParseUserReviews(this.CurrentTitle);
             }
+        }
+
+        void tup_Error(object sender, EventArgs e)
+        {
+            APIEvent ae = (APIEvent)e;
+            this.LoadingList.Visible = false;
+            UI.KListFunctions.ShowError("Error: " + ae.EventData + ".\n" + UI.Translations.GetTranslated("0002") + "...", this.kListControl1);
         }
 
         void tup_ParsingComplete(object sender, EventArgs e)

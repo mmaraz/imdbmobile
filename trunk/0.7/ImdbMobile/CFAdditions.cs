@@ -8,6 +8,51 @@ using System.Drawing.Imaging;
 
 public static class Extensions
 {
+    public static Size GetBitmapDimensions(string Name)
+    {
+        string File = "";
+        if (System.IO.File.Exists(ImdbMobile.IMDBData.SettingsWrapper.ApplicationPath + "\\Skins\\" + Name + ".png"))
+        {
+            File = ImdbMobile.IMDBData.SettingsWrapper.ApplicationPath + "\\Skins\\" + Name + ".png";
+        }
+        else if (System.IO.File.Exists(ImdbMobile.IMDBData.SettingsWrapper.ApplicationPath + "\\Skins\\" + Name + ".jpg"))
+        {
+            File = ImdbMobile.IMDBData.SettingsWrapper.ApplicationPath + "\\Skins\\" + Name + ".jpg";
+        }
+        else
+        {
+            return new Size(0,0);
+        }
+        Bitmap b = new Bitmap(File);
+        return b.Size;
+    }
+
+    public static void DrawBitmap(Graphics g, Rectangle DestRect, string Name)
+    {
+        string File = "";
+        if (System.IO.File.Exists(ImdbMobile.IMDBData.SettingsWrapper.ApplicationPath + "\\Skins\\" + Name + ".png"))
+        {
+            File = ImdbMobile.IMDBData.SettingsWrapper.ApplicationPath + "\\Skins\\" + Name + ".png";
+        }
+        else if (System.IO.File.Exists(ImdbMobile.IMDBData.SettingsWrapper.ApplicationPath + "\\Skins\\" + Name + ".jpg"))
+        {
+            File = ImdbMobile.IMDBData.SettingsWrapper.ApplicationPath + "\\Skins\\" + Name + ".jpg";
+        }
+        else
+        {
+            return;
+        }
+
+        IntPtr gHdc = g.GetHdc();
+        OpenNETCF.Drawing.Imaging.ImagingFactoryClass ifc = new OpenNETCF.Drawing.Imaging.ImagingFactoryClass();
+        OpenNETCF.Drawing.Imaging.IImage image;
+        ifc.CreateImageFromFile(File, out image);
+        Size s;
+        image.GetPhysicalDimension(out s);
+        image.Draw(gHdc, new OpenNETCF.Drawing.Imaging.RECT(DestRect), new OpenNETCF.Drawing.Imaging.RECT(0, 0, s.Width, s.Height));
+        g.ReleaseHdc(gHdc);
+    }
+
     public static bool TryParse(string Str, out Double Dbl)
     {
         try

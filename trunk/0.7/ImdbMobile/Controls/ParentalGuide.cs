@@ -45,9 +45,17 @@ namespace ImdbMobile.Controls
             else
             {
                 IMDBData.TitleParentalGuideParser tgp = new TitleParentalGuideParser();
+                tgp.Error += new EventHandler(tgp_Error);
                 tgp.ParsingComplete += new EventHandler(tgp_ParsingComplete);
                 tgp.ParseParentalGuide(this.CurrentTitle);
             }
+        }
+
+        void tgp_Error(object sender, EventArgs e)
+        {
+            APIEvent ae = (APIEvent)e;
+            this.LoadingList.Visible = false;
+            UI.KListFunctions.ShowError("Error: " + ae.EventData + ".\n" + UI.Translations.GetTranslated("0002") + "...", this.kListControl1);
         }
 
         void tgp_ParsingComplete(object sender, EventArgs e)

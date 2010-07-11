@@ -21,9 +21,16 @@ namespace ImdbMobile.IMDBData
         {
             this.Title = OriginalTitle;
             UI.WindowHandler.APIWorker = new API();
+            UI.WindowHandler.APIWorker.Error += new EventHandler(APIWorker_Error);
             UI.WindowHandler.APIWorker.DataDownloaded += new EventHandler(APIWorker_DataDownloaded);
             this.OnDownloadingData();
             UI.WindowHandler.APIWorker.GetFullDetails(OriginalTitle.ImdbId);
+        }
+
+        void APIWorker_Error(object sender, EventArgs e)
+        {
+            APIEvent ae = (APIEvent)e;
+            this.OnError(ae.EventData);
         }
 
         void APIWorker_DataDownloaded(object sender, EventArgs e)

@@ -22,7 +22,7 @@ namespace ImdbMobile.UI
         public int Height { get; set; }
         public MichyPrima.ManilaDotNetSDK.KListControl Parent { get; set; }
         public Rectangle Bounds { get; set; }
-        public Image Icon { get; set; }
+        public string Icon { get; set; }
         public int PaddingTop;
         public int PaddingBottom;
         public Color BackgroundColor { get; set; }
@@ -71,7 +71,9 @@ namespace ImdbMobile.UI
                 }
                 if (this.Icon != null)
                 {
-                    g.DrawImage(this.Icon, 5, PaddingTop);
+                    Size s = Extensions.GetBitmapDimensions(this.Icon);
+                    Rectangle DestRect = new Rectangle(5, PaddingTop, s.Width, s.Height);
+                    Extensions.DrawBitmap(g, DestRect, this.Icon);
                 }
 
                 int CurrY = 0;
