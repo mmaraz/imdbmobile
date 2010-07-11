@@ -81,9 +81,16 @@ namespace ImdbMobile.Controls
             else
             {
                 TitleQuoteParser tqp = new TitleQuoteParser();
+                tqp.Error += new EventHandler(tqp_Error);
                 tqp.ParsingComplete += new EventHandler(tqp_ParsingComplete);
                 tqp.ParseQuotes(this.CurrentTitle);
             }
+        }
+
+        void tqp_Error(object sender, EventArgs e)
+        {
+            APIEvent ae = (APIEvent)e;
+            UI.KListFunctions.ShowError("Error: " + ae.EventData + ".\n" + UI.Translations.GetTranslated("0002") + "...", this.kListControl1);
         }
 
         void tqp_ParsingComplete(object sender, EventArgs e)

@@ -27,7 +27,7 @@ namespace ImdbMobile.UI
         public int Height { get; set; }
         public MichyPrima.ManilaDotNetSDK.KListControl Parent { get; set; }
         public Rectangle Bounds { get; set; }
-        public Image Icon { get; set; }
+        public string Icon { get; set; }
         public int PaddingTop;
         public int PaddingBottom;
         public Color BackgroundColor { get; set; }
@@ -101,24 +101,31 @@ namespace ImdbMobile.UI
             {
                 g.FillRectangle(new SolidBrush(Color.LightGoldenrodYellow), Bounds);
             }
+
+            if (string.IsNullOrEmpty(this.Icon))
+            {
+                this.Icon = "Loader1";
+            }
+            Size s = Extensions.GetBitmapDimensions(this.Icon);
             if (this.Icon != null)
             {
                 switch (this.CurrentFrame)
                 {
-                    case 1: this.Icon = global::ImdbMobile.Properties.Resources.Loader1; break;
-                    case 2: this.Icon = global::ImdbMobile.Properties.Resources.Loader2; break;
-                    case 3: this.Icon = global::ImdbMobile.Properties.Resources.Loader3; break;
-                    case 4: this.Icon = global::ImdbMobile.Properties.Resources.Loader4; break;
-                    case 5: this.Icon = global::ImdbMobile.Properties.Resources.Loader5; break;
-                    case 6: this.Icon = global::ImdbMobile.Properties.Resources.Loader6; break;
-                    case 7: this.Icon = global::ImdbMobile.Properties.Resources.Loader7; break;
-                    case 8: this.Icon = global::ImdbMobile.Properties.Resources.Loader8; break;
+                    case 1: this.Icon = "Loader1"; break;
+                    case 2: this.Icon = "Loader2"; break;
+                    case 3: this.Icon = "Loader3"; break;
+                    case 4: this.Icon = "Loader4"; break;
+                    case 5: this.Icon = "Loader5"; break;
+                    case 6: this.Icon = "Loader6"; break;
+                    case 7: this.Icon = "Loader7"; break;
+                    case 8: this.Icon = "Loader8"; break;
                 }
-                g.DrawImage(this.Icon, (Bounds.Width / 2) - (this.Icon.Width / 2) , Bounds.Y);
+                Rectangle DestRect = new Rectangle((Bounds.Width / 2) - (s.Width / 2), Bounds.Y, s.Width, s.Height);
+                Extensions.DrawBitmap(g, DestRect, this.Icon);
             }
             StringFormat sf = new StringFormat();
             sf.Alignment = StringAlignment.Center;
-            g.DrawString(this.Text, _mainFont, new SolidBrush(Color.Black), (Bounds.Width / 2), Bounds.Y + this.Icon.Height + 10, sf);
+            g.DrawString(this.Text, _mainFont, new SolidBrush(Color.Black), (Bounds.Width / 2), Bounds.Y + s.Height + 10, sf);
         }
 
         public void OnMouseDown(int x, int y, ref bool StateChanged) { }

@@ -313,3 +313,6 @@ D:\Source Code\IMDb Mobile\0.7\ImdbMobile\obj\Debug\ImdbMobile.Settings.resource
 D:\Source Code\IMDb Mobile\0.7\ImdbMobile\obj\Debug\ImdbMobile.csproj.GenerateResource.Cache
 D:\Source Code\IMDb Mobile\0.7\ImdbMobile\obj\Debug\ImdbMobile.exe
 D:\Source Code\IMDb Mobile\0.7\ImdbMobile\obj\Debug\ImdbMobile.pdb
+D:\imdbmobile\0.7\ImdbMobile\bin\Debug\OpenNETCF.dll
+D:\imdbmobile\0.7\ImdbMobile\bin\Debug\OpenNETCF.Drawing.dll
+D:\imdbmobile\0.7\ImdbMobile\bin\Debug\OpenNETCF.Drawing.xml

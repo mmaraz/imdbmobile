@@ -58,8 +58,16 @@ namespace ImdbMobile.Controls
         private void LoadImdbInformation()
         {
             Top250Parser t2p = new Top250Parser();
+            t2p.Error += new EventHandler(t2p_Error);
             t2p.ParsingComplete += new EventHandler(t2p_ParsingComplete);
             t2p.ParseTop250();
+        }
+
+        void t2p_Error(object sender, EventArgs e)
+        {
+            APIEvent ae = (APIEvent)e;
+            this.LoadingList.Visible = false;
+            UI.KListFunctions.ShowError("Error: " + ae.EventData + ".\n" + UI.Translations.GetTranslated("0002") + "...", this.kListControl1);
         }
 
         void t2p_ParsingComplete(object sender, EventArgs e)

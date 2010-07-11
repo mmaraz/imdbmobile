@@ -101,7 +101,7 @@ namespace ImdbMobile.Controls
             if (!CurrentTitle.HasFullCast)
             {
                 UI.ActionButton ab = new ImdbMobile.UI.ActionButton();
-                ab.Icon = global::ImdbMobile.Properties.Resources.Cast;
+                ab.Icon = "Cast";
                 ab.Text = "Full Cast...";
                 ab.Parent = this.kListControl1;
                 ab.YIndex = CurrentTitle.Cast.Count;
@@ -137,8 +137,16 @@ namespace ImdbMobile.Controls
             this.kListControl1.Items.Clear();
 
             IMDBData.ParseCast pc = new ImdbMobile.IMDBData.ParseCast();
+            pc.Error += new EventHandler(pc_Error);
             pc.ParsingComplete += new EventHandler(pc_ParsingComplete);
             pc.ParseFullCast(CurrentTitle);
+        }
+
+        void pc_Error(object sender, EventArgs e)
+        {
+            APIEvent ae = (APIEvent)e;
+            this.LoadingList.Visible = false;
+            UI.KListFunctions.ShowError("Error: " + ae.EventData + ".\n" + UI.Translations.GetTranslated("0002") + "...", this.kListControl1);
         }
 
         void pc_ParsingComplete(object sender, EventArgs e)

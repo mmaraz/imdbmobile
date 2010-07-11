@@ -50,9 +50,17 @@ namespace ImdbMobile.Controls
             else
             {
                 TitleGoofParser tgp = new TitleGoofParser();
+                tgp.Error += new EventHandler(tgp_Error);
                 tgp.ParsingComplete += new EventHandler(tgp_ParsingComplete);
                 tgp.ParseGoofs(CurrentTitle);
             }
+        }
+
+        void tgp_Error(object sender, EventArgs e)
+        {
+            APIEvent ae = (APIEvent)e;
+            this.LoadingList.Visible = false;
+            UI.KListFunctions.ShowError("Error: " + ae.EventData + ".\n" + UI.Translations.GetTranslated("0002") + "...", this.kListControl1);
         }
 
         void tgp_ParsingComplete(object sender, EventArgs e)
@@ -78,13 +86,13 @@ namespace ImdbMobile.Controls
                 td.Text = ig.Description;
                 switch (ig.Type)
                 {
-                    case ImdbGoof.GoofType.Continuity: td.Heading = UI.Translations.GetTranslated("0034"); td.Icon = global::ImdbMobile.Properties.Resources.Continuity; break;
-                    case ImdbGoof.GoofType.CrewOrEquipment: td.Heading = UI.Translations.GetTranslated("0035"); td.Icon = global::ImdbMobile.Properties.Resources.Cast; break;
-                    case ImdbGoof.GoofType.FactualErrors: td.Heading = UI.Translations.GetTranslated("0036"); td.Icon = global::ImdbMobile.Properties.Resources.Trailers; break;
-                    case ImdbGoof.GoofType.IncorrectlyRegarded: td.Heading = UI.Translations.GetTranslated("0037"); td.Icon = global::ImdbMobile.Properties.Resources.Close; break;
-                    case ImdbGoof.GoofType.PlotHoles: td.Heading = UI.Translations.GetTranslated("0038"); td.Icon = global::ImdbMobile.Properties.Resources.Trailers; break;
-                    case ImdbGoof.GoofType.RevealingMistakes: td.Heading = UI.Translations.GetTranslated("0039"); td.Icon = global::ImdbMobile.Properties.Resources.MoreInfo; break;
-                    default: td.Heading = UI.Translations.GetTranslated("0040"); td.Icon = global::ImdbMobile.Properties.Resources.MoreInfo; break;
+                    case ImdbGoof.GoofType.Continuity: td.Heading = UI.Translations.GetTranslated("0034"); td.Icon = "Continuity"; break;
+                    case ImdbGoof.GoofType.CrewOrEquipment: td.Heading = UI.Translations.GetTranslated("0035"); td.Icon = "Cast"; break;
+                    case ImdbGoof.GoofType.FactualErrors: td.Heading = UI.Translations.GetTranslated("0036"); td.Icon = "Trailers"; break;
+                    case ImdbGoof.GoofType.IncorrectlyRegarded: td.Heading = UI.Translations.GetTranslated("0037"); td.Icon = "Close"; break;
+                    case ImdbGoof.GoofType.PlotHoles: td.Heading = UI.Translations.GetTranslated("0038"); td.Icon = "Trailers"; break;
+                    case ImdbGoof.GoofType.RevealingMistakes: td.Heading = UI.Translations.GetTranslated("0039"); td.Icon = "MoreInfo"; break;
+                    default: td.Heading = UI.Translations.GetTranslated("0040"); td.Icon = "MoreInfo"; break;
                 }
                 td.Parent = this.kListControl1;
 

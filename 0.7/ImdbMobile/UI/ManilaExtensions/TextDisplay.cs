@@ -38,7 +38,7 @@ namespace ImdbMobile.UI
         public MichyPrima.ManilaDotNetSDK.KListControl Parent { get; set; }
         public Rectangle Bounds { get; set; }
 
-        public Image Icon
+        public string Icon
         {
             get;
             set;
@@ -78,9 +78,10 @@ namespace ImdbMobile.UI
                 this.Height += (int)TextSize.Height;
 
                 // If it has an icon, ensure that the height is at least 48 + Padding
-                if (this.Icon != null && (this.Height < this.Icon.Height + PaddingBottom + PaddingTop))
+                Size s = Extensions.GetBitmapDimensions(this.Icon);
+                if (this.Icon != null && (this.Height < s.Height + PaddingBottom + PaddingTop))
                 {
-                    this.Height = this.Icon.Height + PaddingTop + PaddingBottom;
+                    this.Height = s.Height + PaddingTop + PaddingBottom;
                 }
 
                 if (this.ShowSeparator)
@@ -104,7 +105,9 @@ namespace ImdbMobile.UI
                 if (this.Icon != null)
                 {
                     int Y = Bounds.Y + PaddingTop;
-                    g.DrawImage(this.Icon, 5, Y);
+                    Size s = Extensions.GetBitmapDimensions(this.Icon);
+                    Rectangle DestRect = new Rectangle(5, Y, s.Width, s.Height);
+                    Extensions.DrawBitmap(g, DestRect, this.Icon);
                     if (this.Heading != null)
                     {
                         g.DrawString(this.Heading, _bold, new SolidBrush(Color.Black), new RectangleF(53, Y, (ParentWidth - 53), HeadingSize.Height));

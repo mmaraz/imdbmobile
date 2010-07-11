@@ -367,6 +367,10 @@ namespace ImdbMobile.IMDBData
             {
                 // User aborted operation
             }
+            catch (OutOfMemoryException)
+            {
+
+            }
             catch (InvalidOperationException)
             {
                 // User aborted operation

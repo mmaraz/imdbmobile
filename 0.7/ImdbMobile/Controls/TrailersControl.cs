@@ -46,7 +46,7 @@ namespace ImdbMobile.Controls
                         case ImdbEncoding.VideoType.HD720p: mpi.Text = UI.Translations.GetTranslated("0097"); break;
                     }
                     mpi.Parent = this.kListControl1;
-                    mpi.Icon = global::ImdbMobile.Properties.Resources.Trailers;
+                    mpi.Icon = "Trailers";
                     mpi.YIndex = CurrentTitle.Trailer.Encodings.IndexOf(ie);
                     mpi.MouseUp += new ImdbMobile.UI.ActionButton.MouseEvent(mpi_MouseUp);
                     mpi.CalculateHeight();

@@ -45,9 +45,17 @@ namespace ImdbMobile.Controls
             else
             {
                 IMDBData.TitleExternalReviewParser erp = new TitleExternalReviewParser();
+                erp.Error += new EventHandler(erp_Error);
                 erp.ParsingComplete += new EventHandler(erp_ParsingComplete);
                 erp.ParseExternalReviews(this.CurrentTitle);
             }
+        }
+
+        void erp_Error(object sender, EventArgs e)
+        {
+            APIEvent ae = (APIEvent)e;
+            this.LoadingList.Visible = false;
+            UI.KListFunctions.ShowError("Error: " + ae.EventData + ".\n" + UI.Translations.GetTranslated("0002") + "...", this.kListControl1);
         }
 
         void erp_ParsingComplete(object sender, EventArgs e)

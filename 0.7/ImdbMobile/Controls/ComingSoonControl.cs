@@ -62,8 +62,16 @@ namespace ImdbMobile.Controls
         private void LoadImdbInformation()
         {
             ComingSoonParser csp = new ComingSoonParser();
+            csp.Error += new EventHandler(csp_Error);
             csp.ParsingComplete += new EventHandler(csp_ParsingComplete);
             csp.ParseComingSoon();
+        }
+
+        void csp_Error(object sender, EventArgs e)
+        {
+            APIEvent ae = (APIEvent)e;
+            this.LoadingList.Visible = false;
+            UI.KListFunctions.ShowError("Error: " + ae.EventData + ".\n" + UI.Translations.GetTranslated("0002") + "...", this.kListControl1);
         }
 
         void csp_ParsingComplete(object sender, EventArgs e)

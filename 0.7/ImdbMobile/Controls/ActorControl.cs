@@ -50,7 +50,7 @@ namespace ImdbMobile.Controls
         void ap_Error(object sender, EventArgs e)
         {
             APIEvent ae = (APIEvent)e;
-            UI.KListFunctions.ShowLoading("Error: " + ae.EventData + ".\n" + UI.Translations.GetTranslated("0002") + "...", this.kListControl1);
+            UI.KListFunctions.ShowError("Error: " + ae.EventData + ".\n" + UI.Translations.GetTranslated("0002") + "...", this.kListControl1);
         }
 
         void ap_ParsingComplete(object sender, EventArgs e)
@@ -128,7 +128,7 @@ namespace ImdbMobile.Controls
 
             // Add Holder Control
             UI.ActionButton Filmography = new ImdbMobile.UI.ActionButton();
-            Filmography.Icon = global::ImdbMobile.Properties.Resources.Trailers;
+            Filmography.Icon = "Trailers";
             Filmography.Parent = this.kListControl1;
             Filmography.Text = UI.Translations.GetTranslated("0004");
             Filmography.MouseUp += new ImdbMobile.UI.ActionButton.MouseEvent(Filmography_MouseUp);
@@ -138,7 +138,7 @@ namespace ImdbMobile.Controls
 
             // Add Holder Control
             UI.ActionButton Trivia = new ImdbMobile.UI.ActionButton();
-            Trivia.Icon = global::ImdbMobile.Properties.Resources.Trivia;
+            Trivia.Icon = "Trivia";
             Trivia.Parent = this.kListControl1;
             Trivia.Text = UI.Translations.GetTranslated("0005");
             Trivia.YIndex = 3;

@@ -45,7 +45,7 @@ namespace ImdbMobile.UI
         public MichyPrima.ManilaDotNetSDK.KListControl Parent { get; set; }
         public Rectangle Bounds { get; set; }
 
-        public Image Icon
+        public string Icon
         {
             get;
             set;
@@ -105,8 +105,10 @@ namespace ImdbMobile.UI
                     }
                     if (this.Icon != null)
                     {
+                        Size s = Extensions.GetBitmapDimensions(this.Icon);
                         int Y = Bounds.Y + PaddingTop;
-                        g.DrawImage(this.Icon, 5, Y);
+                        Rectangle DestRect = new Rectangle(5, Y, s.Width, s.Height);
+                        Extensions.DrawBitmap(g, DestRect, this.Icon);
                         if (this.Heading != null)
                         {
                             g.DrawString(this.Heading, _bold, new SolidBrush(Color.Black), new RectangleF(53, Y, (ParentWidth - 53), HeadingSize.Height));
@@ -116,14 +118,17 @@ namespace ImdbMobile.UI
                         {
                             int intRating = (int)Math.Floor(this.Rating);
                             int CurrX = 53;
+                            Size starSize = Extensions.GetBitmapDimensions("star_over");
                             for (int i = 0; i < intRating; i++)
                             {
-                                g.DrawImage(global::ImdbMobile.Properties.Resources.star_over, CurrX, Y);
+                                Rectangle DestRectS = new Rectangle(CurrX, Y, starSize.Width, starSize.Height);
+                                Extensions.DrawBitmap(g, DestRectS, "star_over");
                                 CurrX += 20;
                             }
                             for (int i = intRating; i < 10; i++)
                             {
-                                g.DrawImage(global::ImdbMobile.Properties.Resources.star_out, CurrX, Y);
+                                Rectangle DestRectS = new Rectangle(CurrX, Y, starSize.Width, starSize.Height);
+                                Extensions.DrawBitmap(g, DestRectS, "star_out");
                                 CurrX += 20;
                             }
                             g.DrawString("" + this.Rating, _bold, new SolidBrush(Color.Black), CurrX + 15, Y - 5);
@@ -148,14 +153,17 @@ namespace ImdbMobile.UI
                         {
                             int intRating = (int)Math.Floor(this.Rating);
                             int CurrX = 5;
+                            Size starSize = Extensions.GetBitmapDimensions("star_over");
                             for (int i = 0; i < intRating; i++)
                             {
-                                g.DrawImage(global::ImdbMobile.Properties.Resources.star_over, CurrX, Y);
+                                Rectangle DestRectS = new Rectangle(CurrX, Y, starSize.Width, starSize.Height);
+                                Extensions.DrawBitmap(g, DestRectS, "star_over");
                                 CurrX += 20;
                             }
                             for (int i = intRating; i < 10; i++)
                             {
-                                g.DrawImage(global::ImdbMobile.Properties.Resources.star_out, CurrX, Y);
+                                Rectangle DestRectS = new Rectangle(CurrX, Y, starSize.Width, starSize.Height);
+                                Extensions.DrawBitmap(g, DestRectS, "star_out");
                                 CurrX += 20;
                             }
                             g.DrawString("" + this.Rating, _bold, new SolidBrush(Color.Black), CurrX + 15, Y - 5);
