@@ -59,25 +59,9 @@ namespace ImdbMobile.UI
 
         public void Render(Graphics g, Rectangle Bounds)
         {
-            if (this.ShowHoverLeft)
-            {
-                g.DrawImage(global::ImdbMobile.Properties.Resources.previous_Over, 0, 0);
-            }
-            else
-            {
-                g.DrawImage(global::ImdbMobile.Properties.Resources.previous, 0, 0);
-            }
             StringFormat sf = new StringFormat();
             sf.Alignment = StringAlignment.Center;
             g.DrawString("Page " + CurrentPage + " of " + TotalPages, _mainFont, new SolidBrush(Color.Black), new RectangleF(32, 0, Bounds.Width - 64, 32), sf);
-            if (this.ShowHoverRight)
-            {
-                g.DrawImage(global::ImdbMobile.Properties.Resources.next_Over, Bounds.Width - 32, 0);
-            }
-            else
-            {
-                g.DrawImage(global::ImdbMobile.Properties.Resources.next, Bounds.Width - 32, 0);
-            }
         }
 
         void Parent_MouseMove(object sender, System.Windows.Forms.MouseEventArgs e)

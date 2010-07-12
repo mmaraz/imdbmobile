@@ -162,7 +162,6 @@ namespace ImdbMobile.Controls
 
             UI.ActionButton ParentalButton = new ImdbMobile.UI.ActionButton();
             ParentalButton.Icon = "ParentalGuide";
-            ParentalButton.HoverIcon = global::ImdbMobile.Properties.Resources.ParentalGuide_Over;
             ParentalButton.Parent = this.kListControl1;
             ParentalButton.Text = UI.Translations.GetTranslated("0092");
             ParentalButton.YIndex = 9;

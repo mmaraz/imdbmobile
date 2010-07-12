@@ -37,7 +37,7 @@ namespace ImdbMobile.UI
 
                 if (this.ShowSearch)
                 {
-                    this.pbSearch.Image = global::ImdbMobile.Properties.Resources.SearchButton_Large;
+                    this.pbSearch.Image = Extensions.LoadBitmap("SearchButton_Large");
                     this.pbSearch.Size = new System.Drawing.Size(33, 32);
                 }
             }
@@ -50,7 +50,7 @@ namespace ImdbMobile.UI
 
                 if (this.ShowSearch)
                 {
-                    this.pbSearch.Image = global::ImdbMobile.Properties.Resources.SearchButton_Small;
+                    this.pbSearch.Image = Extensions.LoadBitmap("SearchButton_Small");
                     this.pbSearch.Size = new System.Drawing.Size(24, 23);
                 }
             }
@@ -86,7 +86,7 @@ namespace ImdbMobile.UI
 
                 if (this.ShowSearch)
                 {
-                    this.pbSearch.Image = global::ImdbMobile.Properties.Resources.SearchButton_Large;
+                    this.pbSearch.Image = Extensions.LoadBitmap("SearchButton_Large");
                     this.pbSearch.Size = new System.Drawing.Size(33, 32);
                 }
             }
@@ -99,7 +99,7 @@ namespace ImdbMobile.UI
 
                 if (this.ShowSearch)
                 {
-                    this.pbSearch.Image = global::ImdbMobile.Properties.Resources.SearchButton_Small;
+                    this.pbSearch.Image = Extensions.LoadBitmap("SearchButton_Small");
                     this.pbSearch.Size = new System.Drawing.Size(24, 23);
                 }
             }
@@ -163,21 +163,21 @@ namespace ImdbMobile.UI
                     int TextboxX = 5;
 
                     // Draw left edge
-                    Bitmap image = global::ImdbMobile.Properties.Resources.TextInput_Large_Left;
-                    DestRect = new Rectangle(5, TextboxY, image.Width, image.Height);
+                    Size s = Extensions.GetBitmapDimensions("TextInput_Large_Left");
+                    DestRect = new Rectangle(5, TextboxY, s.Width, s.Height);
                     Extensions.DrawBitmap(g, DestRect, "TextInput_Large_Left");
 
-
-                    TextboxX = Screen.PrimaryScreen.WorkingArea.Width - 5 - global::ImdbMobile.Properties.Resources.TextInput_Large_Right.Width;
-                    image = global::ImdbMobile.Properties.Resources.TextInput_Large_Right;
-                    DestRect = new Rectangle(TextboxX, TextboxY, image.Width, image.Height);
+                    s = Extensions.GetBitmapDimensions("TextInput_Large_Right");
+                    TextboxX = Screen.PrimaryScreen.WorkingArea.Width - 5 - s.Width;
+                    DestRect = new Rectangle(TextboxX, TextboxY, s.Width, s.Height);
                     Extensions.DrawBitmap(g, DestRect, "TextInput_Large_Right");
 
-                    image = global::ImdbMobile.Properties.Resources.TextInput_Large_Center;
-                    DestRect = new Rectangle(5 + global::ImdbMobile.Properties.Resources.TextInput_Large_Left.Width, TextboxY, TextboxX - global::ImdbMobile.Properties.Resources.TextInput_Large_Left.Width, image.Height);
+                    s = Extensions.GetBitmapDimensions("TextInput_Large_Center");
+                    DestRect = new Rectangle(5 + s.Width, TextboxY, TextboxX - s.Width, s.Height);
                     Extensions.DrawBitmap(g, DestRect, "TextInput_Large_Center");
 
-                    int PBX = Screen.PrimaryScreen.WorkingArea.Width - 5 - global::ImdbMobile.Properties.Resources.TextInput_Large_Right.Width - 15;
+                    s = Extensions.GetBitmapDimensions("TextInput_Large_Right");
+                    int PBX = Screen.PrimaryScreen.WorkingArea.Width - 5 - s.Width - 15;
                     this.pbSearch.Location = new System.Drawing.Point(PBX, 96);
 
                     this.textBox1.Size = new System.Drawing.Size(PBX - 5, 40);
@@ -199,33 +199,32 @@ namespace ImdbMobile.UI
                 Color stop = Color.FromArgb(27, 31, 29);
                 GradientFill.Fill(g, DestRect, start, stop, GradientFill.FillDirection.TopToBottom);
 
-                Bitmap image = global::ImdbMobile.Properties.Resources.IMDB_Logo_Small;
-                int LogoX = (Screen.PrimaryScreen.WorkingArea.Width / 2) - (image.Width / 2);
-                DestRect = new Rectangle(LogoX, 2, image.Width, image.Height);
+                Size s = Extensions.GetBitmapDimensions("IMDB_Logo_Small");
+                int LogoX = (Screen.PrimaryScreen.WorkingArea.Width / 2) - (s.Width / 2);
+                DestRect = new Rectangle(LogoX, 2, s.Width, s.Height);
                 Extensions.DrawBitmap(g, DestRect, "IMDB_Logo_Small");
 
                 if (this.ShowSearch)
                 {
-                    int TextboxY = 2 + image.Height + 2;
+                    int TextboxY = 2 + s.Height + 2;
                     int TextboxX = 5;
 
 
                     // Draw left edge
-                    image = global::ImdbMobile.Properties.Resources.TextInput_Small_Left;
-                    DestRect = new Rectangle(5, TextboxY, image.Width, image.Height);
+                    Size sLeft = Extensions.GetBitmapDimensions("TextInput_Small_Left");
+                    DestRect = new Rectangle(5, TextboxY, s.Width, s.Height);
                     Extensions.DrawBitmap(g, DestRect, "TextInput_Small_Left");
 
 
-                    TextboxX = Screen.PrimaryScreen.WorkingArea.Width - 5 - global::ImdbMobile.Properties.Resources.TextInput_Small_Right.Width;
-                    image = global::ImdbMobile.Properties.Resources.TextInput_Small_Right;
-                    DestRect = new Rectangle(TextboxX, TextboxY, image.Width, image.Height);
+                    Size sRight = Extensions.GetBitmapDimensions("TextInput_Small_Right");
+                    DestRect = new Rectangle(TextboxX, TextboxY, s.Width, s.Height);
                     Extensions.DrawBitmap(g, DestRect, "TextInput_Small_Right");
 
-                    image = global::ImdbMobile.Properties.Resources.TextInput_Small_Center;
-                    DestRect = new Rectangle(5 + global::ImdbMobile.Properties.Resources.TextInput_Small_Left.Width, TextboxY, TextboxX - global::ImdbMobile.Properties.Resources.TextInput_Small_Left.Width, image.Height);
+                    Size sCenter = Extensions.GetBitmapDimensions("TextInput_Small_Center");
+                    DestRect = new Rectangle(5 + sLeft.Width, TextboxY, TextboxX - sLeft.Width, sCenter.Height);
                     Extensions.DrawBitmap(g, DestRect, "TextInput_Small_Center");
 
-                    int PBX = Screen.PrimaryScreen.WorkingArea.Width - 5 - global::ImdbMobile.Properties.Resources.TextInput_Small_Right.Width - 15;
+                    int PBX = Screen.PrimaryScreen.WorkingArea.Width - 5 - sRight.Width - 15;
                     this.pbSearch.Location = new System.Drawing.Point(PBX, 54);
 
                     this.textBox1.Size = new System.Drawing.Size(PBX - this.pbSearch.Width - 2, 32);
