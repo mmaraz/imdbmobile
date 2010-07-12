@@ -27,6 +27,22 @@ public static class Extensions
         return b.Size;
     }
 
+    public static Bitmap LoadBitmap(string Name)
+    {
+        if (System.IO.File.Exists(ImdbMobile.IMDBData.SettingsWrapper.ApplicationPath + "\\Skins\\" + Name + ".png"))
+        {
+            return new Bitmap(ImdbMobile.IMDBData.SettingsWrapper.ApplicationPath + "\\Skins\\" + Name + ".png");
+        }
+        else if (System.IO.File.Exists(ImdbMobile.IMDBData.SettingsWrapper.ApplicationPath + "\\Skins\\" + Name + ".jpg"))
+        {
+            return new Bitmap(ImdbMobile.IMDBData.SettingsWrapper.ApplicationPath + "\\Skins\\" + Name + ".jpg");
+        }
+        else
+        {
+            return new Bitmap(0, 0);
+        }
+    }
+
     public static void DrawBitmap(Graphics g, Rectangle DestRect, string Name)
     {
         string File = "";

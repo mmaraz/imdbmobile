@@ -36,6 +36,7 @@ namespace ImdbMobile.UI
         public int PaddingBottom;
         public Color BackgroundColor { get; set; }
         public Color FontColor { get; set; }
+        private Bitmap DrawnImage { get; set; }
 
         public ActionButton()
         {
@@ -54,31 +55,34 @@ namespace ImdbMobile.UI
                 SizeF textSize = Extensions.MeasureStringExtended(g, _text, _mainFont, UI.WindowHandler.ParentForm.Width);
                 _textHeight = (int)textSize.Height;
                 this.Height += (int)textSize.Height;
+                this.DrawnImage = new Bitmap(this.Parent.Width, this.Height);
+            }
+            using(Graphics g = Graphics.FromImage(this.DrawnImage))
+            {
+                // Draw Info to in-memory bitmap
+                if (this.BackgroundColor != Color.Empty)
+                {
+                    g.FillRectangle(new SolidBrush(this.BackgroundColor), 0, 0, this.DrawnImage.Width, this.DrawnImage.Height);
+                }
+                else
+                {
+                    g.FillRectangle(new SolidBrush(Color.LightGoldenrodYellow), 0, 0, this.DrawnImage.Width, this.DrawnImage.Height);
+                }
+                if (this.Icon != null)
+                {
+                    Size s = Extensions.GetBitmapDimensions(this.Icon);
+                    Extensions.DrawBitmap(g, new Rectangle(5, PaddingTop, s.Width, s.Height), this.Icon);
+                }
+
+                Size s2 = Extensions.GetBitmapDimensions("next");
+                Extensions.DrawBitmap(g, new Rectangle(this.Parent.Width - s2.Width - 5, ((this.Height / 2) - (s2.Height / 2)), s2.Width, s2.Height), "next");
+                g.DrawString(this.Text, _mainFont, new SolidBrush(this.FontColor), 65, PaddingTop);
             }
         }
 
         public void Render(Graphics g, Rectangle Bounds)
         {
-            GDIPlus.SetSmoothingMode(g, GDIPlus.SmoothingMode.SmoothingModeAntiAlias);
-            if (this.BackgroundColor != Color.Empty)
-            {
-                g.FillRectangle(new SolidBrush(this.BackgroundColor), Bounds);
-            }
-            else
-            {
-                g.FillRectangle(new SolidBrush(Color.LightGoldenrodYellow), Bounds);
-            }
-            if (this.Icon != null)
-            {
-                System.Drawing.Imaging.ImageAttributes ia = new System.Drawing.Imaging.ImageAttributes();
-                ia.SetColorKey(Color.FromArgb(250, 250, 210), Color.FromArgb(250, 250, 210));
-                Size s = Extensions.GetBitmapDimensions(this.Icon);
-                Extensions.DrawBitmap(g, new Rectangle(5, Bounds.Y + PaddingTop, s.Width, s.Height), this.Icon);
-            }
-
-            Size s2 = Extensions.GetBitmapDimensions("next");
-            Extensions.DrawBitmap(g, new Rectangle(this.Parent.Width - s2.Width - 5, Bounds.Y + ((this.Height / 2) - (s2.Height / 2)), s2.Width, s2.Height), "next");
-            g.DrawString(this.Text, _mainFont, new SolidBrush(this.FontColor), 65, Bounds.Y + PaddingTop);
+            g.DrawImage(this.DrawnImage, 0, Bounds.Y);
         }
 
         public void OnMouseDown(int X, int Y, ref bool IsSamePoint)

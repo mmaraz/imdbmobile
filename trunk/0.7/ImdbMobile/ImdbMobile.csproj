@@ -2,7 +2,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.30729</ProductVersion>
+    <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{820D2D2C-8CA2-4CE2-A76C-A6CFA50798F0}</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -226,60 +226,79 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Controls\AboutControl.resx">
       <DependentUpon>AboutControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\ActorControl.resx">
       <DependentUpon>ActorControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\CastControl.resx">
       <DependentUpon>CastControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\ComingSoonControl.resx">
       <DependentUpon>ComingSoonControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\EpisodeListControl.resx">
       <DependentUpon>EpisodeListControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\ExternalReviews.resx">
       <DependentUpon>ExternalReviews.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\FilmographyControl.resx">
       <DependentUpon>FilmographyControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\GoofsControl.resx">
       <DependentUpon>GoofsControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\MainControl.resx">
       <DependentUpon>MainControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\MovieControl.resx">
       <DependentUpon>MovieControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\ParentalGuide.resx">
       <DependentUpon>ParentalGuide.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\QuotesControl.resx">
       <DependentUpon>QuotesControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\SeasonListControl.resx">
       <DependentUpon>SeasonListControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\SettingsControl.resx">
       <DependentUpon>SettingsControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Top250Control.resx">
       <DependentUpon>Top250Control.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\TrailersControl.resx">
       <DependentUpon>TrailersControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\TriviaControl.resx">
       <DependentUpon>TriviaControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\UserReviews.resx">
       <DependentUpon>UserReviews.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\ViewReview.resx">
       <DependentUpon>ViewReview.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -327,69 +346,10 @@
     <Content Include="IMDbMobile.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <None Include="Resources\Cast_Over.png" />
-    <None Include="Resources\Close_Over.png" />
-    <None Include="Resources\ComingSoon_Over.png" />
-    <None Include="Resources\Filmography_Over.png" />
-    <None Include="Resources\MoreInfo_Over.png" />
-    <None Include="Resources\ParentalGuide.png" />
-    <None Include="Resources\ParentalGuide_Over.png" />
-    <None Include="Resources\Photos_Over.png" />
-    <None Include="Resources\Quote_Over.png" />
-    <None Include="Resources\Settings_Over.png" />
-    <None Include="Resources\Trailers_Over.png" />
-    <None Include="Resources\Trivia_Over.png" />
-    <None Include="Resources\about.png" />
-    <None Include="Resources\about_over.png" />
-    <None Include="Resources\ExternalReview.png" />
-    <None Include="Resources\ExternalReview_Over.png" />
-    <None Include="Resources\UserReview.png" />
-    <None Include="Resources\UserReview_Over.png" />
-    <None Include="Resources\IMDB_Logo_Large.png" />
-    <None Include="Resources\IMDB_Logo_Small.png" />
-    <None Include="Resources\SearchButton_Large.png" />
-    <None Include="Resources\SearchButton_Small.png" />
-    <None Include="Resources\TextInput_Large_Center.png" />
-    <None Include="Resources\TextInput_Large_Left.png" />
-    <None Include="Resources\TextInput_Large_Right.png" />
-    <None Include="Resources\TextInput_Small_Center.png" />
-    <None Include="Resources\TextInput_Small_Left.png" />
-    <None Include="Resources\TextInput_Small_Right.png" />
-    <None Include="Resources\next.png" />
-    <None Include="Resources\previous.png" />
-    <None Include="Resources\next_Over.png" />
-    <None Include="Resources\previous_Over.png" />
-    <None Include="Resources\HeadingTitle_Large.png" />
-    <None Include="Resources\HeadingTile_Small.png" />
-    <None Include="Resources\HeadingTile_Large.png" />
-    <None Include="Resources\Loader1.jpg" />
-    <None Include="Resources\Loader2.jpg" />
-    <None Include="Resources\Loader3.jpg" />
-    <None Include="Resources\Loader4.jpg" />
-    <None Include="Resources\Loader5.jpg" />
-    <None Include="Resources\Loader6.jpg" />
-    <None Include="Resources\Loader7.jpg" />
-    <None Include="Resources\Loader8.jpg" />
     <Content Include="Translations\English.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Translations\Swedish.xml" />
-    <None Include="Resources\episodes.png" />
-    <None Include="Resources\Continuity.png" />
-    <None Include="Resources\star_over.png" />
-    <None Include="Resources\star_out.png" />
-    <None Include="Resources\heading.png" />
-    <None Include="Resources\search_btn.png" />
-    <None Include="Resources\Close.png" />
-    <None Include="Resources\Trivia.png" />
-    <None Include="Resources\Trailers.png" />
-    <None Include="Resources\Settings.png" />
-    <None Include="Resources\Quote.png" />
-    <None Include="Resources\Photos.png" />
-    <None Include="Resources\Filmography.png" />
-    <None Include="Resources\ComingSoon.png" />
-    <None Include="Resources\Cast.png" />
-    <None Include="Resources\MoreInfo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CompactFramework.CSharp.targets" />
   <ProjectExtensions>
