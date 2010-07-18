@@ -22,7 +22,7 @@ namespace ImdbMobile.Controls
 
         private void Clear()
         {
-            this.LoadingList.Visible = false;
+            this.LoadingList.Dispose();
         }
 
         private List<ImdbSearchResult> SearchResults;
@@ -66,7 +66,7 @@ namespace ImdbMobile.Controls
         void t2p_Error(object sender, EventArgs e)
         {
             APIEvent ae = (APIEvent)e;
-            this.LoadingList.Visible = false;
+            this.LoadingList.Dispose();
             UI.KListFunctions.ShowError("Error: " + ae.EventData + ".\n" + UI.Translations.GetTranslated("0002") + "...", this.kListControl1);
         }
 

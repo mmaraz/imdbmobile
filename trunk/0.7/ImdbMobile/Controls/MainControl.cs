@@ -43,6 +43,14 @@ namespace ImdbMobile.Controls
             ComingSoon.CalculateHeight();
             this.kListControl1.Items.Add(ComingSoon);
 
+            UI.ActionButton RecentSearches = new ImdbMobile.UI.ActionButton();
+            RecentSearches.Icon = "Search";
+            RecentSearches.Parent = this.kListControl1;
+            RecentSearches.Text = "Recent Searches";
+            RecentSearches.MouseUp += new ImdbMobile.UI.ActionButton.MouseEvent(RecentSearches_MouseUp);
+            RecentSearches.CalculateHeight();
+            this.kListControl1.Items.Add(RecentSearches);
+
             UI.ActionButton Settings = new ImdbMobile.UI.ActionButton();
             Settings.Icon = "Settings";
             Settings.Parent = this.kListControl1;
@@ -68,6 +76,12 @@ namespace ImdbMobile.Controls
             this.kListControl1.Items.Add(Exit);
 
             this.kListControl1.Visible = true;
+        }
+
+        void RecentSearches_MouseUp(int X, int Y, MichyPrima.ManilaDotNetSDK.KListControl Parent, ImdbMobile.UI.ActionButton Sender)
+        {
+            RecentSearchControl rsc = new RecentSearchControl();
+            UI.WindowHandler.OpenForm(rsc);
         }
 
         void Exit_MouseUp(int X, int Y, MichyPrima.ManilaDotNetSDK.KListControl Parent, UI.ActionButton Sender)

@@ -53,9 +53,11 @@ namespace ImdbMobile.Controls
 
         private void SetStatus()
         {
-            int Start = CurrentPage * SettingsWrapper.GlobalSettings.NumToDisplay;
-            int Take = SettingsWrapper.GlobalSettings.NumToDisplay;
-            id.DownloadImages(CurrentTitle.Cast.Skip(Start).Take(Take).ToList(), this.kListControl1, this.ParentForm);
+            List<ImdbActor> FullList = new List<ImdbActor>();
+            FullList.AddRange(CurrentTitle.Directors);
+            FullList.AddRange(CurrentTitle.Writers.Select(w => w as ImdbActor).ToList());
+            FullList.AddRange(CurrentTitle.Cast.Select(c => c as ImdbActor).ToList());
+            id.DownloadImages(FullList, this.kListControl1, this.ParentForm);
         }
 
         private void AddCharacter(MichyPrima.ManilaDotNetSDK.ManilaPanelItem mpi)
@@ -83,6 +85,33 @@ namespace ImdbMobile.Controls
 
         private void ShowData()
         {
+            int YIndex = 0;
+            foreach (ImdbActor ia in CurrentTitle.Directors)
+            {
+                MichyPrima.ManilaDotNetSDK.ManilaPanelItem mpi = new MichyPrima.ManilaDotNetSDK.ManilaPanelItem();
+                mpi.MainText = ia.Name;
+                string secondaryText = "(Director)";
+                mpi.SecondaryText = secondaryText;
+                mpi.OnClick += new MichyPrima.ManilaDotNetSDK.ManilaPanelItem.OnClickEventHandler(mpiDir_OnClick);
+
+                AddCharacter(mpi);
+                Update(YIndex, CurrentTitle.Cast.Count + CurrentTitle.Directors.Count + CurrentTitle.Writers.Count);
+
+                YIndex++;
+            }
+            foreach (ImdbWriter ia in CurrentTitle.Writers)
+            {
+                MichyPrima.ManilaDotNetSDK.ManilaPanelItem mpi = new MichyPrima.ManilaDotNetSDK.ManilaPanelItem();
+                mpi.MainText = ia.Name;
+                string secondaryText = "(Writer)";
+                mpi.SecondaryText = secondaryText;
+                mpi.OnClick += new MichyPrima.ManilaDotNetSDK.ManilaPanelItem.OnClickEventHandler(mpiWri_OnClick);
+
+                AddCharacter(mpi);
+                Update(YIndex, CurrentTitle.Cast.Count + CurrentTitle.Directors.Count + CurrentTitle.Writers.Count);
+
+                YIndex++;
+            }
             foreach (ImdbCharacter actor in CurrentTitle.Cast)
             {
                 MichyPrima.ManilaDotNetSDK.ManilaPanelItem mpi = new MichyPrima.ManilaDotNetSDK.ManilaPanelItem();
@@ -94,8 +123,7 @@ namespace ImdbMobile.Controls
                 mpi.OnClick += new MichyPrima.ManilaDotNetSDK.ManilaPanelItem.OnClickEventHandler(mpi_OnClick);
 
                 AddCharacter(mpi);
-                int YIndex = UI.KListFunctions.GetIndexOf(mpi, this.kListControl1);
-                Update(YIndex, CurrentTitle.Cast.Count);
+                Update(YIndex, CurrentTitle.Cast.Count + CurrentTitle.Directors.Count + CurrentTitle.Writers.Count);
             }
 
             if (!CurrentTitle.HasFullCast)
@@ -170,8 +198,24 @@ namespace ImdbMobile.Controls
         void mpi_OnClick(object Sender)
         {
             MichyPrima.ManilaDotNetSDK.ManilaPanelItem mpi = ((MichyPrima.ManilaDotNetSDK.ManilaPanelItem)Sender); 
-            int YIndex = UI.KListFunctions.GetIndexOf(mpi, this.kListControl1);
+            int YIndex = UI.KListFunctions.GetIndexOf(mpi, this.kListControl1) + CurrentTitle.Directors.Count + CurrentTitle.Writers.Count;
             ActorControl a = new ActorControl(CurrentTitle.Cast[YIndex]);
+            UI.WindowHandler.OpenForm(a);
+        }
+
+        void mpiDir_OnClick(object Sender)
+        {
+            MichyPrima.ManilaDotNetSDK.ManilaPanelItem mpi = ((MichyPrima.ManilaDotNetSDK.ManilaPanelItem)Sender);
+            int YIndex = UI.KListFunctions.GetIndexOf(mpi, this.kListControl1);
+            ActorControl a = new ActorControl(CurrentTitle.Directors[YIndex]);
+            UI.WindowHandler.OpenForm(a);
+        }
+
+        void mpiWri_OnClick(object Sender)
+        {
+            MichyPrima.ManilaDotNetSDK.ManilaPanelItem mpi = ((MichyPrima.ManilaDotNetSDK.ManilaPanelItem)Sender);
+            int YIndex = UI.KListFunctions.GetIndexOf(mpi, this.kListControl1) + CurrentTitle.Directors.Count;
+            ActorControl a = new ActorControl(CurrentTitle.Writers[YIndex]);
             UI.WindowHandler.OpenForm(a);
         }
 

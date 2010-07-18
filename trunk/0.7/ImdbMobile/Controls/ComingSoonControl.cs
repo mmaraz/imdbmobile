@@ -23,7 +23,7 @@ namespace ImdbMobile.Controls
         {
             try
             {
-                this.LoadingList.Visible = false;
+                this.LoadingList.Dispose();
             }
             catch (ObjectDisposedException) { }
         }
@@ -70,7 +70,7 @@ namespace ImdbMobile.Controls
         void csp_Error(object sender, EventArgs e)
         {
             APIEvent ae = (APIEvent)e;
-            this.LoadingList.Visible = false;
+            this.LoadingList.Dispose();
             UI.KListFunctions.ShowError("Error: " + ae.EventData + ".\n" + UI.Translations.GetTranslated("0002") + "...", this.kListControl1);
         }
 

@@ -33,7 +33,8 @@ namespace ImdbMobile.Controls
 
         private void ShowError(string ErrorMessage)
         {
-            UI.KListFunctions.ShowLoading(ErrorMessage, this.kListControl1);
+            this.LoadingList.Visible = false;
+            UI.KListFunctions.ShowError(ErrorMessage, this.kListControl1);
         }
 
         private void LoadExternalData()
@@ -54,7 +55,7 @@ namespace ImdbMobile.Controls
         void erp_Error(object sender, EventArgs e)
         {
             APIEvent ae = (APIEvent)e;
-            this.LoadingList.Visible = false;
+            this.LoadingList.Dispose();
             UI.KListFunctions.ShowError("Error: " + ae.EventData + ".\n" + UI.Translations.GetTranslated("0002") + "...", this.kListControl1);
         }
 
@@ -66,6 +67,11 @@ namespace ImdbMobile.Controls
 
         private void SetImdbInformation(ImdbTitle title)
         {
+            if (this.CurrentTitle.ExternalReviews.Count == 0)
+            {
+                ShowError("There are no External Reviews for this title.");
+                return;
+            }
             this.kListControl1.Items.Clear();
             int Counter = 0;
             foreach (ImdbExternalReview ier in this.CurrentTitle.ExternalReviews)
@@ -80,7 +86,7 @@ namespace ImdbMobile.Controls
 
                 Update(this.CurrentTitle.ExternalReviews.IndexOf(ier) + 1, this.CurrentTitle.ExternalReviews.Count);
             }
-            this.LoadingList.Visible = false;
+            this.LoadingList.Dispose();
         }
 
         void mpi_OnClick(object Sender)

@@ -42,6 +42,7 @@ namespace ImdbMobile.Controls
         private void SetError(string Message)
         {
             UI.KListFunctions.ShowError(Message, this.kListControl1);
+            this.LoadingKlist.Dispose();
         }
 
         private void AddQuotes()
@@ -59,7 +60,6 @@ namespace ImdbMobile.Controls
                 qi.QuoteSection = iqs;
                 qi.YIndex = CurrentTitle.Quotes.IndexOf(iqs);
                 qi.Parent = this.kListControl1;
-                qi.ListWidth = ListWidth;
                 qi.CalculateHeight();
                 qList.Add(qi);
             }

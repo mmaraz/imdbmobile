@@ -54,15 +54,17 @@ namespace ImdbMobile.IMDBData
             this.CurrentActor = actor;
         }
 
-        private List<ImdbKnownFor> ParseFilmography(JToken data)
+        private List<ImdbKnownForGroup> ParseFilmography(JToken data)
         {
-            List<ImdbKnownFor> retList = new List<ImdbKnownFor>();
+            List<ImdbKnownForGroup> retList = new List<ImdbKnownForGroup>();
             if (General.ContainsKey(data, "filmography"))
             {
                 JToken films = data["filmography"];
                 foreach (JToken film in films)
                 {
                     string Label = (string)film["label"];
+                    ImdbKnownForGroup ikg = new ImdbKnownForGroup();
+                    ikg.Label = Label;
                     if (General.ContainsKey(film, "list"))
                     {
                         JToken filmList = film["list"];
@@ -72,21 +74,22 @@ namespace ImdbMobile.IMDBData
                             if (General.ContainsKey(knownFor, "char"))
                             {
                                 kf.CharacterName = (string)knownFor["char"];
-                                JToken title = knownFor["title"];
-                                kf.ImdbId = (string)title["tconst"];
-                                kf.Title = (string)title["title"];
-                                switch ((string)title["type"])
-                                {
-                                    case "feature": kf.Type = ImdbTitle.TitleType.FeatureMovie; break;
-                                    case "tv_series": kf.Type = ImdbTitle.TitleType.TVSeries; break;
-                                    case "video_game": kf.Type = ImdbTitle.TitleType.VideoGame; break;
-                                }
-                                kf.Year = (string)title["year"];
-                                kf.TitleAttribute = Label;
-                                retList.Add(kf);
                             }
+                            JToken title = knownFor["title"];
+                            kf.ImdbId = (string)title["tconst"];
+                            kf.Title = (string)title["title"];
+                            switch ((string)title["type"])
+                            {
+                                case "feature": kf.Type = ImdbTitle.TitleType.FeatureMovie; break;
+                                case "tv_series": kf.Type = ImdbTitle.TitleType.TVSeries; break;
+                                case "video_game": kf.Type = ImdbTitle.TitleType.VideoGame; break;
+                            }
+                            kf.Year = (string)title["year"];
+                            kf.TitleAttribute = Label;
+                            ikg.KnownForList.Add(kf);
                         }
                     }
+                    retList.Add(ikg);
                 }
             }
             return retList;

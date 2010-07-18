@@ -156,6 +156,7 @@ namespace ImdbMobile.IMDBData
 
     public class ImdbSeason
     {
+        public string ShowTitle { get; set; }
         public string Label { get; set; }
         public List<ImdbEpisode> Episodes { get; set; }
 
@@ -168,9 +169,9 @@ namespace ImdbMobile.IMDBData
     public class ImdbEpisode
     {
         public string ImdbId { get; set; }
-        public DateTime ReleaseDate { get; set; }
+        public DateTime? ReleaseDate { get; set; }
         public string Title { get; set; }
-        public int Year { get; set; }
+        public int? Year { get; set; }
 
         public ImdbEpisode() { }
     }
@@ -257,7 +258,17 @@ namespace ImdbMobile.IMDBData
         public string TitleAttribute { get; set; }
 
         public ImdbWriter() { }
+    }
 
+    public class ImdbKnownForGroup
+    {
+        public string Label { get; set; }
+        public List<ImdbKnownFor> KnownForList { get; set; }
+
+        public ImdbKnownForGroup()
+        {
+            this.KnownForList = new List<ImdbKnownFor>();
+        }
     }
 
     public class ImdbKnownFor : ImdbTitle
@@ -297,7 +308,7 @@ namespace ImdbMobile.IMDBData
         public string Birthday { get; set; }
         public string RealName { get; set; }
         public string Bio { get; set; }
-        public List<ImdbKnownFor> KnownForFull { get; set; }
+        public List<ImdbKnownForGroup> KnownForFull { get; set; }
 
         // Extra Details
         public List<string> Trivia { get; set; }
@@ -306,7 +317,7 @@ namespace ImdbMobile.IMDBData
         {
             this.Headshot = new ImdbCover();
             this.Photos = new List<ImdbCover>();
-            this.KnownForFull = new List<ImdbKnownFor>();
+            this.KnownForFull = new List<ImdbKnownForGroup>();
             this.Trivia = new List<string>();
         }
     }

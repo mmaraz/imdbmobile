@@ -2,7 +2,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{820D2D2C-8CA2-4CE2-A76C-A6CFA50798F0}</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -96,6 +96,18 @@
     </Compile>
     <Compile Include="Controls\ComingSoonControl.Designer.cs">
       <DependentUpon>ComingSoonControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\RecentSearchControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\RecentSearchControl.Designer.cs">
+      <DependentUpon>RecentSearchControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FilmographyListControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\FilmographyListControl.Designer.cs">
+      <DependentUpon>FilmographyListControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\EpisodeListControl.cs">
       <SubType>UserControl</SubType>
@@ -238,6 +250,14 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\ComingSoonControl.resx">
       <DependentUpon>ComingSoonControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\RecentSearchControl.resx">
+      <DependentUpon>RecentSearchControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FilmographyListControl.resx">
+      <DependentUpon>FilmographyListControl.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\EpisodeListControl.resx">

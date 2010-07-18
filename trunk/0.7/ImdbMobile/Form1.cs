@@ -44,8 +44,6 @@ namespace ImdbMobile
                 }
                 catch (Exception ex) { }
             }
-
-            
         }
 
         private void menuItem1_Click(object sender, EventArgs e)
@@ -58,9 +56,18 @@ namespace ImdbMobile
             Application.Exit();
         }
 
-        public void DoSearch(string Text)
+        public void DoSearch(string Text, bool AddToHistory)
         {
             Main.DoSearch(Text);
+            if (AddToHistory)
+            {
+                if (SettingsWrapper.GlobalSettings.RecentSearches.Count > 10)
+                {
+                    SettingsWrapper.GlobalSettings.RecentSearches.RemoveAt(SettingsWrapper.GlobalSettings.RecentSearches.Count - 1);
+                }
+                SettingsWrapper.GlobalSettings.RecentSearches.Insert(0, Text);
+                SettingsWrapper.Save(SettingsWrapper.GlobalSettings);
+            }
         }
 
         private void Form1_Closing(object sender, CancelEventArgs e)

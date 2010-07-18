@@ -146,20 +146,20 @@ public static class Extensions
 
     public static SizeF MeasureStringExtended(Graphics g, string text, Font font, int desWidth)
     {
+        string tempString = text;
+        string workString = "";
+        string outputstring = "";
+        int npos = 1;
+        int sp_pos = 0;
+        int sp_pos1 = 0;
+        int sp_pos2 = 0;
+        int sp_pos3 = 0;
+        bool bNeeded = false;
+        int line = 0;
+        int nWidth = 0;
+
         try
         {
-            string tempString = text;
-            string workString = "";
-            string outputstring = "";
-            int npos = 1;
-            int sp_pos = 0;
-            int sp_pos1 = 0;
-            int sp_pos2 = 0;
-            int sp_pos3 = 0;
-            bool bNeeded = false;
-            int line = 0;
-            int nWidth = 0;
-
             //get original size
             SizeF size = g.MeasureString(text, font);
 
@@ -168,7 +168,7 @@ public static class Extensions
                 while (tempString.Length > 0)
                 {
                     //Check for the last lane
-                    if (npos > tempString.Length)
+                    if (npos >= tempString.Length)
                     {
                         outputstring = outputstring + tempString;
                         line++;

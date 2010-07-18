@@ -22,7 +22,7 @@ namespace ImdbMobile.Controls
 
         private void Clear()
         {
-            this.LoadingList.Visible = false;
+            this.LoadingList.Dispose();
         }
 
         public FilmographyControl(ImdbActor actor)
@@ -45,38 +45,38 @@ namespace ImdbMobile.Controls
 
         private void ShowData()
         {
-            foreach (ImdbKnownFor ikf in CurrentActor.KnownForFull)
+            // Ensure the most relevant entries are at the top
+            List<ImdbKnownForGroup> priority = this.CurrentActor.KnownForFull.Where(ikf => ikf.Label == "Actor" || ikf.Label == "Actress" || ikf.Label == "Director" || ikf.Label == "Producer").OrderBy(ikf => ikf.Label).ToList();
+            List<ImdbKnownForGroup> nonpriority = this.CurrentActor.KnownForFull.Where(ikf => ikf.Label != "Actor" && ikf.Label != "Actress" && ikf.Label != "Director" && ikf.Label != "Producer").ToList();
+            if (nonpriority != null && nonpriority.Count > 0)
             {
-                MichyPrima.ManilaDotNetSDK.ManilaPanelItem mpi = new MichyPrima.ManilaDotNetSDK.ManilaPanelItem();
-                mpi.MainText = "(" + ikf.TitleAttribute + ") " + ikf.Title;
-                if (ikf.CharacterName != null)
-                {
-                    mpi.SecondaryText = UI.Translations.GetTranslated("0019") + " " + ikf.CharacterName + " - " + ikf.Year;
-                }
-                else
-                {
-                    mpi.SecondaryText = ikf.Year;
-                }
-                mpi.OnClick += new MichyPrima.ManilaDotNetSDK.ManilaPanelItem.OnClickEventHandler(mpi_OnClick);
-
-                AddItem(mpi);
-                Update(CurrentActor.KnownForFull.IndexOf(ikf), CurrentActor.KnownForFull.Count);
+                priority.AddRange(nonpriority);
             }
-            Clear();
+            foreach (ImdbKnownForGroup ikg in priority)
+            {
+                UI.ActionButton ab = new ImdbMobile.UI.ActionButton();
+                switch (ikg.Label)
+                {
+                    case "Producer": ab.Icon = "Producer"; break;
+                    case "Director": ab.Icon = "Director"; break;
+                    case "Actor": ab.Icon = "Actor"; break;
+                    case "Actress": ab.Icon = "Actress"; break;
+                    default: ab.Icon = "MiscCrew"; break;
+                }
+                ab.YIndex = this.CurrentActor.KnownForFull.IndexOf(ikg);
+                ab.Text = ikg.Label;
+                ab.Parent = this.kListControl1;
+                ab.MouseUp += new ImdbMobile.UI.ActionButton.MouseEvent(ab_MouseUp);
+                ab.CalculateHeight();
+                this.kListControl1.Items.Add(ab);
+            }
+            this.LoadingList.Dispose();
         }
 
-        private void AddItem(MichyPrima.ManilaDotNetSDK.ManilaPanelItem mpi)
+        void ab_MouseUp(int X, int Y, MichyPrima.ManilaDotNetSDK.KListControl Parent, ImdbMobile.UI.ActionButton Sender)
         {
-            this.kListControl1.Items.Add(mpi);
-        }
-
-        void mpi_OnClick(object Sender)
-        {
-            MichyPrima.ManilaDotNetSDK.ManilaPanelItem mpi = ((MichyPrima.ManilaDotNetSDK.ManilaPanelItem)Sender);
-            int YIndex = UI.KListFunctions.GetIndexOf(mpi, this.kListControl1);
-            ImdbTitle t = CurrentActor.KnownForFull[YIndex];
-            MovieControl m = new MovieControl(t);
-            UI.WindowHandler.OpenForm(m);
+            FilmographyListControl flc = new FilmographyListControl(this.CurrentActor.KnownForFull[Sender.YIndex].KnownForList);
+            UI.WindowHandler.OpenForm(flc);
         }
 
         private void LoadImdbInformation()
@@ -90,7 +90,7 @@ namespace ImdbMobile.Controls
         void fp_Error(object sender, EventArgs e)
         {
             APIEvent ae = (APIEvent)e;
-            this.LoadingList.Visible = false;
+            this.LoadingList.Dispose();
             UI.KListFunctions.ShowError("Error: " + ae.EventData + ".\n" + UI.Translations.GetTranslated("0002") + "...", this.kListControl1);
         }
 

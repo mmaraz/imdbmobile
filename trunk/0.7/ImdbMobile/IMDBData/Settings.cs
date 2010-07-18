@@ -25,6 +25,7 @@ namespace ImdbMobile.IMDBData
         public float FontSize_Small { get; set; }
         public System.Drawing.FontStyle FontStyle_Small { get; set; }
         public System.Drawing.FontStyle FontStyle_Large { get; set; }
+        public List<string> RecentSearches { get; set; }
 
         public Settings()
         {
@@ -33,6 +34,7 @@ namespace ImdbMobile.IMDBData
             FontSize_Small = 10f;
             FontStyle_Small = System.Drawing.FontStyle.Regular;
             FontStyle_Large = System.Drawing.FontStyle.Regular;
+            this.RecentSearches = new List<string>();
         }
     }
 
