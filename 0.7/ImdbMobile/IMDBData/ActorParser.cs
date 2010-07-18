@@ -54,7 +54,7 @@ namespace ImdbMobile.IMDBData
                 actor.Photos = ParsePhotos(data);
                 actor.Birthday = ParseBirthday(data);
                 actor.RealName = ParseRealName(data);
-                actor.KnownForFull = ParseKnownFor(data);
+                //actor.KnownForFull = ParseKnownFor(data);
                 actor.Bio = ParseBio(data);
             }
             return actor;

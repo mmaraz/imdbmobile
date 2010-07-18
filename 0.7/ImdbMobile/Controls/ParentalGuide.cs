@@ -33,7 +33,8 @@ namespace ImdbMobile.Controls
 
         private void ShowError(string ErrorMessage)
         {
-            UI.KListFunctions.ShowLoading(ErrorMessage, this.kListControl1);
+            this.LoadingList.Visible = false;
+            UI.KListFunctions.ShowError(ErrorMessage, this.kListControl1);
         }
 
         private void LoadParentalData()
@@ -54,7 +55,7 @@ namespace ImdbMobile.Controls
         void tgp_Error(object sender, EventArgs e)
         {
             APIEvent ae = (APIEvent)e;
-            this.LoadingList.Visible = false;
+            this.LoadingList.Dispose();
             UI.KListFunctions.ShowError("Error: " + ae.EventData + ".\n" + UI.Translations.GetTranslated("0002") + "...", this.kListControl1);
         }
 
@@ -66,6 +67,11 @@ namespace ImdbMobile.Controls
 
         private void SetImdbInformation(ImdbTitle title)
         {
+            if (title.ParentalGuide.Count == 0)
+            {
+                ShowError("There is no Parental Guide info for this title.");
+                return;
+            }
             this.kListControl1.Items.Clear();
             int Counter = 0;
             foreach (KeyValuePair<string, string> kvp in title.ParentalGuide)
@@ -81,7 +87,7 @@ namespace ImdbMobile.Controls
 
                 Update(td.YIndex + 1, title.ParentalGuide.Count);
             }
-            this.LoadingList.Visible = false;
+            this.LoadingList.Dispose();
         }
 
         private string Capitalise(string str)

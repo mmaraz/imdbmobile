@@ -68,7 +68,7 @@ namespace ImdbMobile.UI
             string SearchText = this.textBox1.Text;
             UI.WindowHandler.Home();
             ((Form1)UI.WindowHandler.ParentForm).Titlebar.textBox1.Text = SearchText;
-            ((Form1)UI.WindowHandler.ParentForm).DoSearch(SearchText);
+            ((Form1)UI.WindowHandler.ParentForm).DoSearch(SearchText, true);
         }
 
         public void DrawTitlebar()

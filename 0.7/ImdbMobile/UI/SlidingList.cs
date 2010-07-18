@@ -19,34 +19,6 @@ namespace ImdbMobile.UI
             SlideOutRightKill();
         }
 
-        public void Dispose()
-        {
-            try
-            {
-                foreach (System.Threading.Thread t in ThreadList)
-                {
-                    if (t != null)
-                    {
-                        try
-                        {
-                            t.Abort();
-                        }
-                        catch (Exception) { }
-                    }
-                }
-                foreach (ImageDownloader id in ImageDownloaderList)
-                {
-                    if (id != null)
-                    {
-                        id.Kill();
-                    }
-                }
-            }
-            catch (Exception) { }
-            Dispose(true);
-            GC.SuppressFinalize(this);
-        }
-
         public void Initialise()
         {
             if (System.Windows.Forms.Screen.PrimaryScreen.Bounds.Height > 360)
@@ -187,5 +159,37 @@ namespace ImdbMobile.UI
             };
             this.Invoke(DescreaseX);
         }
+
+        #region IDisposable Members
+
+        void IDisposable.Dispose()
+        {
+            try
+            {
+                foreach (System.Threading.Thread t in ThreadList)
+                {
+                    if (t != null)
+                    {
+                        try
+                        {
+                            t.Abort();
+                        }
+                        catch (Exception) { }
+                    }
+                }
+                foreach (ImageDownloader id in ImageDownloaderList)
+                {
+                    if (id != null)
+                    {
+                        id.Kill();
+                    }
+                }
+            }
+            catch (Exception) { }
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        #endregion
     }
 }

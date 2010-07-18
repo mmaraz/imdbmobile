@@ -37,7 +37,7 @@ namespace ImdbMobile.Controls
 
         private void SetError(string Message)
         {
-            this.LoadingList.Visible = false;
+            this.LoadingList.Dispose();
             UI.KListFunctions.ShowError(Message, this.kListControl1);
         }
 
@@ -59,7 +59,7 @@ namespace ImdbMobile.Controls
         void tgp_Error(object sender, EventArgs e)
         {
             APIEvent ae = (APIEvent)e;
-            this.LoadingList.Visible = false;
+            this.LoadingList.Dispose();
             UI.KListFunctions.ShowError("Error: " + ae.EventData + ".\n" + UI.Translations.GetTranslated("0002") + "...", this.kListControl1);
         }
 
@@ -106,7 +106,7 @@ namespace ImdbMobile.Controls
             }
 
             this.kListControl1.Visible = true;
-            this.LoadingList.Visible = false;
+            this.LoadingList.Dispose();
         }
     }
 }

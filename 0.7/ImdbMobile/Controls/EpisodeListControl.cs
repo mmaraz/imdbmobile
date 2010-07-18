@@ -13,7 +13,7 @@ namespace ImdbMobile.Controls
 {
     public partial class EpisodeListControl : ImdbMobile.UI.SlidingList
     {
-        private static ImdbSeason CurrentSeason;
+        private ImdbSeason CurrentSeason;
 
         public EpisodeListControl(ImdbSeason season)
         {
@@ -31,7 +31,14 @@ namespace ImdbMobile.Controls
             {
                 MichyPrima.ManilaDotNetSDK.ManilaPanelItem mpi = new MichyPrima.ManilaDotNetSDK.ManilaPanelItem();
                 mpi.MainText = ie.Title;
-                mpi.SecondaryText = UI.Translations.GetTranslated("0016") + ": " + ie.ReleaseDate.ToShortDateString();
+                if (ie.ReleaseDate == null)
+                {
+                    mpi.SecondaryText = UI.Translations.GetTranslated("0016") + ": Unknown";
+                }
+                else
+                {
+                    mpi.SecondaryText = UI.Translations.GetTranslated("0016") + ": " + ie.ReleaseDate.Value.ToShortDateString();
+                }
                 mpi.ShowSeparator = true;
                 mpi.OnClick += new MichyPrima.ManilaDotNetSDK.ManilaPanelItem.OnClickEventHandler(mpi_OnClick);
                 this.kListControl1.Items.Add(mpi);
@@ -40,34 +47,15 @@ namespace ImdbMobile.Controls
 
         void mpi_OnClick(object Sender)
         {
-            /*MichyPrima.ManilaDotNetSDK.ManilaPanelItem mpi = (MichyPrima.ManilaDotNetSDK.ManilaPanelItem)Sender;
-            UI.KListFunctions.ShowLoading("Loading Episode Info.\nPlease Wait...", this.kListControl1);
-            ImdbConst = CurrentSeason.Episodes[mpi.YIndex].ImdbId;
-
-            System.Threading.Thread t = new System.Threading.Thread(DownloadTitle);
-            t.Start();*/
-        }
-
-        private void DownloadTitle()
-        {
-            try
-            {
-                API a = new API();
-                string Response = "";//TODO a.GetFullDetails(ImdbConst);
-
-                JObject data = JObject.Parse(Response);
-                if (General.ContainsKey(data, "data"))
-                {
-                    Search s = new Search();
-                    ImdbTitle PartialTitle = s.ParseTitle(data["data"]);
-                    MovieControl m = new MovieControl(PartialTitle);
-                    UI.WindowHandler.OpenForm(m);
-                }
-            }
-            catch (Exception)
-            {
-
-            }
+            MichyPrima.ManilaDotNetSDK.ManilaPanelItem mpi = (MichyPrima.ManilaDotNetSDK.ManilaPanelItem)Sender;
+            int EpisodeIndex = UI.KListFunctions.GetIndexOf(mpi, this.kListControl1);
+            ImdbTitle it = new ImdbTitle();
+            ImdbEpisode Episode = this.CurrentSeason.Episodes[EpisodeIndex];
+            it.Title = this.CurrentSeason.ShowTitle + "\n";
+            it.Title += this.CurrentSeason.Label + ", Episode " + (EpisodeIndex + 1) + "\n";
+            it.Title += "\"" + Episode.Title + "\"";
+            it.ImdbId = Episode.ImdbId;
+            UI.WindowHandler.OpenForm(new Controls.MovieControl(it));
         }
     }
 }

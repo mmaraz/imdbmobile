@@ -33,7 +33,8 @@ namespace ImdbMobile.Controls
 
         private void ShowError(string ErrorMessage)
         {
-            UI.KListFunctions.ShowLoading(ErrorMessage, this.kListControl1);
+            this.LoadingList.Visible = false;
+            UI.KListFunctions.ShowError(ErrorMessage, this.kListControl1);
         }
 
         private void LoadUserData()
@@ -54,7 +55,7 @@ namespace ImdbMobile.Controls
         void tup_Error(object sender, EventArgs e)
         {
             APIEvent ae = (APIEvent)e;
-            this.LoadingList.Visible = false;
+            this.LoadingList.Dispose();
             UI.KListFunctions.ShowError("Error: " + ae.EventData + ".\n" + UI.Translations.GetTranslated("0002") + "...", this.kListControl1);
         }
 
@@ -95,7 +96,7 @@ namespace ImdbMobile.Controls
             }
             
 
-            this.LoadingList.Visible = false;
+            this.LoadingList.Dispose();
         }
 
         void rd_MouseUp(int X, int Y, MichyPrima.ManilaDotNetSDK.KListControl Parent, UI.ReviewDisplay Sender)

@@ -24,7 +24,7 @@ namespace ImdbMobile.Controls
 
         private void Clear()
         {
-            this.LoadingList.Visible = false;
+            this.LoadingList.Dispose();
         }
 
         public TriviaControl(ImdbActor actor)
@@ -126,14 +126,14 @@ namespace ImdbMobile.Controls
         void ttp_Error(object sender, EventArgs e)
         {
             APIEvent ae = (APIEvent)e;
-            this.LoadingList.Visible = false;
+            this.LoadingList.Dispose();
             UI.KListFunctions.ShowError("Error: " + ae.EventData + ".\n" + UI.Translations.GetTranslated("0002") + "...", this.kListControl1);
         }
 
         void atp_Error(object sender, EventArgs e)
         {
             APIEvent ae = (APIEvent)e;
-            this.LoadingList.Visible = false;
+            this.LoadingList.Dispose();
             UI.KListFunctions.ShowError("Error: " + ae.EventData + ".\n" + UI.Translations.GetTranslated("0002") + "...", this.kListControl1);
         }
 

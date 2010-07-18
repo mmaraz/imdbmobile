@@ -75,8 +75,8 @@ namespace ImdbMobile.UI
                 }
 
                 Size s2 = Extensions.GetBitmapDimensions("next");
-                Extensions.DrawBitmap(g, new Rectangle(this.Parent.Width - s2.Width - 5, ((this.Height / 2) - (s2.Height / 2)), s2.Width, s2.Height), "next");
-                g.DrawString(this.Text, _mainFont, new SolidBrush(this.FontColor), 65, PaddingTop);
+                Extensions.DrawBitmap(g, new Rectangle(UI.WindowHandler.ParentForm.Width - s2.Width - 5, ((this.Height / 2) - (s2.Height / 2)), s2.Width, s2.Height), "next");
+                g.DrawString(this.Text, _mainFont, new SolidBrush(this.FontColor), new RectangleF(65, PaddingTop, UI.WindowHandler.ParentForm.Width - 65, _textHeight));
             }
         }
 

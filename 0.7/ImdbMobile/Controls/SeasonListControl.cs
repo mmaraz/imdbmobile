@@ -28,7 +28,7 @@ namespace ImdbMobile.Controls
 
         private void ShowComplete()
         {
-            this.LoadingList.Visible = false;
+            this.LoadingList.Dispose();
         }
 
         private void Add(int YIndex, string Label)
@@ -50,6 +50,7 @@ namespace ImdbMobile.Controls
                 {
                     Add(CurrentTitle.Seasons.IndexOf(isea), isea.Label);
                 }
+                ShowComplete();
             }
             else
             {
@@ -63,17 +64,24 @@ namespace ImdbMobile.Controls
         void tep_Error(object sender, EventArgs e)
         {
             APIEvent ae = (APIEvent)e;
-            this.LoadingList.Visible = false;
+            this.LoadingList.Dispose();
             UI.KListFunctions.ShowError("Error: " + ae.EventData + ".\n" + UI.Translations.GetTranslated("0002") + "...", this.kListControl1);
         }
 
         void tep_ParsingComplete(object sender, EventArgs e)
         {
             TitleEpisodeParser tep = (TitleEpisodeParser)sender;
+            if (tep.Title.Seasons.Count == 0)
+            {
+                this.LoadingList.Visible = false;
+                UI.KListFunctions.ShowError("There are no episodes available for this title", this.kListControl1);
+                return;
+            }
             foreach (ImdbSeason isea in tep.Title.Seasons)
             {
                 Add(CurrentTitle.Seasons.IndexOf(isea), isea.Label);
             }
+            ShowComplete();
         }
 
         void ab_MouseUp(int X, int Y, MichyPrima.ManilaDotNetSDK.KListControl Parent, ImdbMobile.UI.ActionButton Sender)

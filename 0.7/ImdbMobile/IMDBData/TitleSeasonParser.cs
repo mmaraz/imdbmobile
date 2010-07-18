@@ -38,9 +38,11 @@ namespace ImdbMobile.IMDBData
 
             this.OnParsingData();
             string Response = ae.EventData;
+            ae = null;
 
             List<ImdbSeason> Seasons = new List<ImdbSeason>();
             JObject Obj = JObject.Parse(Response);
+            Response = null;
             if (General.ContainsKey(Obj, "data"))
             {
                 JToken data = Obj["data"];
@@ -50,6 +52,7 @@ namespace ImdbMobile.IMDBData
                     foreach (JToken season in seasons)
                     {
                         ImdbSeason isea = new ImdbSeason();
+                        isea.ShowTitle = this.Title.Title;
                         isea.Label = (string)season["label"];
                         isea.Episodes = new List<ImdbEpisode>();
                         if (General.ContainsKey(season, "list"))
@@ -60,10 +63,29 @@ namespace ImdbMobile.IMDBData
                                 ep.ImdbId = (string)episode["tconst"];
                                 if (General.ContainsKey(episode["release_date"], "normal"))
                                 {
-                                    ep.ReleaseDate = DateTime.Parse((string)episode["release_date"]["normal"]);
+                                    string ReldateString = (string)episode["release_date"]["normal"];
+                                    if (!string.IsNullOrEmpty(ReldateString))
+                                    {
+                                        ReldateString = ReldateString.Replace("-", "/");
+                                    }
+                                    try
+                                    {
+                                        ep.ReleaseDate = DateTime.Parse(ReldateString);
+                                    }
+                                    catch (Exception)
+                                    {
+                                        ep.ReleaseDate = null;
+                                    }
                                 }
                                 ep.Title = (string)episode["title"];
-                                ep.Year = int.Parse((string)episode["year"]);
+                                try
+                                {
+                                    ep.Year = int.Parse((string)episode["year"]);
+                                }
+                                catch (Exception)
+                                {
+                                    ep.Year = null;
+                                }
                                 isea.Episodes.Add(ep);
                             }
                         }

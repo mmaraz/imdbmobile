@@ -26,7 +26,6 @@ namespace ImdbMobile.UI
         public int PaddingTop;
         public int PaddingBottom;
         public Color BackgroundColor { get; set; }
-        public int ListWidth { get; set; }
 
         private Bitmap DrawnImage { get; set; }
 
@@ -50,6 +49,8 @@ namespace ImdbMobile.UI
 
                     textSize = Extensions.MeasureStringExtended(g, iq.Character.CharacterName, _bold, UI.WindowHandler.ParentForm.Width - 15);
                     this.Height += (int)textSize.Height;
+
+                    this.Height += 5;
                 }
 
                 
@@ -94,7 +95,7 @@ namespace ImdbMobile.UI
                     CurrY += (int)charSize.Height;
 
                     // Draw Quote
-                    SizeF qSize = Extensions.MeasureStringExtended(g, q.Quote, _unbold, ListWidth);
+                    SizeF qSize = Extensions.MeasureStringExtended(g, q.Quote, _unbold, UI.WindowHandler.ParentForm.Width);
                     g.DrawString(q.Quote, _unbold, new SolidBrush(Color.Black), new RectangleF(5, CurrY, UI.WindowHandler.ParentForm.Width, qSize.Height));
                     CurrY += (int)qSize.Height;
                 }

@@ -351,3 +351,5 @@ X:\Source Code\IMDB Mobile Exported\IMDBMobile\0.7\ImdbMobile\obj\Debug\ImdbMobi
 X:\Source Code\IMDB Mobile Exported\IMDBMobile\0.7\ImdbMobile\obj\Debug\ImdbMobile.csproj.GenerateResource.Cache
 X:\Source Code\IMDB Mobile Exported\IMDBMobile\0.7\ImdbMobile\obj\Debug\ImdbMobile.exe
 X:\Source Code\IMDB Mobile Exported\IMDBMobile\0.7\ImdbMobile\obj\Debug\ImdbMobile.pdb
+D:\imdbmobile\0.7\ImdbMobile\obj\Debug\ImdbMobile.Controls.FilmographyListControl.resources
+D:\imdbmobile\0.7\ImdbMobile\obj\Debug\ImdbMobile.Controls.RecentSearchControl.resources
