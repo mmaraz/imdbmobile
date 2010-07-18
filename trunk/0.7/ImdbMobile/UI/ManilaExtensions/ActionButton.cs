@@ -15,7 +15,7 @@ namespace ImdbMobile.UI
         private string _text;
         private int _textHeight;
 
-        private Font _mainFont = new Font(IMDBData.SettingsWrapper.GlobalSettings.FontName, IMDBData.SettingsWrapper.GlobalSettings.FontSize_Large, IMDBData.SettingsWrapper.GlobalSettings.FontStyle_Large);
+        private Font _mainFont = new Font(IMDBData.SettingsWrapper.GlobalSettings.CurrentSkin.FontName, IMDBData.SettingsWrapper.GlobalSettings.CurrentSkin.FontSize_Large, IMDBData.SettingsWrapper.GlobalSettings.CurrentSkin.FontStyle_Large);
 
         public string Text
         {
@@ -37,6 +37,8 @@ namespace ImdbMobile.UI
         public Color BackgroundColor { get; set; }
         public Color FontColor { get; set; }
         private Bitmap DrawnImage { get; set; }
+        private Bitmap DrawnImageHover { get; set; }
+        private bool DoHover { get; set; }
 
         public ActionButton()
         {
@@ -55,8 +57,10 @@ namespace ImdbMobile.UI
                 SizeF textSize = Extensions.MeasureStringExtended(g, _text, _mainFont, UI.WindowHandler.ParentForm.Width);
                 _textHeight = (int)textSize.Height;
                 this.Height += (int)textSize.Height;
-                this.DrawnImage = new Bitmap(this.Parent.Width, this.Height);
+                this.DrawnImage = new Bitmap(UI.WindowHandler.ParentForm.Width, this.Height);
+                this.DrawnImageHover = new Bitmap(UI.WindowHandler.ParentForm.Width, this.Height);
             }
+
             using(Graphics g = Graphics.FromImage(this.DrawnImage))
             {
                 // Draw Info to in-memory bitmap
@@ -66,7 +70,7 @@ namespace ImdbMobile.UI
                 }
                 else
                 {
-                    g.FillRectangle(new SolidBrush(Color.LightGoldenrodYellow), 0, 0, this.DrawnImage.Width, this.DrawnImage.Height);
+                    g.FillRectangle(new SolidBrush(IMDBData.SettingsWrapper.GlobalSettings.CurrentSkin.BackgroundColour), 0, 0, this.DrawnImage.Width, this.DrawnImage.Height);
                 }
                 if (this.Icon != null)
                 {
@@ -76,21 +80,46 @@ namespace ImdbMobile.UI
 
                 Size s2 = Extensions.GetBitmapDimensions("next");
                 Extensions.DrawBitmap(g, new Rectangle(UI.WindowHandler.ParentForm.Width - s2.Width - 5, ((this.Height / 2) - (s2.Height / 2)), s2.Width, s2.Height), "next");
-                g.DrawString(this.Text, _mainFont, new SolidBrush(this.FontColor), new RectangleF(65, PaddingTop, UI.WindowHandler.ParentForm.Width - 65, _textHeight));
+                g.DrawString(this.Text, _mainFont, new SolidBrush(this.FontColor), 65, PaddingTop);
+            }
+
+            using (Graphics g = Graphics.FromImage(this.DrawnImageHover))
+            {
+                // Draw Info to in-memory bitmap
+                Rectangle DestRect = new Rectangle(0, 0, this.DrawnImageHover.Width, this.DrawnImageHover.Height);
+                Color start = IMDBData.SettingsWrapper.GlobalSettings.CurrentSkin.ActionHoverFrom;
+                Color stop = IMDBData.SettingsWrapper.GlobalSettings.CurrentSkin.ActionHoverTo;
+                GradientFill.Fill(g, DestRect, start, stop, GradientFill.FillDirection.TopToBottom);
+                
+                if (this.Icon != null)
+                {
+                    Size s = Extensions.GetBitmapDimensions(this.Icon);
+                    Extensions.DrawBitmap(g, new Rectangle(5, PaddingTop, s.Width, s.Height), this.Icon);
+                }
+
+                Size s2 = Extensions.GetBitmapDimensions("next");
+                Extensions.DrawBitmap(g, new Rectangle(UI.WindowHandler.ParentForm.Width - s2.Width - 5, ((this.Height / 2) - (s2.Height / 2)), s2.Width, s2.Height), "next");
+                g.DrawString(this.Text, _mainFont, new SolidBrush(IMDBData.SettingsWrapper.GlobalSettings.CurrentSkin.ActionTextHover), 65, PaddingTop);
             }
         }
 
         public void Render(Graphics g, Rectangle Bounds)
         {
-            g.DrawImage(this.DrawnImage, 0, Bounds.Y);
+            if (this.DoHover)
+            {
+                g.DrawImage(this.DrawnImageHover, 0, Bounds.Y);
+            }
+            else
+            {
+                g.DrawImage(this.DrawnImage, 0, Bounds.Y);
+            }
         }
 
         public void OnMouseDown(int X, int Y, ref bool IsSamePoint)
         {
             if (IsSamePoint)
             {
-                this.BackgroundColor = Color.FromArgb(41, 47, 49);
-                this.FontColor = Color.FromArgb(250, 250, 210);
+                this.DoHover = true;
             }
             this.Parent.Invalidate();
             if (this.MouseDown != null)
@@ -101,8 +130,8 @@ namespace ImdbMobile.UI
 
         public void OnMouseUp(int X, int Y, bool IsSamePoint)
         {
-            this.BackgroundColor = Color.LightGoldenrodYellow;
-            this.FontColor = Color.Black;
+            this.DoHover = false;
+
             if (this.MouseUp != null)
             {
                 MouseUp(X, Y, this.Parent, this);
@@ -111,8 +140,7 @@ namespace ImdbMobile.UI
 
         public void OnMouseMove(int X, int Y)
         {
-            this.BackgroundColor = Color.LightGoldenrodYellow;
-            this.FontColor = Color.Black;
+            this.DoHover = false;
         }
     }
 }

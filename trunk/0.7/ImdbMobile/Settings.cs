@@ -33,6 +33,14 @@ namespace ImdbMobile
             this.ddlImdbLocale.ValueMember = "Locale";
             this.ddlImdbLocale.SelectedValue = SettingsWrapper.GlobalSettings.Language.Locale;
 
+            this.ddlSkin.Items.Clear();
+            foreach (string str in System.IO.Directory.GetDirectories(IMDBData.SettingsWrapper.ApplicationPath + "//Skins//"))
+            {
+                System.IO.DirectoryInfo di = new System.IO.DirectoryInfo(str);
+                this.ddlSkin.Items.Add(di.Name);
+            }
+            this.ddlSkin.SelectedItem = SettingsWrapper.GlobalSettings.CurrentSkinName;
+
             this.ddlUILang.Items.Clear();
             List<object> TranslationList = new List<object>();
             foreach (string str in System.IO.Directory.GetFiles(IMDBData.SettingsWrapper.ApplicationPath + "//Translations//", "*.xml"))
@@ -127,8 +135,19 @@ namespace ImdbMobile
             SettingsWrapper.GlobalSettings.VideoPlayerPath = this.txtCustomVideo.Text;
             SettingsWrapper.GlobalSettings.UseAnimations = this.chkUseAnimations.Checked;
             SettingsWrapper.GlobalSettings.UseCompression = this.chkEnableGZip.Checked;
+            if ((string)this.ddlSkin.SelectedValue != SettingsWrapper.GlobalSettings.CurrentSkinName)
+            {
+                MessageBox.Show("Changing Skins will require a restart of the application");
+            }
+            SettingsWrapper.GlobalSettings.CurrentSkinName = (string)this.ddlSkin.SelectedItem;
+            SettingsWrapper.GlobalSettings.CurrentSkin = SkinsWrapper.Load((string)this.ddlSkin.SelectedItem);
             SettingsWrapper.Save(SettingsWrapper.GlobalSettings);
 
+            this.Close();
+        }
+
+        private void menuItem2_Click(object sender, EventArgs e)
+        {
             this.Close();
         }
     }

@@ -36,7 +36,7 @@
             this.LoadingList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.LoadingList.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+            this.LoadingList.BackColor = IMDBData.SettingsWrapper.GlobalSettings.CurrentSkin.BackgroundColour;
             this.LoadingList.Location = new System.Drawing.Point(0, 0);
             this.LoadingList.Name = "LoadingList";
             this.LoadingList.Size = new System.Drawing.Size(474, 377);
@@ -46,7 +46,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+            this.BackColor = IMDBData.SettingsWrapper.GlobalSettings.CurrentSkin.BackgroundColour;
             this.Controls.Add(this.LoadingList);
             this.Name = "SettingsControl";
             this.Size = new System.Drawing.Size(474, 377);

@@ -36,7 +36,7 @@
             this.kListControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.kListControl1.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+            this.kListControl1.BackColor = IMDBData.SettingsWrapper.GlobalSettings.CurrentSkin.BackgroundColour;
             this.kListControl1.Location = new System.Drawing.Point(0, 0);
             this.kListControl1.Name = "kListControl1";
             this.kListControl1.Size = new System.Drawing.Size(474, 377);

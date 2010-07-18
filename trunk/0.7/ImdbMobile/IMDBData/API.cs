@@ -219,7 +219,8 @@ namespace ImdbMobile.IMDBData
                         new EventCallback(
                             delegate()
                             {
-                                this.Error(null, null);
+                                APIEvent ae = new APIEvent(ex.Message);
+                                this.Error(null, ae);
                             }
                         )
                         );

@@ -134,7 +134,14 @@ namespace ImdbMobile.Controls
             s.DownloadComplete += new EventHandler(s_DownloadComplete);
             s.ParsingData += new EventHandler(s_ParsingData);
             s.ParsingComplete += new EventHandler(s_ParsingComplete);
+            s.Error += new EventHandler(s_Error);
             s.QueryIMDB(SearchQuery);
+        }
+
+        void s_Error(object sender, EventArgs e)
+        {
+            APIEvent ae = (APIEvent)e;
+            UI.KListFunctions.ShowError(ae.EventData, this.kListControl1);
         }
 
         void s_ParsingComplete(object sender, EventArgs e)
