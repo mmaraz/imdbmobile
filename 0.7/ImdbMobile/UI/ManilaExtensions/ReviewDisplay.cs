@@ -101,7 +101,7 @@ namespace ImdbMobile.UI
                     }
                     else
                     {
-                        g.Clear(Color.LightGoldenrodYellow);
+                        g.Clear(IMDBData.SettingsWrapper.GlobalSettings.CurrentSkin.BackgroundColour);
                     }
                     if (this.Icon != null)
                     {

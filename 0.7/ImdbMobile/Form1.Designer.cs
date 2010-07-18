@@ -53,7 +53,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(192F, 192F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoScroll = true;
-            this.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+            this.BackColor = IMDBData.SettingsWrapper.GlobalSettings.CurrentSkin.BackgroundColour;
             this.ClientSize = new System.Drawing.Size(480, 536);
             this.ForeColor = System.Drawing.Color.White;
             this.Location = new System.Drawing.Point(0, 52);

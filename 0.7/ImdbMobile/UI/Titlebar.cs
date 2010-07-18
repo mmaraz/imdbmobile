@@ -143,19 +143,14 @@ namespace ImdbMobile.UI
                 TransAtt.SetColorKey(TransparentColor, TransparentColor);
 
                 Rectangle DestRect = new Rectangle(0, 0, Screen.PrimaryScreen.WorkingArea.Width, 148);
-                Color start = Color.FromArgb(52, 60, 67);
-                Color stop = Color.FromArgb(27, 31, 29);
+                Color start = SettingsWrapper.GlobalSettings.CurrentSkin.TitlebarGradientStart;
+                Color stop = SettingsWrapper.GlobalSettings.CurrentSkin.TitlebarGradientStop;
                 GradientFill.Fill(g, DestRect, start, stop, GradientFill.FillDirection.TopToBottom);
 
                 Size LogoSize = Extensions.GetBitmapDimensions("IMDB_Logo_Large");
                 int LogoX = (Screen.PrimaryScreen.WorkingArea.Width / 2) - (LogoSize.Width / 2);
                 DestRect = new Rectangle(LogoX, 5, LogoSize.Width, LogoSize.Height);
                 Extensions.DrawBitmap(g, DestRect, "IMDB_Logo_Large");
-                
-                /*Bitmap image = global::ImdbMobile.Properties.Resources.IMDB_Logo_Large;
-                int LogoX = (Screen.PrimaryScreen.WorkingArea.Width / 2) - (image.Width / 2);
-                DestRect = new Rectangle(LogoX, 5, image.Width, image.Height);
-                g.DrawImage(image, DestRect, 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, TransAtt);*/
 
                 if (this.ShowSearch)
                 {
@@ -163,21 +158,20 @@ namespace ImdbMobile.UI
                     int TextboxX = 5;
 
                     // Draw left edge
-                    Size s = Extensions.GetBitmapDimensions("TextInput_Large_Left");
-                    DestRect = new Rectangle(5, TextboxY, s.Width, s.Height);
+                    Size sLeft = Extensions.GetBitmapDimensions("TextInput_Large_Left");
+                    DestRect = new Rectangle(5, TextboxY, sLeft.Width, sLeft.Height);
                     Extensions.DrawBitmap(g, DestRect, "TextInput_Large_Left");
 
-                    s = Extensions.GetBitmapDimensions("TextInput_Large_Right");
-                    TextboxX = Screen.PrimaryScreen.WorkingArea.Width - 5 - s.Width;
-                    DestRect = new Rectangle(TextboxX, TextboxY, s.Width, s.Height);
+                    Size sRight = Extensions.GetBitmapDimensions("TextInput_Large_Right");
+                    TextboxX = Screen.PrimaryScreen.WorkingArea.Width - 5 - sRight.Width;
+                    DestRect = new Rectangle(TextboxX, TextboxY, sRight.Width, sRight.Height);
                     Extensions.DrawBitmap(g, DestRect, "TextInput_Large_Right");
 
-                    s = Extensions.GetBitmapDimensions("TextInput_Large_Center");
-                    DestRect = new Rectangle(5 + s.Width, TextboxY, TextboxX - s.Width, s.Height);
+                    Size sCenter = Extensions.GetBitmapDimensions("TextInput_Large_Center");
+                    DestRect = new Rectangle(5 + sLeft.Width, TextboxY, TextboxX - sLeft.Width, sCenter.Height);
                     Extensions.DrawBitmap(g, DestRect, "TextInput_Large_Center");
 
-                    s = Extensions.GetBitmapDimensions("TextInput_Large_Right");
-                    int PBX = Screen.PrimaryScreen.WorkingArea.Width - 5 - s.Width - 15;
+                    int PBX = Screen.PrimaryScreen.WorkingArea.Width - 5 - sRight.Width - 15;
                     this.pbSearch.Location = new System.Drawing.Point(PBX, 96);
 
                     this.textBox1.Size = new System.Drawing.Size(PBX - 5, 40);

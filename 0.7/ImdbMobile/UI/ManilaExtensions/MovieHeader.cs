@@ -104,7 +104,7 @@ namespace ImdbMobile.UI
 
             using (Graphics g = Graphics.FromImage(this.DrawnImage))
             {
-                g.Clear(Color.LightGoldenrodYellow);
+                g.Clear(IMDBData.SettingsWrapper.GlobalSettings.CurrentSkin.BackgroundColour);
 
                 if (this.BackgroundColor != Color.Empty)
                 {
@@ -112,7 +112,7 @@ namespace ImdbMobile.UI
                 }
                 else
                 {
-                    g.FillRectangle(new SolidBrush(Color.LightGoldenrodYellow), 0, 0, 480, this.Height * 2);
+                    g.FillRectangle(new SolidBrush(IMDBData.SettingsWrapper.GlobalSettings.CurrentSkin.BackgroundColour), 0, 0, 480, this.Height * 2);
                 }
                 if (this.Icon != null)
                 {
@@ -163,7 +163,7 @@ namespace ImdbMobile.UI
 
         public void Render(Graphics g, Rectangle Bounds)
         {
-            g.Clear(Color.LightGoldenrodYellow);
+            g.Clear(IMDBData.SettingsWrapper.GlobalSettings.CurrentSkin.BackgroundColour);
             int CurrY = Bounds.Y + PaddingTop;
             g.DrawImage(this.DrawnImage, 0, Bounds.Y + PaddingTop);
         }

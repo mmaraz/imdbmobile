@@ -198,7 +198,7 @@ namespace ImdbMobile.Controls
         void mpi_OnClick(object Sender)
         {
             MichyPrima.ManilaDotNetSDK.ManilaPanelItem mpi = ((MichyPrima.ManilaDotNetSDK.ManilaPanelItem)Sender); 
-            int YIndex = UI.KListFunctions.GetIndexOf(mpi, this.kListControl1) + CurrentTitle.Directors.Count + CurrentTitle.Writers.Count;
+            int YIndex = UI.KListFunctions.GetIndexOf(mpi, this.kListControl1) - CurrentTitle.Directors.Count - CurrentTitle.Writers.Count;
             ActorControl a = new ActorControl(CurrentTitle.Cast[YIndex]);
             UI.WindowHandler.OpenForm(a);
         }
@@ -214,7 +214,7 @@ namespace ImdbMobile.Controls
         void mpiWri_OnClick(object Sender)
         {
             MichyPrima.ManilaDotNetSDK.ManilaPanelItem mpi = ((MichyPrima.ManilaDotNetSDK.ManilaPanelItem)Sender);
-            int YIndex = UI.KListFunctions.GetIndexOf(mpi, this.kListControl1) + CurrentTitle.Directors.Count;
+            int YIndex = UI.KListFunctions.GetIndexOf(mpi, this.kListControl1) - CurrentTitle.Directors.Count;
             ActorControl a = new ActorControl(CurrentTitle.Writers[YIndex]);
             UI.WindowHandler.OpenForm(a);
         }

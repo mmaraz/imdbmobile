@@ -75,7 +75,7 @@ namespace ImdbMobile.UI
                 DrawnBitmap = new Bitmap(this.Parent.Width, this.Height);
                 using (Graphics g = Graphics.FromImage(DrawnBitmap))
                 {
-                    g.Clear(Color.LightGoldenrodYellow);
+                    g.Clear(IMDBData.SettingsWrapper.GlobalSettings.CurrentSkin.BackgroundColour);
                 }
             }
             using (Graphics g = Graphics.FromImage(DrawnBitmap))

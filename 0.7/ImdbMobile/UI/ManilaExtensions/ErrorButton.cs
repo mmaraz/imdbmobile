@@ -59,7 +59,7 @@ namespace ImdbMobile.UI
             }
             else
             {
-                g.FillRectangle(new SolidBrush(Color.LightGoldenrodYellow), Bounds);
+                g.FillRectangle(new SolidBrush(IMDBData.SettingsWrapper.GlobalSettings.CurrentSkin.BackgroundColour), Bounds);
             }
             if (this.Icon != null)
             {

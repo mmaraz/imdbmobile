@@ -264,6 +264,7 @@ namespace ImdbMobile.IMDBData
                 System.Drawing.Bitmap b = new System.Drawing.Bitmap(FileName);
                 int Width = (mpi.Height / 3) * 2;
                 System.Drawing.Image i = Extensions.Resize(b, new System.Drawing.Size(Width, mpi.Height));
+                b.Dispose();
                 mpi.Image = i;
                 ParentKList.Refresh();
             }

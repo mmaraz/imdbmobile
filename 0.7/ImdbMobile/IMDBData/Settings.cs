@@ -20,20 +20,13 @@ namespace ImdbMobile.IMDBData
         public bool UseAnimations { get; set; }
         public int NumToDisplay { get; set; }
         public bool UseCompression { get; set; }
-        public string FontName { get; set; }
-        public float FontSize_Large { get; set; }
-        public float FontSize_Small { get; set; }
-        public System.Drawing.FontStyle FontStyle_Small { get; set; }
-        public System.Drawing.FontStyle FontStyle_Large { get; set; }
+        public string CurrentSkinName { get; set; }
+        public Skins CurrentSkin { get; set; }
         public List<string> RecentSearches { get; set; }
 
         public Settings()
         {
-            FontName = "Tahoma";
-            FontSize_Large = 12f;
-            FontSize_Small = 10f;
-            FontStyle_Small = System.Drawing.FontStyle.Regular;
-            FontStyle_Large = System.Drawing.FontStyle.Regular;
+            
             this.RecentSearches = new List<string>();
         }
     }
@@ -65,7 +58,6 @@ namespace ImdbMobile.IMDBData
 
         public static void Load()
         {
-
             try
             {
                 if (!System.IO.File.Exists(ApplicationPath + "\\Config.xml"))
@@ -80,6 +72,7 @@ namespace ImdbMobile.IMDBData
                     s.UseAnimations = false;
                     s.UILanguage = ApplicationPath + "//Translations//English.xml";
                     s.NumToDisplay = 500;
+                    s.CurrentSkinName = "Default";
 
                     Save(s);
                 }
@@ -87,6 +80,7 @@ namespace ImdbMobile.IMDBData
                 StreamReader sr = new StreamReader(ApplicationPath + "\\Config.xml");
                 GlobalSettings = (Settings)xs.Deserialize(sr.BaseStream);
                 sr.Close();
+                GlobalSettings.CurrentSkin = SkinsWrapper.Load(GlobalSettings.CurrentSkinName);
             }
             catch (Exception)
             {

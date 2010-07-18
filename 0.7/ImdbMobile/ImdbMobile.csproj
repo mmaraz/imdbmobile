@@ -201,6 +201,7 @@
     </Compile>
     <Compile Include="IMDBData\APIParser.cs" />
     <Compile Include="IMDBData\ShowtimeParser.cs" />
+    <Compile Include="IMDBData\Skins.cs" />
     <Compile Include="IMDBData\TitleExternalReviewParser.cs" />
     <Compile Include="IMDBData\TitleParentalGuideParser.cs" />
     <Compile Include="IMDBData\TitleUserReviewParser.cs" />
