@@ -46,7 +46,7 @@ namespace ImdbMobile.Controls
             UI.ActionButton RecentSearches = new ImdbMobile.UI.ActionButton();
             RecentSearches.Icon = "Search";
             RecentSearches.Parent = this.kListControl1;
-            RecentSearches.Text = "Recent Searches";
+            RecentSearches.Text = UI.Translations.GetTranslated("0100");
             RecentSearches.MouseUp += new ImdbMobile.UI.ActionButton.MouseEvent(RecentSearches_MouseUp);
             RecentSearches.CalculateHeight();
             this.kListControl1.Items.Add(RecentSearches);
@@ -130,9 +130,6 @@ namespace ImdbMobile.Controls
         private void SearchIMDB()
         {
             Search s = new Search();
-            s.DownloadingData += new EventHandler(s_DownloadingData);
-            s.DownloadComplete += new EventHandler(s_DownloadComplete);
-            s.ParsingData += new EventHandler(s_ParsingData);
             s.ParsingComplete += new EventHandler(s_ParsingComplete);
             s.Error += new EventHandler(s_Error);
             s.QueryIMDB(SearchQuery);
@@ -147,23 +144,7 @@ namespace ImdbMobile.Controls
         void s_ParsingComplete(object sender, EventArgs e)
         {
             Search s = (Search)sender;
-            UI.KListFunctions.ShowLoading("Done.", this.kListControl1);
             ShowResults(s.Results);
-        }
-
-        void s_ParsingData(object sender, EventArgs e)
-        {
-            UI.KListFunctions.ShowLoading("Parsing Results.", this.kListControl1);
-        }
-
-        void s_DownloadComplete(object sender, EventArgs e)
-        {
-            UI.KListFunctions.ShowLoading("Done.", this.kListControl1);
-        }
-
-        void s_DownloadingData(object sender, EventArgs e)
-        {
-            UI.KListFunctions.ShowLoading("Downloading Search Data", this.kListControl1);
         }
 
         private void ShowResults(List<ImdbSearchResult> isrList)

@@ -130,7 +130,7 @@ namespace ImdbMobile.Controls
             {
                 UI.ActionButton ab = new ImdbMobile.UI.ActionButton();
                 ab.Icon = "Cast";
-                ab.Text = "Full Cast...";
+                ab.Text = UI.Translations.GetTranslated("0099") + "...";
                 ab.Parent = this.kListControl1;
                 ab.YIndex = CurrentTitle.Cast.Count;
                 ab.MouseUp += new ImdbMobile.UI.ActionButton.MouseEvent(ab_MouseUp);

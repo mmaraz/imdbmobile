@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Skins xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <BackgroundR>255</BackgroundR>
+  <BackgroundG>255</BackgroundG>
+  <BackgroundB>255</BackgroundB>
+  <ListBounds><X>0</X><Y>0</Y><Width>0</Width><Height>0</Height><Location><X>0</X><Y>0</Y></Location><Size><Width>0</Width><Height>0</Height></Size></ListBounds>
+  <TitlebarGradientStartR>173</TitlebarGradientStartR>
+  <TitlebarGradientStartG>173</TitlebarGradientStartG>
+  <TitlebarGradientStartB>173</TitlebarGradientStartB>
+  <TitlebarGradientStopR>255</TitlebarGradientStopR>
+  <TitlebarGradientStopG>255</TitlebarGradientStopG>
+  <TitlebarGradientStopB>255</TitlebarGradientStopB>
+  <ActionHoverFromR>52</ActionHoverFromR>
+  <ActionHoverFromG>60</ActionHoverFromG>
+  <ActionHoverFromB>67</ActionHoverFromB>
+  <ActionHoverToR>52</ActionHoverToR>
+  <ActionHoverToG>60</ActionHoverToG>
+  <ActionHoverToB>67</ActionHoverToB>
+  <ActionTextHoverR>255</ActionTextHoverR>
+  <ActionTextHoverG>255</ActionTextHoverG>
+  <ActionTextHoverB>255</ActionTextHoverB>
+  <FontName>Tahoma</FontName>
+  <FontSize_Large>12</FontSize_Large>
+  <FontSize_Small>10</FontSize_Small>
+  <FontStyle_Large>Regular</FontStyle_Large>
+  <FontStyle_Small>Regular</FontStyle_Small>
+</Skins>
