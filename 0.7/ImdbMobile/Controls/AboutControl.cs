@@ -16,7 +16,7 @@ namespace ImdbMobile.Controls
             InitializeComponent();
 
             UI.TextDisplay Title = new UI.TextDisplay();
-            Title.Heading = "IMDb Mobile v0.6";
+            Title.Heading = "IMDb Mobile v0.7";
             Title.Parent = this.kListControl1;
             Title.Text = "Developed By: Blade0rz\n\nThis project could not have existed without the help of:";
             Title.CalculateHeight();

@@ -106,5 +106,8 @@
     <Phrase English="HD 480p" ID="0096"><![CDATA[HD 480p]]></Phrase>
     <Phrase English="HD 720p" ID="0097"><![CDATA[HD 720p]]></Phrase>
     <Phrase English="There are no User Reviews for this title" ID="0098"><![CDATA[There are no User Reviews for this title]]></Phrase>
+    <Phrase English="Full Cast" ID="0099"><![CDATA[Full Cast]]></Phrase>
+    <Phrase English="Recent Searches" ID="0100"><![CDATA[Recent Searches]]></Phrase>
+    
   </Phrases>
 </Translation>

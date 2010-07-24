@@ -39,9 +39,6 @@ namespace ImdbMobile.Controls
         private void LoadActorData()
         {
             IMDBData.ActorParser ap = new ImdbMobile.IMDBData.ActorParser(this.CurrentActor);
-            ap.DownloadingData += new EventHandler(ap_DownloadingData);
-            ap.DownloadComplete += new EventHandler(ap_DownloadComplete);
-            ap.ParsingData += new EventHandler(ap_ParsingData);
             ap.ParsingComplete += new EventHandler(ap_ParsingComplete);
             ap.Error += new EventHandler(ap_Error);
             ap.ParseDetails();
@@ -57,21 +54,6 @@ namespace ImdbMobile.Controls
         {
             ActorParser ap = (ActorParser)sender;
             SetImdbInformation(ap.OriginalActor);
-        }
-
-        void ap_ParsingData(object sender, EventArgs e)
-        {
-            UI.KListFunctions.ShowLoading("Parsing Data.\n" + UI.Translations.GetTranslated("0002") + "...", this.kListControl1);
-        }
-
-        void ap_DownloadComplete(object sender, EventArgs e)
-        {
-            UI.KListFunctions.ShowLoading("Done.\n" + UI.Translations.GetTranslated("0002") + "...", this.kListControl1);
-        }
-
-        void ap_DownloadingData(object sender, EventArgs e)
-        {
-            UI.KListFunctions.ShowLoading("Downloading Data.\n" + UI.Translations.GetTranslated("0002") + "...", this.kListControl1);
         }
 
         private void SetImdbInformation(ImdbActor actor)

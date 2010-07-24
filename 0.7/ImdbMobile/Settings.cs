@@ -12,11 +12,39 @@ namespace ImdbMobile
 {
     public partial class Settings : Form
     {
+        Microsoft.WindowsCE.Forms.InputPanel sip = new Microsoft.WindowsCE.Forms.InputPanel();
 
         public Settings()
         {
             InitializeComponent();
+            sip.EnabledChanged += new EventHandler(sip_EnabledChanged);
+            this.txtThumbnailCache.GotFocus += new EventHandler(txtThumbnailCache_GotFocus);
+            this.txtCustomVideo.GotFocus += new EventHandler(txtCustomVideo_GotFocus);
+        }
 
+        void txtCustomVideo_GotFocus(object sender, EventArgs e)
+        {
+            sip.Enabled = true;
+        }
+
+        void txtThumbnailCache_GotFocus(object sender, EventArgs e)
+        {
+            sip.Enabled = true;
+        }
+
+        void sip_EnabledChanged(object sender, EventArgs e)
+        {
+            if (sip.Enabled)
+            {
+                if (this.txtCustomVideo.Focused)
+                {
+                    this.panel1.AutoScrollPosition = new Point(0, this.txtCustomVideo.Location.Y);
+                }
+                else if (this.txtThumbnailCache.Focused)
+                {
+                    this.panel1.AutoScrollPosition = new Point(0, this.txtThumbnailCache.Location.Y);
+                }
+            }
         }
 
         private void Settings_Load(object sender, EventArgs e)
