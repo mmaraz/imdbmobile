@@ -1,0 +1,580 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E12B5447-3601-4E4E-9481-1FBFF5DF5E8F}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ImdbMobile</RootNamespace>
+    <AssemblyName>ImdbMobile</AssemblyName>
+    <ProjectTypeGuids>{4D628B5B-2FBC-4AA6-8C16-197242AEB884};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <PlatformFamilyName>PocketPC</PlatformFamilyName>
+    <PlatformID>b2c48bd2-963d-4549-9169-1fa021dce484</PlatformID>
+    <OSVersion>5.2</OSVersion>
+    <DeployDirSuffix>ImdbMobile</DeployDirSuffix>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <NativePlatformName>Windows Mobile 6 Professional SDK</NativePlatformName>
+    <FormFactorID>
+    </FormFactorID>
+    <ApplicationIcon>IMDbMobile.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;$(PlatformFamilyName)</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <FileAlignment>512</FileAlignment>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;$(PlatformFamilyName)</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <FileAlignment>512</FileAlignment>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CompactFramework.CSharp.targets" />
+  <ItemGroup>
+    <Reference Include="ManilaDotNetSDK, Version=3.0.3723.35311, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Windowsce.Forms" />
+    <Reference Include="mscorlib" />
+    <Reference Include="Newtonsoft.Json.Compact, Version=3.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL" />
+    <Reference Include="OpenNETCF, Version=2.1.0.0, Culture=neutral, PublicKeyToken=e60dbea84bb431b7, processorArchitecture=MSIL" />
+    <Reference Include="OpenNETCF.Configuration, Version=2.1.0.0, Culture=neutral, PublicKeyToken=e60dbea84bb431b7, processorArchitecture=MSIL" />
+    <Reference Include="OpenNETCF.Drawing, Version=2.1.0.0, Culture=neutral, PublicKeyToken=e60dbea84bb431b7, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}">
+        <HostingProcess disable="1" />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ItemGroup>
+    <Compile Include="CFAdditions.cs" />
+    <Compile Include="Controls\AboutControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\AboutControl.Designer.cs">
+      <DependentUpon>AboutControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ActorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ActorControl.Designer.cs">
+      <DependentUpon>ActorControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CastControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\CastControl.Designer.cs">
+      <DependentUpon>CastControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ComingSoonControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ComingSoonControl.Designer.cs">
+      <DependentUpon>ComingSoonControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\EpisodeListControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\EpisodeListControl.Designer.cs">
+      <DependentUpon>EpisodeListControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ExternalReviews.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ExternalReviews.Designer.cs">
+      <DependentUpon>ExternalReviews.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FilmographyControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\FilmographyControl.Designer.cs">
+      <DependentUpon>FilmographyControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FilmographyListControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\FilmographyListControl.Designer.cs">
+      <DependentUpon>FilmographyListControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\GoofsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\GoofsControl.Designer.cs">
+      <DependentUpon>GoofsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MainControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\MainControl.Designer.cs">
+      <DependentUpon>MainControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MovieControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\MovieControl.Designer.cs">
+      <DependentUpon>MovieControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ParentalGuide.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ParentalGuide.Designer.cs">
+      <DependentUpon>ParentalGuide.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\QuotesControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\QuotesControl.Designer.cs">
+      <DependentUpon>QuotesControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\RecentSearchControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\RecentSearchControl.Designer.cs">
+      <DependentUpon>RecentSearchControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SeasonListControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\SeasonListControl.Designer.cs">
+      <DependentUpon>SeasonListControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SettingsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\SettingsControl.Designer.cs">
+      <DependentUpon>SettingsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Top250Control.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Top250Control.Designer.cs">
+      <DependentUpon>Top250Control.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TrailersControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TrailersControl.Designer.cs">
+      <DependentUpon>TrailersControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TriviaControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TriviaControl.Designer.cs">
+      <DependentUpon>TriviaControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UserReviews.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UserReviews.Designer.cs">
+      <DependentUpon>UserReviews.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ViewReview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ViewReview.Designer.cs">
+      <DependentUpon>ViewReview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IMDBData\ActorParser.cs" />
+    <Compile Include="IMDBData\ActorTriviaParser.cs" />
+    <Compile Include="IMDBData\API.cs" />
+    <Compile Include="IMDBData\APIParser.cs" />
+    <Compile Include="IMDBData\Classes.cs" />
+    <Compile Include="IMDBData\ComingSoonParser.cs" />
+    <Compile Include="IMDBData\FilmographyParser.cs" />
+    <Compile Include="IMDBData\ImageDownloader.cs" />
+    <Compile Include="IMDBData\ParseCast.cs" />
+    <Compile Include="IMDBData\Search.cs" />
+    <Compile Include="IMDBData\Settings.cs" />
+    <Compile Include="IMDBData\ShowtimeParser.cs" />
+    <Compile Include="IMDBData\Skins.cs" />
+    <Compile Include="IMDBData\TitleExternalReviewParser.cs" />
+    <Compile Include="IMDBData\TitleGoofParser.cs" />
+    <Compile Include="IMDBData\TitleParentalGuideParser.cs" />
+    <Compile Include="IMDBData\TitleParser.cs" />
+    <Compile Include="IMDBData\TitlePhotoParser.cs" />
+    <Compile Include="IMDBData\TitleQuoteParser.cs" />
+    <Compile Include="IMDBData\TitleSeasonParser.cs" />
+    <Compile Include="IMDBData\TitleTriviaParser.cs" />
+    <Compile Include="IMDBData\TitleUserReviewParser.cs" />
+    <Compile Include="IMDBData\Top250Parser.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs" />
+    <Compile Include="Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings.Designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\GDIPlus.cs" />
+    <Compile Include="UI\GradientFill.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\KListFunctions.cs" />
+    <Compile Include="UI\ManilaExtensions\ActionButton.cs" />
+    <Compile Include="UI\ManilaExtensions\ActorHeader.cs" />
+    <Compile Include="UI\ManilaExtensions\ErrorButton.cs" />
+    <Compile Include="UI\ManilaExtensions\LoadingButton.cs" />
+    <Compile Include="UI\ManilaExtensions\MovieHeader.cs" />
+    <Compile Include="UI\ManilaExtensions\PagerDisplay.cs" />
+    <Compile Include="UI\ManilaExtensions\PhotoDisplay.cs" />
+    <Compile Include="UI\ManilaExtensions\QuoteItem.cs" />
+    <Compile Include="UI\ManilaExtensions\ReviewDisplay.cs" />
+    <Compile Include="UI\ManilaExtensions\TextDisplay.cs" />
+    <Compile Include="UI\SlidingList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Titlebar.cs" />
+    <Compile Include="UI\Translations.cs" />
+    <Compile Include="UI\WindowHandler.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\AboutControl.resx">
+      <DependentUpon>AboutControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ActorControl.resx">
+      <DependentUpon>ActorControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\CastControl.resx">
+      <DependentUpon>CastControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ComingSoonControl.resx">
+      <DependentUpon>ComingSoonControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\EpisodeListControl.resx">
+      <DependentUpon>EpisodeListControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ExternalReviews.resx">
+      <DependentUpon>ExternalReviews.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FilmographyControl.resx">
+      <DependentUpon>FilmographyControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FilmographyListControl.resx">
+      <DependentUpon>FilmographyListControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\GoofsControl.resx">
+      <DependentUpon>GoofsControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\MainControl.resx">
+      <DependentUpon>MainControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\MovieControl.resx">
+      <DependentUpon>MovieControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ParentalGuide.resx">
+      <DependentUpon>ParentalGuide.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\QuotesControl.resx">
+      <DependentUpon>QuotesControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\RecentSearchControl.resx">
+      <DependentUpon>RecentSearchControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SeasonListControl.resx">
+      <DependentUpon>SeasonListControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SettingsControl.resx">
+      <DependentUpon>SettingsControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Top250Control.resx">
+      <DependentUpon>Top250Control.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TrailersControl.resx">
+      <DependentUpon>TrailersControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TriviaControl.resx">
+      <DependentUpon>TriviaControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UserReviews.resx">
+      <DependentUpon>UserReviews.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ViewReview.resx">
+      <DependentUpon>ViewReview.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings.resx">
+      <DependentUpon>Settings.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="IMDbMobile.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="IMDbMobile.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="References\ManilaDotNetSDK.dll" />
+    <Content Include="References\Newtonsoft.Json.Compact.dll" />
+    <Content Include="References\OpenNETCF.Configuration.dll" />
+    <Content Include="References\OpenNETCF.dll" />
+    <Content Include="References\OpenNETCF.Drawing.dll" />
+    <Content Include="Skins\Android\about.png" />
+    <Content Include="Skins\Android\Actor.png" />
+    <Content Include="Skins\Android\Actress.png" />
+    <Content Include="Skins\Android\Cast.png" />
+    <Content Include="Skins\Android\Close.png" />
+    <Content Include="Skins\Android\ComingSoon.png" />
+    <Content Include="Skins\Android\config.xml" />
+    <Content Include="Skins\Android\Continuity.png" />
+    <Content Include="Skins\Android\Director.png" />
+    <Content Include="Skins\Android\episodes.png" />
+    <Content Include="Skins\Android\ExternalReviews.png" />
+    <Content Include="Skins\Android\Filmography.png" />
+    <Content Include="Skins\Android\IMDB_Logo_Large.png" />
+    <Content Include="Skins\Android\IMDB_Logo_Small.png" />
+    <Content Include="Skins\Android\Loader1.jpg" />
+    <Content Include="Skins\Android\Loader2.jpg" />
+    <Content Include="Skins\Android\Loader3.jpg" />
+    <Content Include="Skins\Android\Loader4.jpg" />
+    <Content Include="Skins\Android\Loader5.jpg" />
+    <Content Include="Skins\Android\Loader6.jpg" />
+    <Content Include="Skins\Android\Loader7.jpg" />
+    <Content Include="Skins\Android\Loader8.jpg" />
+    <Content Include="Skins\Android\MiscCrew.png" />
+    <Content Include="Skins\Android\MoreInfo.png" />
+    <Content Include="Skins\Android\next.png" />
+    <Content Include="Skins\Android\ParentalGuide.png" />
+    <Content Include="Skins\Android\Photos.png" />
+    <Content Include="Skins\Android\Producer.png" />
+    <Content Include="Skins\Android\Quotes.png" />
+    <Content Include="Skins\Android\Search.png" />
+    <Content Include="Skins\Android\SearchButton_Large.png" />
+    <Content Include="Skins\Android\SearchButton_Small.png" />
+    <Content Include="Skins\Android\search_btn.png" />
+    <Content Include="Skins\Android\Settings.png" />
+    <Content Include="Skins\Android\star_out.png" />
+    <Content Include="Skins\Android\star_over.png" />
+    <Content Include="Skins\Android\TextInput_Large_Center.png" />
+    <Content Include="Skins\Android\TextInput_Large_Left.png" />
+    <Content Include="Skins\Android\TextInput_Large_Right.png" />
+    <Content Include="Skins\Android\TextInput_Small_Center.png" />
+    <Content Include="Skins\Android\TextInput_Small_Left.png" />
+    <Content Include="Skins\Android\TextInput_Small_Right.png" />
+    <Content Include="Skins\Android\Trailers.png" />
+    <Content Include="Skins\Android\Trivia.png" />
+    <Content Include="Skins\Android\UserReview.png" />
+    <Content Include="Skins\Default\about.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Skins\Default\Actor.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Skins\Default\Actress.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Skins\Default\Cast.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Skins\Default\Close.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Skins\Default\ComingSoon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Skins\Default\config.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Skins\Default\Continuity.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Skins\Default\Director.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Skins\Default\episodes.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Skins\Default\ExternalReview.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Skins\Default\Filmography.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Skins\Default\IMDB_Logo_Large.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Skins\Default\IMDB_Logo_Small.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Skins\Default\Loader1.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Skins\Default\Loader2.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Skins\Default\Loader3.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Skins\Default\Loader4.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Skins\Default\Loader5.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Skins\Default\Loader6.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Skins\Default\Loader7.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Skins\Default\Loader8.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Skins\Default\MiscCrew.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Skins\Default\MoreInfo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Skins\Default\next.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Skins\Default\ParentalGuide.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Skins\Default\Photos.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Skins\Default\previous.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Skins\Default\Producer.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Skins\Default\Quote.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Skins\Default\Search.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Skins\Default\SearchButton_Large.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Skins\Default\SearchButton_Small.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Skins\Default\search_btn.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Skins\Default\Settings.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Skins\Default\star_out.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Skins\Default\star_over.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Skins\Default\TextInput_Large_Center.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Skins\Default\TextInput_Large_Left.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Skins\Default\TextInput_Large_Right.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Skins\Default\TextInput_Small_Center.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Skins\Default\TextInput_Small_Left.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Skins\Default\TextInput_Small_Right.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Skins\Default\Trailers.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Skins\Default\Trivia.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Skins\Default\UserReview.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Translations\Czech.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Translations\Dutch.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Translations\English.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Translations\French.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Translations\German.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Translations\Swedish.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+</Project>
