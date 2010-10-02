@@ -114,8 +114,8 @@ namespace ImdbMobile.IMDBData
                     {
                         ImdbCover ic = new ImdbCover();
                         ic.URL = (string)slate["url"];
-                        ic.Width = int.Parse((string)slate["width"]);
-                        ic.Height = int.Parse((string)slate["height"]);
+                        ic.Width = int.Parse(slate["width"].ToString());
+                        ic.Height = int.Parse(slate["height"].ToString());
                         iv.Slates.Add(ic);
                     }
                 }
