@@ -1,0 +1,3386 @@
+"DeployProject"
+{
+"VSVersion" = "3:701"
+"ProjectType" = "8:{AB322303-2255-48EF-A496-5904EB18DA55}"
+"IsWebType" = "8:FALSE"
+"ProjectName" = "8:ImdbInstaller"
+"LanguageId" = "3:1033"
+"CodePage" = "3:1252"
+"SccProjectName" = "8:"
+"SccLocalPath" = "8:"
+"SccAuxPath" = "8:"
+"SccProvider" = "8:"
+    "Hierarchy"
+    {
+        "Entry"
+        {
+        "MsmKey" = "8:_04F1AB7788E244B7A340D466B08885E4"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_064D72F800C442E9BE1DA44EEFFE6A92"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_072F22900B0A451FB4A4C075FFFDD2AE"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_078FAF84F79C4CA98B6141117061471C"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_08008A1A570B55C962F6E5E94933E927"
+        "OwnerKey" = "8:_367217E395754703A06F470E08CBA585"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_0813B6C3C495CF719093FA5DCB499654"
+        "OwnerKey" = "8:_6D2B8CCAD98376FAB7F75BB0D2BE0997"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_0813B6C3C495CF719093FA5DCB499654"
+        "OwnerKey" = "8:_10DFFB9E815341121C0CCFBC7EF8FC40"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_0813B6C3C495CF719093FA5DCB499654"
+        "OwnerKey" = "8:_73FBE7C2BBD709C21E29357E7DC0434A"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_0813B6C3C495CF719093FA5DCB499654"
+        "OwnerKey" = "8:_367217E395754703A06F470E08CBA585"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_0813B6C3C495CF719093FA5DCB499654"
+        "OwnerKey" = "8:_2FC6AA7CEC40791A8131D01071942323"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_0813B6C3C495CF719093FA5DCB499654"
+        "OwnerKey" = "8:_87DEE54E4CF437EBFF75F5681DCF5CE9"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_0813B6C3C495CF719093FA5DCB499654"
+        "OwnerKey" = "8:_FA387ABBF8F3E0CF840E9459DBF811DB"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_0813B6C3C495CF719093FA5DCB499654"
+        "OwnerKey" = "8:_275412578A46F92C34F55CBE47930A48"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_08AD035AF39B4BDFA14FF1AF6E1D2A40"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_0B685C5AAE3A4DF3A8D3A6E6132ACBB9"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_0B7BBAD1C39140579C2DD80352413892"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_0BCD956914BA4CA8A289FE85D8C71E20"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_0D8F652B9F95FDE09BB373C6B91904FC"
+        "OwnerKey" = "8:_367217E395754703A06F470E08CBA585"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_0DB03146B1D84DFA8B40839D95C68A7C"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_0DBD89380C27424A8ACA18EB1A3C6C5B"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_0E3B8850F006E4413EB83AE3E716486B"
+        "OwnerKey" = "8:_367217E395754703A06F470E08CBA585"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_0E3B8850F006E4413EB83AE3E716486B"
+        "OwnerKey" = "8:_699D30AEE441DE860F7489B1CE0C5562"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_0EC346CAABAB4ADEB9CB4E6767E73439"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_0F4CBEBDF9A4D73A77F90C1DE93AF5AD"
+        "OwnerKey" = "8:_367217E395754703A06F470E08CBA585"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_10DFFB9E815341121C0CCFBC7EF8FC40"
+        "OwnerKey" = "8:_367217E395754703A06F470E08CBA585"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_191E4B94A071437D8706A88F7D36AC0A"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_2097EF5A60CF47AE81DC6015CC3033DA"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_21F8270DB3EE452DA9DEACA2ED1FA5FB"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_240718549F394BB99F6131E313DD86D4"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_275412578A46F92C34F55CBE47930A48"
+        "OwnerKey" = "8:_6D2B8CCAD98376FAB7F75BB0D2BE0997"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_275412578A46F92C34F55CBE47930A48"
+        "OwnerKey" = "8:_73FBE7C2BBD709C21E29357E7DC0434A"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_275412578A46F92C34F55CBE47930A48"
+        "OwnerKey" = "8:_367217E395754703A06F470E08CBA585"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_275412578A46F92C34F55CBE47930A48"
+        "OwnerKey" = "8:_FA387ABBF8F3E0CF840E9459DBF811DB"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_27A4133BEF4A4EFFBF071BAAD076AC92"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_27BF231514EE4DFC96FD39DD205360AB"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_283DECA95D63458FB04553BE48F18F9D"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_2E63D0F681CB4850BC02FCE29E6D0859"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_2F684E55272247A3840AC22F56396647"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_2FC6AA7CEC40791A8131D01071942323"
+        "OwnerKey" = "8:_87DEE54E4CF437EBFF75F5681DCF5CE9"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_2FC6AA7CEC40791A8131D01071942323"
+        "OwnerKey" = "8:_10DFFB9E815341121C0CCFBC7EF8FC40"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_2FC6AA7CEC40791A8131D01071942323"
+        "OwnerKey" = "8:_0F4CBEBDF9A4D73A77F90C1DE93AF5AD"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_2FC6AA7CEC40791A8131D01071942323"
+        "OwnerKey" = "8:_367217E395754703A06F470E08CBA585"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_30BCFAB24F5140CFA5A5035876751BAE"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_3265E34E2C4D444C8E7655063C562366"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_367217E395754703A06F470E08CBA585"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_3AB78268E1BD41B38BF8C242646965ED"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_3B63057AAED44327B2FF7394356B81D1"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_3D223EE54D5F4C7DB84DF4F4B0EA04DD"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_4045C7D2CF724955B59D118BA02E4147"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_418B7C631E264F65A7521E56C86DDD14"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_43FB48A90EA346A8AC0C0E87CC49BDB1"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_4418050C9AE54F7DB744ECF32CC9E77A"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_451BF1F9B5F6466A880A64BEA019AF2C"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_4578F990032B45FE97E1ACC0216AD02A"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_45EE385AAB69451C8CB363E24AA9F1FF"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_464383723FE535768699962D9370C5C3"
+        "OwnerKey" = "8:_367217E395754703A06F470E08CBA585"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_464383723FE535768699962D9370C5C3"
+        "OwnerKey" = "8:_10DFFB9E815341121C0CCFBC7EF8FC40"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_464383723FE535768699962D9370C5C3"
+        "OwnerKey" = "8:_73FBE7C2BBD709C21E29357E7DC0434A"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_464383723FE535768699962D9370C5C3"
+        "OwnerKey" = "8:_0F4CBEBDF9A4D73A77F90C1DE93AF5AD"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_464383723FE535768699962D9370C5C3"
+        "OwnerKey" = "8:_0D8F652B9F95FDE09BB373C6B91904FC"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_4B47C0BAE1834587BD6FA7BA0ADF41C3"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_4FA537C2A3104CC6A7EADCC7FF8275F5"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_50BBCE72DA494EBA92E0DB3FF298D052"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_511E0879E89644CCBF9AC2026782505B"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_51CC8CC0E2214D02A35CB821E0E9AC8E"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_540C8EE4B9164AB187CA10427007E135"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_5BCE15EC7056461BA0761B89A3F33AE5"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_66402B0DB014C232A2494D39F6436C95"
+        "OwnerKey" = "8:_6D2B8CCAD98376FAB7F75BB0D2BE0997"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_66402B0DB014C232A2494D39F6436C95"
+        "OwnerKey" = "8:_73FBE7C2BBD709C21E29357E7DC0434A"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_66402B0DB014C232A2494D39F6436C95"
+        "OwnerKey" = "8:_367217E395754703A06F470E08CBA585"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_66402B0DB014C232A2494D39F6436C95"
+        "OwnerKey" = "8:_FA387ABBF8F3E0CF840E9459DBF811DB"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_66402B0DB014C232A2494D39F6436C95"
+        "OwnerKey" = "8:_275412578A46F92C34F55CBE47930A48"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_68133EB70730471689D71009CD700AAE"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_68BE25A60C31427AA74685ABFC3631AA"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_699D30AEE441DE860F7489B1CE0C5562"
+        "OwnerKey" = "8:_367217E395754703A06F470E08CBA585"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_699D30AEE441DE860F7489B1CE0C5562"
+        "OwnerKey" = "8:_08008A1A570B55C962F6E5E94933E927"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_6D2B8CCAD98376FAB7F75BB0D2BE0997"
+        "OwnerKey" = "8:_FA387ABBF8F3E0CF840E9459DBF811DB"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_6D2B8CCAD98376FAB7F75BB0D2BE0997"
+        "OwnerKey" = "8:_367217E395754703A06F470E08CBA585"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_6E6C473A8B0544299B152C3BC31A3BCD"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_720E11274612401398BFDFABCCC0D0B2"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_73FBE7C2BBD709C21E29357E7DC0434A"
+        "OwnerKey" = "8:_367217E395754703A06F470E08CBA585"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_74ADDB96D99F46D295338498450FBC70"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_7A48906E2C28465A8686C1152A39C998"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_7DAAFFA1426F40AC9004BBD5DEB68CEB"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_7DC38B26C25F46D892634BCC2D4F8C5C"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_7F39E09F59EE4749B57870378832FDEC"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_7FB2B1DDEAEE44FBB76D95F8193FD006"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_806D893A42AD42F28725F5FCBC7E6430"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_8288454B492F4B669F9047E4DC1FBB40"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_87DEE54E4CF437EBFF75F5681DCF5CE9"
+        "OwnerKey" = "8:_0D8F652B9F95FDE09BB373C6B91904FC"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_87DEE54E4CF437EBFF75F5681DCF5CE9"
+        "OwnerKey" = "8:_10DFFB9E815341121C0CCFBC7EF8FC40"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_87DEE54E4CF437EBFF75F5681DCF5CE9"
+        "OwnerKey" = "8:_367217E395754703A06F470E08CBA585"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_8BBE7C1DFCA3490298822AE24DCBDB78"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_8BEE2839FEFD4B62B0CFEA7A6C7AB10F"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_8CE5E299E3F1492DA63940FED197E4F9"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_8FA88591371846ADA28D24F5C9A62BA3"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_92646AE83831456EB3BA7A3B1AD30385"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_930AF8E69BA4424599BBCE286FF6416A"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_93BC0ADF7C524BF8908A6F1186779DDA"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_9864DD5C2C1D4F95B740DB3193DC8C9B"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_98BDE0D72B504D3596A1653610D33612"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_9A740684FD514304AE6C733816DF8872"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_9AC76D8D6ABF49B3B1E299D199DE3316"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_9B390D075E7E42BF8060182FCE2DA832"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_9D0F07C6FDBD4A86829104B91FFDF590"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_9FAF6E48EFB54CDAA46330247547E093"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_A3A8E132A50940A1BAAAB110B0B6A6FB"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_A4F7D8A5A7164552A369A13FEBF08D20"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_A5EB8BEA82E94EE58E13606B85A7FF6D"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_A6400EA81C3E43A090667269A5FEC043"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_A6E1B8A8C0EB4C5AB805AD684130515A"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_A87A8DCC2E804AF9A4E25133A8A56CE9"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_A8956ABD086243BFA18153E7CEE3E71B"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_A9AA55ECDC3445E8B661B5AF9AC2A625"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_AB7D687E81AC49248230E3C2191EC84B"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_ADEDCC30D2114A9B84B726D0645E539C"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_B0AE5966CA359B160F6366F2891070AE"
+        "OwnerKey" = "8:_6D2B8CCAD98376FAB7F75BB0D2BE0997"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_B0AE5966CA359B160F6366F2891070AE"
+        "OwnerKey" = "8:_10DFFB9E815341121C0CCFBC7EF8FC40"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_B0AE5966CA359B160F6366F2891070AE"
+        "OwnerKey" = "8:_73FBE7C2BBD709C21E29357E7DC0434A"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_B0AE5966CA359B160F6366F2891070AE"
+        "OwnerKey" = "8:_0F4CBEBDF9A4D73A77F90C1DE93AF5AD"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_B0AE5966CA359B160F6366F2891070AE"
+        "OwnerKey" = "8:_2FC6AA7CEC40791A8131D01071942323"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_B0AE5966CA359B160F6366F2891070AE"
+        "OwnerKey" = "8:_87DEE54E4CF437EBFF75F5681DCF5CE9"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_B0AE5966CA359B160F6366F2891070AE"
+        "OwnerKey" = "8:_0D8F652B9F95FDE09BB373C6B91904FC"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_B0AE5966CA359B160F6366F2891070AE"
+        "OwnerKey" = "8:_464383723FE535768699962D9370C5C3"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_B0AE5966CA359B160F6366F2891070AE"
+        "OwnerKey" = "8:_367217E395754703A06F470E08CBA585"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_B0AE5966CA359B160F6366F2891070AE"
+        "OwnerKey" = "8:_FA387ABBF8F3E0CF840E9459DBF811DB"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_B0AE5966CA359B160F6366F2891070AE"
+        "OwnerKey" = "8:_275412578A46F92C34F55CBE47930A48"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_B0AE5966CA359B160F6366F2891070AE"
+        "OwnerKey" = "8:_66402B0DB014C232A2494D39F6436C95"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_B0AE5966CA359B160F6366F2891070AE"
+        "OwnerKey" = "8:_0813B6C3C495CF719093FA5DCB499654"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_BA4A0D2267474C0596D76A6CF727844E"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_BC1C74E439BF4EF28D32DB35E17C4FF5"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_C85323C952D9412280C7C6A6721733DD"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_CED86308597D4DA4AF1E866CDA0DDF08"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_CEE8D79F6A174053AE2396CC8E54818E"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_CFB4BB33FF9F4CBA803984397CF1AF41"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_D37F092BCDCB40309EF4CA216B0B3FF7"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_D49FF9E1ABF64CE592FBA143B6F4C360"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_D6823F367FC745F7A9912CC97BC36A6C"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_D88716D5932445359152B0F092FB2A18"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_DAF20E4A97E04DF4859EB7C08F6C6076"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_DD40AF0967DF417482A157DC4194593F"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_E169CF5A69FA41A09337FDA310D95C95"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_E2B97825217949E69BBBABF106F1BCEA"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_E69BAD371D5B40E7A97CE72486013C2A"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_E74B5A3CA07444A6BBDDC09998191CFE"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_E865ED62F6114C6F9DB7AF0EA4062106"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_E951EB523E2C45C9BC694772F8A46048"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_EA9E2106A06B4CA3A7BE66E2E8C7232C"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_EAC11B4B990947D39E55CC85868E27D4"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_EEFC2E6B32814B1092FA9AD99D13F10F"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_F0E2492861BB45018AD94731968DCA24"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_F793CF5CA3244851B2677298D7E1B60D"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_F90569E709034A18AC214B8A49A99475"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_FA387ABBF8F3E0CF840E9459DBF811DB"
+        "OwnerKey" = "8:_367217E395754703A06F470E08CBA585"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_FA387ABBF8F3E0CF840E9459DBF811DB"
+        "OwnerKey" = "8:_73FBE7C2BBD709C21E29357E7DC0434A"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_FE48570C927242999089B860E43AF557"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+    }
+    "Configurations"
+    {
+        "Debug"
+        {
+        "DisplayName" = "8:Debug"
+        "IsDebugOnly" = "11:TRUE"
+        "IsReleaseOnly" = "11:FALSE"
+        "OutputFilename" = "8:Debug\\ImdbInstaller.cab"
+        "PackageFileSize" = "3:-2147483648"
+        "CabType" = "3:1"
+        "SignOutput" = "11:FALSE"
+        "CertificateHash" = "8:"
+        "TimeStampServer" = "8:"
+        }
+        "Release"
+        {
+        "DisplayName" = "8:Release"
+        "IsDebugOnly" = "11:FALSE"
+        "IsReleaseOnly" = "11:TRUE"
+        "OutputFilename" = "8:Release\\ImdbInstaller.cab"
+        "PackageFileSize" = "3:-2147483648"
+        "CabType" = "3:1"
+        "SignOutput" = "11:FALSE"
+        "CertificateHash" = "8:"
+        "TimeStampServer" = "8:"
+        }
+    }
+    "Deployable"
+    {
+        "File"
+        {
+            "{BA458234-9B71-4F46-8107-E91156377184}:_04F1AB7788E244B7A340D466B08885E4"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\next.png"
+            "TargetName" = "8:next.png"
+            "Tag" = "8:"
+            "Folder" = "8:_EF5E65BA6C4E475697F33F58A6BBB96D"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_064D72F800C442E9BE1DA44EEFFE6A92"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Translations\\English.xml"
+            "TargetName" = "8:English.xml"
+            "Tag" = "8:"
+            "Folder" = "8:_1362DA3F775C4C908F18D9CFCC990A26"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_072F22900B0A451FB4A4C075FFFDD2AE"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\Loader5.jpg"
+            "TargetName" = "8:Loader5.jpg"
+            "Tag" = "8:"
+            "Folder" = "8:_4A2C8BA071A4467BA861D5F4B76D3A46"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_078FAF84F79C4CA98B6141117061471C"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\Producer.png"
+            "TargetName" = "8:Producer.png"
+            "Tag" = "8:"
+            "Folder" = "8:_4A2C8BA071A4467BA861D5F4B76D3A46"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{E4F2F62A-3940-4BF5-A031-F7FA98CAAFFA}:_08008A1A570B55C962F6E5E94933E927"
+            {
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:OpenNETCF.Drawing, Version=2.1.0.0, Culture=neutral, PublicKeyToken=e60dbea84bb431b7"
+                "ScatterAssemblies"
+                {
+                    "_08008A1A570B55C962F6E5E94933E927"
+                    {
+                    "Name" = "8:OpenNETCF.Drawing.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:OpenNETCF.Drawing.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_5D83DF9BA96842788E2C251E28C6DDBC"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{E4F2F62A-3940-4BF5-A031-F7FA98CAAFFA}:_0813B6C3C495CF719093FA5DCB499654"
+            {
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:System, Version=3.5.0.0, Culture=neutral, PublicKeyToken=969db8053d3322ac"
+                "ScatterAssemblies"
+                {
+                    "_0813B6C3C495CF719093FA5DCB499654"
+                    {
+                    "Name" = "8:System.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:System.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_5D83DF9BA96842788E2C251E28C6DDBC"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:TRUE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_08AD035AF39B4BDFA14FF1AF6E1D2A40"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\Close.png"
+            "TargetName" = "8:Close.png"
+            "Tag" = "8:"
+            "Folder" = "8:_EF5E65BA6C4E475697F33F58A6BBB96D"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_0B685C5AAE3A4DF3A8D3A6E6132ACBB9"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\IMDB_Logo_Small.png"
+            "TargetName" = "8:IMDB_Logo_Small.png"
+            "Tag" = "8:"
+            "Folder" = "8:_4A2C8BA071A4467BA861D5F4B76D3A46"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_0B7BBAD1C39140579C2DD80352413892"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\previous.png"
+            "TargetName" = "8:previous.png"
+            "Tag" = "8:"
+            "Folder" = "8:_EF5E65BA6C4E475697F33F58A6BBB96D"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_0BCD956914BA4CA8A289FE85D8C71E20"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\IMDB_Logo_Large.png"
+            "TargetName" = "8:IMDB_Logo_Large.png"
+            "Tag" = "8:"
+            "Folder" = "8:_4A2C8BA071A4467BA861D5F4B76D3A46"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{E4F2F62A-3940-4BF5-A031-F7FA98CAAFFA}:_0D8F652B9F95FDE09BB373C6B91904FC"
+            {
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:System.Data.DataSetExtensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=969db8053d3322ac"
+                "ScatterAssemblies"
+                {
+                    "_0D8F652B9F95FDE09BB373C6B91904FC"
+                    {
+                    "Name" = "8:System.Data.DataSetExtensions.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:System.Data.DataSetExtensions.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_5D83DF9BA96842788E2C251E28C6DDBC"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:TRUE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_0DB03146B1D84DFA8B40839D95C68A7C"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\Producer.png"
+            "TargetName" = "8:Producer.png"
+            "Tag" = "8:"
+            "Folder" = "8:_EF5E65BA6C4E475697F33F58A6BBB96D"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_0DBD89380C27424A8ACA18EB1A3C6C5B"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\Loader7.jpg"
+            "TargetName" = "8:Loader7.jpg"
+            "Tag" = "8:"
+            "Folder" = "8:_EF5E65BA6C4E475697F33F58A6BBB96D"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{E4F2F62A-3940-4BF5-A031-F7FA98CAAFFA}:_0E3B8850F006E4413EB83AE3E716486B"
+            {
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:OpenNETCF.Configuration, Version=2.1.0.0, Culture=neutral, PublicKeyToken=e60dbea84bb431b7"
+                "ScatterAssemblies"
+                {
+                    "_0E3B8850F006E4413EB83AE3E716486B"
+                    {
+                    "Name" = "8:OpenNETCF.Configuration.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:OpenNETCF.Configuration.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_5D83DF9BA96842788E2C251E28C6DDBC"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_0EC346CAABAB4ADEB9CB4E6767E73439"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\ExternalReview.png"
+            "TargetName" = "8:ExternalReview.png"
+            "Tag" = "8:"
+            "Folder" = "8:_EF5E65BA6C4E475697F33F58A6BBB96D"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{E4F2F62A-3940-4BF5-A031-F7FA98CAAFFA}:_0F4CBEBDF9A4D73A77F90C1DE93AF5AD"
+            {
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:System.Xml.Linq, Version=3.5.0.0, Culture=neutral, PublicKeyToken=969db8053d3322ac"
+                "ScatterAssemblies"
+                {
+                    "_0F4CBEBDF9A4D73A77F90C1DE93AF5AD"
+                    {
+                    "Name" = "8:System.Xml.Linq.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:System.Xml.Linq.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_5D83DF9BA96842788E2C251E28C6DDBC"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:TRUE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{E4F2F62A-3940-4BF5-A031-F7FA98CAAFFA}:_10DFFB9E815341121C0CCFBC7EF8FC40"
+            {
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Newtonsoft.Json.Compact, Version=3.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed"
+                "ScatterAssemblies"
+                {
+                    "_10DFFB9E815341121C0CCFBC7EF8FC40"
+                    {
+                    "Name" = "8:Newtonsoft.Json.Compact.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:Newtonsoft.Json.Compact.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_5D83DF9BA96842788E2C251E28C6DDBC"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_191E4B94A071437D8706A88F7D36AC0A"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\Filmography.png"
+            "TargetName" = "8:Filmography.png"
+            "Tag" = "8:"
+            "Folder" = "8:_4A2C8BA071A4467BA861D5F4B76D3A46"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_2097EF5A60CF47AE81DC6015CC3033DA"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\UserReview.png"
+            "TargetName" = "8:UserReview.png"
+            "Tag" = "8:"
+            "Folder" = "8:_EF5E65BA6C4E475697F33F58A6BBB96D"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_21F8270DB3EE452DA9DEACA2ED1FA5FB"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\MiscCrew.png"
+            "TargetName" = "8:MiscCrew.png"
+            "Tag" = "8:"
+            "Folder" = "8:_4A2C8BA071A4467BA861D5F4B76D3A46"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_240718549F394BB99F6131E313DD86D4"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Translations\\Swedish.xml"
+            "TargetName" = "8:Swedish.xml"
+            "Tag" = "8:"
+            "Folder" = "8:_1362DA3F775C4C908F18D9CFCC990A26"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{E4F2F62A-3940-4BF5-A031-F7FA98CAAFFA}:_275412578A46F92C34F55CBE47930A48"
+            {
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:System.Windows.Forms, Version=3.5.0.0, Culture=neutral, PublicKeyToken=969db8053d3322ac"
+                "ScatterAssemblies"
+                {
+                    "_275412578A46F92C34F55CBE47930A48"
+                    {
+                    "Name" = "8:System.Windows.Forms.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:System.Windows.Forms.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_5D83DF9BA96842788E2C251E28C6DDBC"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:TRUE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_27A4133BEF4A4EFFBF071BAAD076AC92"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\SearchButton_Small.png"
+            "TargetName" = "8:SearchButton_Small.png"
+            "Tag" = "8:"
+            "Folder" = "8:_4A2C8BA071A4467BA861D5F4B76D3A46"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_27BF231514EE4DFC96FD39DD205360AB"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\Trailers.png"
+            "TargetName" = "8:Trailers.png"
+            "Tag" = "8:"
+            "Folder" = "8:_EF5E65BA6C4E475697F33F58A6BBB96D"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_283DECA95D63458FB04553BE48F18F9D"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\Continuity.png"
+            "TargetName" = "8:Continuity.png"
+            "Tag" = "8:"
+            "Folder" = "8:_4A2C8BA071A4467BA861D5F4B76D3A46"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_2E63D0F681CB4850BC02FCE29E6D0859"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\episodes.png"
+            "TargetName" = "8:episodes.png"
+            "Tag" = "8:"
+            "Folder" = "8:_EF5E65BA6C4E475697F33F58A6BBB96D"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_2F684E55272247A3840AC22F56396647"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\TextInput_Small_Left.png"
+            "TargetName" = "8:TextInput_Small_Left.png"
+            "Tag" = "8:"
+            "Folder" = "8:_4A2C8BA071A4467BA861D5F4B76D3A46"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{E4F2F62A-3940-4BF5-A031-F7FA98CAAFFA}:_2FC6AA7CEC40791A8131D01071942323"
+            {
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:System.Xml, Version=3.5.0.0, Culture=neutral, PublicKeyToken=969db8053d3322ac"
+                "ScatterAssemblies"
+                {
+                    "_2FC6AA7CEC40791A8131D01071942323"
+                    {
+                    "Name" = "8:System.Xml.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:System.Xml.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_5D83DF9BA96842788E2C251E28C6DDBC"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:TRUE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_30BCFAB24F5140CFA5A5035876751BAE"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\Search.png"
+            "TargetName" = "8:Search.png"
+            "Tag" = "8:"
+            "Folder" = "8:_EF5E65BA6C4E475697F33F58A6BBB96D"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_3265E34E2C4D444C8E7655063C562366"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\about.png"
+            "TargetName" = "8:about.png"
+            "Tag" = "8:"
+            "Folder" = "8:_EF5E65BA6C4E475697F33F58A6BBB96D"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_3AB78268E1BD41B38BF8C242646965ED"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\Photos.png"
+            "TargetName" = "8:Photos.png"
+            "Tag" = "8:"
+            "Folder" = "8:_4A2C8BA071A4467BA861D5F4B76D3A46"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_3B63057AAED44327B2FF7394356B81D1"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\ParentalGuide.png"
+            "TargetName" = "8:ParentalGuide.png"
+            "Tag" = "8:"
+            "Folder" = "8:_4A2C8BA071A4467BA861D5F4B76D3A46"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_3D223EE54D5F4C7DB84DF4F4B0EA04DD"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\Loader8.jpg"
+            "TargetName" = "8:Loader8.jpg"
+            "Tag" = "8:"
+            "Folder" = "8:_4A2C8BA071A4467BA861D5F4B76D3A46"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_4045C7D2CF724955B59D118BA02E4147"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\Settings.png"
+            "TargetName" = "8:Settings.png"
+            "Tag" = "8:"
+            "Folder" = "8:_EF5E65BA6C4E475697F33F58A6BBB96D"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_418B7C631E264F65A7521E56C86DDD14"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\Loader1.jpg"
+            "TargetName" = "8:Loader1.jpg"
+            "Tag" = "8:"
+            "Folder" = "8:_4A2C8BA071A4467BA861D5F4B76D3A46"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_43FB48A90EA346A8AC0C0E87CC49BDB1"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Translations\\Dutch.xml"
+            "TargetName" = "8:Dutch.xml"
+            "Tag" = "8:"
+            "Folder" = "8:_1362DA3F775C4C908F18D9CFCC990A26"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_4418050C9AE54F7DB744ECF32CC9E77A"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\Trivia.png"
+            "TargetName" = "8:Trivia.png"
+            "Tag" = "8:"
+            "Folder" = "8:_EF5E65BA6C4E475697F33F58A6BBB96D"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_451BF1F9B5F6466A880A64BEA019AF2C"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\MiscCrew.png"
+            "TargetName" = "8:MiscCrew.png"
+            "Tag" = "8:"
+            "Folder" = "8:_EF5E65BA6C4E475697F33F58A6BBB96D"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_4578F990032B45FE97E1ACC0216AD02A"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\ComingSoon.png"
+            "TargetName" = "8:ComingSoon.png"
+            "Tag" = "8:"
+            "Folder" = "8:_EF5E65BA6C4E475697F33F58A6BBB96D"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_45EE385AAB69451C8CB363E24AA9F1FF"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\Loader8.jpg"
+            "TargetName" = "8:Loader8.jpg"
+            "Tag" = "8:"
+            "Folder" = "8:_EF5E65BA6C4E475697F33F58A6BBB96D"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{E4F2F62A-3940-4BF5-A031-F7FA98CAAFFA}:_464383723FE535768699962D9370C5C3"
+            {
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:System.Core, Version=3.5.0.0, Culture=neutral, PublicKeyToken=969db8053d3322ac"
+                "ScatterAssemblies"
+                {
+                    "_464383723FE535768699962D9370C5C3"
+                    {
+                    "Name" = "8:System.Core.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:System.Core.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_5D83DF9BA96842788E2C251E28C6DDBC"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:TRUE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_4B47C0BAE1834587BD6FA7BA0ADF41C3"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\star_out.png"
+            "TargetName" = "8:star_out.png"
+            "Tag" = "8:"
+            "Folder" = "8:_EF5E65BA6C4E475697F33F58A6BBB96D"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_4FA537C2A3104CC6A7EADCC7FF8275F5"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Translations\\Czech.xml"
+            "TargetName" = "8:Czech.xml"
+            "Tag" = "8:"
+            "Folder" = "8:_1362DA3F775C4C908F18D9CFCC990A26"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_50BBCE72DA494EBA92E0DB3FF298D052"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\TextInput_Large_Right.png"
+            "TargetName" = "8:TextInput_Large_Right.png"
+            "Tag" = "8:"
+            "Folder" = "8:_EF5E65BA6C4E475697F33F58A6BBB96D"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_511E0879E89644CCBF9AC2026782505B"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\TextInput_Small_Right.png"
+            "TargetName" = "8:TextInput_Small_Right.png"
+            "Tag" = "8:"
+            "Folder" = "8:_EF5E65BA6C4E475697F33F58A6BBB96D"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_51CC8CC0E2214D02A35CB821E0E9AC8E"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\SearchButton_Small.png"
+            "TargetName" = "8:SearchButton_Small.png"
+            "Tag" = "8:"
+            "Folder" = "8:_EF5E65BA6C4E475697F33F58A6BBB96D"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_540C8EE4B9164AB187CA10427007E135"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\TextInput_Large_Center.png"
+            "TargetName" = "8:TextInput_Large_Center.png"
+            "Tag" = "8:"
+            "Folder" = "8:_EF5E65BA6C4E475697F33F58A6BBB96D"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_5BCE15EC7056461BA0761B89A3F33AE5"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\Settings.png"
+            "TargetName" = "8:Settings.png"
+            "Tag" = "8:"
+            "Folder" = "8:_4A2C8BA071A4467BA861D5F4B76D3A46"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{E4F2F62A-3940-4BF5-A031-F7FA98CAAFFA}:_66402B0DB014C232A2494D39F6436C95"
+            {
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:System.Drawing, Version=3.5.0.0, Culture=neutral, PublicKeyToken=969db8053d3322ac"
+                "ScatterAssemblies"
+                {
+                    "_66402B0DB014C232A2494D39F6436C95"
+                    {
+                    "Name" = "8:System.Drawing.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:System.Drawing.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_5D83DF9BA96842788E2C251E28C6DDBC"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:TRUE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_68133EB70730471689D71009CD700AAE"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\config.xml"
+            "TargetName" = "8:config.xml"
+            "Tag" = "8:"
+            "Folder" = "8:_4A2C8BA071A4467BA861D5F4B76D3A46"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_68BE25A60C31427AA74685ABFC3631AA"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\Search.png"
+            "TargetName" = "8:Search.png"
+            "Tag" = "8:"
+            "Folder" = "8:_4A2C8BA071A4467BA861D5F4B76D3A46"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{E4F2F62A-3940-4BF5-A031-F7FA98CAAFFA}:_699D30AEE441DE860F7489B1CE0C5562"
+            {
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:OpenNETCF, Version=2.1.0.0, Culture=neutral, PublicKeyToken=e60dbea84bb431b7"
+                "ScatterAssemblies"
+                {
+                    "_699D30AEE441DE860F7489B1CE0C5562"
+                    {
+                    "Name" = "8:OpenNETCF.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:OpenNETCF.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_5D83DF9BA96842788E2C251E28C6DDBC"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{E4F2F62A-3940-4BF5-A031-F7FA98CAAFFA}:_6D2B8CCAD98376FAB7F75BB0D2BE0997"
+            {
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Microsoft.WindowsCE.Forms, Version=3.5.0.0, Culture=neutral, PublicKeyToken=969db8053d3322ac"
+                "ScatterAssemblies"
+                {
+                    "_6D2B8CCAD98376FAB7F75BB0D2BE0997"
+                    {
+                    "Name" = "8:Microsoft.Windowsce.Forms.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:Microsoft.Windowsce.Forms.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_5D83DF9BA96842788E2C251E28C6DDBC"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:TRUE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_6E6C473A8B0544299B152C3BC31A3BCD"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\search_btn.png"
+            "TargetName" = "8:search_btn.png"
+            "Tag" = "8:"
+            "Folder" = "8:_EF5E65BA6C4E475697F33F58A6BBB96D"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_720E11274612401398BFDFABCCC0D0B2"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\star_out.png"
+            "TargetName" = "8:star_out.png"
+            "Tag" = "8:"
+            "Folder" = "8:_4A2C8BA071A4467BA861D5F4B76D3A46"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{E4F2F62A-3940-4BF5-A031-F7FA98CAAFFA}:_73FBE7C2BBD709C21E29357E7DC0434A"
+            {
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:ManilaDotNetSDK, Version=3.0.3723.35311, Culture=neutral"
+                "ScatterAssemblies"
+                {
+                    "_73FBE7C2BBD709C21E29357E7DC0434A"
+                    {
+                    "Name" = "8:ManilaDotNetSDK.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:ManilaDotNetSDK.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_5D83DF9BA96842788E2C251E28C6DDBC"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_74ADDB96D99F46D295338498450FBC70"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\Cast.png"
+            "TargetName" = "8:Cast.png"
+            "Tag" = "8:"
+            "Folder" = "8:_EF5E65BA6C4E475697F33F58A6BBB96D"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_7A48906E2C28465A8686C1152A39C998"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\TextInput_Large_Center.png"
+            "TargetName" = "8:TextInput_Large_Center.png"
+            "Tag" = "8:"
+            "Folder" = "8:_4A2C8BA071A4467BA861D5F4B76D3A46"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_7DAAFFA1426F40AC9004BBD5DEB68CEB"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\Loader3.jpg"
+            "TargetName" = "8:Loader3.jpg"
+            "Tag" = "8:"
+            "Folder" = "8:_4A2C8BA071A4467BA861D5F4B76D3A46"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_7DC38B26C25F46D892634BCC2D4F8C5C"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\Cast.png"
+            "TargetName" = "8:Cast.png"
+            "Tag" = "8:"
+            "Folder" = "8:_4A2C8BA071A4467BA861D5F4B76D3A46"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_7F39E09F59EE4749B57870378832FDEC"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\Trivia.png"
+            "TargetName" = "8:Trivia.png"
+            "Tag" = "8:"
+            "Folder" = "8:_4A2C8BA071A4467BA861D5F4B76D3A46"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_7FB2B1DDEAEE44FBB76D95F8193FD006"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\Actress.png"
+            "TargetName" = "8:Actress.png"
+            "Tag" = "8:"
+            "Folder" = "8:_EF5E65BA6C4E475697F33F58A6BBB96D"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_806D893A42AD42F28725F5FCBC7E6430"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\TextInput_Large_Left.png"
+            "TargetName" = "8:TextInput_Large_Left.png"
+            "Tag" = "8:"
+            "Folder" = "8:_EF5E65BA6C4E475697F33F58A6BBB96D"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_8288454B492F4B669F9047E4DC1FBB40"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\star_over.png"
+            "TargetName" = "8:star_over.png"
+            "Tag" = "8:"
+            "Folder" = "8:_4A2C8BA071A4467BA861D5F4B76D3A46"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{E4F2F62A-3940-4BF5-A031-F7FA98CAAFFA}:_87DEE54E4CF437EBFF75F5681DCF5CE9"
+            {
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:System.Data, Version=3.5.0.0, Culture=neutral, PublicKeyToken=969db8053d3322ac"
+                "ScatterAssemblies"
+                {
+                    "_87DEE54E4CF437EBFF75F5681DCF5CE9"
+                    {
+                    "Name" = "8:System.Data.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:System.Data.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_5D83DF9BA96842788E2C251E28C6DDBC"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:TRUE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_8BBE7C1DFCA3490298822AE24DCBDB78"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\TextInput_Small_Center.png"
+            "TargetName" = "8:TextInput_Small_Center.png"
+            "Tag" = "8:"
+            "Folder" = "8:_EF5E65BA6C4E475697F33F58A6BBB96D"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_8BEE2839FEFD4B62B0CFEA7A6C7AB10F"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\Loader7.jpg"
+            "TargetName" = "8:Loader7.jpg"
+            "Tag" = "8:"
+            "Folder" = "8:_4A2C8BA071A4467BA861D5F4B76D3A46"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_8CE5E299E3F1492DA63940FED197E4F9"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Translations\\German.xml"
+            "TargetName" = "8:German.xml"
+            "Tag" = "8:"
+            "Folder" = "8:_1362DA3F775C4C908F18D9CFCC990A26"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_8FA88591371846ADA28D24F5C9A62BA3"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\IMDbMobile.xml"
+            "TargetName" = "8:IMDbMobile.xml"
+            "Tag" = "8:"
+            "Folder" = "8:_5D83DF9BA96842788E2C251E28C6DDBC"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_92646AE83831456EB3BA7A3B1AD30385"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\SearchButton_Large.png"
+            "TargetName" = "8:SearchButton_Large.png"
+            "Tag" = "8:"
+            "Folder" = "8:_4A2C8BA071A4467BA861D5F4B76D3A46"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_930AF8E69BA4424599BBCE286FF6416A"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\Loader2.jpg"
+            "TargetName" = "8:Loader2.jpg"
+            "Tag" = "8:"
+            "Folder" = "8:_EF5E65BA6C4E475697F33F58A6BBB96D"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_93BC0ADF7C524BF8908A6F1186779DDA"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\TextInput_Small_Center.png"
+            "TargetName" = "8:TextInput_Small_Center.png"
+            "Tag" = "8:"
+            "Folder" = "8:_4A2C8BA071A4467BA861D5F4B76D3A46"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_9864DD5C2C1D4F95B740DB3193DC8C9B"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\ComingSoon.png"
+            "TargetName" = "8:ComingSoon.png"
+            "Tag" = "8:"
+            "Folder" = "8:_4A2C8BA071A4467BA861D5F4B76D3A46"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_98BDE0D72B504D3596A1653610D33612"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\Actor.png"
+            "TargetName" = "8:Actor.png"
+            "Tag" = "8:"
+            "Folder" = "8:_EF5E65BA6C4E475697F33F58A6BBB96D"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_9A740684FD514304AE6C733816DF8872"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\SearchButton_Large.png"
+            "TargetName" = "8:SearchButton_Large.png"
+            "Tag" = "8:"
+            "Folder" = "8:_EF5E65BA6C4E475697F33F58A6BBB96D"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_9AC76D8D6ABF49B3B1E299D199DE3316"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\ParentalGuide.png"
+            "TargetName" = "8:ParentalGuide.png"
+            "Tag" = "8:"
+            "Folder" = "8:_EF5E65BA6C4E475697F33F58A6BBB96D"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_9B390D075E7E42BF8060182FCE2DA832"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\Trailers.png"
+            "TargetName" = "8:Trailers.png"
+            "Tag" = "8:"
+            "Folder" = "8:_4A2C8BA071A4467BA861D5F4B76D3A46"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_9D0F07C6FDBD4A86829104B91FFDF590"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\TextInput_Large_Right.png"
+            "TargetName" = "8:TextInput_Large_Right.png"
+            "Tag" = "8:"
+            "Folder" = "8:_4A2C8BA071A4467BA861D5F4B76D3A46"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_9FAF6E48EFB54CDAA46330247547E093"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\IMDbMobile.ico"
+            "TargetName" = "8:IMDbMobile.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_5D83DF9BA96842788E2C251E28C6DDBC"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_A3A8E132A50940A1BAAAB110B0B6A6FB"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\IMDB_Logo_Large.png"
+            "TargetName" = "8:IMDB_Logo_Large.png"
+            "Tag" = "8:"
+            "Folder" = "8:_EF5E65BA6C4E475697F33F58A6BBB96D"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_A4F7D8A5A7164552A369A13FEBF08D20"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\MoreInfo.png"
+            "TargetName" = "8:MoreInfo.png"
+            "Tag" = "8:"
+            "Folder" = "8:_4A2C8BA071A4467BA861D5F4B76D3A46"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_A5EB8BEA82E94EE58E13606B85A7FF6D"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\Filmography.png"
+            "TargetName" = "8:Filmography.png"
+            "Tag" = "8:"
+            "Folder" = "8:_EF5E65BA6C4E475697F33F58A6BBB96D"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_A6400EA81C3E43A090667269A5FEC043"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\Close.png"
+            "TargetName" = "8:Close.png"
+            "Tag" = "8:"
+            "Folder" = "8:_4A2C8BA071A4467BA861D5F4B76D3A46"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_A6E1B8A8C0EB4C5AB805AD684130515A"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\TextInput_Small_Left.png"
+            "TargetName" = "8:TextInput_Small_Left.png"
+            "Tag" = "8:"
+            "Folder" = "8:_EF5E65BA6C4E475697F33F58A6BBB96D"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_A87A8DCC2E804AF9A4E25133A8A56CE9"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\star_over.png"
+            "TargetName" = "8:star_over.png"
+            "Tag" = "8:"
+            "Folder" = "8:_EF5E65BA6C4E475697F33F58A6BBB96D"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_A8956ABD086243BFA18153E7CEE3E71B"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\previous.png"
+            "TargetName" = "8:previous.png"
+            "Tag" = "8:"
+            "Folder" = "8:_4A2C8BA071A4467BA861D5F4B76D3A46"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_A9AA55ECDC3445E8B661B5AF9AC2A625"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\Continuity.png"
+            "TargetName" = "8:Continuity.png"
+            "Tag" = "8:"
+            "Folder" = "8:_EF5E65BA6C4E475697F33F58A6BBB96D"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_AB7D687E81AC49248230E3C2191EC84B"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\Director.png"
+            "TargetName" = "8:Director.png"
+            "Tag" = "8:"
+            "Folder" = "8:_EF5E65BA6C4E475697F33F58A6BBB96D"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_ADEDCC30D2114A9B84B726D0645E539C"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\Actor.png"
+            "TargetName" = "8:Actor.png"
+            "Tag" = "8:"
+            "Folder" = "8:_4A2C8BA071A4467BA861D5F4B76D3A46"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{E4F2F62A-3940-4BF5-A031-F7FA98CAAFFA}:_B0AE5966CA359B160F6366F2891070AE"
+            {
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:mscorlib, Version=3.5.0.0, Culture=neutral, PublicKeyToken=969db8053d3322ac"
+                "ScatterAssemblies"
+                {
+                    "_B0AE5966CA359B160F6366F2891070AE"
+                    {
+                    "Name" = "8:mscorlib.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:mscorlib.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_5D83DF9BA96842788E2C251E28C6DDBC"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:TRUE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_BA4A0D2267474C0596D76A6CF727844E"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\Loader3.jpg"
+            "TargetName" = "8:Loader3.jpg"
+            "Tag" = "8:"
+            "Folder" = "8:_EF5E65BA6C4E475697F33F58A6BBB96D"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_BC1C74E439BF4EF28D32DB35E17C4FF5"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\Photos.png"
+            "TargetName" = "8:Photos.png"
+            "Tag" = "8:"
+            "Folder" = "8:_EF5E65BA6C4E475697F33F58A6BBB96D"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_C85323C952D9412280C7C6A6721733DD"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\Loader2.jpg"
+            "TargetName" = "8:Loader2.jpg"
+            "Tag" = "8:"
+            "Folder" = "8:_4A2C8BA071A4467BA861D5F4B76D3A46"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_CED86308597D4DA4AF1E866CDA0DDF08"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\Loader6.jpg"
+            "TargetName" = "8:Loader6.jpg"
+            "Tag" = "8:"
+            "Folder" = "8:_EF5E65BA6C4E475697F33F58A6BBB96D"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_CEE8D79F6A174053AE2396CC8E54818E"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\UserReview.png"
+            "TargetName" = "8:UserReview.png"
+            "Tag" = "8:"
+            "Folder" = "8:_4A2C8BA071A4467BA861D5F4B76D3A46"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_CFB4BB33FF9F4CBA803984397CF1AF41"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\Director.png"
+            "TargetName" = "8:Director.png"
+            "Tag" = "8:"
+            "Folder" = "8:_4A2C8BA071A4467BA861D5F4B76D3A46"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_D37F092BCDCB40309EF4CA216B0B3FF7"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\TextInput_Small_Right.png"
+            "TargetName" = "8:TextInput_Small_Right.png"
+            "Tag" = "8:"
+            "Folder" = "8:_4A2C8BA071A4467BA861D5F4B76D3A46"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_D49FF9E1ABF64CE592FBA143B6F4C360"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\Quote.png"
+            "TargetName" = "8:Quote.png"
+            "Tag" = "8:"
+            "Folder" = "8:_EF5E65BA6C4E475697F33F58A6BBB96D"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_D6823F367FC745F7A9912CC97BC36A6C"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\about.png"
+            "TargetName" = "8:about.png"
+            "Tag" = "8:"
+            "Folder" = "8:_4A2C8BA071A4467BA861D5F4B76D3A46"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_D88716D5932445359152B0F092FB2A18"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\config.xml"
+            "TargetName" = "8:config.xml"
+            "Tag" = "8:"
+            "Folder" = "8:_EF5E65BA6C4E475697F33F58A6BBB96D"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_DAF20E4A97E04DF4859EB7C08F6C6076"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\Loader5.jpg"
+            "TargetName" = "8:Loader5.jpg"
+            "Tag" = "8:"
+            "Folder" = "8:_EF5E65BA6C4E475697F33F58A6BBB96D"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_DD40AF0967DF417482A157DC4194593F"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\Loader4.jpg"
+            "TargetName" = "8:Loader4.jpg"
+            "Tag" = "8:"
+            "Folder" = "8:_4A2C8BA071A4467BA861D5F4B76D3A46"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_E169CF5A69FA41A09337FDA310D95C95"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\next.png"
+            "TargetName" = "8:next.png"
+            "Tag" = "8:"
+            "Folder" = "8:_4A2C8BA071A4467BA861D5F4B76D3A46"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_E2B97825217949E69BBBABF106F1BCEA"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\ExternalReview.png"
+            "TargetName" = "8:ExternalReview.png"
+            "Tag" = "8:"
+            "Folder" = "8:_4A2C8BA071A4467BA861D5F4B76D3A46"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_E69BAD371D5B40E7A97CE72486013C2A"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\Loader6.jpg"
+            "TargetName" = "8:Loader6.jpg"
+            "Tag" = "8:"
+            "Folder" = "8:_4A2C8BA071A4467BA861D5F4B76D3A46"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_E74B5A3CA07444A6BBDDC09998191CFE"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\IMDB_Logo_Small.png"
+            "TargetName" = "8:IMDB_Logo_Small.png"
+            "Tag" = "8:"
+            "Folder" = "8:_EF5E65BA6C4E475697F33F58A6BBB96D"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_E865ED62F6114C6F9DB7AF0EA4062106"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\MoreInfo.png"
+            "TargetName" = "8:MoreInfo.png"
+            "Tag" = "8:"
+            "Folder" = "8:_EF5E65BA6C4E475697F33F58A6BBB96D"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_E951EB523E2C45C9BC694772F8A46048"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\Loader1.jpg"
+            "TargetName" = "8:Loader1.jpg"
+            "Tag" = "8:"
+            "Folder" = "8:_EF5E65BA6C4E475697F33F58A6BBB96D"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_EA9E2106A06B4CA3A7BE66E2E8C7232C"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\search_btn.png"
+            "TargetName" = "8:search_btn.png"
+            "Tag" = "8:"
+            "Folder" = "8:_4A2C8BA071A4467BA861D5F4B76D3A46"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_EAC11B4B990947D39E55CC85868E27D4"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\Loader4.jpg"
+            "TargetName" = "8:Loader4.jpg"
+            "Tag" = "8:"
+            "Folder" = "8:_EF5E65BA6C4E475697F33F58A6BBB96D"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_EEFC2E6B32814B1092FA9AD99D13F10F"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\TextInput_Large_Left.png"
+            "TargetName" = "8:TextInput_Large_Left.png"
+            "Tag" = "8:"
+            "Folder" = "8:_4A2C8BA071A4467BA861D5F4B76D3A46"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_F0E2492861BB45018AD94731968DCA24"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\Actress.png"
+            "TargetName" = "8:Actress.png"
+            "Tag" = "8:"
+            "Folder" = "8:_4A2C8BA071A4467BA861D5F4B76D3A46"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_F793CF5CA3244851B2677298D7E1B60D"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\Quote.png"
+            "TargetName" = "8:Quote.png"
+            "Tag" = "8:"
+            "Folder" = "8:_4A2C8BA071A4467BA861D5F4B76D3A46"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_F90569E709034A18AC214B8A49A99475"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Translations\\French.xml"
+            "TargetName" = "8:French.xml"
+            "Tag" = "8:"
+            "Folder" = "8:_1362DA3F775C4C908F18D9CFCC990A26"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{E4F2F62A-3940-4BF5-A031-F7FA98CAAFFA}:_FA387ABBF8F3E0CF840E9459DBF811DB"
+            {
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Microsoft.VisualBasic, Version=8.1.0.0, Culture=neutral, PublicKeyToken=969db8053d3322ac"
+                "ScatterAssemblies"
+                {
+                    "_FA387ABBF8F3E0CF840E9459DBF811DB"
+                    {
+                    "Name" = "8:Microsoft.VisualBasic.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:Microsoft.VisualBasic.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_5D83DF9BA96842788E2C251E28C6DDBC"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:TRUE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_FE48570C927242999089B860E43AF557"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\episodes.png"
+            "TargetName" = "8:episodes.png"
+            "Tag" = "8:"
+            "Folder" = "8:_4A2C8BA071A4467BA861D5F4B76D3A46"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+        }
+        "Folder"
+        {
+            "{F6DFDB62-1DD1-498B-89B7-27BAC542EE5A}:_4266873814824A7ABEE4EA2B260470ED"
+            {
+            "Name" = "8:#1916"
+            "Condition" = "8:"
+            "Property" = "8:%CE11%"
+                "Folders"
+                {
+                }
+            }
+            "{D5B00AC1-E6C3-4CC5-90FF-8E0F53D9E5E0}:_5D83DF9BA96842788E2C251E28C6DDBC"
+            {
+            "DefaultLocation" = "8:%InstallDir%"
+            "Name" = "8:#1920"
+            "Condition" = "8:"
+            "Property" = "8:%InstallDir%"
+                "Folders"
+                {
+                    "{5943FCFD-5B64-4EE4-96C9-4618EC95352A}:_1362DA3F775C4C908F18D9CFCC990A26"
+                    {
+                    "Name" = "8:Translations"
+                    "Condition" = "8:"
+                    "Property" = "8:_DF63EF6A332149C8A597D01DB1407237"
+                        "Folders"
+                        {
+                        }
+                    }
+                    "{5943FCFD-5B64-4EE4-96C9-4618EC95352A}:_77C05AE9564645BDBBBCE6D016C289E7"
+                    {
+                    "Name" = "8:Skins"
+                    "Condition" = "8:"
+                    "Property" = "8:_1E95FE3450684B089CDE2D36366704D8"
+                        "Folders"
+                        {
+                            "{5943FCFD-5B64-4EE4-96C9-4618EC95352A}:_4A2C8BA071A4467BA861D5F4B76D3A46"
+                            {
+                            "Name" = "8:Android"
+                            "Condition" = "8:"
+                            "Property" = "8:_096A75A3D83F49EDB5D108A5FFE661BD"
+                                "Folders"
+                                {
+                                }
+                            }
+                            "{5943FCFD-5B64-4EE4-96C9-4618EC95352A}:_EF5E65BA6C4E475697F33F58A6BBB96D"
+                            {
+                            "Name" = "8:Default"
+                            "Condition" = "8:"
+                            "Property" = "8:_BA6700B3467042DDA3B2202826D6F8E0"
+                                "Folders"
+                                {
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            "{F6DFDB62-1DD1-498B-89B7-27BAC542EE5A}:_C36B4DDEE6434F60BBB473A6B2976AEF"
+            {
+            "Name" = "8:#1911"
+            "Condition" = "8:"
+            "Property" = "8:%CE1%"
+                "Folders"
+                {
+                }
+            }
+        }
+        "Product"
+        {
+        "Name" = "8:Microsoft Visual Studio"
+        "ProductName" = "8:IMDb Mobile"
+        "Manufacturer" = "8:Blade0rz"
+        "OSVersionMin" = "8:4.0"
+        "OSVersionMax" = "8:6.99"
+        "NoUninstall" = "11:FALSE"
+        "Compress" = "11:TRUE"
+        "CESetupDLL" = "8:"
+        }
+        "ProjectOutput"
+        {
+            "{605BE39E-5046-48BD-AEC0-63C3A46626D5}:_367217E395754703A06F470E08CBA585"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\obj\\Release\\ImdbMobile.exe"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_5D83DF9BA96842788E2C251E28C6DDBC"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            "ProjectOutputGroupRegister" = "3:0"
+            "OutputConfiguration" = "8:"
+            "OutputGroupCanonicalName" = "8:Built"
+            "OutputProjectGuid" = "8:{E12B5447-3601-4E4E-9481-1FBFF5DF5E8F}"
+            "ShowKeyOutput" = "11:TRUE"
+                "ExcludeFilters"
+                {
+                }
+            }
+        }
+        "Registry"
+        {
+            "HKLM"
+            {
+                "Keys"
+                {
+                }
+            }
+            "HKCU"
+            {
+                "Keys"
+                {
+                }
+            }
+            "HKCR"
+            {
+                "Keys"
+                {
+                }
+            }
+            "HKU"
+            {
+                "Keys"
+                {
+                }
+            }
+            "HKPU"
+            {
+                "Keys"
+                {
+                }
+            }
+        }
+        "Shortcut"
+        {
+            "{971D45E9-E38C-49AC-B36E-4C5BEA533350}:_92216C0E55884FFCB52E23C511D74DC0"
+            {
+            "Name" = "8:IMDB Mobile"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "Target" = "8:_367217E395754703A06F470E08CBA585"
+            "Folder" = "8:_4266873814824A7ABEE4EA2B260470ED"
+            "WorkingFolder" = "8:_5D83DF9BA96842788E2C251E28C6DDBC"
+            }
+        }
+    }
+}
