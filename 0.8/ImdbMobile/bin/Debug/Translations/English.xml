@@ -108,5 +108,7 @@
     <Phrase English="There are no User Reviews for this title" ID="0098"><![CDATA[There are no User Reviews for this title]]></Phrase>
     <Phrase English="Full Cast" ID="0099"><![CDATA[Full Cast]]></Phrase>
     <Phrase English="Recent Searches" ID="0100"><![CDATA[Recent Searches]]></Phrase>
+    <Phrase English="Runtime" ID="0101"><![CDATA[Runtime]]></Phrase>
+    <Phrase English="Minutes" ID="0102"><![CDATA[Minutes]]></Phrase>
   </Phrases>
 </Translation>

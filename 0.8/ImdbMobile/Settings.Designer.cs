@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.chkUseBigImages = new System.Windows.Forms.CheckBox();
+            this.ddlSkin = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.chkUseAnimations = new System.Windows.Forms.CheckBox();
             this.chkEnableGZip = new System.Windows.Forms.CheckBox();
             this.chkDownloadThumbs = new System.Windows.Forms.CheckBox();
@@ -45,8 +48,6 @@
             this.mainMenu1 = new System.Windows.Forms.MainMenu();
             this.menuItem1 = new System.Windows.Forms.MenuItem();
             this.menuItem2 = new System.Windows.Forms.MenuItem();
-            this.ddlSkin = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,6 +57,7 @@
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.AutoScroll = true;
+            this.panel1.Controls.Add(this.chkUseBigImages);
             this.panel1.Controls.Add(this.ddlSkin);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.chkUseAnimations);
@@ -75,57 +77,79 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(474, 377);
             // 
+            // chkUseBigImages
+            // 
+            this.chkUseBigImages.Location = new System.Drawing.Point(4, 582);
+            this.chkUseBigImages.Name = "chkUseBigImages";
+            this.chkUseBigImages.Size = new System.Drawing.Size(440, 40);
+            this.chkUseBigImages.TabIndex = 33;
+            this.chkUseBigImages.Text = "Use Big Images";
+            // 
+            // ddlSkin
+            // 
+            this.ddlSkin.Location = new System.Drawing.Point(2, 34);
+            this.ddlSkin.Name = "ddlSkin";
+            this.ddlSkin.Size = new System.Drawing.Size(440, 41);
+            this.ddlSkin.TabIndex = 26;
+            // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(440, 41);
+            this.label1.Text = "Skin:";
+            // 
             // chkUseAnimations
             // 
-            this.chkUseAnimations.Location = new System.Drawing.Point(5, 546);
+            this.chkUseAnimations.Location = new System.Drawing.Point(4, 546);
             this.chkUseAnimations.Name = "chkUseAnimations";
-            this.chkUseAnimations.Size = new System.Drawing.Size(455, 40);
+            this.chkUseAnimations.Size = new System.Drawing.Size(440, 40);
             this.chkUseAnimations.TabIndex = 19;
             this.chkUseAnimations.Text = "Use Animations (BETA)";
             // 
             // chkEnableGZip
             // 
-            this.chkEnableGZip.Location = new System.Drawing.Point(5, 510);
+            this.chkEnableGZip.Location = new System.Drawing.Point(4, 510);
             this.chkEnableGZip.Name = "chkEnableGZip";
-            this.chkEnableGZip.Size = new System.Drawing.Size(455, 40);
+            this.chkEnableGZip.Size = new System.Drawing.Size(440, 40);
             this.chkEnableGZip.TabIndex = 18;
             this.chkEnableGZip.Text = "Enable GZip Compression";
             // 
             // chkDownloadThumbs
             // 
-            this.chkDownloadThumbs.Location = new System.Drawing.Point(5, 473);
+            this.chkDownloadThumbs.Location = new System.Drawing.Point(4, 473);
             this.chkDownloadThumbs.Name = "chkDownloadThumbs";
-            this.chkDownloadThumbs.Size = new System.Drawing.Size(455, 40);
+            this.chkDownloadThumbs.Size = new System.Drawing.Size(440, 40);
             this.chkDownloadThumbs.TabIndex = 17;
             this.chkDownloadThumbs.Text = "Download Thumbnails";
             // 
             // txtThumbnailCache
             // 
-            this.txtThumbnailCache.Location = new System.Drawing.Point(5, 426);
+            this.txtThumbnailCache.Location = new System.Drawing.Point(2, 426);
             this.txtThumbnailCache.Name = "txtThumbnailCache";
-            this.txtThumbnailCache.Size = new System.Drawing.Size(456, 41);
+            this.txtThumbnailCache.Size = new System.Drawing.Size(440, 41);
             this.txtThumbnailCache.TabIndex = 13;
             // 
             // lblThumbnailCache
             // 
             this.lblThumbnailCache.Location = new System.Drawing.Point(2, 392);
             this.lblThumbnailCache.Name = "lblThumbnailCache";
-            this.lblThumbnailCache.Size = new System.Drawing.Size(456, 41);
+            this.lblThumbnailCache.Size = new System.Drawing.Size(440, 41);
             this.lblThumbnailCache.Text = "Thumbnail Cache Path:";
             // 
             // txtCustomVideo
             // 
-            this.txtCustomVideo.Location = new System.Drawing.Point(5, 351);
+            this.txtCustomVideo.Location = new System.Drawing.Point(2, 351);
             this.txtCustomVideo.Name = "txtCustomVideo";
             this.txtCustomVideo.ReadOnly = true;
-            this.txtCustomVideo.Size = new System.Drawing.Size(456, 41);
+            this.txtCustomVideo.Size = new System.Drawing.Size(440, 41);
             this.txtCustomVideo.TabIndex = 11;
             // 
             // lblCustomVideo
             // 
             this.lblCustomVideo.Location = new System.Drawing.Point(2, 317);
             this.lblCustomVideo.Name = "lblCustomVideo";
-            this.lblCustomVideo.Size = new System.Drawing.Size(456, 41);
+            this.lblCustomVideo.Size = new System.Drawing.Size(440, 41);
             this.lblCustomVideo.Text = "Custom Video Player:";
             // 
             // ddlVideoPlayer
@@ -136,42 +160,42 @@
             this.ddlVideoPlayer.Items.Add("CorePlayer");
             this.ddlVideoPlayer.Location = new System.Drawing.Point(2, 273);
             this.ddlVideoPlayer.Name = "ddlVideoPlayer";
-            this.ddlVideoPlayer.Size = new System.Drawing.Size(456, 41);
+            this.ddlVideoPlayer.Size = new System.Drawing.Size(440, 41);
             this.ddlVideoPlayer.TabIndex = 6;
             // 
             // lblVideoPlayer
             // 
             this.lblVideoPlayer.Location = new System.Drawing.Point(2, 239);
             this.lblVideoPlayer.Name = "lblVideoPlayer";
-            this.lblVideoPlayer.Size = new System.Drawing.Size(456, 41);
+            this.lblVideoPlayer.Size = new System.Drawing.Size(440, 41);
             this.lblVideoPlayer.Text = "Video Player:";
             // 
             // ddlUILang
             // 
             this.ddlUILang.Location = new System.Drawing.Point(2, 195);
             this.ddlUILang.Name = "ddlUILang";
-            this.ddlUILang.Size = new System.Drawing.Size(456, 41);
+            this.ddlUILang.Size = new System.Drawing.Size(440, 41);
             this.ddlUILang.TabIndex = 3;
             // 
             // lblUILanguage
             // 
             this.lblUILanguage.Location = new System.Drawing.Point(2, 161);
             this.lblUILanguage.Name = "lblUILanguage";
-            this.lblUILanguage.Size = new System.Drawing.Size(456, 41);
+            this.lblUILanguage.Size = new System.Drawing.Size(440, 41);
             this.lblUILanguage.Text = "IMDb Mobile Language:";
             // 
             // ddlImdbLocale
             // 
             this.ddlImdbLocale.Location = new System.Drawing.Point(2, 114);
             this.ddlImdbLocale.Name = "ddlImdbLocale";
-            this.ddlImdbLocale.Size = new System.Drawing.Size(456, 41);
+            this.ddlImdbLocale.Size = new System.Drawing.Size(440, 41);
             this.ddlImdbLocale.TabIndex = 1;
             // 
             // lblImdbLocale
             // 
             this.lblImdbLocale.Location = new System.Drawing.Point(2, 80);
             this.lblImdbLocale.Name = "lblImdbLocale";
-            this.lblImdbLocale.Size = new System.Drawing.Size(456, 41);
+            this.lblImdbLocale.Size = new System.Drawing.Size(440, 41);
             this.lblImdbLocale.Text = "IMDb Locale:";
             // 
             // mainMenu1
@@ -188,20 +212,6 @@
             // 
             this.menuItem2.Text = "Cancel";
             this.menuItem2.Click += new System.EventHandler(this.menuItem2_Click);
-            // 
-            // ddlSkin
-            // 
-            this.ddlSkin.Location = new System.Drawing.Point(2, 34);
-            this.ddlSkin.Name = "ddlSkin";
-            this.ddlSkin.Size = new System.Drawing.Size(456, 41);
-            this.ddlSkin.TabIndex = 26;
-            // 
-            // label1
-            // 
-            this.label1.Location = new System.Drawing.Point(2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(456, 41);
-            this.label1.Text = "Skin:";
             // 
             // Settings
             // 
@@ -241,6 +251,7 @@
         private System.Windows.Forms.MenuItem menuItem2;
         private System.Windows.Forms.ComboBox ddlSkin;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox chkUseBigImages;
 
     }
 }

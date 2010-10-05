@@ -108,6 +108,7 @@
     <Phrase English="There are no User Reviews for this title" ID="0098"><![CDATA[Voor deze titel zijn geen gebruikersrecenties beschikbaar]]></Phrase>
     <Phrase English="Full Cast" ID="0099"><![CDATA[Volledige cast]]></Phrase>
     <Phrase English="Recent Searches" ID="0100"><![CDATA[Onlangs gezocht]]></Phrase>
-
+    <Phrase English="Runtime" ID="0101"><![CDATA[Speelduur]]></Phrase>
+    <Phrase English="Minutes" ID="0102"><![CDATA[Minuten]]></Phrase>
   </Phrases>
 </Translation>
