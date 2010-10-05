@@ -55,6 +55,15 @@ namespace ImdbMobile.Controls
             }
             mh.MovieTitle = title.Title;
             mh.Certificate = title.Certificate;
+            try
+            {
+                int runtime = int.Parse(title.Runtime);
+                mh.Runtime = (runtime / 60).ToString();
+            }
+            catch (Exception)
+            {
+                mh.Runtime = "";
+            }
             mh.Writer = "";
             if (title.Writers.Count > 0)
             {

@@ -3,6 +3,7 @@ using System.Linq;
 using System.Collections.Generic;
 using System.Text;
 using System.Drawing;
+using ImdbMobile.IMDBData;
 
 namespace ImdbMobile.UI
 {
@@ -61,12 +62,17 @@ namespace ImdbMobile.UI
         {
             this.Height = 0;
             this.Height += (PaddingBottom + PaddingTop);
+            int height = 100;
 
+            if (SettingsWrapper.GlobalSettings.UseBigImages)
+            {
+                height = 200;
+            }
             using (Graphics g = Parent.CreateGraphics())
             {
                 // Movie Title
                 SizeF TitleSize = Extensions.MeasureStringExtended(g, this.Name, _bold, (UI.WindowHandler.ParentForm.Width - 200));
-                this.Height = 100 + (int)TitleSize.Height + PaddingBottom + PaddingTop;
+                this.Height = height + (int)TitleSize.Height + PaddingBottom + PaddingTop;
             }
         }
 
@@ -86,17 +92,40 @@ namespace ImdbMobile.UI
             }
             else
             {
-                g.DrawRectangle(new Pen(Color.Black), new Rectangle(5, Bounds.Y + PaddingTop, 98, 140));
+                if (SettingsWrapper.GlobalSettings.UseBigImages)
+                {
+                    g.DrawRectangle(new Pen(Color.Black), new Rectangle(5, Bounds.Y + PaddingTop, 170, 243));
+                }
+                else
+                {
+                    g.DrawRectangle(new Pen(Color.Black), new Rectangle(5, Bounds.Y + PaddingTop, 98, 140));
+                }
             }
             StringFormat sf = new StringFormat();
             int TitleY = Bounds.Y + PaddingTop;
+            int TitleX = 108;
+
+            if (SettingsWrapper.GlobalSettings.UseBigImages)
+            {
+                TitleX = 189;
+            }
+
             SizeF TitleSize = Extensions.MeasureStringExtended(g, this.Name, _bold, (this.Bounds.Width - 200));
-            g.DrawString(this.Name, _bold, new SolidBrush(Color.Black), new RectangleF(15 + 108, TitleY, (this.Bounds.Width - 200), TitleSize.Height));
+            g.DrawString(this.Name, _bold, new SolidBrush(Color.Black), new RectangleF(15 + TitleX, TitleY, (this.Bounds.Width - 200), TitleSize.Height));
             TitleY += ((int)TitleSize.Height + 10);
-            g.DrawString(UI.Translations.GetTranslated("0081") + ":", _unbold, new SolidBrush(Color.Black), 15 + 108, (TitleY));
-            g.DrawString(this.RealName, _bold, new SolidBrush(Color.Black), 15 + 108, (22 + TitleY));
-            g.DrawString(UI.Translations.GetTranslated("0082") + ":", _unbold, new SolidBrush(Color.Black), 15 + 108, (49 + TitleY));
-            g.DrawString(this.Birthday, _bold, new SolidBrush(Color.Black), 15 + 108, (75 + TitleY));
+
+            g.DrawString(UI.Translations.GetTranslated("0081") + ":", _unbold, new SolidBrush(Color.Black), 15 + TitleX, (TitleY));
+            int imageWidth = 215;
+            if (!SettingsWrapper.GlobalSettings.UseBigImages)
+            {
+                imageWidth = 108;
+            }
+            SizeF RealNameSize = Extensions.MeasureStringExtended(g, this.RealName, _bold, (this.Bounds.Width - imageWidth));
+            g.DrawString(this.RealName, _bold, new SolidBrush(Color.Black), new RectangleF(15 + TitleX, 22 + TitleY, (this.Bounds.Width - imageWidth), RealNameSize.Height));
+            TitleY += ((int)RealNameSize.Height) - 22;
+
+            g.DrawString(UI.Translations.GetTranslated("0082") + ":", _unbold, new SolidBrush(Color.Black), 15 + TitleX, (49 + TitleY));
+            g.DrawString(this.Birthday, _bold, new SolidBrush(Color.Black), 15 + TitleX, (75 + TitleY));
         }
 
         public void OnMouseDown(int X, int Y, ref bool IsSamePoint)

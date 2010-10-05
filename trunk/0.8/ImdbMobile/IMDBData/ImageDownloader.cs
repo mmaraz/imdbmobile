@@ -90,7 +90,15 @@ namespace ImdbMobile.IMDBData
 
         private static string GetMoviePoster(string URL)
         {
-            return URL.Replace(".jpg", "SX108_SY154.jpg");
+            if (SettingsWrapper.GlobalSettings.UseBigImages)
+            {
+                return URL.Replace(".jpg", "SX189_SY270.jpg");
+            }
+            else
+            {
+                return URL.Replace(".jpg", "SX108_SY154.jpg");
+            }
+            
         }
 
         public static string DownloadImage(string URL)

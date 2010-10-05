@@ -104,6 +104,7 @@ namespace ImdbMobile
             this.txtThumbnailCache.Text = SettingsWrapper.GlobalSettings.CachePath;
             this.chkDownloadThumbs.Checked = SettingsWrapper.GlobalSettings.DownloadThumbnails;
             this.chkUseAnimations.Checked = SettingsWrapper.GlobalSettings.UseAnimations;
+            this.chkUseBigImages.Checked = SettingsWrapper.GlobalSettings.UseBigImages;
             this.chkEnableGZip.Checked = SettingsWrapper.GlobalSettings.UseCompression;
         }
 
@@ -162,8 +163,9 @@ namespace ImdbMobile
             SettingsWrapper.GlobalSettings.UILanguage = (string)this.ddlUILang.SelectedValue;
             SettingsWrapper.GlobalSettings.VideoPlayerPath = this.txtCustomVideo.Text;
             SettingsWrapper.GlobalSettings.UseAnimations = this.chkUseAnimations.Checked;
+            SettingsWrapper.GlobalSettings.UseBigImages = this.chkUseBigImages.Checked;
             SettingsWrapper.GlobalSettings.UseCompression = this.chkEnableGZip.Checked;
-            if ((string)this.ddlSkin.SelectedValue != SettingsWrapper.GlobalSettings.CurrentSkinName)
+            if (this.ddlSkin.SelectedItem.ToString() != SettingsWrapper.GlobalSettings.CurrentSkinName)
             {
                 MessageBox.Show("Changing Skins will require a restart of the application");
             }

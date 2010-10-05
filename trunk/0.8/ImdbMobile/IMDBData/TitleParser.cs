@@ -63,6 +63,7 @@ namespace ImdbMobile.IMDBData
                 title.Cast = ParseCast(Obj);
                 title.Plot = ParsePlot(Obj);
                 title.Trailer = ParseTrailers(Obj);
+                title.Cover = ParseImage(Obj);
             }
 
             return title;
