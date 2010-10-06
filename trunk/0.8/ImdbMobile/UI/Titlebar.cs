@@ -206,12 +206,12 @@ namespace ImdbMobile.UI
 
                     // Draw left edge
                     Size sLeft = Extensions.GetBitmapDimensions("TextInput_Small_Left");
-                    DestRect = new Rectangle(5, TextboxY, s.Width, s.Height);
+                    DestRect = new Rectangle(5, TextboxY, sLeft.Width, sLeft.Height);
                     Extensions.DrawBitmap(g, DestRect, "TextInput_Small_Left");
 
-
                     Size sRight = Extensions.GetBitmapDimensions("TextInput_Small_Right");
-                    DestRect = new Rectangle(TextboxX, TextboxY, s.Width, s.Height);
+                    TextboxX = Screen.PrimaryScreen.WorkingArea.Width - 5 - sRight.Width;
+                    DestRect = new Rectangle(TextboxX, TextboxY, sRight.Width, sRight.Height);
                     Extensions.DrawBitmap(g, DestRect, "TextInput_Small_Right");
 
                     Size sCenter = Extensions.GetBitmapDimensions("TextInput_Small_Center");
