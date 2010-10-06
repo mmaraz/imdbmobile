@@ -1,4 +1,10 @@
-﻿v0.7.5 - Changelog
+﻿TODO list:
+Put movie covers on filmograpy control. (movies of actor)
+
+v0.7.6 - Changelog
+- Fixed the QVGA support.
+
+v0.7.5 - Changelog
 - Fixed the "Cannot convert integer to string" error.
 - Popup "Changing Skins will require a restart of the application" in settings menu was always popping up after save. now only when skin is changed.
 - Added languages (Czech, Dutch, French, German)
