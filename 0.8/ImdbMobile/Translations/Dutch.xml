@@ -15,9 +15,9 @@
     <Phrase English="Loading Cast" ID="0010"><![CDATA[Cast wordt geopend]]></Phrase>
     <Phrase English="There is no Cast available for this title" ID="0011"><![CDATA[Voor deze titel is geen cast beschikbaar]]></Phrase>
     <Phrase English="Cast" ID="0012"><![CDATA[Cast]]></Phrase>
-    <Phrase English="Loading Coming Soon" ID="0013"><![CDATA[Coming Soon wordt geopend]]></Phrase>
-    <Phrase English="There are no titles in the Coming Soon section" ID="0014"><![CDATA[Er zijn geen titels beschikbaar in Coming Soon]]></Phrase>
-    <Phrase English="Coming Soon" ID="0015"><![CDATA[Coming Soon]]></Phrase>
+    <Phrase English="Loading Coming Soon" ID="0013"><![CDATA[Binnenkort verwacht wordt geopend]]></Phrase>
+    <Phrase English="There are no titles in the Coming Soon section" ID="0014"><![CDATA[Er zijn geen titels beschikbaar in Binnenkort verwacht]]></Phrase>
+    <Phrase English="Coming Soon" ID="0015"><![CDATA[Binnenkort verwacht]]></Phrase>
     <Phrase English="Air Date" ID="0016"><![CDATA[Uitgezonden op]]></Phrase>
     <Phrase English="Episode List" ID="0017"><![CDATA[Alle afleveringen]]></Phrase>
     <Phrase English="Loading Filmography" ID="0018"><![CDATA[Filmografie wordt geopend]]></Phrase>
@@ -32,7 +32,7 @@
     <Phrase English="Video Game" ID="0026"><![CDATA[Computerspel]]></Phrase>
     <Phrase English="Searching IMDb" ID="0027"><![CDATA[Zoeken in IMDb]]></Phrase>
     <Phrase English="Top 250" ID="0028"><![CDATA[Top 250]]></Phrase>
-    <Phrase English="Coming Soon" ID="0029"><![CDATA[Coming Soon]]></Phrase>
+    <Phrase English="Coming Soon" ID="0029"><![CDATA[Binnenkort verwacht]]></Phrase>
     <Phrase English="Settings" ID="0030"><![CDATA[Instellingen]]></Phrase>
     <Phrase English="Exit" ID="0031"><![CDATA[Afsluiten]]></Phrase>
     <Phrase English="IMDb Mobile" ID="0032"><![CDATA[IMDb Mobile]]></Phrase>
@@ -110,5 +110,25 @@
     <Phrase English="Recent Searches" ID="0100"><![CDATA[Onlangs gezocht]]></Phrase>
     <Phrase English="Runtime" ID="0101"><![CDATA[Speelduur]]></Phrase>
     <Phrase English="Minutes" ID="0102"><![CDATA[Minuten]]></Phrase>
+    <Phrase English="Use Big Images" ID="0103"><![CDATA[Gebruik grotere plaatjes]]></Phrase>
+    <Phrase English="Skin" ID="0104"><![CDATA[Uiterlijk]]></Phrase>
+    <Phrase English="Use Animations (BETA)" ID="0105"><![CDATA[Gebruik animaties (BETA)]]></Phrase>
+    <Phrase English="Enable GZip Compression" ID="0106"><![CDATA[Gebruik GZip Compressie]]></Phrase>
+    <Phrase English="Download Thumbnails" ID="0107"><![CDATA[Download Thumbnails]]></Phrase>
+    <Phrase English="Thumbnail Cache Path" ID="0108"><![CDATA[Thumbnail Cache Path]]></Phrase>
+    <Phrase English="Custom Video Player" ID="0109"><![CDATA[Custom Video Player]]></Phrase>
+    <Phrase English="Video Player" ID="0110"><![CDATA[Video Speler]]></Phrase>
+    <Phrase English="IMDb Mobile Language" ID="0111"><![CDATA[IMDb Mobile Taal]]></Phrase>
+    <Phrase English="IMDb Locale" ID="0112"><![CDATA[IMDb Locale]]></Phrase>
+    <Phrase English="Changing Skin or language will require a restart of the application" ID="0113"><![CDATA[Het veranderen van uiterlijk of taal vergt een herstart van de applicatie]]></Phrase>
+    <Phrase English="Producer" ID="0114"><![CDATA[Producent]]></Phrase>
+    <Phrase English="Director" ID="0115"><![CDATA[Regisseur]]></Phrase>
+    <Phrase English="Actor" ID="0116"><![CDATA[Acteur]]></Phrase>
+    <Phrase English="Actress" ID="0117"><![CDATA[Actrice]]></Phrase>
+    <Phrase English="Writer" ID="0118"><![CDATA[Schrijver]]></Phrase>
+    <Phrase English="Thanks" ID="0119"><![CDATA[Bedankt]]></Phrase>
+    <Phrase English="Self" ID="0120"><![CDATA[Zichzelf]]></Phrase>
+    <Phrase English="Soundtrack" ID="0121"><![CDATA[Soundtrack]]></Phrase>
+    <Phrase English="Bottom 100" ID="0122"><![CDATA[Bottom 100]]></Phrase>
   </Phrases>
 </Translation>

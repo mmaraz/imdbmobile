@@ -67,16 +67,16 @@ namespace ImdbMobile.IMDBData
 
         private ImdbCover ParseHeadshot(JToken data)
         {
+            ImdbCover ic = new ImdbCover();
             if (General.ContainsKey(data, "image"))
             {
                 JToken image = data["image"];
-                ImdbCover ic = new ImdbCover();
                 ic.URL = (string)image["url"];
                 ic.Width = (int)image["width"];
                 ic.Height = (int)image["height"];
                 return ic;
             }
-            return null;
+            return ic;
         }
 
         private string ParseBio(JToken data)

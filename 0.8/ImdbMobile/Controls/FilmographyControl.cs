@@ -63,8 +63,20 @@ namespace ImdbMobile.Controls
                     case "Actress": ab.Icon = "Actress"; break;
                     default: ab.Icon = "MiscCrew"; break;
                 }
+
+                switch (ikg.Label)
+                {
+                    case "Producer": ab.Text = UI.Translations.GetTranslated("0114"); break;
+                    case "Director": ab.Text = UI.Translations.GetTranslated("0115"); break;
+                    case "Actor": ab.Text = UI.Translations.GetTranslated("0116"); break;
+                    case "Actress": ab.Text = UI.Translations.GetTranslated("0117"); break;
+                    case "Writer": ab.Text = UI.Translations.GetTranslated("0118"); break;
+                    case "Thanks": ab.Text = UI.Translations.GetTranslated("0119"); break;
+                    case "Self": ab.Text = UI.Translations.GetTranslated("0120"); break;
+                    case "Soundtrack": ab.Text = UI.Translations.GetTranslated("0121"); break;
+                    default: ab.Text = ikg.Label; break;
+                }
                 ab.YIndex = this.CurrentActor.KnownForFull.IndexOf(ikg);
-                ab.Text = ikg.Label;
                 ab.Parent = this.kListControl1;
                 ab.MouseUp += new ImdbMobile.UI.ActionButton.MouseEvent(ab_MouseUp);
                 ab.CalculateHeight();
@@ -77,6 +89,7 @@ namespace ImdbMobile.Controls
         {
             FilmographyListControl flc = new FilmographyListControl(this.CurrentActor.KnownForFull[Sender.YIndex].KnownForList);
             UI.WindowHandler.OpenForm(flc);
+            flc.LoadImdbInformation();
         }
 
         private void LoadImdbInformation()

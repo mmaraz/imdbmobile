@@ -410,6 +410,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_8055A577EFE44E93BF62362C36E2F02F"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_806D893A42AD42F28725F5FCBC7E6430"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -495,6 +501,12 @@
         "Entry"
         {
         "MsmKey" = "8:_A6E1B8A8C0EB4C5AB805AD684130515A"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_A7AF948D03654ADE8D5BCB0A6E617688"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -1572,6 +1584,24 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_8055A577EFE44E93BF62362C36E2F02F"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Cache\\no_image_big.gif"
+            "TargetName" = "8:no_image_big.gif"
+            "Tag" = "8:"
+            "Folder" = "8:_A2D45EFB57A6459ABA672C50D38FC93A"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{BA458234-9B71-4F46-8107-E91156377184}:_806D893A42AD42F28725F5FCBC7E6430"
             {
             "SourcePath" = "8:..\\ImdbMobile\\Skins\\Default\\TextInput_Large_Left.png"
@@ -1804,6 +1834,24 @@
             "TargetName" = "8:TextInput_Small_Left.png"
             "Tag" = "8:"
             "Folder" = "8:_EF5E65BA6C4E475697F33F58A6BBB96D"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{BA458234-9B71-4F46-8107-E91156377184}:_A7AF948D03654ADE8D5BCB0A6E617688"
+            {
+            "SourcePath" = "8:..\\ImdbMobile\\Cache\\no_image_small.gif"
+            "TargetName" = "8:no_image_small.gif"
+            "Tag" = "8:"
+            "Folder" = "8:_A2D45EFB57A6459ABA672C50D38FC93A"
             "Condition" = "8:"
             "Vital" = "11:TRUE"
             "ReadOnly" = "11:FALSE"
@@ -2180,6 +2228,15 @@
                             }
                         }
                     }
+                    "{5943FCFD-5B64-4EE4-96C9-4618EC95352A}:_A2D45EFB57A6459ABA672C50D38FC93A"
+                    {
+                    "Name" = "8:Cache"
+                    "Condition" = "8:"
+                    "Property" = "8:_81D888A534724865998E73E4AE79EED3"
+                        "Folders"
+                        {
+                        }
+                    }
                 }
             }
             "{F6DFDB62-1DD1-498B-89B7-27BAC542EE5A}:_C36B4DDEE6434F60BBB473A6B2976AEF"
@@ -2196,7 +2253,7 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:IMDb Mobile"
-        "Manufacturer" = "8:Blade0rz"
+        "Manufacturer" = "8:Blade0rz & The Darkman"
         "OSVersionMin" = "8:4.0"
         "OSVersionMax" = "8:6.99"
         "NoUninstall" = "11:FALSE"

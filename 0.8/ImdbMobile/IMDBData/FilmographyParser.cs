@@ -84,6 +84,16 @@ namespace ImdbMobile.IMDBData
                                 case "tv_series": kf.Type = ImdbTitle.TitleType.TVSeries; break;
                                 case "video_game": kf.Type = ImdbTitle.TitleType.VideoGame; break;
                             }
+
+                            if (General.ContainsKey(title, "image"))
+                            {
+                                ImdbCover ic = new ImdbCover();
+                                ic.URL = (string)title["image"]["url"];
+                                ic.Width = int.Parse(title["image"]["width"].ToString());
+                                ic.Height = int.Parse(title["image"]["height"].ToString());
+                                kf.Cover = ic;
+                            }
+
                             kf.Year = (string)title["year"];
                             kf.TitleAttribute = Label;
                             ikg.KnownForList.Add(kf);

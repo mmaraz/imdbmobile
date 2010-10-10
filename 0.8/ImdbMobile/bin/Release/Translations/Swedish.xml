@@ -1,8 +1,8 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <Translation>
   <Name English="Svenska"></Name>
-  <Phrases>
-    <Phrase English="Loading Actor Info" ID="0001"><![CDATA[Laddar info om skådespelare]]></Phrase>
+   <Phrases>
+     <Phrase English="Loading Actor Info" ID="0001"><![CDATA[Laddar skådespelareinfo.]]></Phrase>
     <Phrase English="Please Wait" ID="0002"><![CDATA[Var god vänta]]></Phrase>
     <!--Context: "Bio" / Biography -->
     <Phrase English="Bio" ID="0003"><![CDATA[Bio]]></Phrase>
@@ -71,44 +71,64 @@
     <Phrase English="Download Thumbnails?" ID="0063"><![CDATA[Ladda ner miniatyrer?]]></Phrase>
     <Phrase English="Default Video Player" ID="0064"><![CDATA[Standard videospelare]]></Phrase>
     <Phrase English="Custom Video Player" ID="0065"><![CDATA[Egen videospelare]]></Phrase>
-    <Phrase English="Command Line Arguments" ID="0066"><![CDATA[Kommandorad argument]]></Phrase>
+    <Phrase English="Command Line Arguments" ID="0066"><![CDATA[Kommandorad-argument]]></Phrase>
     <Phrase English="Download Images To" ID="0067"><![CDATA[Ladda ner bilder också]]></Phrase>
     <Phrase English="Loading Top 250" ID="0068"><![CDATA[Laddar topp 250]]></Phrase>
     <Phrase English="Votes" ID="0069"><![CDATA[Röster]]></Phrase>
     <!-- Context: "Watch Trailer (Low Resolution)" -->
-    <Phrase English="Watch Trailer (Low-Res)" ID="0070"><![CDATA[Se på trailer (Lågupplösning)]]></Phrase>
+    <Phrase English="Watch Trailer (Low-Res)" ID="0070"><![CDATA[Se på trailer (Låg kvalite)]]></Phrase>
     <!-- Context: "Watch Trailer (High Resolution)" -->
-    <Phrase English="Watch Trailer (High-Res)" ID="0071"><![CDATA[Se på trailer (Högupplösning)]]></Phrase>
-    <Phrase English="There are no Trailers available for this title" ID="0072"><![CDATA[Det finns inga tillgängliga trailers på denna titel]]></Phrase>
+    <Phrase English="Watch Trailer (High-Res)" ID="0071"><![CDATA[Se på trailer (Hög kvalite)]]></Phrase>
+    <Phrase English="There are no Trailers available for this title" ID="0072"><![CDATA[Det finns inga tillgängliga trailers för denna titel]]></Phrase>
     <Phrase English="Downloading Trailer Info" ID="0073"><![CDATA[Laddar ner trailer-information]]></Phrase>
     <Phrase English="Loading Trivia" ID="0074"><![CDATA[Laddar trivialt]]></Phrase>
-    <Phrase English="Loading Actor Trivia" ID="0075"><![CDATA[Laddar skådespelar-trivialt]]></Phrase>
-    <Phrase English="Loading Movie Trivia" ID="0076"><![CDATA[Laddar film-trivialt]]></Phrase>
-    <Phrase English="There is no Trivia available for this actor" ID="0077"><![CDATA[Det finns inget trivialt tillgängligt på denna skådespelaren]]></Phrase>
-    <Phrase English="There is no Trivia available for this title" ID="0078"><![CDATA[Det finns inget trivialt tillgängligt på denna titel]]></Phrase>
+    <Phrase English="Loading Actor Trivia" ID="0075"><![CDATA[Laddar trivialt om skådespelar]]></Phrase>
+    <Phrase English="Loading Movie Trivia" ID="0076"><![CDATA[Laddar trivialt om film]]></Phrase>
+    <Phrase English="There is no Trivia available for this actor" ID="0077"><![CDATA[Det finns inget trivialt tillgängligt för denna skådespelaren]]></Phrase>
+    <Phrase English="There is no Trivia available for this title" ID="0078"><![CDATA[Det finns inget trivialt tillgängligt för denna titel]]></Phrase>
     <Phrase English="An error has occurred" ID="0079"><![CDATA[Ett fel har uppstått]]></Phrase>
     <Phrase English="Search For" ID="0080"><![CDATA[Sök efter]]></Phrase>
-    <Phrase English="Real Name" ID="0081"><![CDATA[Ritkigt namn]]></Phrase>
+    <Phrase English="Real Name" ID="0081"><![CDATA[Riktiga namn]]></Phrase>
     <Phrase English="Birthday" ID="0082"><![CDATA[Födelsedag]]></Phrase>
     <Phrase English="Directed By" ID="0083"><![CDATA[Regiserats av]]></Phrase>
-    <Phrase English="Written By" ID="0084"><![CDATA[Skriven av]]></Phrase>
+    <Phrase English="Written By" ID="0084"><![CDATA[Skrivits av]]></Phrase>
     <Phrase English="Genres" ID="0085"><![CDATA[Genre]]></Phrase>
-    <Phrase English="Certificate" ID="0086"><![CDATA[Certifikat]]></Phrase>
+    <Phrase English="Certificate" ID="0086"><![CDATA[Åldersgräns]]></Phrase>
     <Phrase English="Stage" ID="0087"><![CDATA[Scen]]></Phrase>
-    <Phrase English="Loading Movie Info" ID="0088"><![CDATA[Loading Movie Info]]></Phrase>
-    <Phrase English="About" ID="0089"><![CDATA[About]]></Phrase>
-    <Phrase English="User Reviews" ID="0090"><![CDATA[User Reviews]]></Phrase>
-    <Phrase English="External Reviews" ID="0091"><![CDATA[External Reviews]]></Phrase>
-    <Phrase English="Parental Guide" ID="0092"><![CDATA[Parental Guide]]></Phrase>
-    <Phrase English="Loading Parental Guide" ID="0093"><![CDATA[Loading Parental Guide]]></Phrase>
-    <Phrase English="Loading External Reviews" ID="0094"><![CDATA[Loading External Reviews]]></Phrase>
-    <Phrase English="Loading User Reviews" ID="0095"><![CDATA[Loading User Reviews]]></Phrase>
+    <Phrase English="Loading Movie Info" ID="0088"><![CDATA[Laddar filminfo.]]></Phrase>
+    <Phrase English="About" ID="0089"><![CDATA[Om]]></Phrase>
+    <Phrase English="User Reviews" ID="0090"><![CDATA[Användar-recension]]></Phrase>
+    <Phrase English="External Reviews" ID="0091"><![CDATA[Externa recensioner]]></Phrase>
+    <Phrase English="Parental Guide" ID="0092"><![CDATA[Föräldraguide]]></Phrase>
+    <Phrase English="Loading Parental Guide" ID="0093"><![CDATA[Laddar föräldraguide]]></Phrase>
+    <Phrase English="Loading External Reviews" ID="0094"><![CDATA[Laddar externa recensioner]]></Phrase>
+    <Phrase English="Loading User Reviews" ID="0095"><![CDATA[Laddar användar-recensioner]]></Phrase>
     <Phrase English="HD 480p" ID="0096"><![CDATA[HD 480p]]></Phrase>
     <Phrase English="HD 720p" ID="0097"><![CDATA[HD 720p]]></Phrase>
-    <Phrase English="There are no User Reviews for this title" ID="0098"><![CDATA[There are no User Reviews for this title]]></Phrase>
-    <Phrase English="Full Cast" ID="0099"><![CDATA[Full Cast]]></Phrase>
-    <Phrase English="Recent Searches" ID="0100"><![CDATA[Recent Searches]]></Phrase>
-    <Phrase English="Runtime" ID="0101"><![CDATA[Runtime]]></Phrase>
+    <Phrase English="There are no User Reviews for this title" ID="0098"><![CDATA[Det finns inga användar-recensioner för denna titel]]></Phrase>
+    <Phrase English="Full Cast" ID="0099"><![CDATA[Hela rollistan]]></Phrase>
+    <Phrase English="Recent Searches" ID="0100"><![CDATA[Senaste sökningar]]></Phrase>
+    <Phrase English="Runtime" ID="0101"><![CDATA[Speltid]]></Phrase>
     <Phrase English="Minutes" ID="0102"><![CDATA[Minuter]]></Phrase>
+    <Phrase English="Use Big Images" ID="0103"><![CDATA[Använd stora bilder]]></Phrase>
+    <Phrase English="Skin" ID="0104"><![CDATA[Teman]]></Phrase>
+    <Phrase English="Use Animations (BETA)" ID="0105"><![CDATA[Används animationer (BETA)]]></Phrase>
+    <Phrase English="Enable GZip Compression" ID="0106"><![CDATA[Aktivera GZip Komprimering]]></Phrase>
+    <Phrase English="Download Thumbnails" ID="0107"><![CDATA[Ladda ner miniatyrer]]></Phrase>
+    <Phrase English="Thumbnail Cache Path" ID="0108"><![CDATA[Lagringsplats för miniatyrer]]></Phrase>
+    <Phrase English="Custom Video Player" ID="0109"><![CDATA[Egen videospelare]]></Phrase>
+    <Phrase English="Video Player" ID="0110"><![CDATA[Videospelare]]></Phrase>
+    <Phrase English="IMDb Mobile Language" ID="0111"><![CDATA[IMDb Mobil språk]]></Phrase>
+    <Phrase English="IMDb Locale" ID="0112"><![CDATA[IMDb språk]]></Phrase>
+    <Phrase English="Changing Skin or language will require a restart of the application" ID="0113"><![CDATA[Det krävs en omstart av programmet vid ändring av tema eller språk.]]></Phrase>
+    <Phrase English="Producer" ID="0114"><![CDATA[Producent]]></Phrase>
+    <Phrase English="Director" ID="0115"><![CDATA[Regissör]]></Phrase>
+    <Phrase English="Actor" ID="0116"><![CDATA[Skådespelare]]></Phrase>
+    <Phrase English="Actress" ID="0117"><![CDATA[Skådespelerska]]></Phrase>
+    <Phrase English="Writer" ID="0118"><![CDATA[Författare]]></Phrase>
+    <Phrase English="Thanks" ID="0119"><![CDATA[Tack till]]></Phrase>
+    <Phrase English="Self" ID="0120"><![CDATA[Sig själv]]></Phrase>
+    <Phrase English="Soundtrack" ID="0121"><![CDATA[Soundtrack]]></Phrase>
+    <Phrase English="Bottom 100" ID="0122"><![CDATA[100 sämsta]]></Phrase>
   </Phrases>
 </Translation>

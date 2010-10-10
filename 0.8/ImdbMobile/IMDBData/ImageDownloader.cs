@@ -34,7 +34,26 @@ namespace ImdbMobile.IMDBData
         public void Download()
         {
             string Path = ImageDownloader.DownloadImage(_url);
-            if (Path != null)
+
+            if (string.IsNullOrEmpty(Path))
+            {
+                if (SettingsWrapper.GlobalSettings.UseBigImages)
+                {
+                    Path = SettingsWrapper.GlobalSettings.CachePath + "\\no_image_big.gif";
+                }
+                else
+                {
+                    Path = SettingsWrapper.GlobalSettings.CachePath + "\\no_image_small.gif";
+                }
+                System.Drawing.Image i = new System.Drawing.Bitmap(Path);
+                try
+                {
+                    UpdateIcon ui = new UpdateIcon(Update);
+                    Parent.Invoke(ui, new object[] { i });
+                }
+                catch (ObjectDisposedException) { }
+            }
+            else
             {
                 System.Drawing.Image i = new System.Drawing.Bitmap(Path);
                 System.IO.File.Delete(Path);

@@ -97,7 +97,6 @@ C:\Projects\IMDb Mobile\0.8\ImdbMobile\bin\Debug\Skins\Android\config.xml
 C:\Projects\IMDb Mobile\0.8\ImdbMobile\bin\Debug\Skins\Android\Continuity.png
 C:\Projects\IMDb Mobile\0.8\ImdbMobile\bin\Debug\Skins\Android\Director.png
 C:\Projects\IMDb Mobile\0.8\ImdbMobile\bin\Debug\Skins\Android\episodes.png
-C:\Projects\IMDb Mobile\0.8\ImdbMobile\bin\Debug\Skins\Android\ExternalReviews.png
 C:\Projects\IMDb Mobile\0.8\ImdbMobile\bin\Debug\Skins\Android\Filmography.png
 C:\Projects\IMDb Mobile\0.8\ImdbMobile\bin\Debug\Skins\Android\IMDB_Logo_Large.png
 C:\Projects\IMDb Mobile\0.8\ImdbMobile\bin\Debug\Skins\Android\IMDB_Logo_Small.png
@@ -115,7 +114,6 @@ C:\Projects\IMDb Mobile\0.8\ImdbMobile\bin\Debug\Skins\Android\next.png
 C:\Projects\IMDb Mobile\0.8\ImdbMobile\bin\Debug\Skins\Android\ParentalGuide.png
 C:\Projects\IMDb Mobile\0.8\ImdbMobile\bin\Debug\Skins\Android\Photos.png
 C:\Projects\IMDb Mobile\0.8\ImdbMobile\bin\Debug\Skins\Android\Producer.png
-C:\Projects\IMDb Mobile\0.8\ImdbMobile\bin\Debug\Skins\Android\Quotes.png
 C:\Projects\IMDb Mobile\0.8\ImdbMobile\bin\Debug\Skins\Android\Search.png
 C:\Projects\IMDb Mobile\0.8\ImdbMobile\bin\Debug\Skins\Android\SearchButton_Large.png
 C:\Projects\IMDb Mobile\0.8\ImdbMobile\bin\Debug\Skins\Android\SearchButton_Small.png
@@ -132,3 +130,7 @@ C:\Projects\IMDb Mobile\0.8\ImdbMobile\bin\Debug\Skins\Android\TextInput_Small_R
 C:\Projects\IMDb Mobile\0.8\ImdbMobile\bin\Debug\Skins\Android\Trailers.png
 C:\Projects\IMDb Mobile\0.8\ImdbMobile\bin\Debug\Skins\Android\Trivia.png
 C:\Projects\IMDb Mobile\0.8\ImdbMobile\bin\Debug\Skins\Android\UserReview.png
+C:\Projects\IMDb Mobile\0.8\ImdbMobile\bin\Debug\Cache\no_image_big.gif
+C:\Projects\IMDb Mobile\0.8\ImdbMobile\bin\Debug\Cache\no_image_small.gif
+C:\Projects\IMDb Mobile\0.8\ImdbMobile\bin\Debug\Skins\Android\ExternalReview.png
+C:\Projects\IMDb Mobile\0.8\ImdbMobile\bin\Debug\Skins\Android\Quote.png
