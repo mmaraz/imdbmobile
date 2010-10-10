@@ -189,7 +189,6 @@ namespace ImdbMobile.Controls
                 EpisodeButton.MouseUp += new ImdbMobile.UI.ActionButton.MouseEvent(EpisodeButton_MouseUp);
                 this.kListControl1.Items.Add(EpisodeButton);
             }
-
         }
 
         void ParentalButton_MouseUp(int X, int Y, MichyPrima.ManilaDotNetSDK.KListControl Parent, ImdbMobile.UI.ActionButton Sender)
@@ -250,6 +249,7 @@ namespace ImdbMobile.Controls
         {
             CastControl c = new CastControl(CurrentTitle);
             UI.WindowHandler.OpenForm(c);
+            c.LoadImdbInformation();
         }
         public void LoadMovieData()
         {

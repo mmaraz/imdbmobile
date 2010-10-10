@@ -13,6 +13,7 @@ namespace ImdbMobile.Controls
     public partial class FilmographyListControl : ImdbMobile.UI.SlidingList
     {
         private List<ImdbKnownFor> KnownForList;
+        ImageDownloader id = new ImageDownloader();
 
         private void Update(int Current, int Total)
         {
@@ -30,13 +31,18 @@ namespace ImdbMobile.Controls
             this.KnownForList = KnownForList;
             InitializeComponent();
 
+            this.ImageDownloaderList.Add(id);
+
             this.Text = UI.Translations.GetTranslated("0020");
 
             UI.KListFunctions.ShowLoading(UI.Translations.GetTranslated("0018") + ".\n" + UI.Translations.GetTranslated("0002") + "...", this.LoadingList);
-
-            ShowData();
         }
 
+        public void LoadImdbInformation()
+        {
+            ShowData();
+            id.DownloadImages(KnownForList, this.kListControl1, this.ParentForm);
+        }
 
         private void ShowData()
         {

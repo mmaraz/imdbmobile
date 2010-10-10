@@ -42,8 +42,6 @@ namespace ImdbMobile.Controls
             this.Text = UI.Translations.GetTranslated("0012");
 
             UI.KListFunctions.ShowLoading(UI.Translations.GetTranslated("0010") + ".\n" + UI.Translations.GetTranslated("0002") + "...", this.LoadingList);
-
-            LoadImdbInformation();
         }
 
         private void SetError(string Message)
@@ -153,7 +151,7 @@ namespace ImdbMobile.Controls
             GetFullCast();
         }
 
-        private void LoadImdbInformation()
+        public void LoadImdbInformation()
         {
             ShowData();
         }

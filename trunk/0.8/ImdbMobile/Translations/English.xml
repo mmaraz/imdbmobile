@@ -110,5 +110,25 @@
     <Phrase English="Recent Searches" ID="0100"><![CDATA[Recent Searches]]></Phrase>
     <Phrase English="Runtime" ID="0101"><![CDATA[Runtime]]></Phrase>
     <Phrase English="Minutes" ID="0102"><![CDATA[Minutes]]></Phrase>
+    <Phrase English="Use Big Images" ID="0103"><![CDATA[Use Big Images]]></Phrase>
+    <Phrase English="Skin" ID="0104"><![CDATA[Skin]]></Phrase>
+    <Phrase English="Use Animations (BETA)" ID="0105"><![CDATA[Use Animations (BETA)]]></Phrase>
+    <Phrase English="Enable GZip Compression" ID="0106"><![CDATA[Enable GZip Compression]]></Phrase>
+    <Phrase English="Download Thumbnails" ID="0107"><![CDATA[Download Thumbnails]]></Phrase>
+    <Phrase English="Thumbnail Cache Path" ID="0108"><![CDATA[Thumbnail Cache Path]]></Phrase>
+    <Phrase English="Custom Video Player" ID="0109"><![CDATA[Custom Video Player]]></Phrase>
+    <Phrase English="Video Player" ID="0110"><![CDATA[Video Player]]></Phrase>
+    <Phrase English="IMDb Mobile Language" ID="0111"><![CDATA[IMDb Mobile Language]]></Phrase>
+    <Phrase English="IMDb Locale" ID="0112"><![CDATA[IMDb Locale]]></Phrase>
+    <Phrase English="Changing Skin or language will require a restart of the application" ID="0113"><![CDATA[Changing Skin or language will require a restart of the application]]></Phrase>
+    <Phrase English="Producer" ID="0114"><![CDATA[Producer]]></Phrase>
+    <Phrase English="Director" ID="0115"><![CDATA[Director]]></Phrase>
+    <Phrase English="Actor" ID="0116"><![CDATA[Actor]]></Phrase>
+    <Phrase English="Actress" ID="0117"><![CDATA[Actress]]></Phrase>
+    <Phrase English="Writer" ID="0118"><![CDATA[Writer]]></Phrase>
+    <Phrase English="Thanks" ID="0119"><![CDATA[Thanks]]></Phrase>
+    <Phrase English="Self" ID="0120"><![CDATA[Self]]></Phrase>
+    <Phrase English="Soundtrack" ID="0121"><![CDATA[Soundtrack]]></Phrase>
+    <Phrase English="Bottom 100" ID="0122"><![CDATA[Bottom 100]]></Phrase>
   </Phrases>
 </Translation>

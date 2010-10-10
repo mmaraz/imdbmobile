@@ -83,7 +83,7 @@
             this.chkUseBigImages.Name = "chkUseBigImages";
             this.chkUseBigImages.Size = new System.Drawing.Size(440, 40);
             this.chkUseBigImages.TabIndex = 33;
-            this.chkUseBigImages.Text = "Use Big Images";
+            this.chkUseBigImages.Text = UI.Translations.GetTranslated("0103");
             // 
             // ddlSkin
             // 
@@ -97,7 +97,7 @@
             this.label1.Location = new System.Drawing.Point(2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(440, 41);
-            this.label1.Text = "Skin:";
+            this.label1.Text = UI.Translations.GetTranslated("0104") + ":";
             // 
             // chkUseAnimations
             // 
@@ -105,7 +105,7 @@
             this.chkUseAnimations.Name = "chkUseAnimations";
             this.chkUseAnimations.Size = new System.Drawing.Size(440, 40);
             this.chkUseAnimations.TabIndex = 19;
-            this.chkUseAnimations.Text = "Use Animations (BETA)";
+            this.chkUseAnimations.Text = UI.Translations.GetTranslated("0105");
             // 
             // chkEnableGZip
             // 
@@ -113,7 +113,7 @@
             this.chkEnableGZip.Name = "chkEnableGZip";
             this.chkEnableGZip.Size = new System.Drawing.Size(440, 40);
             this.chkEnableGZip.TabIndex = 18;
-            this.chkEnableGZip.Text = "Enable GZip Compression";
+            this.chkEnableGZip.Text = UI.Translations.GetTranslated("0106");
             // 
             // chkDownloadThumbs
             // 
@@ -121,7 +121,7 @@
             this.chkDownloadThumbs.Name = "chkDownloadThumbs";
             this.chkDownloadThumbs.Size = new System.Drawing.Size(440, 40);
             this.chkDownloadThumbs.TabIndex = 17;
-            this.chkDownloadThumbs.Text = "Download Thumbnails";
+            this.chkDownloadThumbs.Text = UI.Translations.GetTranslated("0107");
             // 
             // txtThumbnailCache
             // 
@@ -135,7 +135,7 @@
             this.lblThumbnailCache.Location = new System.Drawing.Point(2, 392);
             this.lblThumbnailCache.Name = "lblThumbnailCache";
             this.lblThumbnailCache.Size = new System.Drawing.Size(440, 41);
-            this.lblThumbnailCache.Text = "Thumbnail Cache Path:";
+            this.lblThumbnailCache.Text = UI.Translations.GetTranslated("0108") + ":";
             // 
             // txtCustomVideo
             // 
@@ -150,7 +150,7 @@
             this.lblCustomVideo.Location = new System.Drawing.Point(2, 317);
             this.lblCustomVideo.Name = "lblCustomVideo";
             this.lblCustomVideo.Size = new System.Drawing.Size(440, 41);
-            this.lblCustomVideo.Text = "Custom Video Player:";
+            this.lblCustomVideo.Text = UI.Translations.GetTranslated("0109") + ":";
             // 
             // ddlVideoPlayer
             // 
@@ -168,7 +168,7 @@
             this.lblVideoPlayer.Location = new System.Drawing.Point(2, 239);
             this.lblVideoPlayer.Name = "lblVideoPlayer";
             this.lblVideoPlayer.Size = new System.Drawing.Size(440, 41);
-            this.lblVideoPlayer.Text = "Video Player:";
+            this.lblVideoPlayer.Text = UI.Translations.GetTranslated("0110") + ":";
             // 
             // ddlUILang
             // 
@@ -182,7 +182,7 @@
             this.lblUILanguage.Location = new System.Drawing.Point(2, 161);
             this.lblUILanguage.Name = "lblUILanguage";
             this.lblUILanguage.Size = new System.Drawing.Size(440, 41);
-            this.lblUILanguage.Text = "IMDb Mobile Language:";
+            this.lblUILanguage.Text = UI.Translations.GetTranslated("0111") + ":";
             // 
             // ddlImdbLocale
             // 
@@ -196,7 +196,7 @@
             this.lblImdbLocale.Location = new System.Drawing.Point(2, 80);
             this.lblImdbLocale.Name = "lblImdbLocale";
             this.lblImdbLocale.Size = new System.Drawing.Size(440, 41);
-            this.lblImdbLocale.Text = "IMDb Locale:";
+            this.lblImdbLocale.Text = UI.Translations.GetTranslated("0112") + ":";
             // 
             // mainMenu1
             // 
@@ -205,12 +205,12 @@
             // 
             // menuItem1
             // 
-            this.menuItem1.Text = "Save";
+            this.menuItem1.Text = UI.Translations.GetTranslated("0060");
             this.menuItem1.Click += new System.EventHandler(this.menuItem1_Click);
             // 
             // menuItem2
             // 
-            this.menuItem2.Text = "Cancel";
+            this.menuItem2.Text = UI.Translations.GetTranslated("0061");
             this.menuItem2.Click += new System.EventHandler(this.menuItem2_Click);
             // 
             // Settings

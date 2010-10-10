@@ -81,7 +81,7 @@ namespace ImdbMobile.UI
                 Size s = Extensions.GetBitmapDimensions(this.Icon);
                 if (this.Icon != null && (this.Height < s.Height + PaddingBottom + PaddingTop))
                 {
-                    this.Height = s.Height + PaddingTop + PaddingBottom;
+                    this.Height = s.Height + PaddingTop + PaddingBottom + 20;
                 }
 
                 if (this.ShowSeparator)

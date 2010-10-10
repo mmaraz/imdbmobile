@@ -64,7 +64,7 @@ namespace ImdbMobile.IMDBData
                 if (!System.IO.File.Exists(ApplicationPath + "\\Config.xml"))
                 {
                     Settings s = new Settings();
-                    s.CachePath = ApplicationPath;
+                    s.CachePath = ApplicationPath + "\\Cache";
                     s.DownloadThumbnails = true;
                     ImdbLanguages ilangs = new ImdbLanguages();
                     s.Language = ilangs.SupportedLanguages[0];

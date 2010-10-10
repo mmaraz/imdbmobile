@@ -160,6 +160,10 @@ namespace ImdbMobile
                     break;
                 }
             }
+            if (SettingsWrapper.GlobalSettings.UILanguage != this.ddlUILang.SelectedValue.ToString())
+            {
+                MessageBox.Show(UI.Translations.GetTranslated("0113"));
+            }
             SettingsWrapper.GlobalSettings.UILanguage = (string)this.ddlUILang.SelectedValue;
             SettingsWrapper.GlobalSettings.VideoPlayerPath = this.txtCustomVideo.Text;
             SettingsWrapper.GlobalSettings.UseAnimations = this.chkUseAnimations.Checked;
@@ -167,7 +171,7 @@ namespace ImdbMobile
             SettingsWrapper.GlobalSettings.UseCompression = this.chkEnableGZip.Checked;
             if (this.ddlSkin.SelectedItem.ToString() != SettingsWrapper.GlobalSettings.CurrentSkinName)
             {
-                MessageBox.Show("Changing Skins will require a restart of the application");
+                MessageBox.Show(UI.Translations.GetTranslated("0113"));
             }
             SettingsWrapper.GlobalSettings.CurrentSkinName = (string)this.ddlSkin.SelectedItem;
             SettingsWrapper.GlobalSettings.CurrentSkin = SkinsWrapper.Load((string)this.ddlSkin.SelectedItem);
