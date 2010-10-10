@@ -18,6 +18,7 @@ v0.?
 - Fixed the bug that when movie does not have a cover not all movie information is shown.
 - Added movie covers on filmography (movies of actor) page. 
 - Added missing android pictures on movie page.
+- Added Spanish language.
 
 v0.7.6 - Changelog
 - Fixed the QVGA support.

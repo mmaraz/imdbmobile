@@ -74,6 +74,8 @@ namespace ImdbMobile.Controls
                     case "Thanks": ab.Text = UI.Translations.GetTranslated("0119"); break;
                     case "Self": ab.Text = UI.Translations.GetTranslated("0120"); break;
                     case "Soundtrack": ab.Text = UI.Translations.GetTranslated("0121"); break;
+                    case "Music Department": ab.Text = UI.Translations.GetTranslated("0123"); break;
+                    case "Miscellaneous Crew": ab.Text = UI.Translations.GetTranslated("0124"); break;
                     default: ab.Text = ikg.Label; break;
                 }
                 ab.YIndex = this.CurrentActor.KnownForFull.IndexOf(ikg);

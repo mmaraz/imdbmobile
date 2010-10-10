@@ -151,8 +151,6 @@ namespace ImdbMobile.UI
                     TitleX = 189;
                 }
 
-
-
                 g.DrawString(this.MovieTitle, _bold, new SolidBrush(Color.Black), new RectangleF(15 + TitleX, TitleY, (this.DrawnImage.Width - imageWidth), TitleSize.Height));
                 TitleY += ((int)TitleSize.Height - 25);
                 int CurrX = 15 + TitleX;
@@ -180,8 +178,8 @@ namespace ImdbMobile.UI
                 g.DrawString(this.Writer, _bold, new SolidBrush(Color.Black), 15 + TitleX, (145 + TitleY));
                 g.DrawString(UI.Translations.GetTranslated("0085") + ":", _unbold, new SolidBrush(Color.Black), 15 + TitleX, (171 + TitleY));
 
-                SizeF GenresSize = Extensions.MeasureStringExtended(g, this.Genres, _bold, (this.Bounds.Width - imageWidth));
-                g.DrawString(this.Genres, _bold, new SolidBrush(Color.Black), new RectangleF(15 + TitleX, 194 + TitleY, (this.Bounds.Width - imageWidth), GenresSize.Height));
+                SizeF GenresSize = Extensions.MeasureStringExtended(g, this.Genres, _bold, (this.Parent.Width - imageWidth));
+                g.DrawString(this.Genres, _bold, new SolidBrush(Color.Black), new RectangleF(15 + TitleX, 194 + TitleY, (this.Parent.Width - imageWidth), GenresSize.Height));
                 TitleY += ((int)GenresSize.Height) - 25;
                                 
                 if (this.Certificate != null)
