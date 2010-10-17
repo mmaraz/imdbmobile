@@ -1,17 +1,10 @@
 ﻿TODO list:
 - in QVGA mode in main menu icons are chopped off.
 - Trailers functionality (doesn't always work correct)
-- When there are no goofs/episodes/quotes/etc the item is still available, when you click it you get an error. (don't show item when not available)
-- Add Bottom Top 100
-- If I hit the Search button without entering a search term then the busy indicator spins but nothing happens. I would have thought the button should only activate if a search term is entered. These blank searches are also being added to (and contaminating) the Recent Search list.
-- In the Settings screen, if I tap the 'Custom Video Player' or 'Thumbnail Cache Path' the keyboard automatically opens. However, it fails to automatically close when 'Saving', 'Cancelling' or 'Ok'ing out of the screen.
 - In the Settings screen, if I scroll down with the scroll bar to the bottom of the screen and then tap the 'Thumbnail Cach Path', the keyboard activates and screen repositions the field under the keyboard.
-- In Recent Searches, would it be possible to check if a search already exists in the list and then delete the oldest occurence (or just not add it if that's easier).
-- Would it be possible to clear the Search box when returning to the Home screen?
 
-
-v0.?
-- Settings page and filmography page are now translatable.
+v0.8
+- Added: Settings page and filmography page are now translatable.
 - Added no image available image when no image is available for a movie or actor
 - Fixed the images on the cast "preview" page.
 - Added Cache folder for the cached items.
@@ -19,6 +12,12 @@ v0.?
 - Added movie covers on filmography (movies of actor) page. 
 - Added missing android pictures on movie page.
 - Added Spanish language.
+- Fixed: If a search already exists in Recent Searches the oldest occurence is deleted.
+- Fixed: It isn't possible anymore to search when no search term is entered.
+- Added: Search box is cleared when returning on Home screen
+- Fixed: Movie Items (goofs/episodes/quotes/etc) are now not shown when not available.
+- Added Bottom Top 100
+- Fixed: In the Settings screen, the keyboard automatically closes when saving or cancelling.
 
 v0.7.6 - Changelog
 - Fixed the QVGA support.

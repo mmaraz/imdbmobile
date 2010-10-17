@@ -99,10 +99,10 @@ namespace ImdbMobile.IMDBData
     {
         public enum TitleType
         {
-            TVSeries,
             FeatureMovie,
             VideoGame,
-            TVEpisode
+            TVEpisode,
+            TVSeries
         }
 
         public bool HasFullCast { get; set; }
@@ -126,6 +126,14 @@ namespace ImdbMobile.IMDBData
         public List<ImdbCharacter> Cast { get; set; }
         public string Plot { get; set; }
         public string Certificate { get; set; }
+
+
+        public bool HasTrivia { get; set; }
+        public bool HasGoofs { get; set; }
+        public bool HasQuotes { get; set; }
+        public bool HasUserReviews { get; set; }
+        public bool HasExternalReviews { get; set; }
+        public bool HasParentalGuide { get; set; }
 
         // Extra Details
         public List<string> Trivia { get; set; }

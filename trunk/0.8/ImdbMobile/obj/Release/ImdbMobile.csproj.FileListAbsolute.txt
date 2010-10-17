@@ -130,7 +130,11 @@ C:\Projects\IMDb Mobile\0.8\ImdbMobile\bin\Release\Skins\Android\TextInput_Small
 C:\Projects\IMDb Mobile\0.8\ImdbMobile\bin\Release\Skins\Android\Trailers.png
 C:\Projects\IMDb Mobile\0.8\ImdbMobile\bin\Release\Skins\Android\Trivia.png
 C:\Projects\IMDb Mobile\0.8\ImdbMobile\bin\Release\Skins\Android\UserReview.png
-C:\Projects\IMDb Mobile\0.8\ImdbMobile\bin\Release\Cache\no_image_big.gif
-C:\Projects\IMDb Mobile\0.8\ImdbMobile\bin\Release\Cache\no_image_small.gif
 C:\Projects\IMDb Mobile\0.8\ImdbMobile\bin\Release\Skins\Android\ExternalReview.png
 C:\Projects\IMDb Mobile\0.8\ImdbMobile\bin\Release\Skins\Android\Quote.png
+C:\Projects\IMDb Mobile\0.8\ImdbMobile\bin\Release\Translations\Spanish.xml
+C:\Projects\IMDb Mobile\0.8\ImdbMobile\bin\Release\Cache\no_image_big.png
+C:\Projects\IMDb Mobile\0.8\ImdbMobile\bin\Release\Cache\no_image_small.png
+C:\Projects\IMDb Mobile\0.8\ImdbMobile\bin\Release\Skins\Android\Trashcan.png
+C:\Projects\IMDb Mobile\0.8\ImdbMobile\bin\Release\Skins\Default\Trashcan.png
+C:\Projects\IMDb Mobile\0.8\ImdbMobile\obj\Release\ImdbMobile.Controls.Bottom100Control.resources

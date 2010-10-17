@@ -59,11 +59,17 @@ namespace ImdbMobile.UI
                     sl.Close();
                 }
                 ControlList[0].SlideInLeft();
+               
             }
             else
             {
                 ImdbMobile.Controls.MainControl mc = (ImdbMobile.Controls.MainControl)ControlList[0];
                 mc.ShowMainMenu();
+                try
+                {
+                    ((Form1)UI.WindowHandler.ParentForm).Titlebar.textBox1.Text = "";
+                }
+                catch (Exception e)  {   }
             }
         }
     }

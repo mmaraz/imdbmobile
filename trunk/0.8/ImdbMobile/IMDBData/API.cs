@@ -96,6 +96,11 @@ namespace ImdbMobile.IMDBData
             GetResponse("chart/top");
         }
 
+        public void GetBottom100()
+        {
+            GetResponse("chart/bottom");
+        }
+
         public void GetActorQuotes(string nconst)
         {
             Dictionary<string, string> n = new Dictionary<string, string>();
