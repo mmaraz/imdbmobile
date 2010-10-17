@@ -39,16 +39,16 @@ namespace ImdbMobile.IMDBData
             {
                 if (SettingsWrapper.GlobalSettings.UseBigImages)
                 {
-                    if (System.IO.File.Exists(SettingsWrapper.GlobalSettings.CachePath + "\\no_image_big.png"))
+                    if (System.IO.File.Exists(ApplicationPath + "\\Cache\\no_image_big.png"))
                     {
-                        Path = SettingsWrapper.GlobalSettings.CachePath + "\\no_image_big.png";
+                        Path = ApplicationPath + "\\Cache\\no_image_big.png";
                     }
                 }
                 else
                 {
-                    if (System.IO.File.Exists(SettingsWrapper.GlobalSettings.CachePath + "\\no_image_small.png"))
+                    if (System.IO.File.Exists(ApplicationPath + "\\Cache\\no_image_small.png"))
                     {
-                        Path = SettingsWrapper.GlobalSettings.CachePath + "\\no_image_small.png";
+                        Path = ApplicationPath + "\\Cache\\no_image_small.png";
                     }
                 }
                 if (!string.IsNullOrEmpty(Path))
