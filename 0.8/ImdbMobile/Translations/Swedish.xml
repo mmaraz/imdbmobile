@@ -130,7 +130,8 @@
     <Phrase English="Self" ID="0120"><![CDATA[Sig själv]]></Phrase>
     <Phrase English="Soundtrack" ID="0121"><![CDATA[Soundtrack]]></Phrase>
     <Phrase English="Bottom 100" ID="0122"><![CDATA[100 sämsta]]></Phrase>
-     <Phrase English="Music Department" ID="0123"><![CDATA[Music Department]]></Phrase>
-     <Phrase English="Miscellaneous Crew" ID="0124"><![CDATA[Miscellaneous Crew]]></Phrase>
+    <Phrase English="Music Department" ID="0123"><![CDATA[Musik avdelning]]></Phrase>
+    <Phrase English="Miscellaneous Crew" ID="0124"><![CDATA[Blandade uppdrag]]></Phrase>
+    <Phrase English="Loading Bottom 100" ID="0125"><![CDATA[Loading Bottom 100]]></Phrase>
   </Phrases>
 </Translation>

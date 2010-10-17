@@ -35,6 +35,14 @@ namespace ImdbMobile.Controls
             Top250.CalculateHeight();
             this.kListControl1.Items.Add(Top250);
 
+            UI.ActionButton Bottom100 = new ImdbMobile.UI.ActionButton();
+            Bottom100.Icon = "Trashcan";
+            Bottom100.Parent = this.kListControl1;
+            Bottom100.Text = UI.Translations.GetTranslated("0122");
+            Bottom100.MouseUp += new ImdbMobile.UI.ActionButton.MouseEvent(Bottom100_MouseUp);
+            Bottom100.CalculateHeight();
+            this.kListControl1.Items.Add(Bottom100);
+
             UI.ActionButton ComingSoon = new ImdbMobile.UI.ActionButton();
             ComingSoon.Icon = "ComingSoon";
             ComingSoon.Parent = this.kListControl1;
@@ -112,6 +120,13 @@ namespace ImdbMobile.Controls
             Top250Control t2 = new Top250Control();
             UI.WindowHandler.OpenForm(t2);
         }
+
+        void Bottom100_MouseUp(int X, int Y, MichyPrima.ManilaDotNetSDK.KListControl Parent, UI.ActionButton Sender)
+        {
+            Bottom100Control t1 = new Bottom100Control();
+            UI.WindowHandler.OpenForm(t1);
+        }
+
         private void ShowError()
         {
             try

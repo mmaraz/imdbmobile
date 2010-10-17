@@ -64,9 +64,42 @@ namespace ImdbMobile.IMDBData
                 title.Plot = ParsePlot(Obj);
                 title.Trailer = ParseTrailers(Obj);
                 title.Cover = ParseImage(Obj);
+                ParseHasData(Obj, title);
             }
 
             return title;
+        }
+
+        private void ParseHasData(JToken data, ImdbTitle title)
+        {
+            if (General.ContainsKey(data, "has"))
+            {
+                JToken hasdata = data["has"];
+                foreach (JToken g in hasdata)
+                {
+                    switch ((string)g)
+                    {
+                        case "trivia":
+                            title.HasTrivia = true;
+                            break;
+                        case "goofs":
+                            title.HasGoofs = true;
+                            break;
+                        case "quotes":
+                            title.HasQuotes = true;
+                            break;
+                        case "user_comments":
+                            title.HasUserReviews = true;
+                            break;
+                        case "external_reviews":
+                            title.HasExternalReviews = true;
+                            break;
+                        case "parentalguide":
+                            title.HasParentalGuide = true;
+                            break;
+                    }
+                }
+            }
         }
 
         private string ParseCertificate(JToken data)

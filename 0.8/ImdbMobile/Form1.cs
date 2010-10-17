@@ -58,15 +58,23 @@ namespace ImdbMobile
 
         public void DoSearch(string Text, bool AddToHistory)
         {
-            Main.DoSearch(Text);
-            if (AddToHistory)
+            if (!string.IsNullOrEmpty(Text))
             {
-                if (SettingsWrapper.GlobalSettings.RecentSearches.Count > 10)
+                Main.DoSearch(Text);
+                if (AddToHistory)
                 {
-                    SettingsWrapper.GlobalSettings.RecentSearches.RemoveAt(SettingsWrapper.GlobalSettings.RecentSearches.Count - 1);
+                    if (SettingsWrapper.GlobalSettings.RecentSearches.Contains(Text))
+                    {
+                        SettingsWrapper.GlobalSettings.RecentSearches.RemoveAt(SettingsWrapper.GlobalSettings.RecentSearches.IndexOf(Text));
+                    }
+
+                    if (SettingsWrapper.GlobalSettings.RecentSearches.Count > 10)
+                    {
+                        SettingsWrapper.GlobalSettings.RecentSearches.RemoveAt(SettingsWrapper.GlobalSettings.RecentSearches.Count - 1);
+                    }
+                    SettingsWrapper.GlobalSettings.RecentSearches.Insert(0, Text);
+                    SettingsWrapper.Save(SettingsWrapper.GlobalSettings);
                 }
-                SettingsWrapper.GlobalSettings.RecentSearches.Insert(0, Text);
-                SettingsWrapper.Save(SettingsWrapper.GlobalSettings);
             }
         }
 

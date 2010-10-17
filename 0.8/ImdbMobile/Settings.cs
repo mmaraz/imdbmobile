@@ -135,6 +135,10 @@ namespace ImdbMobile
             {
                 return "\\Program Files\\CorePlayer\\player.exe";
             }
+            else if (System.IO.File.Exists("\\Programmabestanden\\CorePlayer\\player.exe"))
+            {
+                return "\\Programmabestanden\\CorePlayer\\player.exe";
+            }
             else if (System.IO.File.Exists("\\Storage Card\\Program Files\\CorePlayer\\player.exe"))
             {
                 return "\\Storage Card\\Program Files\\CorePlayer\\player.exe";
@@ -149,6 +153,7 @@ namespace ImdbMobile
 
         private void menuItem1_Click(object sender, EventArgs e)
         {
+            sip.Enabled = false;
             SettingsWrapper.GlobalSettings.CachePath = this.txtThumbnailCache.Text;
             SettingsWrapper.GlobalSettings.DownloadThumbnails = this.chkDownloadThumbs.Checked;
             ImdbLanguages ils = new ImdbLanguages();
@@ -182,6 +187,7 @@ namespace ImdbMobile
 
         private void menuItem2_Click(object sender, EventArgs e)
         {
+            sip.Enabled = false;
             this.Close();
         }
     }

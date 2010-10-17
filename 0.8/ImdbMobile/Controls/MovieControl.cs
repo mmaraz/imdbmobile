@@ -105,24 +105,30 @@ namespace ImdbMobile.Controls
             CastButton.MouseUp += new ImdbMobile.UI.ActionButton.MouseEvent(CastButton_MouseUp);
             this.kListControl1.Items.Add(CastButton);
 
-            UI.ActionButton UserReviewButton = new ImdbMobile.UI.ActionButton();
-            UserReviewButton.Icon = "UserReview";
-            UserReviewButton.Parent = this.kListControl1;
-            UserReviewButton.Text = UI.Translations.GetTranslated("0090");
-            UserReviewButton.YIndex = 3;
-            UserReviewButton.CalculateHeight();
-            UserReviewButton.MouseUp += new ImdbMobile.UI.ActionButton.MouseEvent(UserReviewButton_MouseUp);
-            this.kListControl1.Items.Add(UserReviewButton);
+            if (title.HasUserReviews)
+            {
+                UI.ActionButton UserReviewButton = new ImdbMobile.UI.ActionButton();
+                UserReviewButton.Icon = "UserReview";
+                UserReviewButton.Parent = this.kListControl1;
+                UserReviewButton.Text = UI.Translations.GetTranslated("0090");
+                UserReviewButton.YIndex = 3;
+                UserReviewButton.CalculateHeight();
+                UserReviewButton.MouseUp += new ImdbMobile.UI.ActionButton.MouseEvent(UserReviewButton_MouseUp);
+                this.kListControl1.Items.Add(UserReviewButton);
+            }
 
-            UI.ActionButton ExternalReviewButton = new ImdbMobile.UI.ActionButton();
-            ExternalReviewButton.Icon = "ExternalReview";
-            ExternalReviewButton.Parent = this.kListControl1;
-            ExternalReviewButton.Text = UI.Translations.GetTranslated("0091");
-            ExternalReviewButton.YIndex = 4;
-            ExternalReviewButton.CalculateHeight();
-            ExternalReviewButton.MouseUp += new ImdbMobile.UI.ActionButton.MouseEvent(ExternalReviewButton_MouseUp);
-            this.kListControl1.Items.Add(ExternalReviewButton);
 
+            if (title.HasExternalReviews)
+            {
+                UI.ActionButton ExternalReviewButton = new ImdbMobile.UI.ActionButton();
+                ExternalReviewButton.Icon = "ExternalReview";
+                ExternalReviewButton.Parent = this.kListControl1;
+                ExternalReviewButton.Text = UI.Translations.GetTranslated("0091");
+                ExternalReviewButton.YIndex = 4;
+                ExternalReviewButton.CalculateHeight();
+                ExternalReviewButton.MouseUp += new ImdbMobile.UI.ActionButton.MouseEvent(ExternalReviewButton_MouseUp);
+                this.kListControl1.Items.Add(ExternalReviewButton);
+            }
             /*UI.ActionButton PhotoButton = new ImdbMobile.UI.ActionButton();
             PhotoButton.Icon = global::ImdbMobile.Properties.Resources.Photos;
             PhotoButton.HoverIcon = global::ImdbMobile.Properties.Resources.Photos_Over;
@@ -142,41 +148,53 @@ namespace ImdbMobile.Controls
             TrailerButton.MouseUp += new ImdbMobile.UI.ActionButton.MouseEvent(TrailerButton_MouseUp);
             this.kListControl1.Items.Add(TrailerButton);
 
-            UI.ActionButton QuoteButton = new ImdbMobile.UI.ActionButton();
-            QuoteButton.Icon = "Quote";
-            QuoteButton.Parent = this.kListControl1;
-            QuoteButton.Text = UI.Translations.GetTranslated("0046");
-            QuoteButton.YIndex = 6;
-            QuoteButton.CalculateHeight();
-            QuoteButton.MouseUp += new ImdbMobile.UI.ActionButton.MouseEvent(QuoteButton_MouseUp);
-            this.kListControl1.Items.Add(QuoteButton);
+            if (title.HasQuotes)
+            {
+                UI.ActionButton QuoteButton = new ImdbMobile.UI.ActionButton();
+                QuoteButton.Icon = "Quote";
+                QuoteButton.Parent = this.kListControl1;
+                QuoteButton.Text = UI.Translations.GetTranslated("0046");
+                QuoteButton.YIndex = 6;
+                QuoteButton.CalculateHeight();
+                QuoteButton.MouseUp += new ImdbMobile.UI.ActionButton.MouseEvent(QuoteButton_MouseUp);
+                this.kListControl1.Items.Add(QuoteButton);
+            }
 
-            UI.ActionButton TriviaButton = new ImdbMobile.UI.ActionButton();
-            TriviaButton.Icon = "Trivia";
-            TriviaButton.Parent = this.kListControl1;
-            TriviaButton.Text = UI.Translations.GetTranslated("0005");
-            TriviaButton.YIndex = 7;
-            TriviaButton.CalculateHeight();
-            TriviaButton.MouseUp += new ImdbMobile.UI.ActionButton.MouseEvent(TriviaButton_MouseUp);
-            this.kListControl1.Items.Add(TriviaButton);
+            if (title.HasTrivia)
+            {
+                UI.ActionButton TriviaButton = new ImdbMobile.UI.ActionButton();
+                TriviaButton.Icon = "Trivia";
+                TriviaButton.Parent = this.kListControl1;
+                TriviaButton.Text = UI.Translations.GetTranslated("0005");
+                TriviaButton.YIndex = 7;
+                TriviaButton.CalculateHeight();
+                TriviaButton.MouseUp += new ImdbMobile.UI.ActionButton.MouseEvent(TriviaButton_MouseUp);
+                this.kListControl1.Items.Add(TriviaButton);
+            }
 
-            UI.ActionButton GoofButton = new ImdbMobile.UI.ActionButton();
-            GoofButton.Icon = "MoreInfo";
-            GoofButton.Parent = this.kListControl1;
-            GoofButton.Text = UI.Translations.GetTranslated("0042");
-            GoofButton.YIndex = 8;
-            GoofButton.CalculateHeight();
-            GoofButton.MouseUp += new ImdbMobile.UI.ActionButton.MouseEvent(GoofButton_MouseUp);
-            this.kListControl1.Items.Add(GoofButton);
+            if (title.HasGoofs)
+            {
+                UI.ActionButton GoofButton = new ImdbMobile.UI.ActionButton();
+                GoofButton.Icon = "MoreInfo";
+                GoofButton.Parent = this.kListControl1;
+                GoofButton.Text = UI.Translations.GetTranslated("0042");
+                GoofButton.YIndex = 8;
+                GoofButton.CalculateHeight();
+                GoofButton.MouseUp += new ImdbMobile.UI.ActionButton.MouseEvent(GoofButton_MouseUp);
+                this.kListControl1.Items.Add(GoofButton);
+            }
 
-            UI.ActionButton ParentalButton = new ImdbMobile.UI.ActionButton();
-            ParentalButton.Icon = "ParentalGuide";
-            ParentalButton.Parent = this.kListControl1;
-            ParentalButton.Text = UI.Translations.GetTranslated("0092");
-            ParentalButton.YIndex = 9;
-            ParentalButton.CalculateHeight();
-            ParentalButton.MouseUp += new ImdbMobile.UI.ActionButton.MouseEvent(ParentalButton_MouseUp);
-            this.kListControl1.Items.Add(ParentalButton);
+            if (title.HasParentalGuide)
+            {
+                UI.ActionButton ParentalButton = new ImdbMobile.UI.ActionButton();
+                ParentalButton.Icon = "ParentalGuide";
+                ParentalButton.Parent = this.kListControl1;
+                ParentalButton.Text = UI.Translations.GetTranslated("0092");
+                ParentalButton.YIndex = 9;
+                ParentalButton.CalculateHeight();
+                ParentalButton.MouseUp += new ImdbMobile.UI.ActionButton.MouseEvent(ParentalButton_MouseUp);
+                this.kListControl1.Items.Add(ParentalButton);
+            }
 
             if (CurrentTitle.Type == ImdbTitle.TitleType.TVSeries)
             {
