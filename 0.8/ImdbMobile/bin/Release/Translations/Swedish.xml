@@ -76,9 +76,9 @@
     <Phrase English="Loading Top 250" ID="0068"><![CDATA[Laddar topp 250]]></Phrase>
     <Phrase English="Votes" ID="0069"><![CDATA[Röster]]></Phrase>
     <!-- Context: "Watch Trailer (Low Resolution)" -->
-    <Phrase English="Watch Trailer (Low-Res)" ID="0070"><![CDATA[Se på trailer (Låg kvalite)]]></Phrase>
+    <Phrase English="Watch Trailer (Low-Res)" ID="0070"><![CDATA[Se på trailer (Lågupplösning)]]></Phrase>
     <!-- Context: "Watch Trailer (High Resolution)" -->
-    <Phrase English="Watch Trailer (High-Res)" ID="0071"><![CDATA[Se på trailer (Hög kvalite)]]></Phrase>
+    <Phrase English="Watch Trailer (High-Res)" ID="0071"><![CDATA[Se på trailer (Högupplösning)]]></Phrase>
     <Phrase English="There are no Trailers available for this title" ID="0072"><![CDATA[Det finns inga tillgängliga trailers för denna titel]]></Phrase>
     <Phrase English="Downloading Trailer Info" ID="0073"><![CDATA[Laddar ner trailer-information]]></Phrase>
     <Phrase English="Loading Trivia" ID="0074"><![CDATA[Laddar trivialt]]></Phrase>
@@ -132,6 +132,7 @@
     <Phrase English="Bottom 100" ID="0122"><![CDATA[100 sämsta]]></Phrase>
     <Phrase English="Music Department" ID="0123"><![CDATA[Musik avdelning]]></Phrase>
     <Phrase English="Miscellaneous Crew" ID="0124"><![CDATA[Blandade uppdrag]]></Phrase>
-    <Phrase English="Loading Bottom 100" ID="0125"><![CDATA[Loading Bottom 100]]></Phrase>
-  </Phrases>
+    <Phrase English="Loading Bottom 100" ID="0125"><![CDATA[Laddar 100 sämsta]]></Phrase>
+    <Phrase English="Release Date" ID="0126"><![CDATA[Utgivningsdatum]]></Phrase>
+   </Phrases>
 </Translation>

@@ -57,7 +57,7 @@ namespace ImdbMobile.IMDBData
                 title.Rating = ParseRating(Obj);
                 title.NumberOfVotes = ParseNumberOfVotes(Obj);
                 title.Genres = ParseGenres(Obj);
-                title.ReleaseDate = ParseReleaseDate(Obj);
+                title.ReleaseDateString = ParseReleaseDate(Obj);
                 title.Tagline = ParseTagline(Obj);
                 title.Runtime = ParseRuntime(Obj);
                 title.Cast = ParseCast(Obj);
@@ -79,6 +79,9 @@ namespace ImdbMobile.IMDBData
                 {
                     switch ((string)g)
                     {
+                        case "more_plot":
+                            title.HasMorePlot = true;
+                            break;
                         case "trivia":
                             title.HasTrivia = true;
                             break;

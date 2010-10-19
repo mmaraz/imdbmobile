@@ -85,7 +85,14 @@ namespace ImdbMobile.Controls
 
                 MichyPrima.ManilaDotNetSDK.ManilaPanelItem mpi = new MichyPrima.ManilaDotNetSDK.ManilaPanelItem();
                 mpi.MainText = title.Title;
-                mpi.SecondaryText = title.ReleaseDate;
+                if (title.ReleaseDate.HasValue)
+                {
+                    mpi.SecondaryText = UI.Translations.GetTranslated("0126") + ": " + title.ReleaseDate.Value.ToShortDateString();
+                }
+                else
+                {
+                    mpi.SecondaryText = title.ReleaseDateString;
+                }
                 mpi.OnClick += new MichyPrima.ManilaDotNetSDK.ManilaPanelItem.OnClickEventHandler(mpi_OnClick);
 
                 AddPanelItem(mpi);
