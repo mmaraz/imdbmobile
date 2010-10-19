@@ -29,13 +29,13 @@
     <Phrase English="Known For" ID="0023"><![CDATA[Conocido por]]></Phrase>
     <Phrase English="Movie" ID="0024"><![CDATA[Película]]></Phrase>
     <Phrase English="TV Series" ID="0025"><![CDATA[Serie de TV]]></Phrase>
-    <Phrase English="Video Game" ID="0026"><![CDATA[video juego]]></Phrase>
+    <Phrase English="Video Game" ID="0026"><![CDATA[Video juego]]></Phrase>
     <Phrase English="Searching IMDb" ID="0027"><![CDATA[Buscando en IMDb]]></Phrase>
     <Phrase English="Top 250" ID="0028"><![CDATA[Mejores 250]]></Phrase>
     <Phrase English="Coming Soon" ID="0029"><![CDATA[Próximamente]]></Phrase>
     <Phrase English="Settings" ID="0030"><![CDATA[Configuración]]></Phrase>
     <Phrase English="Exit" ID="0031"><![CDATA[Salir]]></Phrase>
-    <Phrase English="IMDb Mobile" ID="0032"><![CDATA[IMDb Mobile]]></Phrase>
+    <Phrase English="IMDb Mobile" ID="0032"><![CDATA[IMDb Móvil]]></Phrase>
     <Phrase English="Loading Goofs" ID="0033"><![CDATA[Cargando Tonterías]]></Phrase>
     <Phrase English="Continuity" ID="0034"><![CDATA[Continuidad]]></Phrase>
     <Phrase English="Crew or equipment visible" ID="0035"><![CDATA[Equipo o equipamiento visible]]></Phrase>
@@ -63,7 +63,7 @@
     <Phrase English="Loading Episode List" ID="0055"><![CDATA[Cargando Lista de episodios]]></Phrase>
     <Phrase English="Season List" ID="0056"><![CDATA[Lista de temporadas]]></Phrase>
     <Phrase English="No Video Player has been selected. If you do this, you will not be able to view Trailers. Are you sure you want to do this?" ID="0057"><![CDATA[No ha seleccionado un visor de videos. Si no selecciona uno no podrá ver los avances cortos. ¿Está seguro que es lo quiere hacer?]]></Phrase>
-    <Phrase English="The path to the Custom Video Player does not exist. Do you want to change it?" ID="0058"><![CDATA[La ruta a el visor de videos no existe. ¿Desea cambiarla?]]></Phrase>
+    <Phrase English="The path to the Custom Video Player does not exist. Do you want to change it?" ID="0058"><![CDATA[La ruta al visor de videos no existe. ¿Desea cambiarla?]]></Phrase>
     <Phrase English="Could not find CorePlayer on your phone. If you are sure it is installed, please select the 'Custom Video Player' option and enter the location of player.exe" ID="0059"><![CDATA[No se encontró el COrePlayer en el dispositivo. Si lo tiene instalado, por favor seleccione 'Visor de video personalizado' y brinde la ubicación de player.exe]]></Phrase>
     <Phrase English="Save" ID="0060"><![CDATA[Guardar]]></Phrase>
     <Phrase English="Cancel" ID="0061"><![CDATA[Cancelar]]></Phrase>
@@ -81,14 +81,14 @@
     <Phrase English="ThreeG" ID="0071"><![CDATA[3G]]></Phrase>
     <Phrase English="There are no Trailers available for this title" ID="0072"><![CDATA[No hay avances cortos disponibles para este título]]></Phrase>
     <Phrase English="Downloading Trailer Info" ID="0073"><![CDATA[Descargando Información de avances cortos]]></Phrase>
-    <Phrase English="Loading Trivia" ID="0074"><![CDATA[Loading Trivia]]></Phrase>
+    <Phrase English="Loading Trivia" ID="0074"><![CDATA[Cargando Trivia]]></Phrase>
     <Phrase English="Loading Actor Trivia" ID="0075"><![CDATA[Cargando Trivia de actores]]></Phrase>
     <Phrase English="Loading Movie Trivia" ID="0076"><![CDATA[Cargando Trivia de películas]]></Phrase>
     <Phrase English="There is no Trivia available for this actor" ID="0077"><![CDATA[NO hay trivias disponibles para este actor]]></Phrase>
     <Phrase English="There is no Trivia available for this title" ID="0078"><![CDATA[No hay trivias disponibles para esta película]]></Phrase>
     <Phrase English="An error has occurred" ID="0079"><![CDATA[Ha ocurrido un error]]></Phrase>
     <Phrase English="Search For" ID="0080"><![CDATA[Buscar]]></Phrase>
-    <Phrase English="Real Name" ID="0081"><![CDATA[NOmbre verdadero]]></Phrase>
+    <Phrase English="Real Name" ID="0081"><![CDATA[Nombre verdadero]]></Phrase>
     <Phrase English="Birthday" ID="0082"><![CDATA[Cumpleaños]]></Phrase>
     <Phrase English="Directed By" ID="0083"><![CDATA[Dirigida por]]></Phrase>
     <Phrase English="Written By" ID="0084"><![CDATA[Escrita por]]></Phrase>
@@ -118,7 +118,7 @@
     <Phrase English="Thumbnail Cache Path" ID="0108"><![CDATA[Ruta del caché de imágenes miniatura]]></Phrase>
     <Phrase English="Custom Video Player" ID="0109"><![CDATA[Visor de video personalizado]]></Phrase>
     <Phrase English="Video Player" ID="0110"><![CDATA[Visor de video]]></Phrase>
-    <Phrase English="IMDb Mobile Language" ID="0111"><![CDATA[Idioma de IMDb Mobile]]></Phrase>
+    <Phrase English="IMDb Mobile Language" ID="0111"><![CDATA[Idioma de IMDb Móvil]]></Phrase>
     <Phrase English="IMDb Locale" ID="0112"><![CDATA[Localización de IMDb]]></Phrase>
     <Phrase English="Changing Skin or language will require a restart of the application" ID="0113"><![CDATA[Cambiar la piel o el idioma requerirá que reinicie la aplicación]]></Phrase>
     <Phrase English="Producer" ID="0114"><![CDATA[Productor]]></Phrase>
@@ -132,7 +132,8 @@
     <Phrase English="Bottom 100" ID="0122"><![CDATA[Peores 100]]></Phrase>
     <Phrase English="Music Department" ID="0123"><![CDATA[Departamento musical]]></Phrase>
     <Phrase English="Miscellaneous Crew" ID="0124"><![CDATA[Elenco misceláneo]]></Phrase>
-    <Phrase English="Loading Bottom 100" ID="0125"><![CDATA[Loading Bottom 100]]></Phrase>
+    <Phrase English="Loading Bottom 100" ID="0125"><![CDATA[Cargando Peores 100]]></Phrase>
+    <Phrase English="Release Date" ID="0126"><![CDATA[Fecha de estreno]]></Phrase>
   </Phrases>
   <!--Traducido por: aaamador at XDA-Developers -->
 </Translation>

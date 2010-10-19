@@ -120,7 +120,8 @@ namespace ImdbMobile.IMDBData
         public string Rating { get; set; }
         public int NumberOfVotes { get; set; }
         public List<string> Genres { get; set; }
-        public string ReleaseDate { get; set; }
+        public string ReleaseDateString { get; set; }
+        public DateTime? ReleaseDate { get; set; }
         public string Tagline { get; set; }
         public string Runtime { get; set; }
         public List<ImdbCharacter> Cast { get; set; }
@@ -128,6 +129,7 @@ namespace ImdbMobile.IMDBData
         public string Certificate { get; set; }
 
 
+        public bool HasMorePlot { get; set; }
         public bool HasTrivia { get; set; }
         public bool HasGoofs { get; set; }
         public bool HasQuotes { get; set; }

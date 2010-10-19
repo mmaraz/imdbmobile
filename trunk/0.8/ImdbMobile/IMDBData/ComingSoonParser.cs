@@ -55,7 +55,19 @@ namespace ImdbMobile.IMDBData
                                 {
                                     ImdbTitle it = new ImdbTitle();
                                     it.Title = (string)title["title"];
-                                    it.ReleaseDate = (string)movie["label"];
+                                    it.ReleaseDateString = (string)movie["label"];
+                                    if (General.ContainsKey(movie, "token"))
+                                    {
+                                        try
+                                        {
+                                            string tempdate = (string)movie["token"];
+                                            it.ReleaseDate = DateTime.Parse(tempdate);
+                                        }
+                                        catch (Exception)
+                                        {
+                                            it.ReleaseDate = null;
+                                        }
+                                    }
                                     if (General.ContainsKey(title, "image"))
                                     {
                                         it.Cover.URL = (string)title["image"]["url"];
