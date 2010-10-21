@@ -44,6 +44,7 @@ namespace ImdbMobile.Controls
                         case ImdbEncoding.VideoType.EDGE: mpi.Text = UI.Translations.GetTranslated("0070"); break;
                         case ImdbEncoding.VideoType.HD480p: mpi.Text = UI.Translations.GetTranslated("0096"); break;
                         case ImdbEncoding.VideoType.HD720p: mpi.Text = UI.Translations.GetTranslated("0097"); break;
+                        case ImdbEncoding.VideoType.H264: mpi.Text = "H.264"; break;
                     }
                     mpi.Parent = this.kListControl1;
                     mpi.Icon = "Trailers";
