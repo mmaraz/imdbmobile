@@ -118,8 +118,8 @@ namespace ImdbMobile
                 string WindowsPath = Splitted[1];
                 switch (this.ddlVideoPlayer.SelectedIndex)
                 {
-                    case 1: this.txtCustomVideo.Text = "\\" + WindowsPath + "\\wmplayer.exe"; break;
-                    case 2: this.txtCustomVideo.Text = "\\" + WindowsPath + "\\StreamingPlayer.exe"; break;
+                    case 1: this.txtCustomVideo.Text = "\\" + WindowsPath + "\\StreamingPlayer.exe"; break;
+                    case 2: this.txtCustomVideo.Text = "\\" + WindowsPath + "\\wmplayer.exe"; break;
                     case 3: if (CorePlayerPath() != null) { this.txtCustomVideo.Text = CorePlayerPath(); } break;
                 }
             }
