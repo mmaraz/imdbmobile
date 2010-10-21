@@ -1,6 +1,6 @@
 ﻿TODO list:
 - in QVGA mode in main menu icons are chopped off.
-- Trailers functionality (doesn't always work correct)
+- in QVGA mode the rating (stars + rating) is outside the screen.
 - In the Settings screen, if I scroll down with the scroll bar to the bottom of the screen and then tap the 'Thumbnail Cach Path', the keyboard activates and screen repositions the field under the keyboard.
 - Set userfeedback on the listings pages. on selecting things.
 
@@ -20,6 +20,10 @@ v0.8
 - Fixed: Movie Items (goofs/episodes/quotes/etc) are now not shown when not available.
 - Fixed: In the Settings screen, the keyboard automatically closes when saving or cancelling.
 - Fixed: On the Coming soon page the release date is now translatable.
+- Fixed: Trailers functionality. Removed the not working trailers 
+	(which caused the Out of Memory exception) Also removed the 720p trailers (these where not working either).
+	Trailer functionality is tested with HTC streaming media 3.10
+
 
 v0.7.6 - Changelog
 - Fixed the QVGA support.

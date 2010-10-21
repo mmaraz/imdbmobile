@@ -193,7 +193,8 @@ namespace ImdbMobile.IMDBData
             ThreeG,
             EDGE,
             HD480p,
-            HD720p
+            HD720p,
+            H264
         }
 
         public string VideoURL { get; set; }

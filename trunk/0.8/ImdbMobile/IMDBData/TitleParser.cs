@@ -139,8 +139,13 @@ namespace ImdbMobile.IMDBData
                                 case "iPhone EDGE": ie.Type = ImdbEncoding.VideoType.EDGE; break;
                                 case "HD 480p": ie.Type = ImdbEncoding.VideoType.HD480p; break;
                                 case "HD 720p": ie.Type = ImdbEncoding.VideoType.HD720p; break;
+                                default: ie.Type = ImdbEncoding.VideoType.H264; break;
                             }
-                            iv.Encodings.Add(ie);
+                            // These aren't working so don't add them.
+                            if (!(ie.VideoURL.ToLower().Contains("totaleclips") && ie.VideoURL.ToLower().Contains(".mp4")) && ie.Type != ImdbEncoding.VideoType.HD720p)
+                            {
+                                iv.Encodings.Add(ie);
+                            }
                         }
                     }
                 }
