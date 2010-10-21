@@ -69,7 +69,15 @@ namespace ImdbMobile.IMDBData
                     ImdbLanguages ilangs = new ImdbLanguages();
                     s.Language = ilangs.SupportedLanguages[0];
                     s.VideoPlayerArguments = "";
-                    s.VideoPlayerPath = "\\Windows\\wmplayer.exe";
+                    if (File.Exists("\\Windows\\StreamingPlayer.exe"))
+                    {
+                        s.VideoPlayerPath = "\\Windows\\StreamingPlayer.exe";
+                    }
+                    else
+                    {
+                        s.VideoPlayerPath = "\\Windows\\wmplayer.exe";
+                    }
+                    
                     s.UseAnimations = false;
                     s.UseBigImages = false;
                     s.UILanguage = ApplicationPath + "//Translations//English.xml";

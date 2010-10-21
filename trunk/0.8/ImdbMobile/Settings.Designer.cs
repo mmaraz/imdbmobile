@@ -155,8 +155,8 @@
             // ddlVideoPlayer
             // 
             this.ddlVideoPlayer.Items.Add("Custom Video Player");
-            this.ddlVideoPlayer.Items.Add("Windows Media Player");
             this.ddlVideoPlayer.Items.Add("HTC StreamingMedia");
+            this.ddlVideoPlayer.Items.Add("Windows Media Player");
             this.ddlVideoPlayer.Items.Add("CorePlayer");
             this.ddlVideoPlayer.Location = new System.Drawing.Point(2, 273);
             this.ddlVideoPlayer.Name = "ddlVideoPlayer";

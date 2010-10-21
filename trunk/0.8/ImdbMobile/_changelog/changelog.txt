@@ -20,9 +20,10 @@ v0.8
 - Fixed: Movie Items (goofs/episodes/quotes/etc) are now not shown when not available.
 - Fixed: In the Settings screen, the keyboard automatically closes when saving or cancelling.
 - Fixed: On the Coming soon page the release date is now translatable.
-- Fixed: Trailers functionality. Removed the not working trailers 
-	(which caused the Out of Memory exception) Also removed the 720p trailers (these where not working either).
-	Trailer functionality is tested with HTC streaming media 3.10
+- Fixed: Trailers functionality. Removed the not working trailers (which caused the Out of Memory exception) 
+		 Also removed the 720p trailers (these where not working either).
+		 Trailer functionality is tested with HTC streaming media 3.10
+		 This is now the default player (when available) instead of windows media player.
 
 
 v0.7.6 - Changelog
