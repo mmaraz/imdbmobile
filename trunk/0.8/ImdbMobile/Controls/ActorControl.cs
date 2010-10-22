@@ -104,6 +104,11 @@ namespace ImdbMobile.Controls
             td.Heading = UI.Translations.GetTranslated("0003") + ":";
             td.Parent = this.kListControl1;
             td.Text = CurrentActor.Bio;
+            // When text is longer then 12000 the control freaks out and the text isn't readable. so remove it.
+            if (td.Text.Length > 12000)
+            {
+                td.Text = td.Text.Substring(0, 12000);
+            }
             td.YIndex = 1;
             td.CalculateHeight();
             this.kListControl1.Items.Add(td);
