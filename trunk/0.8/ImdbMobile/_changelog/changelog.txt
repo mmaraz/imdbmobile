@@ -3,16 +3,26 @@
 - in QVGA mode the rating (stars + rating) is outside the screen.
 - In the Settings screen, if I scroll down with the scroll bar to the bottom of the screen and then tap the 'Thumbnail Cach Path', the keyboard activates and screen repositions the field under the keyboard.
 - Set userfeedback on the listings pages. on selecting things.
+- if Actor (or any PERSON) is dead, pls add date-of-death to his property-page
+- pls add Year-of-Production to the Property-Page of a Movie 
+great would be user-settable font-sizes .. on my WVGA (Diamond 2) lots of stuff
+gets rendered way too large
+- caching not working properly
+- Just a cosmetic issue in the Filmography screen - some of the titles need truncating as they are too long to fit the available screen width. For example, with Sam Raimi, he has Filmography entries under 'Second Unit Director or Assistant Director' and 'Camera and Electrical Department' which then seem to affect line spacing too.
+
+
+
+
 
 v0.8 - Changelog
-- Added: Bottom Top 100
+- Added: Bottom Top 100.
 - Added: Settings page and filmography page are now translatable.
-- Added: A no image available image when no image is available for a movie or actor
-- Added: Search box is cleared when returning on Home screen
+- Added: A no image available image when no image is available for a movie or actor.
 - Added: Movie covers on filmography (movies of actor) page. 
 - Added: Missing android icons on movie page.
 - Added: Spanish language.
 - Added: A Cache folder for the cached items. (so the install folder stays clean)
+- Added: Search box is cleared when returning on Home screen.
 - Fixed: The images on the cast "preview" page.
 - Fixed: The bug that when a movie does not have a cover not all movie information is shown.
 - Fixed: If a search already exists in Recent Searches the oldest occurence is deleted.
@@ -20,11 +30,11 @@ v0.8 - Changelog
 - Fixed: Movie Items (goofs/episodes/quotes/etc) are now not shown when not available.
 - Fixed: In the Settings screen, the keyboard automatically closes when saving or cancelling.
 - Fixed: On the Coming soon page the release date is now translatable.
-- Fixed: Fixed a bug on actor page with to long biography.
+- Fixed: Fixed a bug on actor page, text was unreadable by actors with to long biography.
 - Fixed: Trailers functionality. Removed the not working trailers (which caused the Out of Memory exception) 
 		 Also removed the 720p trailers (these where not working either).
 		 Trailer functionality is tested with HTC streaming media 3.10
-		 This is now the default player (when available) instead of windows media player.
+		 HTC streaming media is now the default player (when available) instead of windows media player.
 
 v0.7.6 - Changelog
 - Fixed the QVGA support.
