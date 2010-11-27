@@ -19,6 +19,7 @@ namespace ImdbMobile.IMDBData
         public string UILanguage { get; set; }
         public bool UseAnimations { get; set; }
         public bool UseBigImages { get; set; }
+        public bool UseCaching { get; set; }
         public int NumToDisplay { get; set; }
         public bool UseCompression { get; set; }
         public string CurrentSkinName { get; set; }
@@ -80,6 +81,8 @@ namespace ImdbMobile.IMDBData
                     
                     s.UseAnimations = false;
                     s.UseBigImages = false;
+                    s.UseCaching = false;
+                    s.UseCompression = true;
                     s.UILanguage = ApplicationPath + "//Translations//English.xml";
                     s.NumToDisplay = 500;
                     s.CurrentSkinName = "Default";

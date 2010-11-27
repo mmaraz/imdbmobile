@@ -30,6 +30,7 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.chkUseBigImages = new System.Windows.Forms.CheckBox();
+            this.chkUseCaching = new System.Windows.Forms.CheckBox();
             this.ddlSkin = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.chkUseAnimations = new System.Windows.Forms.CheckBox();
@@ -58,6 +59,7 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.AutoScroll = true;
             this.panel1.Controls.Add(this.chkUseBigImages);
+            this.panel1.Controls.Add(this.chkUseCaching);
             this.panel1.Controls.Add(this.ddlSkin);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.chkUseAnimations);
@@ -198,6 +200,14 @@
             this.lblImdbLocale.Size = new System.Drawing.Size(440, 41);
             this.lblImdbLocale.Text = UI.Translations.GetTranslated("0112") + ":";
             // 
+            // chkUseCaching
+            // 
+            this.chkUseCaching.Location = new System.Drawing.Point(4, 620);
+            this.chkUseCaching.Name = "chkUseCaching";
+            this.chkUseCaching.Size = new System.Drawing.Size(440, 40);
+            this.chkUseCaching.TabIndex = 40;
+            this.chkUseCaching.Text = UI.Translations.GetTranslated("0127");
+            // 
             // mainMenu1
             // 
             this.mainMenu1.MenuItems.Add(this.menuItem1);
@@ -252,6 +262,6 @@
         private System.Windows.Forms.ComboBox ddlSkin;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox chkUseBigImages;
-
+        private System.Windows.Forms.CheckBox chkUseCaching;
     }
 }

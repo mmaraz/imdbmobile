@@ -62,7 +62,7 @@ namespace ImdbMobile.IMDBData
                 title.Runtime = ParseRuntime(Obj);
                 title.Cast = ParseCast(Obj);
                 title.Plot = ParsePlot(Obj);
-                title.Trailer = ParseTrailers(Obj);
+                title.Trailer = ParseTrailers(Obj, title);
                 title.Cover = ParseImage(Obj);
                 ParseHasData(Obj, title);
             }
@@ -118,7 +118,7 @@ namespace ImdbMobile.IMDBData
             return null;
         }
 
-        private ImdbVideo ParseTrailers(JToken data)
+        private ImdbVideo ParseTrailers(JToken data, ImdbTitle title)
         {
             if (General.ContainsKey(data, "trailer"))
             {
@@ -145,6 +145,7 @@ namespace ImdbMobile.IMDBData
                             if (!(ie.VideoURL.ToLower().Contains("totaleclips") && ie.VideoURL.ToLower().Contains(".mp4")) && ie.Type != ImdbEncoding.VideoType.HD720p)
                             {
                                 iv.Encodings.Add(ie);
+                                title.HasTrailers = true;
                             }
                         }
                     }

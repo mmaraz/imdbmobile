@@ -33,27 +33,15 @@ namespace ImdbMobile.IMDBData
         }
         public void Download()
         {
-            string Path = ImageDownloader.DownloadImage(_url);
-
-            if (string.IsNullOrEmpty(Path))
+            if (!string.IsNullOrEmpty(_url))
             {
-                if (SettingsWrapper.GlobalSettings.UseBigImages)
+                string CoverFileName = "";
+                string[] splitter = ImageDownloader.GetMoviePoster(_url).Split('/');
+                CoverFileName = SettingsWrapper.GlobalSettings.CachePath + "\\" + splitter[splitter.Length - 1];
+
+                if (System.IO.File.Exists(CoverFileName))
                 {
-                    if (System.IO.File.Exists(ImdbMobile.IMDBData.SettingsWrapper.ApplicationPath + "\\Cache\\no_image_big.png"))
-                    {
-                        Path = ImdbMobile.IMDBData.SettingsWrapper.ApplicationPath + "\\Cache\\no_image_big.png";
-                    }
-                }
-                else
-                {
-                    if (System.IO.File.Exists(ImdbMobile.IMDBData.SettingsWrapper.ApplicationPath + "\\Cache\\no_image_small.png"))
-                    {
-                        Path = ImdbMobile.IMDBData.SettingsWrapper.ApplicationPath + "\\Cache\\no_image_small.png";
-                    }
-                }
-                if (!string.IsNullOrEmpty(Path))
-                {
-                    System.Drawing.Image i = new System.Drawing.Bitmap(Path);
+                    System.Drawing.Image i = new System.Drawing.Bitmap(CoverFileName);
                     try
                     {
                         UpdateIcon ui = new UpdateIcon(Update);
@@ -61,17 +49,52 @@ namespace ImdbMobile.IMDBData
                     }
                     catch (ObjectDisposedException) { }
                 }
-            }
-            else
-            {
-                System.Drawing.Image i = new System.Drawing.Bitmap(Path);
-                System.IO.File.Delete(Path);
-                try
+                else
                 {
-                    UpdateIcon ui = new UpdateIcon(Update);
-                    Parent.Invoke(ui, new object[] { i });
+                    string Path = ImageDownloader.DownloadImage(_url);
+
+                    if (string.IsNullOrEmpty(Path))
+                    {
+                        if (SettingsWrapper.GlobalSettings.UseBigImages)
+                        {
+                            if (System.IO.File.Exists(ImdbMobile.IMDBData.SettingsWrapper.ApplicationPath + "\\Cache\\no_image_big.png"))
+                            {
+                                Path = ImdbMobile.IMDBData.SettingsWrapper.ApplicationPath + "\\Cache\\no_image_big.png";
+                            }
+                        }
+                        else
+                        {
+                            if (System.IO.File.Exists(ImdbMobile.IMDBData.SettingsWrapper.ApplicationPath + "\\Cache\\no_image_small.png"))
+                            {
+                                Path = ImdbMobile.IMDBData.SettingsWrapper.ApplicationPath + "\\Cache\\no_image_small.png";
+                            }
+                        }
+                        if (!string.IsNullOrEmpty(Path))
+                        {
+                            System.Drawing.Image i = new System.Drawing.Bitmap(Path);
+                            try
+                            {
+                                UpdateIcon ui = new UpdateIcon(Update);
+                                Parent.Invoke(ui, new object[] { i });
+                            }
+                            catch (ObjectDisposedException) { }
+                        }
+                    }
+                    else
+                    {
+                        System.Drawing.Image i = new System.Drawing.Bitmap(Path);
+                        if (!SettingsWrapper.GlobalSettings.UseCaching)
+                        {
+                            System.IO.File.Delete(Path);
+                        }
+                        try
+                        {
+                            UpdateIcon ui = new UpdateIcon(Update);
+                            Parent.Invoke(ui, new object[] { i });
+                        }
+                        catch (ObjectDisposedException) { }
+                    }
                 }
-                catch (ObjectDisposedException) { }
             }
         }
     }
@@ -116,7 +139,7 @@ namespace ImdbMobile.IMDBData
 
         }
 
-        private static string GetMoviePoster(string URL)
+        public static string GetMoviePoster(string URL)
         {
             if (SettingsWrapper.GlobalSettings.UseBigImages)
             {
@@ -140,7 +163,11 @@ namespace ImdbMobile.IMDBData
                     {
                         using (Stream s = resp.GetResponseStream())
                         {
-                            using (FileStream fs = File.Open(SettingsWrapper.GlobalSettings.CachePath + "\\tempimg.jpg", FileMode.Create, FileAccess.Write, FileShare.None))
+                            string CoverFileName = "";
+                            string[] splitter = ImageDownloader.GetMoviePoster(URL).Split('/');
+                            CoverFileName = splitter[splitter.Length - 1];
+
+                            using (FileStream fs = File.Open(SettingsWrapper.GlobalSettings.CachePath + "\\" + CoverFileName, FileMode.Create, FileAccess.Write, FileShare.None))
                             {
                                 int maxRead = 10240;
                                 byte[] buffer = new byte[maxRead];
@@ -155,7 +182,7 @@ namespace ImdbMobile.IMDBData
                                 fs.Flush();
                             }
 
-                            return SettingsWrapper.GlobalSettings.CachePath + "\\tempimg.jpg";
+                            return SettingsWrapper.GlobalSettings.CachePath + "\\" + CoverFileName;
                         }
                     }
                 }
@@ -267,16 +294,22 @@ namespace ImdbMobile.IMDBData
             {
                 try
                 {
-                    string FileName = GetImageFromWeb(ic);
-                    int Index = Images.IndexOf(ic);
-                    if (!string.IsNullOrEmpty(FileName))
+                    string CoverFileName = "";
+                    if (ic != null && !string.IsNullOrEmpty(ic.URL))
                     {
-                        if (System.IO.File.Exists(FileName))
+                        string[] splitter = ic.URL.Split('/');
+                        CoverFileName = SettingsWrapper.GlobalSettings.CachePath + "\\" + splitter[splitter.Length - 1];
+                    }
+
+                    if (!string.IsNullOrEmpty(CoverFileName))
+                    {
+                        if (System.IO.File.Exists(CoverFileName))
                         {
                             try
                             {
+                                int Index = Images.IndexOf(ic);
                                 ChangeImage ci = new ChangeImage(SetImage);
-                                ParentFormControl.Invoke(ci, new object[] { FileName, Index });
+                                ParentFormControl.Invoke(ci, new object[] { CoverFileName, Index });
                             }
                             catch (ObjectDisposedException)
                             {
@@ -284,7 +317,28 @@ namespace ImdbMobile.IMDBData
                                 break;
                             }
                         }
-                        System.IO.File.Delete(FileName);
+                        else
+                        {
+                            string FileName = GetImageFromWeb(ic);
+                            int Index = Images.IndexOf(ic);
+                            if (System.IO.File.Exists(FileName))
+                            {
+                                try
+                                {
+                                    ChangeImage ci = new ChangeImage(SetImage);
+                                    ParentFormControl.Invoke(ci, new object[] { FileName, Index });
+                                }
+                                catch (ObjectDisposedException)
+                                {
+                                    // If the parent has been killed, exit the thread
+                                    break;
+                                }
+                            }
+                            if (!SettingsWrapper.GlobalSettings.UseCaching)
+                            {
+                                System.IO.File.Delete(FileName);
+                            }
+                        }
                         System.Threading.Thread.Sleep(10);
                     }
                 }

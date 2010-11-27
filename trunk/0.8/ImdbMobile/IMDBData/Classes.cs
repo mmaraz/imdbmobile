@@ -136,6 +136,7 @@ namespace ImdbMobile.IMDBData
         public bool HasUserReviews { get; set; }
         public bool HasExternalReviews { get; set; }
         public bool HasParentalGuide { get; set; }
+        public bool HasTrailers { get; set; }
 
         // Extra Details
         public List<string> Trivia { get; set; }
