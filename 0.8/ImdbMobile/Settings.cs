@@ -105,6 +105,7 @@ namespace ImdbMobile
             this.chkDownloadThumbs.Checked = SettingsWrapper.GlobalSettings.DownloadThumbnails;
             this.chkUseAnimations.Checked = SettingsWrapper.GlobalSettings.UseAnimations;
             this.chkUseBigImages.Checked = SettingsWrapper.GlobalSettings.UseBigImages;
+            this.chkUseCaching.Checked = SettingsWrapper.GlobalSettings.UseCaching;
             this.chkEnableGZip.Checked = SettingsWrapper.GlobalSettings.UseCompression;
         }
 
@@ -173,6 +174,7 @@ namespace ImdbMobile
             SettingsWrapper.GlobalSettings.VideoPlayerPath = this.txtCustomVideo.Text;
             SettingsWrapper.GlobalSettings.UseAnimations = this.chkUseAnimations.Checked;
             SettingsWrapper.GlobalSettings.UseBigImages = this.chkUseBigImages.Checked;
+            SettingsWrapper.GlobalSettings.UseCaching = this.chkUseCaching.Checked;
             SettingsWrapper.GlobalSettings.UseCompression = this.chkEnableGZip.Checked;
             if (this.ddlSkin.SelectedItem.ToString() != SettingsWrapper.GlobalSettings.CurrentSkinName)
             {

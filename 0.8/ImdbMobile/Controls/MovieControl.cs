@@ -139,14 +139,17 @@ namespace ImdbMobile.Controls
             PhotoButton.MouseUp += new ImdbMobile.UI.ActionButton.MouseEvent(PhotoButton_MouseUp);
             this.kListControl1.Items.Add(PhotoButton);*/
 
-            UI.ActionButton TrailerButton = new ImdbMobile.UI.ActionButton();
-            TrailerButton.Icon = "Trailers";
-            TrailerButton.Parent = this.kListControl1;
-            TrailerButton.Text = UI.Translations.GetTranslated("0045");
-            TrailerButton.YIndex = 5;
-            TrailerButton.CalculateHeight();
-            TrailerButton.MouseUp += new ImdbMobile.UI.ActionButton.MouseEvent(TrailerButton_MouseUp);
-            this.kListControl1.Items.Add(TrailerButton);
+            if (title.HasTrailers)
+            {
+                UI.ActionButton TrailerButton = new ImdbMobile.UI.ActionButton();
+                TrailerButton.Icon = "Trailers";
+                TrailerButton.Parent = this.kListControl1;
+                TrailerButton.Text = UI.Translations.GetTranslated("0045");
+                TrailerButton.YIndex = 5;
+                TrailerButton.CalculateHeight();
+                TrailerButton.MouseUp += new ImdbMobile.UI.ActionButton.MouseEvent(TrailerButton_MouseUp);
+                this.kListControl1.Items.Add(TrailerButton);
+            }
 
             if (title.HasQuotes)
             {

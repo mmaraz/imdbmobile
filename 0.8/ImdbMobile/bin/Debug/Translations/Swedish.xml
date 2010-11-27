@@ -76,9 +76,9 @@
     <Phrase English="Loading Top 250" ID="0068"><![CDATA[Laddar topp 250]]></Phrase>
     <Phrase English="Votes" ID="0069"><![CDATA[Röster]]></Phrase>
     <!-- Context: "Watch Trailer (Low Resolution)" -->
-    <Phrase English="Watch Trailer (Low-Res)" ID="0070"><![CDATA[Se på trailer (Lågupplösning)]]></Phrase>
+    <Phrase English="Watch Trailer (Low-Res)" ID="0070"><![CDATA[Se trailer (Lågupplöst)]]></Phrase>
     <!-- Context: "Watch Trailer (High Resolution)" -->
-    <Phrase English="Watch Trailer (High-Res)" ID="0071"><![CDATA[Se på trailer (Högupplösning)]]></Phrase>
+    <Phrase English="Watch Trailer (High-Res)" ID="0071"><![CDATA[Se trailer (Högupplöst)]]></Phrase>
     <Phrase English="There are no Trailers available for this title" ID="0072"><![CDATA[Det finns inga tillgängliga trailers för denna titel]]></Phrase>
     <Phrase English="Downloading Trailer Info" ID="0073"><![CDATA[Laddar ner trailer-information]]></Phrase>
     <Phrase English="Loading Trivia" ID="0074"><![CDATA[Laddar trivialt]]></Phrase>

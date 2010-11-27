@@ -17,7 +17,6 @@ namespace ImdbMobile
             UI.Translations.ReadTranslationFile();
             UI.WindowHandler.ControlList = new List<ImdbMobile.UI.SlidingList>();
             UI.WindowHandler.APIWorker = new ImdbMobile.IMDBData.API();
-            IMDBData.SettingsWrapper.GlobalSettings.UseCompression = true;
             Form1 f1 = new Form1();
             UI.WindowHandler.ParentForm = f1;
             Application.Run(f1);

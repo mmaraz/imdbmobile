@@ -7,12 +7,13 @@
 - pls add Year-of-Production to the Property-Page of a Movie 
 great would be user-settable font-sizes .. on my WVGA (Diamond 2) lots of stuff
 gets rendered way too large
-- caching not working properly
 - Just a cosmetic issue in the Filmography screen - some of the titles need truncating as they are too long to fit the available screen width. For example, with Sam Raimi, he has Filmography entries under 'Second Unit Director or Assistant Director' and 'Camera and Electrical Department' which then seem to affect line spacing too.
 
 
-
-
+v0.8.1 - Changelog
+- Fixed: Gzip compression can now be disabled.
+- Fixed: Trailers button now not shown when no trailers are available
+- Added: Image caching + option to enable/disable it. (default:disabled)
 
 v0.8 - Changelog
 - Added: Bottom Top 100.
