@@ -35,12 +35,14 @@ namespace ImdbMobile.IMDBData
         {
             if (!string.IsNullOrEmpty(_url))
             {
+                // image is available
                 string CoverFileName = "";
                 string[] splitter = ImageDownloader.GetMoviePoster(_url).Split('/');
                 CoverFileName = SettingsWrapper.GlobalSettings.CachePath + "\\" + splitter[splitter.Length - 1];
 
                 if (System.IO.File.Exists(CoverFileName))
                 {
+                    // Image is already downloaded and exists in the cachefolder.
                     System.Drawing.Image i = new System.Drawing.Bitmap(CoverFileName);
                     try
                     {
@@ -51,49 +53,48 @@ namespace ImdbMobile.IMDBData
                 }
                 else
                 {
+                    // Download image
                     string Path = ImageDownloader.DownloadImage(_url);
-
-                    if (string.IsNullOrEmpty(Path))
+                    System.Drawing.Image i = new System.Drawing.Bitmap(Path);
+                    if (!SettingsWrapper.GlobalSettings.UseCaching)
                     {
-                        if (SettingsWrapper.GlobalSettings.UseBigImages)
-                        {
-                            if (System.IO.File.Exists(ImdbMobile.IMDBData.SettingsWrapper.ApplicationPath + "\\Cache\\no_image_big.png"))
-                            {
-                                Path = ImdbMobile.IMDBData.SettingsWrapper.ApplicationPath + "\\Cache\\no_image_big.png";
-                            }
-                        }
-                        else
-                        {
-                            if (System.IO.File.Exists(ImdbMobile.IMDBData.SettingsWrapper.ApplicationPath + "\\Cache\\no_image_small.png"))
-                            {
-                                Path = ImdbMobile.IMDBData.SettingsWrapper.ApplicationPath + "\\Cache\\no_image_small.png";
-                            }
-                        }
-                        if (!string.IsNullOrEmpty(Path))
-                        {
-                            System.Drawing.Image i = new System.Drawing.Bitmap(Path);
-                            try
-                            {
-                                UpdateIcon ui = new UpdateIcon(Update);
-                                Parent.Invoke(ui, new object[] { i });
-                            }
-                            catch (ObjectDisposedException) { }
-                        }
+                        System.IO.File.Delete(Path);
                     }
-                    else
+                    try
                     {
-                        System.Drawing.Image i = new System.Drawing.Bitmap(Path);
-                        if (!SettingsWrapper.GlobalSettings.UseCaching)
-                        {
-                            System.IO.File.Delete(Path);
-                        }
-                        try
-                        {
-                            UpdateIcon ui = new UpdateIcon(Update);
-                            Parent.Invoke(ui, new object[] { i });
-                        }
-                        catch (ObjectDisposedException) { }
+                        UpdateIcon ui = new UpdateIcon(Update);
+                        Parent.Invoke(ui, new object[] { i });
                     }
+                    catch (ObjectDisposedException) { }
+                }
+            }
+            else
+            {
+                // No image available
+                string imagePath = "";
+                if (SettingsWrapper.GlobalSettings.UseBigImages)
+                {
+                    if (System.IO.File.Exists(ImdbMobile.IMDBData.SettingsWrapper.ApplicationPath + "\\Cache\\no_image_big.png"))
+                    {
+                        imagePath = ImdbMobile.IMDBData.SettingsWrapper.ApplicationPath + "\\Cache\\no_image_big.png";
+                    }
+                }
+                else
+                {
+                    if (System.IO.File.Exists(ImdbMobile.IMDBData.SettingsWrapper.ApplicationPath + "\\Cache\\no_image_small.png"))
+                    {
+                        imagePath = ImdbMobile.IMDBData.SettingsWrapper.ApplicationPath + "\\Cache\\no_image_small.png";
+                    }
+                }
+                if (!string.IsNullOrEmpty(imagePath))
+                {
+                    System.Drawing.Image i = new System.Drawing.Bitmap(imagePath);
+                    try
+                    {
+                        UpdateIcon ui = new UpdateIcon(Update);
+                        Parent.Invoke(ui, new object[] { i });
+                    }
+                    catch (ObjectDisposedException) { }
                 }
             }
         }
