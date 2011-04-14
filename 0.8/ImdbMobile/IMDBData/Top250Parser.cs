@@ -59,9 +59,12 @@ namespace ImdbMobile.IMDBData
                             title.NumberOfVotes = (int)movie["num_votes"];
                             title.Rating = ParseRating(movie); ;
                             title.ImdbId = (string)movie["tconst"];
-                            title.Cover.URL = (string)movie["image"]["url"];
-                            title.Cover.Width = (int)movie["image"]["width"];
-                            title.Cover.Height = (int)movie["image"]["height"];
+                            if (General.ContainsKey(movie, "image"))
+                            {
+                                title.Cover.URL = (string)movie["image"]["url"];
+                                title.Cover.Width = (int)movie["image"]["width"];
+                                title.Cover.Height = (int)movie["image"]["height"];
+                            }
                             isrList.Add(title);
                         }
                     }
