@@ -34,16 +34,16 @@ namespace ImdbMobile
             Main = new MainControl();
             UI.WindowHandler.OpenForm(Main);
 
-            if (System.IO.Directory.Exists(@"\Application Data\AppToDate\") || !System.IO.File.Exists(@"\Application Data\AppToDate\IMDbMobile.xml"))
-            {
-                try
-                {
-                    string ApplicationPath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase);
-                    System.IO.File.Copy(ApplicationPath + "\\IMDbMobile.xml", @"\Application Data\AppToDate\IMDbMobile.xml");
-                    System.IO.File.Copy(ApplicationPath + "\\IMDbMobile.ico", @"\Application Data\AppToDate\IMDbMobile.ico");
-                }
-                catch (Exception ex) { }
-            }
+            //if (System.IO.Directory.Exists(@"\Application Data\AppToDate\") || !System.IO.File.Exists(@"\Application Data\AppToDate\IMDbMobile.xml"))
+            //{
+            //    try
+            //    {
+            //        string ApplicationPath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase);
+            //        System.IO.File.Copy(ApplicationPath + "\\IMDbMobile.xml", @"\Application Data\AppToDate\IMDbMobile.xml");
+            //        System.IO.File.Copy(ApplicationPath + "\\IMDbMobile.ico", @"\Application Data\AppToDate\IMDbMobile.ico");
+            //    }
+            //    catch (Exception ex) { }
+            //}
         }
 
         private void menuItem1_Click(object sender, EventArgs e)

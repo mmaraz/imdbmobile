@@ -5,6 +5,7 @@ using System.Text;
 using System.IO;
 using System.Net;
 using ImdbMobile.Controls;
+using System.Security.Cryptography;
 
 namespace ImdbMobile.IMDBData
 {
@@ -26,6 +27,23 @@ namespace ImdbMobile.IMDBData
             }
         }
 
+        public string CalculateMD5Hash(string input)
+        {
+            // step 1, calculate MD5 hash from input
+            MD5 md5 = System.Security.Cryptography.MD5.Create();
+            byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes(input);
+            byte[] hash = md5.ComputeHash(inputBytes);
+
+            // step 2, convert byte array to hex string
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < hash.Length; i++)
+            {
+                sb.Append(hash[i].ToString("X2"));
+            }
+            return sb.ToString();
+        }
+
+
         public DownloadCover(string URL, ImdbMobile.UI.SlidingList Parent)
         {
             this.Parent = Parent;
@@ -37,8 +55,27 @@ namespace ImdbMobile.IMDBData
             {
                 // image is available
                 string CoverFileName = "";
+                string MD5Hash = "";
                 string[] splitter = ImageDownloader.GetMoviePoster(_url).Split('/');
-                CoverFileName = SettingsWrapper.GlobalSettings.CachePath + "\\" + splitter[splitter.Length - 1];
+                MD5Hash = CalculateMD5Hash(splitter[splitter.Length - 1]);
+                if (SettingsWrapper.GlobalSettings.UseCaching && MD5Hash.Length > 5)
+                {
+                    StringBuilder path = new StringBuilder();
+                    path.Append(SettingsWrapper.GlobalSettings.CachePath);
+                    path.Append("\\");
+                    path.Append(MD5Hash.Substring(0,1));
+                    path.Append("\\");
+                    path.Append(MD5Hash.Substring(1, 2));
+                    path.Append("\\");
+                    path.Append(splitter[splitter.Length - 1]);
+                    CoverFileName = path.ToString();
+                }
+                else
+                {
+                    CoverFileName = SettingsWrapper.GlobalSettings.CachePath + "\\" + splitter[splitter.Length -1];
+                }
+
+                
 
                 if (System.IO.File.Exists(CoverFileName))
                 {
@@ -102,6 +139,22 @@ namespace ImdbMobile.IMDBData
 
     public class ImageDownloader
     {
+        public static string CalculateMD5Hash(string input)
+        {
+            // step 1, calculate MD5 hash from input
+            MD5 md5 = System.Security.Cryptography.MD5.Create();
+            byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes(input);
+            byte[] hash = md5.ComputeHash(inputBytes);
+
+            // step 2, convert byte array to hex string
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < hash.Length; i++)
+            {
+                sb.Append(hash[i].ToString("X2"));
+            }
+            return sb.ToString();
+        }
+
         public void Kill()
         {
             if (diw != null)
@@ -164,11 +217,36 @@ namespace ImdbMobile.IMDBData
                     {
                         using (Stream s = resp.GetResponseStream())
                         {
+                            string MD5Hash = "";
                             string CoverFileName = "";
                             string[] splitter = ImageDownloader.GetMoviePoster(URL).Split('/');
-                            CoverFileName = splitter[splitter.Length - 1];
 
-                            using (FileStream fs = File.Open(SettingsWrapper.GlobalSettings.CachePath + "\\" + CoverFileName, FileMode.Create, FileAccess.Write, FileShare.None))
+                            MD5Hash = CalculateMD5Hash(splitter[splitter.Length - 1]);
+                            if (SettingsWrapper.GlobalSettings.UseCaching && MD5Hash.Length > 5)
+                            {
+                                StringBuilder path = new StringBuilder();
+                                path.Append(SettingsWrapper.GlobalSettings.CachePath);
+                                path.Append("\\");
+                                path.Append(MD5Hash.Substring(0, 1));
+                                path.Append("\\");
+                                path.Append(MD5Hash.Substring(1, 2));
+                                path.Append("\\");
+
+                                if (!Directory.Exists(path.ToString()))
+                                {
+                                    Directory.CreateDirectory(path.ToString());
+                                }
+
+                                path.Append(splitter[splitter.Length - 1]);
+                                CoverFileName = path.ToString();
+
+                            }
+                            else
+                            {
+                                CoverFileName = SettingsWrapper.GlobalSettings.CachePath + "\\" + splitter[splitter.Length - 1];
+                            }
+
+                            using (FileStream fs = File.Open(CoverFileName, FileMode.Create, FileAccess.Write, FileShare.None))
                             {
                                 int maxRead = 10240;
                                 byte[] buffer = new byte[maxRead];
@@ -183,7 +261,7 @@ namespace ImdbMobile.IMDBData
                                 fs.Flush();
                             }
 
-                            return SettingsWrapper.GlobalSettings.CachePath + "\\" + CoverFileName;
+                            return CoverFileName;
                         }
                     }
                 }
@@ -277,6 +355,22 @@ namespace ImdbMobile.IMDBData
             this.ParentFormControl = ParentFormControl;
         }
 
+        public string CalculateMD5Hash(string input)
+        {
+            // step 1, calculate MD5 hash from input
+            MD5 md5 = System.Security.Cryptography.MD5.Create();
+            byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes(input);
+            byte[] hash = md5.ComputeHash(inputBytes);
+
+            // step 2, convert byte array to hex string
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < hash.Length; i++)
+            {
+                sb.Append(hash[i].ToString("X2"));
+            }
+            return sb.ToString();
+        }
+
         public void Abort()
         {
             if (webReq != null)
@@ -291,6 +385,7 @@ namespace ImdbMobile.IMDBData
 
         public void DownloadImage()
         {
+            // Download the thumbnail images
             foreach (ImdbCover ic in Images)
             {
                 try
@@ -298,8 +393,25 @@ namespace ImdbMobile.IMDBData
                     string CoverFileName = "";
                     if (ic != null && !string.IsNullOrEmpty(ic.URL))
                     {
+                        string MD5Hash = "";
                         string[] splitter = ic.URL.Split('/');
-                        CoverFileName = SettingsWrapper.GlobalSettings.CachePath + "\\" + splitter[splitter.Length - 1];
+                        MD5Hash = CalculateMD5Hash(splitter[splitter.Length - 1]);
+                        if (SettingsWrapper.GlobalSettings.UseCaching && MD5Hash.Length > 5)
+                        {
+                            StringBuilder path = new StringBuilder();
+                            path.Append(SettingsWrapper.GlobalSettings.CachePath);
+                            path.Append("\\");
+                            path.Append(MD5Hash.Substring(0, 1));
+                            path.Append("\\");
+                            path.Append(MD5Hash.Substring(1, 2));
+                            path.Append("\\");
+                            path.Append(splitter[splitter.Length - 1]);
+                            CoverFileName = path.ToString();
+                        }
+                        else
+                        {
+                            CoverFileName = SettingsWrapper.GlobalSettings.CachePath + "\\" + splitter[splitter.Length - 1];
+                        }
                     }
 
                     if (!string.IsNullOrEmpty(CoverFileName))
@@ -375,12 +487,38 @@ namespace ImdbMobile.IMDBData
                 {
                     string[] splitter = ic.URL.Split('/');
                     string fileName = splitter[splitter.Length - 1];
+                    string MD5Hash = "";
+                    MD5Hash = CalculateMD5Hash(splitter[splitter.Length - 1]);
+                    if (SettingsWrapper.GlobalSettings.UseCaching && MD5Hash.Length > 5)
+                    {
+                        StringBuilder path = new StringBuilder();
+                        path.Append(SettingsWrapper.GlobalSettings.CachePath);
+                        path.Append("\\");
+                        path.Append(MD5Hash.Substring(0, 1));
+                        path.Append("\\");
+                        path.Append(MD5Hash.Substring(1, 2));
+                        path.Append("\\");
+
+                        if (!Directory.Exists(path.ToString()))
+                        {
+                            Directory.CreateDirectory(path.ToString());
+                        }
+
+                        path.Append(splitter[splitter.Length - 1]);
+                        fileName = path.ToString();
+
+                    }
+                    else
+                    {
+                        fileName = SettingsWrapper.GlobalSettings.CachePath + "\\" + splitter[splitter.Length - 1];
+                    }
+
                     webReq = (HttpWebRequest)WebRequest.Create(GetThumbnailURL(ic.URL));
                     using (HttpWebResponse resp = (HttpWebResponse)webReq.GetResponse())
                     {
                         using (Stream s = resp.GetResponseStream())
                         {
-                            using (FileStream fs = File.Open(SettingsWrapper.GlobalSettings.CachePath + "\\" + fileName, FileMode.Create, FileAccess.Write, FileShare.None))
+                            using (FileStream fs = File.Open(fileName, FileMode.Create, FileAccess.Write, FileShare.None))
                             {
 
                                 int maxRead = 10240;
@@ -398,7 +536,7 @@ namespace ImdbMobile.IMDBData
                         }
                     }
 
-                    return SettingsWrapper.GlobalSettings.CachePath + "\\" + fileName;
+                    return fileName;
                 }
             }
             catch (Exception) { }

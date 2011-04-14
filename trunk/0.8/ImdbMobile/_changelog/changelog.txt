@@ -8,7 +8,20 @@
 great would be user-settable font-sizes .. on my WVGA (Diamond 2) lots of stuff
 gets rendered way too large
 - Just a cosmetic issue in the Filmography screen - some of the titles need truncating as they are too long to fit the available screen width. For example, with Sam Raimi, he has Filmography entries under 'Second Unit Director or Assistant Director' and 'Camera and Electrical Department' which then seem to affect line spacing too.
+- I have a small request, can you add an entry in settings to allow one to select the default Samsung Streaming Player which is located at:
 
+\\\Program Files\Samsung\Streaming Player\ASPlayer.exe
+
+Alternatively, maybe you could implement a browse-to-file button to select any custom players. Or even just allow copy & paste to function in that field.
+
+
+
+v0.8.3 - Changelog
+- Removed AppToDate functionality (Wasn't working anymore)
+- Fixed Top250 bug
+
+v0.8.2 - Changelog
+- Fixed: Changed image caching structure. Images are now stored in different folders. This is because when there are to much images in 1 folder the app crashes.
 
 v0.8.1 - Changelog
 - Fixed: Gzip compression can now be disabled.
