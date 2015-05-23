@@ -1,0 +1,1 @@
+Unlike other IMDb apps which parse IMDb pages for information, IMDb Mobile uses the iPhone IMDb API to retrieve information from IMDb.com and display it on your Windows Mobile.
